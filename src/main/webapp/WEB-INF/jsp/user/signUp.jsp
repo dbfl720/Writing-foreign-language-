@@ -36,17 +36,23 @@
 							height="250" width="300">
 					</div>
 				</div>
-						<!--title-->
-						<form method="post" name="form" class="form w-100 p-4" id="form">
+						<!--SignUp-->
+						<form id="signUpFrom" method="post"  action="/user/sign_up" name="form" class="form w-100 p-4">
 							<div class="row">
 								<div class="col col-sm-12 col-md-12 col-lg-11 m-0">
 									<div class="form-group d-flex">
-										<label for="fname">Id</label> <input type="text" name="fname"
-											class="form-control signUpInputPadding" id="fname" onfocus="labelUp(this)"
+										<label for="fname">Id</label> <input id="loginId" type="text" name="fname"
+											class="form-control signUpInputPadding"  onfocus="labelUp(this)"
 											onblur="labelDown(this)" required />
 										<button type="button" id="loginIdCheckBtn" class="btn btn-secondary  ">duplicate check</button>
 									</div>
 								</div>
+								 <%-- 아이디 체크 결과 --%> <%-- d-none 클래스: display none (보이지 않게) --%>
+									<div id="idCheckLength" class="text-danger d-none">Please enter at least 4 characters.</div>
+									<div id="idCheckDuplicated" class="text-danger d-none">already Id in use.</div>
+									<div id="idCheckOk" class=" text-success d-none">It's possible to use.</div>
+										
+										
 								<div class="col col-sm-12 col-md-12 col-lg-12 m-0">
 									<div class="form-group">
 										<label for="signup_password">Password</label> <i
@@ -114,7 +120,7 @@
 							
 							<!--form-row-->
 							<div class="form-group">
-								<button type="submit" class="btn btn-primary register_btn w-100">Sign
+								<button type="button" class="btn btn-primary register_btn w-100">Sign
 									Up</button>
 							</div>
 						</form>
@@ -145,7 +151,7 @@
 									onblur="labelDown(this)" required />
 							</div>
 							<div class="form-group mb-0">
-								<button type="submit" class="btn btn-primary register_btn w-100">Sign
+								<button type="button" class="btn btn-primary register_btn w-100">Sign
 									In</button>
 							</div>
 						</form>
@@ -237,8 +243,52 @@
 	
 	
 $(document).ready(function() {
-	// 회원가입
-	
+	// 중복 확인
+	$('#loginIdCheckBtn').on('click', function(){
+		//alert("dd");
+		// validation
+		let loginId = $('#loginId').val().trim();
+		
+		// 4자 미만이면 경고 문구 노출
+		if (loginId.length < 4) {
+			$('#idCheckLength').removeClass('d-none');  // 경고문고 노출
+			$('#idCheckDuplicated').addClass('d-none'); // 숨김
+			$('#idCheckOk').addClass('d-none');// 숨김
+			return;
+		}
+		
+		
+		
+		
+		// 화면을 이동시키지 않고 ajax 통신으로 중복여부 확인하고 동적으로 문구 노출
+		// AJAX 통신 - 중복확인
+		$.ajax({
+			// request
+			url:"/user/is_duplicated_id"
+			, data:{"loginId":loginId}
+			
+			// response
+			, success:function(data) {
+				if(data.result) {
+					//중복
+					$("#idCheckDuplicated").removeClass("d-none");
+					$('#idCheckLength').addClass("d-none");   // 숨김
+					$('#idCheckOk').addClass("d-none");   // 숨김
+				} else {
+					// 사용 가능
+					$("#idCheckOk").removeClass("d-none");
+					$('#idCheckLength').addClass('d-none'); // 경고문구 노출
+					$('#idCheckDuplicated').addClass("d-none");   // 숨김
+				}
+			}
+			
+			,error: function(error) {
+				alert("아이디 중복확인에 실패했습니다. 관리자에게 문의해주세요.");
+			}
+			
+		}); // AJAX
+		
+	}); // 중복 확인
 	
 	
 }); // ready
