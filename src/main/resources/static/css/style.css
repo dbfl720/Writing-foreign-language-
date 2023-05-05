@@ -5,14 +5,22 @@
 /*header*/
 .header{height:120px; background-color:#A9E2F3;}
 .ami{font-size:60px; margin-left:80px; padding-top:20px; font-weight:bold}
+
+
 /*menu */
 .asideMenu{width:250px; height:1080px; background-color:#F6CEF5}
 .communityText{padding-top:100px; font-size:26px;}
 .v-line {border-left : thin solid black; height : 1080px;}
+
+
 /*section */
 .section{width:2295px; height:1080px; background-color:#A9F5D0}
+
+
 /*footer*/
 .footer{height:60px; background-color:#F5D0A9}
+
+
 /*signUp*/
 .signUpNativeLanguage {font-size: 10px; font-family: 'Marck Script', cursive;}
 :root {
@@ -39,11 +47,12 @@ h1 {
 }
 
 p {
-	font-size: 1.5rem;
+	font-size: 1.9rem;
 }
-/* Sections */
+
 .login_section {
-	padding-top: 30px; min-height : 10vh;
+	padding-top:20px;
+    min-height : 10vh;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -52,7 +61,7 @@ p {
 }
 
 .accounts_container {
-	height: 900px;
+	height: 1000px;
 	border-radius: 10px;
 	box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
 	background-color: #fcfcfc;
@@ -67,7 +76,7 @@ p {
 }
 
 .accounts_forms {
-	padding-top: 70px;
+	padding-top: 30px;
 }
 
 .accounts_col form .form-group {
@@ -110,7 +119,7 @@ p {
 
 .register_btn {
 	padding: 10px 0 !important;
-	font-size: 2.5rem !important;
+	font-size: 1.8rem !important;
 	font-weight: 600 !important;
 }
 
@@ -147,11 +156,21 @@ p {
     font-weight: 400;
     font-size: 18px;
     line-height: 8px;
-    margin-bottom:19px;
+    margin-bottom:16px;
     margin-right:30px;
     margin-left:15px;
 }
 
-.signUpWhoBox{font-size:20px;  padding-top:10px; }
+.signUpWhoBox{font-size:20px;  padding-top:10px;}
 .signUpPurposeBox{font-size:20px; padding-top:10px; margin-right:100px;}
+.signUpInputPadding{height:50px;}
+
+
+/* signUp 사진 */
+.profilePics{padding-top:20px; padding-left:100px; width:1000px; height:600px;}
+.profileBox{    width: 100px; height: 100px;  border-radius: 70%; overflow: hidden;}
+.profile{  width: 100%;  height: 100%; object-fit: cover;}
+.headerFollowing{font-weight:lighter;}
+/* singUp 중복버튼*/
+#loginIdCheckBtn{width: 100px; height:50px; font-size:13px; margin-right:-25px; margin-left:10px;}
 
