@@ -43,7 +43,7 @@ p {
 }
 /* Sections */
 .login_section {
-	padding-top: 130px; min-height : 10vh;
+	padding-top: 30px; min-height : 10vh;
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -152,4 +152,6 @@ p {
     margin-left:15px;
 }
 
+.signUpWhoBox{font-size:20px;  padding-top:10px; }
+.signUpPurposeBox{font-size:20px; padding-top:10px; margin-right:100px;}
 
