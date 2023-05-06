@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.language.user.dao.UserMapper">
+ 	<select id="selectUserByLoginId" parameterType="String" resultType="com.language.user.model.User">
+ 		SELECT
+ 			`id`
+ 			,`nativeCategoryId`
+ 			,`foreignCategoryId`
+ 			,`loginId`
+ 			,`password`
+ 			,`email`
+ 			,`selfIntroduction`
+ 			,`languageGoals`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`user`
+		WHERE
+			`loginId` = #{loginId}
+ 	
+ 	</select>
+ 
+ 
+ </mapper>

@@ -172,5 +172,5 @@ p {
 .profile{  width: 100%;  height: 100%; object-fit: cover;}
 .headerFollowing{font-weight:lighter;}
 /* singUp 중복버튼*/
-#loginIdCheckBtn{width: 100px; height:50px; font-size:13px; margin-right:-25px; margin-left:10px;}
-
+#loginIdCheckBtn{width: 100px; height:50px; font-weight: bold; font-size:15px; margin-right:-25px; margin-left:10px;}
+.duplicatedText{font-size:15px;  font-weight: 400; margin-left:19px; margin-top: -30px;}

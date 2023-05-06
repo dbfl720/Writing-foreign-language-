@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="section">
-	<section class="login_section">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 		<div class="container outer_container accounts_container">
 			<div class="row h-100">
 				<div
@@ -44,26 +43,26 @@
 										<label for="fname">Id</label> <input id="loginId" type="text" name="fname"
 											class="form-control signUpInputPadding"  onfocus="labelUp(this)"
 											onblur="labelDown(this)" required />
-										<button type="button" id="loginIdCheckBtn" class="btn btn-secondary  ">duplicate check</button>
+										<button type="button" id="loginIdCheckBtn" class="duplicatedCheck btn btn-secondary  ">duplicate check</button>
 									</div>
 								</div>
 								 <%-- 아이디 체크 결과 --%> <%-- d-none 클래스: display none (보이지 않게) --%>
-									<div id="idCheckLength" class="text-danger d-none">Please enter at least 4 characters.</div>
-									<div id="idCheckDuplicated" class="text-danger d-none">already Id in use.</div>
-									<div id="idCheckOk" class=" text-success d-none">It's possible to use.</div>
+									<div id="idCheckLength" class="duplicatedText text-danger d-none">Please enter at least 4 characters.</div>
+									<div id="idCheckDuplicated" class="duplicatedText text-danger d-none">already Id in use.</div>
+									<div id="idCheckOk" class="duplicatedText text-success d-none">It's possible to use.</div>
 										
 										
 								<div class="col col-sm-12 col-md-12 col-lg-12 m-0">
 									<div class="form-group">
 										<label for="signup_password">Password</label> <i
 											class="fa fa-eye-slash " id="eye_icon_signup"></i> <input
-											type="password" name="pass" class="form-control signUpInputPadding"
+											type="password" name="signup_password" class="form-control signUpInputPadding"
 											id="signup_password" onfocus="labelUp(this)"
 											onblur="labelDown(this)" required />
 									</div>
 									<div class="form-group">
 										<label for="cpass">Confirm Password</label> <input
-											type="password" name="cpass" class="form-control signUpInputPadding" id="cpass"
+											type="password" name="confirmPassword" class="form-control signUpInputPadding" id="confirmPassword"
 											onfocus="labelUp(this)" onblur="labelDown(this)" required />
 									</div>
 									<div class="form-group">
@@ -120,7 +119,7 @@
 							
 							<!--form-row-->
 							<div class="form-group">
-								<button type="button" class="btn btn-primary register_btn w-100">Sign
+								<button id="signUpBtn" name="signUpBtn" type="button" class="btn btn-primary register_btn w-100">Sign
 									Up</button>
 							</div>
 						</form>
@@ -129,7 +128,11 @@
 							<p class="text-center" id="to_login">I am already member</p>
 						</div>
 					</div>
-					<!--accounts_forms-->
+					
+					
+					
+					
+					<!--signIn-->
 					<div class="accounts_forms  w-100 h-100" id="login">
 						<div class="title  mt-4 p-4 w-100">
 							<h1>Sign In</h1>
@@ -168,10 +171,10 @@
 			</div>
 			<!--row-->
 		</div>
-		<!--accounts_container-->
-	</section>
+	
+	
 
-</div>
+
 
 
 
@@ -242,10 +245,9 @@
 	
 	
 	
-$(document).ready(function() {
+ $(document).ready(function() {
 	// 중복 확인
 	$('#loginIdCheckBtn').on('click', function(){
-		//alert("dd");
 		// validation
 		let loginId = $('#loginId').val().trim();
 		
@@ -291,7 +293,102 @@ $(document).ready(function() {
 	}); // 중복 확인
 	
 	
-}); // ready
+	
+	
+	
+	// 회원가입
+	 $('#signUpBtn').on('click', function() {
+		//e.prevenDefault(e);
+		
+		// validation
+		let loginId = $('#loginId').val().trim();
+		let signup_password = $('#signup_password').val();
+		let confirmPassword = $('#confirmPassword').val();
+		let email =  $('#email').val().trim();
+		var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+		var selectNative = document.getElementById('selectNative');
+		var selectNativeIndex = document.getElementById('selectNative').options.selectedIndex;		
+		var selectLanguage = document.getElementById('selectLanguage');
+		var selectLanguageIndex = document.getElementById('selectLanguage').options.selectedIndex;
+		
+		var selectNativeValue = selectNative.options[selectNativeIndex].value;
+		var selectLanguageValue = selectLanguage.options[selectLanguageIndex].value;
+		
+		//alert(selectNativeValue);
+		//alert(selectLanguage.value);
+		
+		if (!loginId) {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		
+		
+		if (!signup_password) {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+		
+		if (reg.test(signup_password) == false) {
+			alert("비밀번호는 8자 이상이어야 하며, 숫자/대문자/소문자/특수문를 모두 포함해야 합니다.");
+			return false;
+		} else {
+			console.log("통과");
+		}
+		
+		
+		
+		if (signup_password != confirmPassword) {
+			alert("비밀번호가 일치하지 않습니다.");
+			return false;
+		}
+		
+		
+		if(email) {
+		    var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+		    if (!regEmail.test(email)) {
+		        alert('이메일 형식에 맞춰주세요.');
+		        return false;
+		    }
+		}
+		
+		
+		if(!email) {    // 이메일 형식에 맞는지 정규식 확인하는거 필요! 
+			alert("이메일을 입력하세요.");
+			return false;
+		}
+		
+		
+		
+		
+		
+		// select 선택 했는지 확인 
+		if (selectNativeValue == 'none') {
+			alert("Please select one native language.");
+		}
+		
+		
+		
+		// select 선택 했는지 확인 
+		if (selectLanguageValue == 'none') {
+			alert("Please select one foreign language.");
+		}
+		
+		
+		
+		// 아이디 중복확인 완료 됐는지 확인 - idCheckOk d-none이 있으면 alert 띄우기 
+		if ($("#idCheckOk").hasClass("d-none")) {
+			alert("아이디 중복확인을 다시 해주세요.");
+			return false;
+		}
+		
+		
+		
+		
+		
+	});   // 회원가입
+	
+	
+}); // ready 
 	
 
 </script>

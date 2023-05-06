@@ -4,8 +4,8 @@
 <html lang="en" >
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="SignUp, Login, Register">
-<meta name="keywords" content="Sign up, Sign in">
+<!-- <meta name="keywords" content="SignUp, Login, Register">
+<meta name="keywords" content="Sign up, Sign in"> -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Writing_foreign_language</title>
