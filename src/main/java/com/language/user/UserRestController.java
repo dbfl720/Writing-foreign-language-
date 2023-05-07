@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.language.common.Encrypt;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -48,6 +51,38 @@ public class UserRestController {
 	}
 	
 	
+	
+	
+	@PostMapping("/sign_up")
+	public Map<String, Object> signUp(
+		@RequestParam("selectNativeValue") String nativeCategoryId,
+		@RequestParam("selectLanguageValue") String foreignCategoryId,
+		@RequestParam("loginId") String loginId,
+		@RequestParam("signup_password") String password,
+		@RequestParam("email") String email,
+		@RequestParam("selfIntroduction") String selfIntroduction,
+		@RequestParam("languageGoals") String languageGoals,
+		@RequestParam("file") MultipartFile file){
+
+	  
+		Encrypt en = new Encrypt();	
+		// salt 생성
+		String salt = en.getSalt();
+		// 최종 password 생성
+		String saltPassword = en.getEncrypt(password, salt);
+		
+
+		
+		// db insert
+		userBO.addUser(nativeCategoryId, foreignCategoryId, loginId, saltPassword, email, selfIntroduction, languageGoals, file);
+		
+		Map<String, Object> result = new HashMap<>();
+		result.put("code", 1);
+		result.put("result", "성공");
+		
+		return result;
+		
+	}
 	
 	
 }

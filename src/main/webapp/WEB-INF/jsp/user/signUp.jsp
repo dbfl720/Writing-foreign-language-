@@ -28,13 +28,9 @@
 					<a href="#" id="fileUploadBtn">
 					<img   alt="프로필 변경 이모티콘" width="30" height="30"	src="data:image/png;base64,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" >
 					</a>
-					
-					<!-- 프로필 이미지 -->
-					<div class=" profileBox">
-						<img id="profileImg" class=" profile" alt="프로필 사진"
-							src=""
-							height="250" width="300">
-					</div>
+					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
+					<div id="fileName" class="text-secondary ml-2 mt-2"></div>
+				
 				</div>
 						<!--SignUp-->
 						<form id="signUpFrom" method="post"  action="/user/sign_up" name="form" class="form w-100 p-4">
@@ -79,27 +75,27 @@
 									<select name="selectNative" id="selectNative">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>native language</option>
-										<option value="KO">KO</option>
-										<option value="EN">EN</option>
-										<option value="JP">JP</option>
-										<option value="CHN">CHN</option>
-										<option value="FRA">FRA</option>
-										<option value="SWE">SWE</option>
-										<option value="DEU">DEU</option>
-										<option value="VNM">VNM</option>
-										<option value="Others">Others</option>
+										<option value="10">KO</option>
+										<option value="11">EN</option>
+										<option value="12">JP</option>
+										<option value="13">CHN</option>
+										<option value="14">FRA</option>
+										<option value="15">SWE</option>
+										<option value="16">DEU</option>
+										<option value="17">VNM</option>
+										<option value="18">Others</option>
 									</select> <select name="selectLanguage" id="selectLanguage">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>foreign language</option>
-										<option value="KO">KO</option>
-										<option value="EN">EN</option>
-										<option value="JP">JP</option>
-										<option value="CHN">CHN</option>
-										<option value="FRA">FRA</option>
-										<option value="SWE">SWE</option>
-										<option value="DEU">DEU</option>
-										<option value="VNM">VNM</option>
-										<option value="Others">Others</option>
+										<option value="1">KO</option>
+										<option value="2">EN</option>
+										<option value="3">JP</option>
+										<option value="4">CHN</option>
+										<option value="5">FRA</option>
+										<option value="6">SWE</option>
+										<option value="7">DEU</option>
+										<option value="8">VNM</option>
+										<option value="9">Others</option>
 									</select>
 								</div>
 
@@ -324,8 +320,13 @@
 		let ext = fileName.split(".").pop().toLowerCase();
 		if (ext != "jpg" && ext != "png" && ext != "jpeg" && ext != "gif" && ext != "webp") {
 			alert("You can only upload image files.");
+			$("#file").val(""); // 파일 태그에 파일 제거
+			$("#fileName").text(""); // 파일 이름 비우기
 			return;
 		}
+		
+		// 유효성 통과한 이미지는 상자에 업로드 된 파일 이름 노출
+		$("#fileName").text(fileName); // 태그 사이에 글자를 넣는 함수 : text() 
 		
 	}); // #file
 	

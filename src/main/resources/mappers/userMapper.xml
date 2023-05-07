@@ -22,6 +22,41 @@
 			`loginId` = #{loginId}
  	
  	</select>
+ 	
+ 	
+ 	
+ 	
+ 	<insert id="insertUser" parameterType="map">
+ 		INSERT INTO `user`
+ 		(
+			`nativeCategoryId` 
+			,`foreignCategoryId`
+			,`loginId`
+			,`password`
+			,`email`
+			,`selfIntroduction`
+			,`languageGoals`
+			,`ImagePath`
+			,`createdAt`
+ 			,`updatedAt`
+					
+ 		)
+ 		VALUES
+ 		(
+ 			#{nativeCategoryId}
+ 			,#{foreignCategoryId}
+ 			,#{loginId}
+ 			,#{password}
+ 			,#{email}
+ 			,#{selfIntroduction}
+ 			,#{languageGoals}
+ 			,#{ImagePath}
+ 			,NOW()
+ 			,NOW()
+
+ 		)
+	
+ 	</insert>
  
  
  </mapper>
