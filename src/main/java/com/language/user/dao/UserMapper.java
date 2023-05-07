@@ -10,7 +10,11 @@ public interface UserMapper {
 	
 	public User selectUserByLoginId(String loginId);
 	
+	public User selectUserByLoginIdPassword(
+			@Param("loginId") String loginId,
+			@Param("password") String password);
 	
+
 	
 	public int insertUser(
 			@Param("nativeCategoryId") String nativeCategoryId,
@@ -21,4 +25,10 @@ public interface UserMapper {
 			@Param("selfIntroduction") String selfIntroduction,
 			@Param("languageGoals") String languageGoals,
 			@Param("ImagePath") String ImagePath);
+	
+	
+	
+	
+	
+	
 }

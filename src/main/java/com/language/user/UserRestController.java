@@ -3,6 +3,9 @@ package com.language.user;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.language.common.Encrypt;
+import com.language.common.EncryptUtils;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -52,7 +56,18 @@ public class UserRestController {
 	
 	
 	
-	
+	/**
+	 * 회원가입 
+	 * @param nativeCategoryId
+	 * @param foreignCategoryId
+	 * @param loginId
+	 * @param password
+	 * @param email
+	 * @param selfIntroduction
+	 * @param languageGoals
+	 * @param file
+	 * @return
+	 */
 	@PostMapping("/sign_up")
 	public Map<String, Object> signUp(
 		@RequestParam("selectNativeValue") String nativeCategoryId,
@@ -65,16 +80,19 @@ public class UserRestController {
 		@RequestParam("file") MultipartFile file){
 
 	  
-		Encrypt en = new Encrypt();	
-		// salt 생성
-		String salt = en.getSalt();
-		// 최종 password 생성
-		String saltPassword = en.getEncrypt(password, salt);
+//		Encrypt en = new Encrypt();	
+//		// salt 생성
+//		String salt = en.getSalt();
+//		// 최종 password 생성
+//		String saltPassword = en.getEncrypt(password, salt);
 		
+		
+		// 비밀번호 해싱
+		String hashedPassword = EncryptUtils.md5(password);
 
 		
 		// db insert
-		userBO.addUser(nativeCategoryId, foreignCategoryId, loginId, saltPassword, email, selfIntroduction, languageGoals, file);
+		userBO.addUser(nativeCategoryId, foreignCategoryId, loginId, hashedPassword, email,  selfIntroduction, languageGoals, file);
 		
 		Map<String, Object> result = new HashMap<>();
 		result.put("code", 1);
@@ -83,6 +101,54 @@ public class UserRestController {
 		return result;
 		
 	}
+	
+	
+	
+	
+	
+	// 로그인
+	@PostMapping("/sign_in")
+	public Map<String, Object> signIn(
+			@RequestParam("signInId") String loginId,
+			@RequestParam("signInPassword") String signInPassword,
+			HttpServletRequest request) {
+		
+		
+	
+//		비밀번호 인증
+//		SHA-256(입력받은 비밀번호 + 유저 디비 테이블의 Salt값) 과 유저테이블에 이미 생성된 해시 값이 같으면 인증 성공
+//      로그인 할때 ID로 salt값을 조회하여 입력한 비밀번호와 Salt값을 다시 암호화하여 비밀번호 체킹.		
+		
+		// password hashing
+		String hashedPassword = EncryptUtils.md5(signInPassword);
+		
+		// select null or 1행   // ** select - hashedPassword로 해야함.
+		User user = userBO.getUserByLoginIdPassword(loginId, hashedPassword);
+				
+				
+		// 로그인 처리
+		Map<String, Object> result = new HashMap<>();
+		if (user != null) {
+			result.put("code", 1);
+			result.put("result", "log-in succeed");
+			
+			
+			// 세션에 유저 정보 
+			HttpSession session = request.getSession();
+			session.setAttribute("userId", user.getId());
+			session.setAttribute("userLoginId", user.getLoginId());
+			session.setAttribute("ImagePath", user.getImagePath());
+		} else {
+			result.put("code", 500);
+			result.put("errorMessage", "This user does not exist.");
+		}
+		
+		return result;
+		
+	}
+	
+	
+	
 	
 	
 }

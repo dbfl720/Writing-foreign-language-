@@ -14,6 +14,7 @@ public class User {
 	private int foreignCategoryId;
 	private String loginId;
 	private String password;
+	private String salt;
 	private String email;
 	private String selfIntroduction;
 	private String languageGoals;

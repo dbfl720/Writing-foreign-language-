@@ -3,7 +3,7 @@ package com.language.common;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-
+// salt 암호화
 public class Encrypt {
 	
 	  public static String getSalt() {
@@ -22,6 +22,9 @@ public class Encrypt {
 	     return sb.toString();
 	  }
 
+	  
+	  
+	  
 	  public static String getEncrypt(String pwd, String salt) {
 		
 	      String result = "";

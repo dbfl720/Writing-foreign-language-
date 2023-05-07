@@ -21,6 +21,20 @@ public class UserBO {
 	}
 	
 	
+	
+	
+	
+	// select - 로그인
+	public User getUserByLoginIdPassword(String loginId, String password) {	
+		
+		return userMapper.selectUserByLoginIdPassword(loginId, password);
+	}
+	
+	
+
+	
+	
+	
 	// insert - 회원가입
 	public int addUser(
 			String nativeCategoryId,
@@ -40,4 +54,13 @@ public class UserBO {
 		
 		return userMapper.insertUser(nativeCategoryId, foreignCategoryId, loginId, password, email, selfIntroduction, languageGoals, ImagePath);
 	}
+	
+	
+	
+
+	
+
+	
+	
+	
 }

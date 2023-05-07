@@ -26,6 +26,32 @@
  	
  	
  	
+ 	
+ 	<select id="selectUserByLoginIdPassword" parameterType="map" resultType="com.language.user.model.User">
+		SELECT
+ 			`id`
+ 			,`nativeCategoryId`
+ 			,`foreignCategoryId`
+ 			,`loginId`
+ 			,`password`
+ 			,`email`
+ 			,`selfIntroduction`
+ 			,`languageGoals`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`user`
+		WHERE
+			`loginId` = #{loginId}
+		AND `password` = #{password}
+ 	</select>
+ 	
+ 	
+ 	
+ 
+ 	
+ 	
  	<insert id="insertUser" parameterType="map">
  		INSERT INTO `user`
  		(

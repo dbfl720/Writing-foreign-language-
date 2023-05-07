@@ -106,7 +106,6 @@
 									</div>
 								</div>
 							</div>
-							
 							<div class="  signUpPurposeBox">
 								<div class="form-group ">
 									<label for="lname">Purpose of writing</label> 
@@ -141,14 +140,14 @@
 						<form method="post" name="form" class="form  w-100 p-4" id="form">
 							<div class="form-group">
 								<label for="fname">Id</label> <input type="text" name="fname"
-									class="form-control signUpInputPadding" id="fname" onfocus="labelUp(this)"
+									class="form-control signUpInputPadding" id="signInId" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required />
 							</div>
 							<div class="form-group">
 								<label for="login_password">Password</label> <i
 									class="fa fa-eye-slash" id="eye_icon_login"></i> <input
 									type="password" name="pass" class="form-control signUpInputPadding"
-									id="login_password" onfocus="labelUp(this)"
+									id="signInPassword" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required />
 							</div>
 
@@ -160,7 +159,7 @@
 							
 							
 							<div class="form-group mb-0">
-								<button type="button" class="btn btn-primary register_btn w-100">Sign
+								<button id="loginBtn" type="button" class="btn btn-primary register_btn w-100">Sign
 									In</button>
 							</div>
 						</form>
@@ -497,7 +496,7 @@
 			// response
 			, success : function(data) {
 				if (data.code == 1) {
-					alert("Your post has been saved.");
+					alert("Your information has been saved.");
 					location.reload();
 				} else {
 					alert(data.errorMessage);
@@ -514,6 +513,67 @@
 		});    // ajax
 		
 	});   // 회원가입
+	
+	
+	
+	
+	
+	
+	
+	
+	// 로그인
+	$('#loginBtn').on('click', function() {
+		// alert("dd");
+		
+		// validation
+		 let signInId = $('#signInId').val().trim();
+		 let signInPassword = $('#signInPassword').val();
+		 
+		 if (!signInId) {
+			 alert("Please enter your ID.");
+			 return;
+		 }
+		 
+		 if (!signInPassword) {
+			 alert("Please enter your password.");
+			 return;
+		 }
+		
+		 
+		 
+		 
+
+		 
+		 
+		 
+		 // AJAX 전송
+		$.ajax({
+			// request
+			 type : "post"
+			, url : "/user/sign_in"
+			, data: {"signInId" : signInId,
+					 "signInPassword" : signInPassword}
+			
+			
+			// response
+			, success: function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
+				if (data.code == 1) {
+					// 성공 시 커뮤니트 목록으로 이동.
+					location.href = "/community/community_view";
+				} else {
+					alert(data.errorMessage);
+				}
+			}
+			, error : function(request, status, error) {
+				alert("Failed to save information. Please contact the administrator.");
+			}
+				
+			
+		});  // ajax
+		
+		
+	});  // 로그인
+	
 	
 	
 }); // ready 
