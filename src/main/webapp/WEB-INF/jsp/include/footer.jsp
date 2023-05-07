@@ -4,6 +4,6 @@
 
 <div class="footer">
 	<small class="text-center justify-content-center align-items-center col-9 mt-4">
-		<div class="text-secondary">Copyright@2023 YURI. All Rights Reserved.</div>
+		<div class="text-secondary footerText">Copyright@2023 YURI. All Rights Reserved.</div>
 	</small>
 </div>

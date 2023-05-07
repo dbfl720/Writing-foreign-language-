@@ -3,12 +3,14 @@
 #wrap{background-color:gray; height:1200px;}
 
 /*header*/
-.header{height:120px; background-color:#A9E2F3;}
+.header{height:100px; background-color:#A9E2F3;}
 .ami{font-size:60px; margin-left:80px; padding-top:20px; font-weight:bold}
 
 
 /*menu */
-.asideMenu{width:250px; height:1080px; background-color:#F6CEF5}
+.asideMenu{width:250px; height:1080px; background-color:#F6CEF5; padding-top:13px;}
+.asideText{font-size: 25px; color:black;}
+.asideText:hover{text-decoration:none;}
 .communityText{padding-top:100px; font-size:26px;}
 .v-line {border-left : thin solid black; height : 1080px;}
 
@@ -19,10 +21,13 @@
 
 /*footer*/
 .footer{height:60px; background-color:#F5D0A9}
+.footerText{font-size: 20px;}
 
 
 /*signUp*/
+.signUpTitle{font-size:50px; font-weight:bold; }
 .signUpNativeLanguage {font-size: 10px; font-family: 'Marck Script', cursive;}
+.fileName{font-size:15px;}
 :root {
 	--background-theme: #e6e9f0;
 	--text-color: #000;
@@ -47,7 +52,7 @@ h1 {
 }
 
 p {
-	font-size: 1.9rem;
+	font-size: 2.0rem;
 }
 
 .login_section {
@@ -61,7 +66,9 @@ p {
 }
 
 .accounts_container {
-	height: 1000px;
+	margin-left: 10px;
+	margin-top: 70px;
+	height: 950px;
 	border-radius: 10px;
 	box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
 	background-color: #fcfcfc;
@@ -161,8 +168,8 @@ p {
     margin-left:15px;
 }
 
-.signUpWhoBox{font-size:20px;  padding-top:10px;}
-.signUpPurposeBox{font-size:20px; padding-top:10px; margin-right:100px;}
+.signUpWhoBox{font-size:20px;  padding-top:10px;   }
+.signUpPurposeBox{font-size:20px; padding-top:10px; margin-right:100px;  }
 .signUpInputPadding{height:50px;}
 
 
@@ -174,3 +181,10 @@ p {
 /* singUp 중복버튼*/
 #loginIdCheckBtn{width: 100px; height:50px; font-weight: bold; font-size:15px; margin-right:-25px; margin-left:10px;}
 .duplicatedText{font-size:15px;  font-weight: 400; margin-left:19px; margin-top: -30px;}
+
+
+
+/* signIn */
+.signInTitle {font-size:60px; font-weight:bold; margin-top:100px;}
+.signInBigBox{margin-top:100px;}
+.signInText{font-size: 17px;}
