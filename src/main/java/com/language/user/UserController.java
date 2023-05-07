@@ -28,7 +28,11 @@ public class UserController {
 		 
 		 
 		 
-		 
-		
+	//localhost/user/profile_view
+		@GetMapping("/profile_view")
+		public String profileView(Model model, HttpSession session) {
+			model.addAttribute("view", "user/profile");
+			return "template/layout";
+		}
 		 
 }

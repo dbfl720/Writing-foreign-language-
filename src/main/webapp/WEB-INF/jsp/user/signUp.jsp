@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-		<div class="container outer_container accounts_container">
+		<div class="container outer_container accounts_container ">
 			<div class="row h-100">
 				<div class="col col-sm-12 col-md-12 col-lg-8 m-0 p-0 w-100 h-100 accounts_col">
 					<div class="accounts_image w-100 h-100">
@@ -284,7 +284,7 @@
 			}
 			
 			,error: function(error) {
-				alert("아이디 중복확인에 실패했습니다. 관리자에게 문의해주세요.");
+				swal("아이디 중복확인에 실패했습니다. 관리자에게 문의해주세요.");
 			}
 			
 		}); // AJAX
@@ -312,7 +312,7 @@
 		// 확장자 유효성 확인
 		let ext = fileName.split(".").pop().toLowerCase();
 		if (ext != "jpg" && ext != "png" && ext != "jpeg" && ext != "gif" && ext != "webp") {
-			alert("You can only upload image files.");
+			swal("You can only upload image files.");
 			$("#file").val(""); // 파일 태그에 파일 제거
 			$("#fileName").text(""); // 파일 이름 비우기
 			return;
@@ -360,7 +360,7 @@
 		
 		
 		if (file == '') {
-			alert("Please upload the file.");
+			swal("Please upload the file.");
 			return;
 		}
 		
@@ -371,7 +371,7 @@
 		
 		// 확장자만 뽑아서 소문자로 변경한다.
 		if ($.inArray(ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']) == -1) {  //배열에 값이있으면 return 해당 index return 값이 없으면 -1
-			alert("You can only upload image files.");
+			swal("You can only upload image files.");
 			$('#file').val('');     // 파일을 비운다.
 			return;
 		}
@@ -380,18 +380,18 @@
 		
 		
 		if (!loginId) {
-			alert("Please enter your ID.");
+			swal("Please enter your ID.");
 			return false;
 		}
 		
 		
 		if (!signup_password) {
-			alert("Please enter a password.");
+			swal("Please enter a password.");
 			return false;
 		}
 		
 		if (reg.test(signup_password) == false) {
-			alert("The password must be at least 8 characters long and must contain numbers, uppercase letters, lowercase letters and special characters.");
+			swal("The password must be at least 8 characters long and must contain numbers, uppercase letters, lowercase letters and special characters.");
 			return false;
 		} else {
 			console.log("통과");
@@ -400,7 +400,7 @@
 		
 		
 		if (signup_password != confirmPassword) {
-			alert("Passwords do not match.");
+			swal("Passwords do not match.");
 			return false;
 		}
 		
@@ -408,14 +408,14 @@
 		if(email) {
 		    var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 		    if (!regEmail.test(email)) {
-		        alert('Please follow the email format.');
+		    	swal('Please follow the email format.');
 		        return false;
 		    }
 		}
 		
 		
 		if(!email) {    // 이메일 형식에 맞는지 정규식 확인하는거 필요! 
-			alert("Please enter your email.");
+			swal("Please enter your email.");
 			return false;
 		}
 		
@@ -425,7 +425,7 @@
 		
 		// select 선택 했는지 확인 
 		if (selectNativeValue == 'none') {
-			alert("Please select one native language.");
+			swal("Please select one native language.");
 			return;
 		}
 		
@@ -433,7 +433,7 @@
 		
 		// select 선택 했는지 확인 
 		if (selectLanguageValue == 'none') {
-			alert("Please select one foreign language.");
+			swal("Please select one foreign language.");
 			return;
 		}
 		
@@ -441,19 +441,19 @@
 
 		
 		if (selfIntroduction.length < 10) {
-			alert("Please write at least 10 characters.");
+			swal("Please write at least 10 characters.");
 			return;
 		}
 		
 		if (languageGoals.length < 10) {
-			alert("Please write at least 10 characters.");
+			swal("Please write at least 10 characters.");
 			return;
 		}
 		
 
 		// 아이디 중복확인 완료 됐는지 확인 - idCheckOk d-none이 있으면 alert 띄우기 
 		if ($("#idCheckOk").hasClass("d-none")) {
-			alert("Please double check your ID.");
+			swal("Please double check your ID.");
 			return false;
 		}
 		
@@ -490,15 +490,15 @@
 			// response
 			, success : function(data) {
 				if (data.code == 1) {
-					alert("Your information has been saved.");
+					swal("Your information has been saved.");
 					location.reload();
 				} else {
-					alert(data.errorMessage);
+					swal(data.errorMessage);
 				}
 				
 			}
 			, error : function(request, status, error) {
-				alert("Failed to save information. Please contact the administrator.");
+				swal("Failed to save information. Please contact the administrator.");
 			}
 			
 			
@@ -524,12 +524,12 @@
 		 let signInPassword = $('#signInPassword').val();
 		 
 		 if (!signInId) {
-			 alert("Please enter your ID.");
+			 swal("Please enter your ID.");
 			 return;
 		 }
 		 
 		 if (!signInPassword) {
-			 alert("Please enter your password.");
+			 swal("Please enter your password.");
 			 return;
 		 }
 		
@@ -555,11 +555,11 @@
 					// 성공 시 커뮤니트 목록으로 이동.
 					location.href = "/community/community_view";
 				} else {
-					alert(data.errorMessage);
+					swal(data.errorMessage);
 				}
 			}
 			, error : function(request, status, error) {
-				alert("Failed to save information. Please contact the administrator.");
+				swal("Failed to save information. Please contact the administrator.");
 			}
 				
 			
