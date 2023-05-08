@@ -197,14 +197,14 @@ p {
 .signInText{font-size: 17px;}
 
 
-/* 프로필 사진 및 팔로우 */
-.profilePics{width:1000px; height:600px;}
-.profileBox{    width: 300px; height: 300px;  border-radius: 45%; overflow: hidden;}
-.profile{  width: 100%;  height: 100%; object-fit: cover;}
-.parents{  /* 설정 */
-  position: relative;}
-.child{  /* 상하좌우 정중앙 정렬하기 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 50 50 50 50 /* 자식 요소 전체를 중앙 정렬하기 위해, 상단 및 왼쪽 margin을 마이너스 값으로 적용하기 */}
+
+/* 헤더 프로필 정보 */
+.profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
+.profileTotalBox{margin-left:310px; margin-top:200px;}
+.my-box  { border:2px dashed black;  padding-right:400px; margin-top:200px; margin-left:100px;}
+.firstProfileBox{width:80px; height:150px;  }
+.headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
+.headerProfileText{font-size:30px;}
+#headerImg{    width: 90px; height: 90px;  border-radius: 100%; overflow: hidden;}
+.profileTotalText{font-size:30px; margin-bottom:20px;}
+.secondMyBox{border:2px dashed black;  padding-right:400px;  margin-left:770px; height:200px;}

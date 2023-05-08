@@ -2,15 +2,23 @@ package com.language.user;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.language.user.bo.UserBO;
+import com.language.user.model.User;
+
 @RequestMapping("/user")
 @Controller
 public class UserController {
 
+	
+	@Autowired
+	private UserBO userBO;
+	
 	/**
 	 * 회원가입 화면 
 	 * @param model
@@ -31,6 +39,8 @@ public class UserController {
 	//localhost/user/profile_view
 		@GetMapping("/profile_view")
 		public String profileView(Model model, HttpSession session) {
+			
+			//User user = userBO.getUserByLoginId(loginId);
 			model.addAttribute("view", "user/profile");
 			return "template/layout";
 		}
