@@ -136,7 +136,7 @@ public class UserRestController {
 			// 세션에 유저 정보 
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", user.getId());
-			session.setAttribute("userLoginId", user.getLoginId());
+			session.setAttribute("loginId", user.getLoginId());	
 			session.setAttribute("ImagePath", user.getImagePath());
 		} else {
 			result.put("code", 500);

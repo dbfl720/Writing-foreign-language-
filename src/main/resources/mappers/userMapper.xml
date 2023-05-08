@@ -50,6 +50,25 @@
  	
  	
  
+ 
+ 	<select id="selectUserById" parameterType="int" resultType="com.language.user.model.User">
+ 		SELECT
+ 			`id`
+ 			,`nativeCategoryId`
+ 			,`foreignCategoryId`
+ 			,`loginId`
+ 			,`password`
+ 			,`email`
+ 			,`selfIntroduction`
+ 			,`languageGoals`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`user`
+		WHERE
+			`id` = #{id}
+ 	</select>
  	
  	
  	<insert id="insertUser" parameterType="map">

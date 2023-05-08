@@ -40,7 +40,10 @@ public class UserController {
 		@GetMapping("/profile_view")
 		public String profileView(Model model, HttpSession session) {
 			
-			//User user = userBO.getUserByLoginId(loginId);
+			int userId = (int)session.getAttribute("userId");
+			User user = userBO.getUserById(userId);
+			
+			model.addAttribute("user", user);
 			model.addAttribute("view", "user/profile");
 			return "template/layout";
 		}

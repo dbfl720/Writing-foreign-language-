@@ -33,6 +33,10 @@ public class UserBO {
 	
 
 	
+	// select -  id로 조회. 
+	public User getUserById (int id) {
+		return userMapper.selectUserById(id);
+	}
 	
 	
 	// insert - 회원가입

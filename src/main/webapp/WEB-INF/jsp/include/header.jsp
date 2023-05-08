@@ -12,9 +12,9 @@
 								accept=".gif, .jpg, .png, .jpeg , .webp">
 			<div class=" headerBox d-flex align-items-center"> 
 				<img id="headerImg"  alt="프로필 사진"
-					src="https://cdn.pixabay.com/photo/2023/04/30/14/52/countryside-7960674__340.jpg"
+					src="${user.imagePath}"
 					height="50" width="50">
-				<div class="ml-3 headerProfileText">userID</div>
+				<div class="ml-3 headerProfileText">${user.loginId}</div>
 				<a  href="/user/profile_view" class="ml-3 mr-5"><img alt="프로필 이모티콘" height="50" width="50" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-setting-icon.png"></a>
 			</div>
 		</div>

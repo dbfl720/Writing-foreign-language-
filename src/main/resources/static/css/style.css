@@ -198,7 +198,7 @@ p {
 
 
 
-/* 헤더 프로필 정보 */
+/* 프로필 정보 */
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
 .profileTotalBox{margin-left:310px; margin-top:200px;}
 .my-box  { border:2px dashed black;  padding-right:400px; margin-top:200px; margin-left:100px;}
@@ -207,4 +207,6 @@ p {
 .headerProfileText{font-size:30px;}
 #headerImg{    width: 90px; height: 90px;  border-radius: 100%; overflow: hidden;}
 .profileTotalText{font-size:30px; margin-bottom:20px;}
-.secondMyBox{border:2px dashed black;  padding-right:400px;  margin-left:770px; height:200px;}
+.secondMyBox{border:2px dashed black;  padding-right:200px;  margin-left:770px; height:200px;}
+.updateProfileIcon{margin-left:500px;}
+
