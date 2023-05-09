@@ -2,64 +2,64 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%-- 프로필 사진 --%>
-<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
-<input type="file" id="file" multiple='multiple' class="d-none"
-					accept=".gif, .jpg, .png, .jpeg , .webp">
-<div>
-	<div class="d-flex">
-		<div class="profileTotalBox">
-			<div class=" profileBox mr-3">
-				<img id="profileImg" class=" profile" alt="프로필 사진"
-					src="${user.imagePath}"
-					height="500" width="500">
-			</div>
-				<a href="#" id="profileBtn">
-				<img   alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
-				</a>
-				<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
-				<div id="fileName" class="text-secondary ml-2 mt-2"></div>
-		</div>
-		
-		
-		
-		<%-- 유저 정보들 --%>	
-		<div class="my-box">
-			<div class="profileLoginIdText">${user.loginId}</div>
-			<div class="profileTotalText">${user.nativeCategoryId}
-				<img alt="화살표" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
-				${user.foreignCategoryId}
-			</div>
-			<div class="profileTotalText"><img alt="좋아요 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
-				Grammar heart 개수
-			</div>	
-			<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
-				Review heart 개수
-			</div>	
-			<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
-				Total Review 개수
-			</div>	
-		</div>
-	</div> <%-- d-flex 끝. --%>
-	
-			<%-- 자기소개 --%>
-			<div class="totalSecondMyBox">
-				<div class="selfTitle">Who are you?</div>
-					<div class="secondMyBox profileSelfIntroduction">
-						<textarea id="selfIntroduction" class="profileTextArea">${user.selfIntroduction}</textarea>
-					</div>
-				<div class="goalTitle">The purpose of writing</div>
-				<div class="secondMyBox profileLanguageGoal">
-					<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
+	<%-- 프로필 사진 --%>
+	<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
+	<input type="file" id="file" multiple='multiple' class="d-none"
+						accept=".gif, .jpg, .png, .jpeg , .webp">
+	<div>
+		<div class="d-flex">
+			<div class="profileTotalBox">
+				<div class=" profileBox mr-3">
+					<img id="profileImg" class=" profile" alt="프로필 사진"
+						src="${user.imagePath}"
+						height="500" width="500">
 				</div>
+					<a href="#" id="profileBtn">
+					<img   alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
+					</a>
+					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
+					<div id="fileName" class="text-secondary ml-2 mt-2"></div>
 			</div>
 			
-			<%-- 수정 아이콘 --%>
-			<a href="#" id="updateProfileBtn">
-			<img class="updateProfileIcon" alt="업데이트 이모티콘" width="40" height="40" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Settings-Wrench-icon.png">
-			</a>
-</div>
-
+			
+			
+			<%-- 유저 정보들 --%>	
+	
+				<div class="my-box">
+					<div class="profileLoginIdText">${user.loginId}</div>
+					<div class="profileTotalText">${user.nativeCategoryId}
+						<img alt="화살표" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
+						${user.foreignCategoryId}
+					</div>
+					<div class="profileTotalText"><img alt="좋아요 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+						Grammar heart 개수
+					</div>	
+					<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+						Review heart 개수
+					</div>	
+					<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
+						Total Review 개수
+					</div>	
+				</div>
+			</div> <%-- d-flex 끝. --%>
+			
+					<%-- 자기소개 --%>
+					<div class="totalSecondMyBox">
+						<div class="selfTitle">Who are you?</div>
+							<div class="secondMyBox profileSelfIntroduction">
+								<textarea id="selfIntroduction" class="profileTextArea">${user.selfIntroduction}</textarea>
+							</div>
+						<div class="goalTitle">The purpose of writing</div>
+						<div class="secondMyBox profileLanguageGoal">
+							<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
+						</div>
+					</div>
+				
+				<%-- 수정 아이콘 --%>
+				<a href="#" id="updateProfileBtn">
+				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="40" height="40" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Settings-Wrench-icon.png">
+				</a>
+	</div>
 
 
 <script>
@@ -100,13 +100,15 @@ $(document).ready(function() {
 				// validation
 				let file = $('#file').val();
 				let selfIntroduction = $('#selfIntroduction').val();
-				let updateProfileIcon = $('#updateProfileIcon').val();
+				let languageGoals = $('#languageGoals').val();
 				
 				
 				if (file == '') {
 					swal("Please upload the file.");
 					return;
 				}
+				
+				
 				
 				// 파일이 업로드 된 경우에만 확장자 체크 
 				let ext = file.split(".").pop().toLowerCase();
@@ -132,15 +134,19 @@ $(document).ready(function() {
 				
 				
 				
+				// form 태그를 자바스크립트에서 만들기.
+				let formData = new FormData();
+				formData.append("file", $('#file')[0].files[0]);
+				formData.append("selfIntroduction", selfIntroduction);
+				formData.append("languageGoals", languageGoals);
+				
 				
 				// AJAX 전송
 				$.ajax({
 					// request
 					type: "PUT"
 					, url : "/user/update"
-					, data {"file", $('#file')[0].files[0],
-						    "selfIntroduction", selfIntroduction,
-						    "updateProfileIcon", updateProfileIcon}
+					, data : formData
 					, encType : "multipart/form-data" // 파일 업로드를 위한 필수 설정
 					, processData : false // 파일 업로드를 위한 필수 설정//json으로 가는거 방지. 
 					, contentType : false // 파일 업로드를 위한 필수 설정
@@ -149,8 +155,8 @@ $(document).ready(function() {
 					// response
 					, success: function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
 						if (data.code == 1) {
-							// 성공 시 커뮤니트 목록으로 이동.
-							location.href = "/community/community_view";
+							swal("The update was successful.");
+							location.reload();
 						} else {
 							swal(data.errorMessage);
 						}

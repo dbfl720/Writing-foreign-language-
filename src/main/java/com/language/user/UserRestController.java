@@ -169,10 +169,11 @@ public class UserRestController {
 		
 		// 세션 정보 꺼내오기.
 		int userId = (int)session.getAttribute("userId");
-		User user = userBO.getUserById(userId);
+		String loginId = (String)session.getAttribute("loginId");
+		User user = userBO.getUserByLoginId(loginId);
 		
 		// update  db
-		userBO.
+		userBO.updateUser(file, selfIntroduction, languageGoals, loginId, userId);
 		
 		// 응답 
 		Map<String, Object> result = new HashMap<>();
