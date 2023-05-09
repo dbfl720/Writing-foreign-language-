@@ -8,12 +8,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.language.common.Encrypt;
 import com.language.common.EncryptUtils;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
@@ -105,7 +105,13 @@ public class UserRestController {
 	
 	
 	
-	
+	/**
+	 * 로그인
+	 * @param loginId
+	 * @param signInPassword
+	 * @param request
+	 * @return
+	 */
 	// 로그인
 	@PostMapping("/sign_in")
 	public Map<String, Object> signIn(
@@ -149,6 +155,38 @@ public class UserRestController {
 	
 	
 	
+	
+	
+	
+	
+	// 프로필 수정
+	@PutMapping("/update")
+	public Map<String, Object> update(
+			@RequestParam("file") MultipartFile file,
+			@RequestParam("selfIntroduction") String selfIntroduction,
+			@RequestParam("languageGoals") String languageGoals,
+			HttpSession session) {
+		
+		// 세션 정보 꺼내오기.
+		int userId = (int)session.getAttribute("userId");
+		User user = userBO.getUserById(userId);
+		
+		// update  db
+		userBO.
+		
+		// 응답 
+		Map<String, Object> result = new HashMap<>();
+		if (user != null) {
+			result.put("code", 1);
+			result.put("result", "update succeed");
+			
+		} else {
+			result.put("code", 500);
+			result.put("errorMessage", "Update failed.");
+		}
+		
+		return result;
+	}
 	
 	
 }

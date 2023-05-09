@@ -14,12 +14,16 @@
 					src="${user.imagePath}"
 					height="500" width="500">
 			</div>
-			<a href="#" id="profileBtn">
-			<img   alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
-			</a>
+				<a href="#" id="profileBtn">
+				<img   alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
+				</a>
+				<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
+				<div id="fileName" class="text-secondary ml-2 mt-2"></div>
 		</div>
 		
-		<%-- 유저 정보들 --%>
+		
+		
+		<%-- 유저 정보들 --%>	
 		<div class="my-box">
 			<div class="profileLoginIdText">${user.loginId}</div>
 			<div class="profileTotalText">${user.nativeCategoryId}
@@ -42,18 +46,18 @@
 			<div class="totalSecondMyBox">
 				<div class="selfTitle">Who are you?</div>
 					<div class="secondMyBox profileSelfIntroduction">
-						<textarea id="" class="profileTextArea">${user.selfIntroduction}</textarea>
+						<textarea id="selfIntroduction" class="profileTextArea">${user.selfIntroduction}</textarea>
 					</div>
 				<div class="goalTitle">The purpose of writing</div>
 				<div class="secondMyBox profileLanguageGoal">
-					<textarea id="" class="profileTextArea" >${user.languageGoals}</textarea>
+					<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
 				</div>
 			</div>
+			
 			<%-- 수정 아이콘 --%>
-			<a href="#" id="updateProfileIcon">
-			<img class="updateProfileIcon" alt="업데이트 이모티콘" width="45" height="45" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Settings-Wrench-icon.png">
+			<a href="#" id="updateProfileBtn">
+			<img class="updateProfileIcon" alt="업데이트 이모티콘" width="40" height="40" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Settings-Wrench-icon.png">
 			</a>
-		
 </div>
 
 
@@ -85,6 +89,82 @@ $(document).ready(function() {
 				// 유효성 통과한 이미지는 상자에 업로드 된 파일 이름 노출
 				$("#fileName").text(fileName); // 태그 사이에 글자를 넣는 함수 : text()  
 			}); // file
+			
+			
+			
+			
+			
+			
+			// 프로필 수정
+			$("#updateProfileBtn").on('click', function() {
+				// validation
+				let file = $('#file').val();
+				let selfIntroduction = $('#selfIntroduction').val();
+				let updateProfileIcon = $('#updateProfileIcon').val();
+				
+				
+				if (file == '') {
+					swal("Please upload the file.");
+					return;
+				}
+				
+				// 파일이 업로드 된 경우에만 확장자 체크 
+				let ext = file.split(".").pop().toLowerCase();
+				
+				// 확장자만 뽑아서 소문자로 변경한다.
+				if ($.inArray(ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']) == -1) {  //배열에 값이있으면 return 해당 index return 값이 없으면 -1
+					swal("You can only upload image files.");
+					$('#file').val('');     // 파일을 비운다.
+					return;
+				}
+				
+				
+				
+				if (selfIntroduction.length < 10) {
+					swal("Please write at least 10 characters.");
+					return;
+				}
+				
+				if (languageGoals.length < 10) {
+					swal("Please write at least 10 characters.");
+					return;
+				}
+				
+				
+				
+				
+				// AJAX 전송
+				$.ajax({
+					// request
+					type: "PUT"
+					, url : "/user/update"
+					, data {"file", $('#file')[0].files[0],
+						    "selfIntroduction", selfIntroduction,
+						    "updateProfileIcon", updateProfileIcon}
+					, encType : "multipart/form-data" // 파일 업로드를 위한 필수 설정
+					, processData : false // 파일 업로드를 위한 필수 설정//json으로 가는거 방지. 
+					, contentType : false // 파일 업로드를 위한 필수 설정
+					
+					
+					// response
+					, success: function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
+						if (data.code == 1) {
+							// 성공 시 커뮤니트 목록으로 이동.
+							location.href = "/community/community_view";
+						} else {
+							swal(data.errorMessage);
+						}
+					}
+					, error : function(request, status, error) {
+						swal("Failed to save information. Please contact the administrator.");
+					}
+						
+					
+				});    // ajax
+				
+				
+			}); // 프로필 수정
+			
 
 });// ready
 
