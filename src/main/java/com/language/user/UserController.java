@@ -26,12 +26,8 @@ public class UserController {
 	 */
 	//localhost/user/sign_up_view
 		 @GetMapping("/sign_up_view")
-		 public String signUpView(Model model, HttpSession session) {
+		 public String signUpView(Model model) {
 			 
-			 int userId = (int)session.getAttribute("userId");
-			 User user = userBO.getUserById(userId);
-			
-			 model.addAttribute("user", user);
 			 model.addAttribute("view", "user/signUp");   // 가운데 section 조각페이지 이렇게 세팅해랏 !  - singUp(jsp)에서 view변수로 사용 가능.
 			 return "template/layout";
 		 }
@@ -44,7 +40,8 @@ public class UserController {
 		  * @param session
 		  * @return
 		  */
-		@RequestMapping("/sign_out")
+		 //localhost/user/sign_out_view
+		@RequestMapping("/sign_out_view")
 		public String signOut(HttpSession session) {
 			// 세션에 있는 모든 것을 비운다.
 			session.removeAttribute("userId");

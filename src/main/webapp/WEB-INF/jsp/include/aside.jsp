@@ -11,10 +11,16 @@
 		Review</a></div>
 		<div class="communityText text-center"><a href="#" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/praveen/minimal-outline/128/microphone-icon.png" >
 		Live</a></div>
-		<c:if test="${empty userId}">
-		<div class="communityText text-center"><a href="/user/sign_up_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Internet-Smiley-icon.png" >
-		Login</a></div>
-		</c:if>
+		<c:choose>
+			<c:when test="${empty userId}">
+			<div class="communityText text-center"><a href="/user/sign_up_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Internet-Smiley-icon.png" >
+			Login</a></div>
+			</c:when>
+			<c:otherwise>
+			<div class="communityText text-center"><a href="/user/sign_out_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Internet-Smiley-icon.png" >
+			Logout</a></div>
+			</c:otherwise>
+		</c:choose>
 	</div>
 	<div class='v-line'></div>
 </div>

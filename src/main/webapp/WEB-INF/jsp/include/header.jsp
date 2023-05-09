@@ -14,10 +14,10 @@
 					<div class=" headerBox d-flex align-items-center"> 
 						<img id="headerImg"  alt="프로필 사진"
 							src="${user.imagePath}"
-							height="50" width="50">
-						<div class="ml-3 headerProfileText">${user.loginId}</div>
-						<a  href="/user/profile_view" class="ml-3 mr-5"><img alt="프로필 이모티콘" height="50" width="50" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-setting-icon.png"></a>
-					</div>
+							height="35" width="35">
+						<div class="ml-3 headerProfileText ">${user.loginId}</div>
+						<a  href="/user/profile_view" class="ml-5 mr-5"><img alt="프로필 이모티콘" height="40" width="40" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-setting-icon.png"></a>
+					</div>	
 				</c:if>
 		</div>
 	</div>
