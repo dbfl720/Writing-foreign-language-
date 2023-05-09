@@ -10,8 +10,8 @@ import lombok.Setter;
 public class User {
 	
 	private int id;
-	private int nativeCategoryId;
-	private int foreignCategoryId;
+	private String nativeCategoryId;
+	private String foreignCategoryId;
 	private String loginId;
 	private String password;
 	private String salt;

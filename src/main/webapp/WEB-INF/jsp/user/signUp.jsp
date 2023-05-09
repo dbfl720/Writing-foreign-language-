@@ -74,27 +74,27 @@
 									<select name="selectNative" id="selectNative">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>native language</option>
-										<option value="10">KO</option>
-										<option value="11">EN</option>
-										<option value="12">JP</option>
-										<option value="13">CHN</option>
-										<option value="14">FRA</option>
-										<option value="15">SWE</option>
-										<option value="16">DEU</option>
-										<option value="17">VNM</option>
-										<option value="18">Others</option>
+										<option value="KO">KO</option>
+										<option value="EN">EN</option>
+										<option value="JP">JP</option>
+										<option value="CHN">CHN</option>
+										<option value="FRA">FRA</option>
+										<option value="SWE">SWE</option>
+										<option value="DEU">DEU</option>
+										<option value="VNM">VNM</option>
+										<option value="Others">Others</option>
 									</select> <select name="selectLanguage" id="selectLanguage">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>foreign language</option>
-										<option value="1">KO</option>
-										<option value="2">EN</option>
-										<option value="3">JP</option>
-										<option value="4">CHN</option>
-										<option value="5">FRA</option>
-										<option value="6">SWE</option>
-										<option value="7">DEU</option>
-										<option value="8">VNM</option>
-										<option value="9">Others</option>
+										<option value="KO">KO</option>
+										<option value="EN">EN</option>
+										<option value="JP">JP</option>
+										<option value="CHN">CHN</option>
+										<option value="FRA">FRA</option>
+										<option value="SWE">SWE</option>
+										<option value="DEU">DEU</option>
+										<option value="VNM">VNM</option>
+										<option value="Others">Others</option>
 									</select>
 								</div>
 

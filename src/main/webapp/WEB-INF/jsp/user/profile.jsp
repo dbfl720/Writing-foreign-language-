@@ -21,47 +21,39 @@
 		
 		<%-- 유저 정보들 --%>
 		<div class="my-box">
-			<div class="profileTotalText">${user.loginId}</div>
+			<div class="profileLoginIdText">${user.loginId}</div>
 			<div class="profileTotalText">${user.nativeCategoryId}
-				<img alt="화살표" height="50" width="50" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
-				foreignLanguage
+				<img alt="화살표" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
+				${user.foreignCategoryId}
 			</div>
-			<div class="profileTotalText"><img alt="좋아요 하트" height="50" width="50" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+			<div class="profileTotalText"><img alt="좋아요 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
 				Grammar heart 개수
 			</div>	
-			<div class="profileTotalText"><img alt="리뷰 하트" height="50" width="50" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+			<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
 				Review heart 개수
 			</div>	
-			<div class="profileTotalText"><img alt="리뷰 하트" height="50" width="50" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
+			<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
 				Total Review 개수
 			</div>	
 		</div>
 	</div> <%-- d-flex 끝. --%>
-			<%-- 자기 소개 --%>
-			<%-- <div class="secondMyBox">
-				<div class="profileTotalText">${user.selfIntroduction}</div>
-			</div>
-			언어 목표
-			<div class="secondMyBox">
-				<div class="profileTotalText">${user.languageGoals}</div>
-			</div> --%>
-			
-		</div>	
-			<div class="secondMyBox">
-				<textarea id="selfIntroduction" class="signUpWhoBox" rows = "3" cols = "48" name = "selfIntroduction" onfocus="labelUp(this)" onblur="labelDown(this)" required ></textarea>
-			</div>
-
-			<div class="secondMyBox">
-				<textarea id="languageGoals" class="signUpPurposeBox" rows = "3" cols = "48" name = "languageGoals" onfocus="labelUp(this)" onblur="labelDown(this)" required ></textarea>
+	
+			<%-- 자기소개 --%>
+			<div class="totalSecondMyBox">
+				<div class="selfTitle">Who are you?</div>
+					<div class="secondMyBox profileSelfIntroduction">
+						<textarea id="" class="profileTextArea">${user.selfIntroduction}</textarea>
+					</div>
+				<div class="goalTitle">The purpose of writing</div>
+				<div class="secondMyBox profileLanguageGoal">
+					<textarea id="" class="profileTextArea" >${user.languageGoals}</textarea>
+				</div>
 			</div>
 			<%-- 수정 아이콘 --%>
 			<a href="#" id="updateProfileIcon">
 			<img class="updateProfileIcon" alt="업데이트 이모티콘" width="45" height="45" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Settings-Wrench-icon.png">
 			</a>
-			<%-- 저장 아이콘 --%>
-			<a href="#" id="saveProfileIcon">
-			<img class="saveProfileIcon" alt="업데이트 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/content-save-icon.png">
-			</a>
+		
 </div>
 
 

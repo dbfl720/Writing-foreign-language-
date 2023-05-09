@@ -200,13 +200,18 @@ p {
 
 /* 프로필 정보 */
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
-.profileTotalBox{margin-left:310px; margin-top:200px;}
-.my-box  { border:2px dashed black;  padding-right:400px; margin-top:200px; margin-left:100px;}
+.profileTotalBox{margin-left:310px; margin-top:170px;}
+.my-box  { border:2px dashed black;  padding-right:235px; margin-top:170px; margin-left:100px; width:495px; height:300px;}
 .firstProfileBox{width:80px; height:150px;  }
 .headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
 .headerProfileText{font-size:30px;}
 #headerImg{    width: 90px; height: 90px;  border-radius: 100%; overflow: hidden;}
-.profileTotalText{font-size:30px; margin-bottom:20px;}
-.secondMyBox{border:2px dashed black;  padding-right:200px;  margin-left:770px; height:200px;}
+.profileLoginIdText{font-size:30px; font-weight:bold;}
+.profileTotalText{font-size:21px; margin-bottom:20px;}
+.secondMyBox{border:2px dashed black;   margin-left:770px; height:180px; }
+.totalSecondMyBox{margin-top:-80px;}
+.selfTitle{font-weight:bold; font-size:30px; margin-left:770px;}
+.goalTitle{font-weight:bold; font-size:30px; margin-left:770px; margin-top:10px;}
 .updateProfileIcon{margin-left:500px;}
+.profileTextArea{width:495px; height:180px; overflow: hidden; font-size:20px;}
 
