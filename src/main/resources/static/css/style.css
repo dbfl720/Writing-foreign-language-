@@ -206,8 +206,8 @@ p {
 .headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
 .headerProfileText{font-size:30px;}
 #headerImg{    width: 90px; height: 90px;  border-radius: 100%; overflow: hidden;}
-.profileLoginIdText{font-size:30px; font-weight:bold;}
-.profileTotalText{font-size:21px; margin-bottom:20px;}
+.profileLoginIdText{font-size:30px; font-weight:bold; margin-bottom:17px;}
+.profileTotalText{font-size:21px; margin-bottom:17px;}
 .secondMyBox{border:2px dashed black;   margin-left:770px; height:180px; }
 .totalSecondMyBox{margin-top:-80px;}
 .selfTitle{font-weight:bold; font-size:30px; margin-left:770px;}
