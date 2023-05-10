@@ -76,5 +76,16 @@ public class UserController {
 		
 		
 		
+		
+		
+		//localhost/user/community_view
+		@GetMapping("/community_view")
+		public String communityView(Model model) {
+	
+			model.addAttribute("view", "user/community");
+			return "template/layout";
+		}
+		
+		
 		 
 }

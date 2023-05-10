@@ -47,11 +47,11 @@
 					<div class="totalSecondMyBox">
 						<div class="selfTitle">Who are you?</div>
 							<div class="secondMyBox profileSelfIntroduction">
-								<textarea id="selfIntroduction" class="profileTextArea">${user.selfIntroduction}</textarea>
+								<textarea id="selfIntroduction" class="profileTextArea border-bottom rounded">${user.selfIntroduction}</textarea>
 							</div>
 						<div class="goalTitle">The purpose of writing</div>
 						<div class="secondMyBox profileLanguageGoal">
-							<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
+							<textarea id="languageGoals" class="profileTextArea border-bottom rounded" >${user.languageGoals}</textarea>
 						</div>
 					</div>
 				

@@ -98,6 +98,19 @@ public class UserBO {
 		userMapper.updateUserByUserId(userId, imagePath, selfIntroduction, languageGoals);
 	
 	}
+	
+	
+	
+	
+	
+	
+	
+	// community 유저 정보들
+	public User communityUser() {
+		
+		//db select
+		userMapper.;
+	}
 
 	
 }

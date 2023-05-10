@@ -36,4 +36,8 @@ public interface UserMapper {
 			@Param("ImagePath") String ImagePath,
 			@Param("selfIntroduction") String selfIntroduction,
 			@Param("languageGoals") String languageGoals);
+	
+	
+	
+	public User selectCommunityUser();
 }

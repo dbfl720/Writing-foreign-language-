@@ -64,6 +64,28 @@
  	</select>
  	
  	
+ 	
+ 	
+ 	
+ 	
+ 	<select id="selectCommunityUser" resultType="com.language.user.model.User">
+ 		SELECT
+ 			`nativeCategoryId`
+ 			,`foreignCategoryId`
+ 			,`loginId`
+ 			,`selfIntroduction`
+ 			,`ImagePath`
+ 		FROM
+ 			`user`
+		WHERE
+			`id` = #{id}
+ 	
+ 	
+ 	</select>
+ 	
+ 	
+ 	
+ 	
  	<insert id="insertUser" parameterType="map">
  		INSERT INTO `user`
  		(
