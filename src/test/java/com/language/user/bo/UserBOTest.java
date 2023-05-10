@@ -49,6 +49,13 @@ class UserBOTest {
 	
 	
 	
+	
+//	@Test
+//	void 프로필업로드() {
+//		 User user = userBO.updateUser(null, null, null, null, 0);
+//	}
+	
+	
 	//@Test
 	void test() {
 		fail("Not yet implemented");

@@ -6,16 +6,9 @@
  	<select id="selectUserByLoginId" parameterType="String" resultType="com.language.user.model.User">
  		SELECT
  			`id`
- 			,`nativeCategoryId`
- 			,`foreignCategoryId`
  			,`loginId`
  			,`password`
- 			,`email`
- 			,`selfIntroduction`
- 			,`languageGoals`
- 			,`ImagePath`
- 			,`createdAt`
- 			,`updatedAt`
+ 			,`salt`
  		FROM
  			`user`
 		WHERE
@@ -78,6 +71,7 @@
 			,`foreignCategoryId`
 			,`loginId`
 			,`password`
+			,`salt`
 			,`email`
 			,`selfIntroduction`
 			,`languageGoals`
@@ -92,6 +86,7 @@
  			,#{foreignCategoryId}
  			,#{loginId}
  			,#{password}
+ 			,#{salt}
  			,#{email}
  			,#{selfIntroduction}
  			,#{languageGoals}

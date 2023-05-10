@@ -201,7 +201,7 @@ p {
 /* 프로필 정보 */
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
 .profileTotalBox{margin-left:310px; margin-top:170px;}
-.my-box  { border:2px dashed black;  padding-right:235px; margin-top:170px; margin-left:100px; width:495px; height:300px;}
+.my-box  { border:none;  padding-right:235px; margin-top:170px; margin-left:100px; width:495px; height:300px;}
 .firstProfileBox{width:80px; height:150px;  }
 .headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
 .headerProfileText{font-size:30px;}

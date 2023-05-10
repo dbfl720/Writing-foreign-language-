@@ -1,6 +1,5 @@
 package com.language.user.bo;
 
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -50,6 +49,7 @@ public class UserBO {
 			String foreignCategoryId,
 			String loginId,
 			String password,
+			String salt,
 			String email,
 			String selfIntroduction,
 			String languageGoals,
@@ -61,7 +61,7 @@ public class UserBO {
 		
 		}
 
-		return userMapper.insertUser(nativeCategoryId, foreignCategoryId, loginId, password, email, selfIntroduction, languageGoals, ImagePath);
+		return userMapper.insertUser(nativeCategoryId, foreignCategoryId, loginId, password, salt, email, selfIntroduction, languageGoals, ImagePath);
 	}
 	
 	

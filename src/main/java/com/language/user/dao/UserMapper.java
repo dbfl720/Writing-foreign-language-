@@ -24,6 +24,7 @@ public interface UserMapper {
 			@Param("foreignCategoryId") String foreignCategoryId,
 			@Param("loginId") String loginId,
 			@Param("password") String password,
+			@Param("salt") String salt,
 			@Param("email") String email,
 			@Param("selfIntroduction") String selfIntroduction,
 			@Param("languageGoals") String languageGoals,

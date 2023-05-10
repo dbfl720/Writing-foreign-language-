@@ -25,7 +25,7 @@
 			
 			<%-- 유저 정보들 --%>	
 	
-				<div class="my-box">
+				<div class="my-box border-bottom">
 					<div class="profileLoginIdText">${user.loginId}</div>
 					<div class="profileTotalText">${user.nativeCategoryId}
 						<img alt="화살표" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
@@ -103,10 +103,10 @@ $(document).ready(function() {
 				let languageGoals = $('#languageGoals').val();
 				
 				
-				if (file == '') {
+				 if (file == '') {
 					swal("Please upload the file.");
 					return;
-				}
+				} 
 				
 				
 				
