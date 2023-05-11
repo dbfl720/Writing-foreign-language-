@@ -566,10 +566,10 @@
 			, success: function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
 				if (data.code == 1) {
 					// 성공 시 커뮤니트 목록으로 이동.
-					location.href = "/user/community_view";
+					location.href = "/community/community_view";
 					
 				} else {
-					swal(data.errorMessage);
+					swal("This user does not exist.");
 				}
 			}
 			, error : function(request, status, error) {

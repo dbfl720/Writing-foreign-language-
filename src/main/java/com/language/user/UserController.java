@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
@@ -63,14 +64,16 @@ public class UserController {
 		  * @param session
 		  * @return
 		  */
-	//localhost/user/profile_view
+	//localhost/user/profile_view?loginId=yuri
 		@GetMapping("/profile_view")
-		public String profileView(Model model, HttpSession session) {
-			
-			Integer userId = (Integer)session.getAttribute("userId");
-			User user = userBO.getUserById(userId);
-			
-			model.addAttribute("user", user);
+		public String profileView(
+				@RequestParam(value="loginId") String loginId,
+				Model model) {
+		
+			User user = userBO.getUserByLoginId(loginId);
+
+	
+			model.addAttribute("user", user); 
 			model.addAttribute("view", "user/profile");
 			return "template/layout";
 		}
@@ -82,17 +85,15 @@ public class UserController {
 		
 		//localhost/user/community_view
 		@GetMapping("/community_view")
-		public String communityView(Model model,HttpSession session) {
-	
-			Integer userId = (Integer)session.getAttribute("userId");
-			User user = userBO.getUserById(userId);
+		public String communityView(Model model) {
 			
+			//Integer userId = (Integer)session.getAttribute("userId");
+			//User user = userBO.getUserById(userId);
 
-			List<User> listUser = userBO.communityUser();
+			List<User> listUser = userBO.getCommunityUser();
+
 			
-			
-			
-			model.addAttribute("user", user);
+			//model.addAttribute("user", user);
 			model.addAttribute("listUser", listUser);
 			model.addAttribute("view", "user/community");
 			return "template/layout";

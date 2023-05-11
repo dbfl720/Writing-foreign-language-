@@ -108,7 +108,7 @@ public class UserBO {
 	
 	
 	// community 유저 정보들
-	public List<User> communityUser() {
+	public List<User> getCommunityUser() {
 		
 		//db select
 		return userMapper.selectCommunityUser();

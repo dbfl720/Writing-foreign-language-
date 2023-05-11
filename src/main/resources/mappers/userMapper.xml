@@ -6,9 +6,13 @@
  	<select id="selectUserByLoginId" parameterType="String" resultType="com.language.user.model.User">
  		SELECT
  			`id`
+ 			,`nativeCategoryId`
+ 			,`foreignCategoryId`
  			,`loginId`
- 			,`password`
  			,`salt`
+ 			,`selfIntroduction`
+ 			,`languageGoals`
+ 			,`ImagePath`
  		FROM
  			`user`
 		WHERE
@@ -66,7 +70,8 @@
  	
  	<select id="selectCommunityUser" resultType="com.language.user.model.User">
  		SELECT
- 			`nativeCategoryId`
+ 			`id`
+ 			,`nativeCategoryId`
  			,`foreignCategoryId`
  			,`loginId`
  			,`selfIntroduction`

@@ -15,7 +15,7 @@
 						height="500" width="500">
 				</div>
 					<a href="#" id="profileBtn">
-					<img   alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
+					<img alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
 					</a>
 					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
 					<div id="fileName" class="text-secondary ml-2 mt-2"></div>
