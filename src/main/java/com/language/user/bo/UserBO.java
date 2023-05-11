@@ -1,5 +1,7 @@
 package com.language.user.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,7 +39,7 @@ public class UserBO {
 	
 	
 	// select -  id로 조회. 
-	public User getUserById (int id) {
+	public User getUserById (Integer id) {
 		return userMapper.selectUserById(id);
 	}
 	
@@ -106,10 +108,10 @@ public class UserBO {
 	
 	
 	// community 유저 정보들
-	public User communityUser() {
+	public List<User> communityUser() {
 		
 		//db select
-		userMapper.;
+		return userMapper.selectCommunityUser();
 	}
 
 	

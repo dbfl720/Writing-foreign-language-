@@ -44,19 +44,15 @@
  	
  
  
- 	<select id="selectUserById" parameterType="int" resultType="com.language.user.model.User">
+ 	<select id="selectUserById" parameterType="Integer" resultType="com.language.user.model.User">
  		SELECT
  			`id`
  			,`nativeCategoryId`
  			,`foreignCategoryId`
  			,`loginId`
- 			,`password`
- 			,`email`
  			,`selfIntroduction`
  			,`languageGoals`
  			,`ImagePath`
- 			,`createdAt`
- 			,`updatedAt`
  		FROM
  			`user`
 		WHERE
@@ -77,8 +73,9 @@
  			,`ImagePath`
  		FROM
  			`user`
-		WHERE
-			`id` = #{id}
+		ORDER BY `id` DESC
+		LIMIT 10
+
  	
  	
  	</select>

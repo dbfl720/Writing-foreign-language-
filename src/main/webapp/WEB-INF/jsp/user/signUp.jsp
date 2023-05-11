@@ -566,7 +566,8 @@
 			, success: function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
 				if (data.code == 1) {
 					// 성공 시 커뮤니트 목록으로 이동.
-					location.href = "/community/community_view";
+					location.href = "/user/community_view";
+					
 				} else {
 					swal(data.errorMessage);
 				}

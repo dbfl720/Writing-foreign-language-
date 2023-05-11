@@ -1,5 +1,7 @@
 package com.language.user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +67,7 @@ public class UserController {
 		@GetMapping("/profile_view")
 		public String profileView(Model model, HttpSession session) {
 			
-			int userId = (int)session.getAttribute("userId");
+			Integer userId = (Integer)session.getAttribute("userId");
 			User user = userBO.getUserById(userId);
 			
 			model.addAttribute("user", user);
@@ -80,8 +82,18 @@ public class UserController {
 		
 		//localhost/user/community_view
 		@GetMapping("/community_view")
-		public String communityView(Model model) {
+		public String communityView(Model model,HttpSession session) {
 	
+			Integer userId = (Integer)session.getAttribute("userId");
+			User user = userBO.getUserById(userId);
+			
+
+			List<User> listUser = userBO.communityUser();
+			
+			
+			
+			model.addAttribute("user", user);
+			model.addAttribute("listUser", listUser);
 			model.addAttribute("view", "user/community");
 			return "template/layout";
 		}

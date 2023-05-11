@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="d-flex">
 	<div class="asideMenu">
-		<div class="communityText text-center"><a href="/community/community_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png" >
+		<div class="communityText text-center"><a href="/user/community_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png" >
 		Community</a></div>
 		<div class="communityText text-center"><a href="#" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png" >
 		Grammar</a></div>

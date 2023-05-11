@@ -1,5 +1,7 @@
 package com.language.user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +18,7 @@ public interface UserMapper {
 			@Param("password")String password);
 	
 	
-	public User selectUserById (int id);
+	public User selectUserById (Integer id);
 	
 	
 	public int insertUser(
@@ -39,5 +41,5 @@ public interface UserMapper {
 	
 	
 	
-	public User selectCommunityUser();
+	public List<User> selectCommunityUser();
 }
