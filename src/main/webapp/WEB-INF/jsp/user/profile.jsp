@@ -28,7 +28,7 @@
 				<div class="my-box border-bottom">
 					<div class="profileLoginIdText">${user.loginId}</div>
 					<div class="profileTotalText">${user.nativeCategoryId}
-						<img alt="화살표" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
+						<img alt="화살표" height="30" width="30" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
 						${user.foreignCategoryId}
 					</div>
 					<div class="profileTotalText"><img alt="좋아요 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">

@@ -1,14 +1,14 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
-#wrap{ height:1200px; background-color:grey;}
+#wrap{ height:1200px;/*  background-color:grey; */}
 
 /*header*/
-.header{height:100px; background-color:#A9E2F3;}
+.header{height:100px; /* background-color:#A9E2F3; */}
 .ami{font-size:60px; margin-left:80px; padding-top:20px; font-weight:bold}
 
 
 /*menu */
-.asideMenu{width:250px; height:1080px; background-color:#F6CEF5; padding-top:13px;}
+.asideMenu{width:250px; height:1080px; /* background-color:#F6CEF5;  */padding-top:13px;}
 .asideText{font-size: 25px; color:black;}
 .asideText:hover{text-decoration:none;}
 .communityText{padding-top:100px; font-size:26px;}
@@ -20,15 +20,26 @@
 
 
 /*footer*/
-.footer{height:60px; background-color:#F5D0A9}
-.footerText{font-size: 20px;}
+.footer{height:60px; /* background-color:#F5D0A9 */}
+.footerText{font-size: 17px;}
+
+/* signIn */
+.signInBox5555{margin-top:120px; margin-bottom:180px;}
+.signInTitle {font-size:60px; font-weight:bold; /*margin-top:100px;*/}
+.signInText{font-size: 80px;}
+
 
 
 /*signUp*/
+.signUpInputPadding{margin-top:1.5rem;}
 .signUpTitle{font-size:5rem; font-weight:bold; }
 .signUpSubTitle{font-size: 1.7rem;}
 .signUpNativeLanguage {font-size: 10px; font-family: 'Marck Script', cursive;}
 .fileName{font-size:15px;}
+.duplicatedCheck{height: 42px; width:85px; font-size:13px;}
+.signUpBox2{width:260px;}
+.loginDublicatedBox33{margin-left:16px; margin-top:10px;}
+.duplicatedText{font-size:18px; margin-top:-20px; margin-left: 2.0rem;}
 
 
 :root {
@@ -36,13 +47,13 @@
 	--text-color: #000;
 }
 
-*, body {
+ *, body {
 	margin: 0px;
 	padding: 0px;
 	font-size: 10px;
 	color: var(--text-color);
 	box-sizing: border-box;
-}
+} 
 
 body {
 	width: 100%;
@@ -51,7 +62,7 @@ body {
 }
 
 h1 {
-	font-size: 3.8rem;
+	font-size: 5.8rem;
 }
 
 p {
@@ -71,6 +82,7 @@ p {
 .accounts_container {
     /* 상하좌우 정중앙 정렬하기 */
 	width: 100%;
+	height: 100%;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
@@ -155,6 +167,19 @@ p {
     
 }
 
+.signup-textarea {
+	font-size: 1.8rem;
+	padding-top: 1rem;
+	padding-left: 0.5rem;
+	border:none;
+}
+
+.signUpWhoBox{font-size:20px;  padding-top:10px;}
+
+
+
+
+
 #selectNative{
 
     border: 1px solid #C4C4C4;
@@ -169,31 +194,26 @@ p {
     margin-left:15px;*/
 }
 
-.signup-textarea {
-	font-size: 1.8rem;
-	padding-top: 1rem;
-	padding-left: 0.5rem;
-}
-/*.signUpWhoBox{font-size:20px;  padding-top:10px;   }*/
-/*.signUpPurposeBox{font-size:20px; padding-top:10px; margin-right:100px;  }*/
+
 .signUpInputPadding{height:50px;}
 
 
+
 /* signUp 사진 */
-.profilePics{padding-top:20px; padding-left:100px; width:1000px; height:600px;}
 .profileBox{    width: 100px; height: 100px;  border-radius: 70%; overflow: hidden;}
-.profile{  width: 100%;  height: 100%; object-fit: cover;}
+.profile{  width: 100%;  height: 100%; object-fit: cover;  transition: all 0.2s linear;}
+.profile:hover {
+  transform: scale(1.4);
+} 
 .headerFollowing{font-weight:lighter;}
+
+
 /* singUp 중복버튼*/
-#loginIdCheckBtn{width: 100px; height:50px; font-weight: bold; font-size:15px; margin-left:10px;}
-.duplicatedText{font-size:15px;  font-weight: 400; margin-left:19px; margin-top: -30px;}
+#loginIdCheckBtn{width: 65px; height:40px; font-weight: bold; font-size:12px; }
 
 
 
-/* signIn */
-.signInTitle {font-size:60px; font-weight:bold; /*margin-top:100px;*/}
-/* .signInBigBox{margin-top:100px;} */
-.signInText{font-size: 17px;}
+
 
 
 
@@ -218,8 +238,33 @@ p {
 
 
 /* 커뮤니티 */
+ .profilePicture2{
+  transition: all 0.2s linear;
+}
+.profilePicture2:hover {
+  transform: scale(1.4);
+} 
 .communityImg{ border-radius: 70%; overflow: hidden;}
-.fontCommunity{font-size: 2.9rem; margin-left:2.2rem;}
-.infoCommunity{margin-top: 2.8rem;}
-.outer{min-width : 300px; min-height : 200px;   }
-.communityFont{font-size: 2.0rem; margin-top:0.8rem; margin-left:1.2rem; font-weight: bold;}
+.fontCommunity{font-size: 2.0rem; margin-left:3.5rem;}
+.loginIdFont{font-size:2.5rem; font-weight:bold; color:black;}
+.loginIdFont:hover{text-decoration: none; color:#82F9B7;}
+.languageMark{margin-top:0.7rem;}
+.arrow{margin-top: 1rem; margin-left: 1rem;}
+.selfIntroMark{margin-right:0.8rem;}
+.infoCommunity{margin-top: 2.4rem;}
+.outer{min-width : 2rem; min-height : 2.5rem;  margin-bottom:2.8rem;  border:none;}
+.communityFont{font-size: 1.8rem; margin-top:1.2rem; margin-left:1.5rem; }
+
+
+@media (min-width: 480px) {
+  .container {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 48px;
+  }
+}
+

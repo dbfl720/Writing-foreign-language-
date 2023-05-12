@@ -40,14 +40,14 @@
 					</div>
 
 					<div class="row">
-						<div class="col col-sm-12 col-md-12 col-lg-11 m-0">
+						<div class="loginDublicatedBox33">
 							<div class="form-group d-flex">
 								<label for="fname">Id</label> <input id="loginId" type="text"
-									name="fname" class="form-control signUpInputPadding"
+									name="fname" class="form-control signUpBox2"
 									onfocus="labelUp(this)" onblur="labelDown(this)" required />
-								<button type="button" id="loginIdCheckBtn"
-									class="duplicatedCheck btn btn-secondary  ">duplicate
-									check</button>
+								<div class="loginButton2"><button  type="button" id="loginIdCheckBtn"
+									class="duplicatedCheck btn btn-secondary ">duplicate
+									check</button></div>
 							</div>
 						</div>
 						<%-- 아이디 체크 결과 --%>
@@ -142,39 +142,41 @@
 
 
 			<!--signIn-->
-			<div class="accounts_forms  w-100 h-100" id="login">
-				<div class="title  mt-4 p-4 w-100">
-					<div class="signInTitle">Sign In</div>
-					<p class="mt-3">Share your writing with people in the world.</p>
-				</div>
-				<!--title-->
-				<form method="post" name="form" class="form  w-100 p-4 signInBigBox"
-					id="form">
-					<div class="form-group">
-						<label for="fname">Id</label> <input type="text" name="fname"
-							class="form-control signUpInputPadding" id="signInId"
-							onfocus="labelUp(this)" onblur="labelDown(this)" required />
+			<div class="signInBox5555">
+				<div class="accounts_forms  w-100 h-100" id="login">
+					<div class="title  mt-4 p-4 w-100">
+						<h1 class="signInTitle">Sign In</h1>
+						<p class="mt-3">Share your writing with people in the world.</p>
 					</div>
-					<div class="form-group">
-						<label for="login_password">Password</label> <i
-							class="fa fa-eye-slash" id="eye_icon_login"></i> <input
-							type="password" name="pass"
-							class="form-control signUpInputPadding" id="signInPassword"
-							onfocus="labelUp(this)" onblur="labelDown(this)" required />
+					<!--title-->
+					<form method="post" name="form" class="form  w-100 p-4 signInBigBox"
+						id="form">
+						<div class="form-group">
+							<label for="fname">Id</label> <input type="text" name="fname"
+								class="form-control signUpInputPadding" id="signInId"
+								onfocus="labelUp(this)" onblur="labelDown(this)" required />
+						</div>
+						<div class="form-group">
+							<label for="login_password">Password</label> <i
+								class="fa fa-eye-slash" id="eye_icon_login"></i> <input
+								type="password" name="pass"
+								class="form-control signUpInputPadding" id="signInPassword"
+								onfocus="labelUp(this)" onblur="labelDown(this)" required />
+						</div>
+	
+	
+	
+						<div class="form-group mb-0">
+							<button id="loginBtn" type="button"
+								class="btn btn-primary register_btn w-100">Sign In</button>
+						</div>
+					</form>
+	
+					<div class="already_member_box d-flex justify-content-between px-4">
+						<p class="text-center signInText" id="to_signup">Create an
+							account?</p>
+						<p class="signInText text-center">Forgot password</p>
 					</div>
-
-
-
-					<div class="form-group mb-0">
-						<button id="loginBtn" type="button"
-							class="btn btn-primary register_btn w-100">Sign In</button>
-					</div>
-				</form>
-
-				<div class="already_member_box d-flex justify-content-between px-4">
-					<p class="text-center signInText" id="to_signup">Create an
-						account?</p>
-					<p class="signInText text-center">Forgot password</p>
 				</div>
 			</div>
 			<!--accounts_forms-->
