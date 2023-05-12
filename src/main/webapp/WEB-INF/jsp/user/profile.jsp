@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 	<%-- 프로필 사진 --%>
 	<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
 	<input type="file" id="file" multiple='multiple' class="d-none"
@@ -9,22 +10,29 @@
 	<div>
 		<div class="d-flex">
 			<div class="profileTotalBox">
+				<%-- 수정 아이콘 --%>
+				<a href="#" id="updateProfileBtn">
+				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+				</a>
 				<div class=" profileBox mr-3">
 					<img id="profileImg" class=" profile" alt="프로필 사진"
 						src="${user.imagePath}"
 						height="500" width="500">
 				</div>
 					<a href="#" id="profileBtn">
-					<img alt="프로필 변경 이모티콘" width="45" height="45"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
+					<img alt="프로필 변경 이모티콘" width="36" height="36"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
 					</a>
 					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
 					<div id="fileName" class="text-secondary ml-2 mt-2"></div>
+					
+					
 			</div>
 			
 			
 			
-			<%-- 유저 정보들 --%>	
-	
+
+				
+					<%-- 유저 정보들 --%>	
 				<div class="my-box border-bottom">
 					<div class="profileLoginIdText">${user.loginId}</div>
 					<div class="profileTotalText">${user.nativeCategoryId}
@@ -43,22 +51,19 @@
 				</div>
 			</div> <%-- d-flex 끝. --%>
 			
+			
 					<%-- 자기소개 --%>
 					<div class="totalSecondMyBox">
 						<div class="selfTitle">Who are you?</div>
 							<div class="secondMyBox profileSelfIntroduction">
 								<textarea id="selfIntroduction" class="profileTextArea border-bottom rounded">${user.selfIntroduction}</textarea>
 							</div>
+					</div>
 						<div class="goalTitle">The purpose of writing</div>
 						<div class="secondMyBox profileLanguageGoal">
 							<textarea id="languageGoals" class="profileTextArea border-bottom rounded" >${user.languageGoals}</textarea>
 						</div>
-					</div>
-				
-				<%-- 수정 아이콘 --%>
-				<a href="#" id="updateProfileBtn">
-				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="40" height="40" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Settings-Wrench-icon.png">
-				</a>
+			
 	</div>
 
 

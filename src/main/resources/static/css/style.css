@@ -220,20 +220,17 @@ p {
 /* 프로필 */
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
 .profileTotalBox{margin-left:100px; margin-top:70px;}
-.my-box  { border:none;  padding-right:235px; margin-top:170px; margin-left:100px; width:495px; height:300px;}
+.my-box  { border:none;  padding-right:235px; margin-top:100px; margin-left:100px; width:495px; height:300px;}
 .firstProfileBox{width:80px; height:150px;  }
 .headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
 .headerProfileText{font-size:30px;}
 #headerImg{    width: 90px; height: 90px;  border-radius: 100%; overflow: hidden;}
 .profileLoginIdText{font-size:30px; font-weight:bold; margin-bottom:17px;}
 .profileTotalText{font-size:18px; margin-bottom:17px;}
-.secondMyBox{border:none;   margin-left:770px; height:180px; }
-.totalSecondMyBox{margin-top:-80px;}
-.selfTitle{font-weight:bold; font-size:30px; margin-left:770px;}
-.goalTitle{font-weight:bold; font-size:30px; margin-left:770px; margin-top:10px;}
-.updateProfileIcon{margin-left:500px;}
-.profileTextArea{border:outset; width:495px; height:180px; overflow: hidden; font-size:20px;}
-.updateProfileIcon{margin-left:1000px; margin-top:45px;}
+.secondMyBox{border:none;   margin-left:55rem; height:12rem; }
+.selfTitle{font-weight:bold; font-size:30px; margin-left:55rem;}
+.goalTitle{font-weight:bold; font-size:30px; margin-left:55rem; margin-top:10px;}
+.profileTextArea{border:outset; width:495px; height:12rem; overflow: hidden; font-size:20px;}
 
 
 

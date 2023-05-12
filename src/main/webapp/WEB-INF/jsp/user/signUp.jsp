@@ -192,8 +192,6 @@
 
 
 
-
-
 <script>
 	
 	// Chnage Label Position
