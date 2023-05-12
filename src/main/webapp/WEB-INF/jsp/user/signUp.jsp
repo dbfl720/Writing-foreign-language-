@@ -7,7 +7,7 @@
 			<div class="accounts_image h-100">
 				<img
 					src="https://img.freepik.com/free-photo/social-media-instagram-digital-marketing-concept-3d-rendering_106244-1717.jpg?t=st=1647414398~exp=1647414998~hmac=2c478ef6affd973ccd71ea4d394d9283db4a0c6c4c686ba0b9f6091c8a56e5a1&w=1480"
-					alt="accounts_image" class="w-100 h-100" />
+					alt="accounts_image" class="w-100 h-100 loginInPhotoBox4" />
 			</div>
 			<!--accounts_image-->
 		</div>
@@ -83,8 +83,8 @@
 
 							<!-- select : native language, foreign language -->
 							<div class="form-group container">
-								<div class="row">
-									<select class="col" name="selectNative" id="selectNative">
+								<div class=" selectBox88 d-flex">
+									<select class="col-7" name="selectNative" id="selectNative">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>native language</option>
 										<option value="KO">KO</option>
@@ -96,7 +96,7 @@
 										<option value="DEU">DEU</option>
 										<option value="VNM">VNM</option>
 										<option value="Others">Others</option>
-									</select> <select class="col" name="selectLanguage" id="selectLanguage">
+									</select> <select class="col-7" name="selectLanguage" id="selectLanguage">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>foreign language</option>
 										<option value="KO">KO</option>

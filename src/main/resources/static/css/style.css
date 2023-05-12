@@ -27,7 +27,7 @@
 .signInBox5555{margin-top:120px; margin-bottom:180px;}
 .signInTitle {font-size:60px; font-weight:bold; /*margin-top:100px;*/}
 .signInText{font-size: 80px;}
-
+.loginInPhotoBox4{height:1000px;}
 
 
 /*signUp*/
@@ -36,8 +36,8 @@
 .signUpSubTitle{font-size: 1.7rem;}
 .signUpNativeLanguage {font-size: 10px; font-family: 'Marck Script', cursive;}
 .fileName{font-size:15px;}
-.duplicatedCheck{height: 42px; width:85px; font-size:13px;}
-.signUpBox2{width:260px;}
+.duplicatedCheck{height: 53px; width:85px; font-size:13px;}
+.signUpBox2{width:260px; height:53px;}
 .loginDublicatedBox33{margin-left:16px; margin-top:10px;}
 .duplicatedText{font-size:18px; margin-top:-20px; margin-left: 2.0rem;}
 
@@ -154,8 +154,9 @@ p {
 	display: none;
 }
 
-#selectLanguage{
 
+.selectBox88{margin-left:-5rem;}
+#selectLanguage{
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 4px;
@@ -181,7 +182,6 @@ p {
 
 
 #selectNative{
-
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 4px;
@@ -209,7 +209,7 @@ p {
 
 
 /* singUp 중복버튼*/
-#loginIdCheckBtn{width: 65px; height:40px; font-weight: bold; font-size:12px; }
+#loginIdCheckBtn{width: 65px; height:53px; font-weight: bold; font-size:12px; }
 
 
 
@@ -219,7 +219,7 @@ p {
 
 /* 프로필 */
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
-.profileTotalBox{margin-left:310px; margin-top:170px;}
+.profileTotalBox{margin-left:100px; margin-top:70px;}
 .my-box  { border:none;  padding-right:235px; margin-top:170px; margin-left:100px; width:495px; height:300px;}
 .firstProfileBox{width:80px; height:150px;  }
 .headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
