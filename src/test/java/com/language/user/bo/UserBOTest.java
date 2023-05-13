@@ -3,6 +3,11 @@ package com.language.user.bo;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,17 +49,29 @@ class UserBOTest {
 	//@Test
 	void 유저가져오기() {
 		User user = userBO.getUserById(3);
-		assertNotNull(user); // 메소드 검색해서 사용! 
+		assertNotNull(user); // 메소드 검색해서 사용!  null이 아님을 시험하기 위해 assertNotNull 메소드
 	}
 	
 	
 	
 	
-//	@Test
+
+	
+	//@Test
 //	void 프로필업로드() {
-//		 User user = userBO.updateUser(null, null, null, null, 0);
+//		 User user = userBO.updateUser("org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@67cfd515", "modify modify modify mdify", "modify modify modify mdify", "yuri", 9);
 //	}
 	
+	
+	
+	
+	@Transactional
+	@Test
+	void 커뮤니티() {
+		logger.info("###### 커뮤니티 #####");
+		List<User> user = userBO.getCommunityUser();
+		assertNotNull(user);
+	}
 	
 	//@Test
 	void test() {
