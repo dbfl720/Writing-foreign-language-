@@ -3,9 +3,6 @@ package com.language.user.bo;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -38,6 +35,16 @@ class UserBOTest {
 	
 //	@Transactional
 //	@Test
+	void 아이디_중복체크() {
+		logger.info("#### 아이디 중복체크 ####");
+		userBO.getUserByLoginId("yuri");
+	}
+	
+	
+	
+	
+//	@Transactional
+//	@Test
 	void 로그인() {
 		logger.info("##### 로그인 #####");
 		userBO.getUserByLoginId("yuri");
@@ -55,6 +62,8 @@ class UserBOTest {
 	
 	
 	
+	
+	
 
 	
 	//@Test
@@ -65,8 +74,8 @@ class UserBOTest {
 	
 	
 	
-	@Transactional
-	@Test
+//	@Transactional
+//	@Test
 	void 커뮤니티() {
 		logger.info("###### 커뮤니티 #####");
 		List<User> user = userBO.getCommunityUser();

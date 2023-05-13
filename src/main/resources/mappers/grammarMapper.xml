@@ -4,10 +4,35 @@
  
  
  <mapper namespace="com.language.grammar.dao.GrammarMapper">
- 	<select id="selectGrammarList" resultType="map">
+ 	<!-- <select id="selectGrammarList" resultType="map">
  		SELECT
  			*
 		FROM
 			`category`
- 	</select>
+ 	</select> -->
+ 	
+ 	
+ 	<insert id="insertGrammar" parameterType="map">
+ 		INSERT INTO `grammar_writing`
+ 		(
+ 			`userId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`content`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		
+ 		)
+ 		VALUES
+ 		(
+ 			#{userId}
+ 			,#{languageCategoryId}
+ 			,#{title}
+ 			,#{content}
+ 			,NOW()
+ 			,NOW()
+
+ 		)
+ 		
+ 	</insert>
  </mapper>

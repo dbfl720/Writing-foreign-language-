@@ -158,7 +158,14 @@ public class UserRestController {
 	
 	
 	
-	
+	/**
+	 * 프로필 수정
+	 * @param file
+	 * @param selfIntroduction
+	 * @param languageGoals
+	 * @param session
+	 * @return
+	 */
 	// 프로필 수정
 	@PutMapping("/update")
 	public Map<String, Object> update(

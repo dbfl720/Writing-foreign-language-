@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="container outer_container accounts_container ">
+<div class="container outer_container accounts_container">
 	<div class="row">
 		<div class="col col-sm-12 col-md-12 col-lg-8 m-0 p-0 accounts_col">
 			<div class="accounts_image h-100">
@@ -503,7 +503,7 @@
 			// response
 			, success : function(data) {
 				if (data.code == 1) {
-					swal("Your information has been saved.");
+					swal("Your information is stored.");
 					location.reload();
 				} else {
 					swal(data.errorMessage);
