@@ -199,9 +199,10 @@ p {
 
 
 
-/* signUp 사진 */
-.profileBox{    width: 100px; height: 100px;  border-radius: 70%; overflow: hidden;}
-.profile{  width: 100%;  height: 100%; object-fit: cover;  transition: all 0.2s linear;}
+/* profile 사진 */
+.profileBox{    width: 100px; height: 100px;  overflow: hidden;  border: 2px solid black; border-radius: 70%;}
+.profile{  width: 100%;  height: 100%; object-fit: cover;  transition: all 0.2s linear; border-radius: 70%; overflow: hidden;  
+        padding: 20px;}
 .profile:hover {
   transform: scale(1.4);
 } 
@@ -218,6 +219,7 @@ p {
 
 
 /* 프로필 */
+.profileTotal55{padding:4rem; margin:4rem;}
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
 .profileTotalBox{margin-left:100px; margin-top:70px;}
 .my-box  { border:none;  padding-right:235px; margin-top:100px; margin-left:100px; width:495px; height:300px;}
@@ -228,20 +230,33 @@ p {
 .profileLoginIdText{font-size:30px; font-weight:bold; margin-bottom:17px;}
 .profileTotalText{font-size:18px; margin-bottom:17px;}
 .secondMyBox{border:none;   margin-left:55rem; height:12rem; }
-.selfTitle{font-weight:bold; font-size:30px; margin-left:55rem;}
-.goalTitle{font-weight:bold; font-size:30px; margin-left:55rem; margin-top:10px;}
-.profileTextArea{border:outset; width:495px; height:12rem; overflow: hidden; font-size:20px;}
-
+.selfTitle{font-weight:bold; font-size:2.5rem; margin-left:55rem;}
+.goalTitle{font-weight:bold; font-size:2.5rem; margin-left:55rem; margin-top:10px;}
+.profileTextArea{  width:495px; height:14rem; overflow: hidden; font-size:20px; 
+   border-radius: 40px 40px 40px 40px; padding:2rem; margin:1rem;} /* 왼쪽 위, 오른쪽 위, 오른쪽 아래, 왼쪽 아래  */
+.profileTextArea:focus {outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; }
 
 
 /* 커뮤니티 */
+.communityTotal55{padding:5rem; margin:5rem;}
+.communityImg{/*  border-radius: 70%; overflow: hidden;  
+        padding: 30px;
+        max-width: 1170px; */
+      
+          width: 180px; height: 180px;  overflow: hidden;  border: 2px solid black; border-radius: 70%;}
  .profilePicture2{
-  transition: all 0.2s linear;
+/*   transition: all 0.2s linear;
+        border: 2px solid black;
+        border-radius: 50%; */
+        
+         width: 100%;  height: 100%; object-fit: cover;  transition: all 0.2s linear; border-radius: 70%; overflow: hidden;  
+        padding: 12px;
+  
 }
 .profilePicture2:hover {
   transform: scale(1.4);
 } 
-.communityImg{ border-radius: 70%; overflow: hidden;}
+
 .fontCommunity{font-size: 2.0rem; margin-left:3.5rem;}
 .loginIdFont{font-size:2.5rem; font-weight:bold; color:black;}
 .loginIdFont:hover{text-decoration: none; color:#82F9B7;}

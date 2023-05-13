@@ -6,7 +6,7 @@
 <%-- 커뮤니티  --%>
 <div class="container ">
 	<c:forEach items="${communityList}" var="communityLists">
-		<div class="d-flex border-bottom rounded outer">
+		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55">
 			<div class="communityImg">
 				<a href="/user/profile_view?loginId=${communityLists.user.loginId}"><img class="profilePicture2" id="communityImg" alt="프로필 사진"
 					src="${communityLists.user.imagePath}"
@@ -15,12 +15,12 @@
 			<div class="infoCommunity">
 				<div class="fontCommunity mb-3">
 					<a class="loginIdFont" href="/user/profile_view?loginId=${communityLists.user.loginId}"><img alt="유저 사진" width="30" height="30"
-						src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Users-Name-icon.png">
+						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
 					${communityLists.user.loginId}</a>
 				</div>
 				<div class="fontCommunity d-flex mb-3">
 					<img class="languageMark" alt="언어 사진" width="30" height="30"
-						src="https://icons.iconarchive.com/icons/fa-team/fontawesome/128/FontAwesome-Language-icon.png">
+						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
 					<div class="communityFont">${communityLists.user.nativeCategoryId}</div>
 					<img  class="arrow" alt="화살표" height="30" width="30" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
 					<div class="communityFont">${communityLists.user.foreignCategoryId}</div>

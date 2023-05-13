@@ -7,7 +7,7 @@
 	<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
 	<input type="file" id="file" multiple='multiple' class="d-none"
 						accept=".gif, .jpg, .png, .jpeg , .webp">
-	<div>
+	<div class="profileTotal55">
 		<div class="d-flex">
 			<div class="profileTotalBox">
 				<%-- 수정 아이콘 --%>
@@ -34,18 +34,24 @@
 				
 					<%-- 유저 정보들 --%>	
 				<div class="my-box border-bottom">
-					<div class="profileLoginIdText">${user.loginId}</div>
-					<div class="profileTotalText">${user.nativeCategoryId}
-						<img alt="화살표" height="30" width="30" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
+					<div class="profileLoginIdText">
+					<img alt="유저 사진" width="40" height="40"
+						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
+						${user.loginId}</div>
+					<div class="profileTotalText">
+					<img class="languageMark" alt="언어 사진" width="40" height="40"
+						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
+					${user.nativeCategoryId}
+						<img alt="화살표" height="35" width="35" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
 						${user.foreignCategoryId}
 					</div>
-					<div class="profileTotalText"><img alt="좋아요 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+					<div class="profileTotalText"><img alt="좋아요 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
 						Grammar heart 개수
 					</div>	
-					<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+					<div class="profileTotalText"><img alt="리뷰 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
 						Review heart 개수
 					</div>	
-					<div class="profileTotalText"><img alt="리뷰 하트" height="45" width="45" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
+					<div class="profileTotalText"><img alt="리뷰 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
 						Total Review 개수
 					</div>	
 				</div>
@@ -56,12 +62,12 @@
 					<div class="totalSecondMyBox">
 						<div class="selfTitle">Who are you?</div>
 							<div class="secondMyBox profileSelfIntroduction">
-								<textarea id="selfIntroduction" class="profileTextArea border-bottom rounded">${user.selfIntroduction}</textarea>
+								<textarea id="selfIntroduction" class="profileTextArea  form-control">${user.selfIntroduction}</textarea>
 							</div>
 					</div>
 						<div class="goalTitle">The purpose of writing</div>
 						<div class="secondMyBox profileLanguageGoal">
-							<textarea id="languageGoals" class="profileTextArea border-bottom rounded" >${user.languageGoals}</textarea>
+							<textarea id="languageGoals" class="profileTextArea  form-control" >${user.languageGoals}</textarea>
 						</div>
 			
 	</div>
@@ -75,6 +81,7 @@ $(document).ready(function() {
 				$('#file').click(); // input file을 클릭한 것과 같은 효과
 			});
 
+			
 			
 			// 사용자가 이미지를 선택했을 때 유효성 확인 및 업로드 된 파일명 노출
 			$("#file").on('change', function(e) { // e가 파일객체들고 있음.
