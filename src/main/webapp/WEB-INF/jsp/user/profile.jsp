@@ -11,20 +11,24 @@
 		<div class="d-flex">
 			<div class="profileTotalBox">
 				<%-- 수정 아이콘 --%>
+				<c:if test="${user.id eq userId}">
 				<a href="#" id="updateProfileBtn">
 				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 				</a>
+				</c:if>
 				<div class=" profileBox mr-3">
 					<img id="profileImg" class=" profile" alt="프로필 사진"
 						src="${user.imagePath}"
 						height="500" width="500">
 				</div>
+				<c:if test="${user.id eq userId}">
 					<a href="#" id="profileBtn">
 					<img alt="프로필 변경 이모티콘" width="36" height="36"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
 					</a>
+				
 					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
 					<div id="fileName" class="text-secondary ml-2 mt-2"></div>
-					
+				</c:if>	
 					
 			</div>
 			
@@ -62,12 +66,12 @@
 					<div class="totalSecondMyBox">
 						<div class="selfTitle">Who are you?</div>
 							<div class="secondMyBox profileSelfIntroduction">
-								<textarea id="selfIntroduction" class="profileTextArea  form-control">${user.selfIntroduction}</textarea>
+								<textarea id="selfIntroduction" class="profileTextArea" >${user.selfIntroduction}</textarea>
 							</div>
 					</div>
 						<div class="goalTitle">The purpose of writing</div>
 						<div class="secondMyBox profileLanguageGoal">
-							<textarea id="languageGoals" class="profileTextArea  form-control" >${user.languageGoals}</textarea>
+							<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
 						</div>
 			
 	</div>

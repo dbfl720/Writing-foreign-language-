@@ -6,7 +6,7 @@
 		<div class="col col-sm-12 col-md-12 col-lg-8 m-0 p-0 accounts_col">
 			<div class="accounts_image h-100">
 				<img
-					src="https://img.freepik.com/free-photo/social-media-instagram-digital-marketing-concept-3d-rendering_106244-1717.jpg?t=st=1647414398~exp=1647414998~hmac=2c478ef6affd973ccd71ea4d394d9283db4a0c6c4c686ba0b9f6091c8a56e5a1&w=1480"
+					src="https://bsw.iitd.ac.in/images/main.svg"
 					alt="accounts_image" class="w-100 h-100 loginInPhotoBox4" />
 			</div>
 			<!--accounts_image-->
