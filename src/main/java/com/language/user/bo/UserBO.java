@@ -113,6 +113,13 @@ public class UserBO {
 		//db select
 		return userMapper.selectCommunityUser();
 	}
+	
+	
+	// grammar 유저 정보들
+	public List<User> getGrammarUser() {
+		
+		return userMapper.selectGrammarUser();
+	}
 
 	
 }

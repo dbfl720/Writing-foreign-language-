@@ -30,11 +30,11 @@ public class GrammarRestController {
 			HttpSession session) {
 		
 		// 세션 정보 꺼내기
-		String loginId = (String)session.getAttribute("loginId");
+		int userId = (int)session.getAttribute("userId");
 		
 		
 		// update db
-		int rowCount = grammarBO.addGrammar(loginId, languageCategoryId, title, content);
+		int rowCount = grammarBO.addGrammar(userId, languageCategoryId, title, content);
 		
 		// 응답 
 		Map<String, Object> result = new HashMap<>();

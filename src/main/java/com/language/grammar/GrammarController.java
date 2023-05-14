@@ -35,7 +35,7 @@ public class GrammarController {
 	// localhost/grammar/grammar_detail_view
 	@GetMapping("/grammar_detail_view")
 	public String grammarDetailView(
-			@RequestParam(value="userId") String userId,
+			@RequestParam(value="userId") int userId,
 			Model model) {
 		
 		// select db 

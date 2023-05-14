@@ -82,7 +82,21 @@
 		LIMIT 10
 
  	
+ 	</select>
  	
+ 	
+ 	
+ 	<select id="selectGrammarUser" resultType="com.language.user.model.User">
+ 		SELECT
+ 			`id`
+ 			,`nativeCategoryId`
+ 			,`foreignCategoryId`
+ 			,`loginId`
+ 			,`selfIntroduction`
+ 			,`ImagePath`
+ 		FROM
+ 			`user`
+	
  	</select>
  	
  	

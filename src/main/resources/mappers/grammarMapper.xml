@@ -41,7 +41,7 @@
  	<select id="selectGrammarList" resultType="com.language.grammar.model.Grammar">
  		SELECT
  			`id`
- 			,`loginId`
+ 			,`userId`
  			,`languageCategoryId`
  			,`title`
  			,`content`

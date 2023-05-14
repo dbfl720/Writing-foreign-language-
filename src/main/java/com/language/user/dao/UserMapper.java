@@ -42,4 +42,8 @@ public interface UserMapper {
 	
 	
 	public List<User> selectCommunityUser();
+	
+	
+	
+	public List<User> selectGrammarUser();
 }

@@ -16,6 +16,7 @@ public class CommunityBO {
 	@Autowired
 	private UserBO userBO;
 	
+	 
 	public List<CommunityView> generateCommunityList(Integer userId) {
 		
 		List<CommunityView> communityList = new ArrayList<>();
@@ -26,7 +27,7 @@ public class CommunityBO {
 		for(User userOne : userList) {
 			CommunityView community = new CommunityView();
 			
-			// 유저 정보들 
+			// *** 유저 정보들 
 			User user = userBO.getUserByLoginId(userOne.getLoginId());
 			community.setUser(user);
 			
