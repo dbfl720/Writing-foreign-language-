@@ -24,4 +24,9 @@ public interface GrammarMapper {
 	
 	// select
 	public List<Grammar> selectGrammarList();
+	
+	
+	
+	// select
+	public Grammar selectGrammarByUserId
 }

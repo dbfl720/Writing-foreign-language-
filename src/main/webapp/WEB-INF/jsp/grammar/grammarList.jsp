@@ -22,7 +22,11 @@
 		<c:forEach items="${grammarList}" var="grammarLists">
 			<tr>
 				<td class="GrammarTableFont">${grammarLists.loginId}</td>
-				<td class="GrammarTableFont">${grammarLists.title}</td>
+				<td class="GrammarTableFont">
+				<a href="/grammar/grammar_detail_view?userId=${grammarLists.id}">
+				${grammarLists.title}
+				</a>
+				</td>
 				<td class="GrammarTableFont">${grammarLists.languageCategoryId}</td>
 			</tr>
 		</c:forEach>

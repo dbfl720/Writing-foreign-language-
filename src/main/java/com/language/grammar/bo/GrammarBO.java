@@ -32,4 +32,9 @@ public class GrammarBO {
 		return grammarMapper.selectGrammarList();
 		
 	}
+	
+	
+	public Grammar getGrammarById (int id) {
+		return grammarMapper;
+	}
 }

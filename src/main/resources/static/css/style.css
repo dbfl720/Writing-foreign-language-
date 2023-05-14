@@ -4,16 +4,16 @@
 
 /*header*/
 .header{height:100px; /* background-color:#A9E2F3; */}
-.ami{font-size:60px; margin-left:80px; padding-top:20px; font-weight:bold}
+.ami{font-size:5.0rem; margin-left:2.9rem; padding-top:7.0rem; font-weight:bold}
 .nameHeader{font-size:4rem;}
 .headerBox{margin-top: 3rem;}
 .headerLoginIcon{margin:6rem;}
 
 /*menu */
 .asideMenu{width:250px; height:1080px; /* background-color:#F6CEF5;  */padding-top:13px;}
-.asideText{font-size: 25px; color:black;}
+.asideText{font-size: 2.0rem; color:black; margin-left:2.2rem;}
 .asideText:hover{text-decoration:none;}
-.communityText{padding-top:100px; font-size:26px;}
+.communityText{padding-top:7.5rem; font-size:26px;}
 .v-line {border-left : thin solid black; height : 1080px;}
 
 

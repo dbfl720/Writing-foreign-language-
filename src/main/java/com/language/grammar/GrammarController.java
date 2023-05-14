@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.language.grammar.bo.GrammarBO;
 import com.language.grammar.model.Grammar;
@@ -33,7 +34,11 @@ public class GrammarController {
 	
 	// localhost/grammar/grammar_detail_view
 	@GetMapping("/grammar_detail_view")
-	public String grammarDetailView(Model model) {
+	public String grammarDetailView(
+			@RequestParam(value="userId") String userId,
+			Model model) {
+		
+		// select db 
 		
 		model.addAttribute("view", "grammar/grammarDetail");
 		return "template/layout";
@@ -53,4 +58,8 @@ public class GrammarController {
 		model.addAttribute("view", "grammar/grammarList");
 		return "template/layout";
 	}
+	
+	
+	
+	
 }
