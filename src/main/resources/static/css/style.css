@@ -52,7 +52,7 @@
  *, body {
 	margin: 0px;
 	padding: 0px;
-	font-size: 10px;
+	font-size: 10px; 
 	color: var(--text-color);
 	box-sizing: border-box;
 } 
@@ -309,3 +309,32 @@ p {
 .GrammarSaveIcon{margin:3rem;}
 .GrammarModifyIcon{margin:3rem;}
 .GrammarDeleteIcon{margin:2rem;}
+
+
+
+
+/* Grammar 디테일 */
+.GrammarDetailText{  margin: 1rem; width: 45rem;  height:70rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding: 8px 10px;}
+.GrammarDetailText:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+.GrammarDetailTextBox{margin-left:0.6rem;}
+.GrammarSaveIcon{margin:3rem;}
+.GrammarModifyIcon{margin:3rem;}
+.GrammarDeleteIcon{margin:2rem;}
+.GrammarDetailTextBox2{margin-top:1rem;}
+.GrammarLeftInfo{margin-top:12rem;}
+
+
+
+
+
+/* Grammar 목록   */
+.GrammarListTable{margin:15rem; padding:15rem; }
+.GrammarTableFont{font-size:2.0rem;}

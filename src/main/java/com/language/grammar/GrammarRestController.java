@@ -30,11 +30,11 @@ public class GrammarRestController {
 			HttpSession session) {
 		
 		// 세션 정보 꺼내기
-		int userId = (int)session.getAttribute("userId");
+		String loginId = (String)session.getAttribute("loginId");
 		
 		
 		// update db
-		int rowCount = grammarBO.addGrammar(userId, languageCategoryId, title, content);
+		int rowCount = grammarBO.addGrammar(loginId, languageCategoryId, title, content);
 		
 		// 응답 
 		Map<String, Object> result = new HashMap<>();
@@ -44,7 +44,7 @@ public class GrammarRestController {
 			
 		} else {
 			result.put("code", 500);
-			result.put("errorMessage", "Failed to save. Please log in.");
+			result.put("errorMessage", "Failed to save. Please login.");
 		}
 		
 		return result;

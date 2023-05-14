@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Grammar {
 	
 	private int id;
-	private int userId;
+	private String loginId;
 	private String languageCategoryId;
 	private String title;
 	private String content;

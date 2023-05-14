@@ -15,7 +15,7 @@
  	<insert id="insertGrammar" parameterType="map">
  		INSERT INTO `grammar_writing`
  		(
- 			`userId`
+ 			`loginId`
  			,`languageCategoryId`
  			,`title`
  			,`content`
@@ -25,7 +25,7 @@
  		)
  		VALUES
  		(
- 			#{userId}
+ 			#{loginId}
  			,#{languageCategoryId}
  			,#{title}
  			,#{content}
@@ -35,4 +35,20 @@
  		)
  		
  	</insert>
+ 	
+ 	
+ 	
+ 	<select id="selectGrammarList" resultType="com.language.grammar.model.Grammar">
+ 		SELECT
+ 			`id`
+ 			,`loginId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`content`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`grammar_writing`
+		
+ 	</select>
  </mapper>

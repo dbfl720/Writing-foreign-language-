@@ -5,7 +5,7 @@
 	<div class="asideMenu">
 		<div class="communityText text-center"><a href="/community/community_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png" >
 		Community</a></div>
-		<div class="communityText text-center"><a href="/grammar/grammar_writing_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png" >
+		<div class="communityText text-center"><a href="/grammar/grammar_list_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png" >
 		Grammar</a></div>
 		<div class="communityText text-center"><a href="#" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="75" height="75" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png" >
 		Review</a></div>

@@ -27,12 +27,12 @@
 					<div class="d-flex">
 						<div class="GrammarSaveIcon">
 							<a href="#" id="saveGrammarBtn">
-								<img class="updateProfileIcon" alt="저장 이모티콘" width="40" height="40" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+								<img class="updateProfileIcon" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 							</a>
 						</div>
 						<div class="GrammarDeleteIcon">
 							<a href="#" id="deleteGrammarBtn">
-								<img class="updateProfileIcon" alt="삭제 이모티콘" width="60" height="60" src="https://icons.iconarchive.com/icons/github/octicons/128/x-16-icon.png">
+								<img class="updateProfileIcon mt-1" alt="삭제 이모티콘" width="50" height="50" src="https://icons.iconarchive.com/icons/github/octicons/128/x-16-icon.png">
 							</a>
 						</div>
 					</div>		
