@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.language.grammar.model.Grammar;
+import com.language.user.model.User;
 
 @Repository
 public interface GrammarMapper {
@@ -22,11 +23,21 @@ public interface GrammarMapper {
 	
 	
 	
-	// select
-	public List<Grammar> selectGrammarListByUserId();
-	
-	
 
 	// select 
 	public List<Grammar> selectGrammarList();
+	
+	
+	
+
+	// select
+	public Grammar selectGrammarByGrammarId (
+			@Param("grammarId") int grammarId); 
+	
+	
+	
+	// delete
+	public int deleteGrammarByGrammarIdUserId(
+			@Param("grammarId") int grammarId,
+			@Param("userId") int userId);
 }

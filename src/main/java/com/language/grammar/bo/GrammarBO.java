@@ -3,6 +3,8 @@ package com.language.grammar.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,13 @@ import com.language.user.model.User;
 
 @Service
 public class GrammarBO {
+	
+	// *** logger 
+	private Logger logger = LoggerFactory.getLogger(this.getClass());  
 
+	
+	
+	
 	@Autowired 
 	private GrammarMapper grammarMapper;
 	
@@ -23,11 +31,14 @@ public class GrammarBO {
 	private UserBO userBO;
 	
 	
+	
+	
 	// insert
 	public int addGrammar(int userId, String languageCategoryId, String title, String content) {
 		
 		return grammarMapper.insertGrammar(userId, languageCategoryId, title, content);
 	}
+	
 	
 	
 	
@@ -64,5 +75,32 @@ public class GrammarBO {
 	}
 	
 	
+	
+	
+	
+	
+	// select
+	public Grammar getGrammarByGrammarId (int grammarId) {
+		return grammarMapper.selectGrammarByGrammarId(grammarId);
+	}
+	
+	
+	
+	
+	
+	// delete
+	public int deleteGrammarByGrammarIdUserId(
+			int grammarId, int userId) {
+		
+		// 기존 글 가져오기
+		Grammar grammar = getGrammarByGrammarId(grammarId);
+		if (grammar == null) {
+			logger.warn("[그래머 삭제] grammr is null. grammarId:{} ");
+			return 0;
+		}
+		
+		// db delete
+		return grammarMapper.deleteGrammarByGrammarIdUserId(grammarId, userId);
+	}
 
 }

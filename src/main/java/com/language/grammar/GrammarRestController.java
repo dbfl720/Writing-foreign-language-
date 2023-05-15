@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,4 +50,31 @@ public class GrammarRestController {
 		
 		return result;
 	}
+	
+	
+	
+	
+	 @DeleteMapping("/delete")
+	 public Map<String, Object> delete(
+			 @RequestParam("grammarId") int grammarId,
+			 HttpSession session) {
+		 
+		 int userId = (int)session.getAttribute("userId");
+		 
+		 // db delete
+		 int rowCount = grammarBO.deleteGrammarByGrammarIdUserId(grammarId, userId);  // ** breakpoint
+		 
+		 Map<String, Object> result = new HashMap<>();
+		 if (rowCount > 0) {
+			 	result.put("code", 1);
+				result.put("result", "Your post is deleted.");
+				
+			} else {
+				result.put("code", 500);
+				result.put("errorMessage", "Failed to save. Please contact the administrator.");
+			}
+			
+			return result;
+		 
+	 }
 }

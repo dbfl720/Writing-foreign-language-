@@ -314,7 +314,7 @@ p {
 
 
 /* Grammar 디테일 */
-.GrammarDetailText{  margin: 1rem; width: 45rem;  height:70rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+.GrammarDetailText{  margin: 1rem; width: 45rem;  height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
      background-attachment: local;
   background-image:
@@ -338,3 +338,11 @@ p {
 /* Grammar 목록   */
 .GrammarListTable{margin:15rem; padding:15rem; }
 .GrammarTableFont{font-size:2.0rem;}
+
+
+
+/* Grammar 상세 */
+.grammarDetailFont{font-size:1.9rem; margin:1rem;}
+.grammarDetailFontLang{font-size:1.9rem; margin-top:1.5rem; margin-left:1rem;}
+.dateMark{margin-left:2rem; margin-top:0.7rem;}
+.grammarDateBox{margin-left:2rem; }

@@ -79,26 +79,5 @@ public class UserController {
 		}
 		
 		
-		
-		
-		
-		
-		//localhost/user/community_view
-		@GetMapping("/community_view")
-		public String communityView(Model model) {
-			
-			//Integer userId = (Integer)session.getAttribute("userId");
-			//User user = userBO.getUserById(userId);
 
-			List<User> listUser = userBO.getCommunityUser();
-
-			
-			//model.addAttribute("user", user);
-			model.addAttribute("listUser", listUser);
-			model.addAttribute("view", "user/community");
-			return "template/layout";
-		}
-		
-		
-		 
 }

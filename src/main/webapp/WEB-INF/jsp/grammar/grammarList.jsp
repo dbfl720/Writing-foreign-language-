@@ -23,7 +23,7 @@
 			<tr>
 				<td class="GrammarTableFont">${grammarLists.user.loginId}</td>
 				<td class="GrammarTableFont">
-				<a href="/grammar/grammar_detail_view?userId=${grammarLists.grammar.userId}">
+				<a href="/grammar/grammar_detail_view?grammarId=${grammarLists.grammar.id}">
 				${grammarLists.grammar.title}
 				</a>
 				</td>

@@ -2,6 +2,8 @@ package com.language.grammar;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,18 +36,25 @@ public class GrammarController {
 	
 	
 	
-	// localhost/grammar/grammar_detail_view
+	
+	
+	// localhost/grammar/grammar_detail_view?grammarId=9
 	@GetMapping("/grammar_detail_view")
 	public String grammarDetailView(
-			@RequestParam(value="userId") int userId,
+			@RequestParam(value="grammarId") int grammarId,
 			Model model) {
 		
+		
+		
 		// select db 
+		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
 		
-		
+		model.addAttribute("grammar", grammar);
 		model.addAttribute("view", "grammar/grammarDetail");
 		return "template/layout";
 	}
+	
+	
 	
 	
 	

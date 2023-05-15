@@ -38,19 +38,6 @@
  	
  	
  	
- 	<select id="selectGrammarListByUserId" resultType="com.language.grammar.model.Grammar">
- 		SELECT
- 			`id`
- 			,`userId`
- 			,`languageCategoryId`
- 			,`title`
- 			,`content`
- 			,`createdAt`
- 			,`updatedAt`
- 		FROM
- 			`grammar_writing`
- 	</select>
- 	
  	
  	<select id="selectGrammarList" resultType="com.language.grammar.model.Grammar">
  		SELECT
@@ -64,4 +51,35 @@
  		FROM
  			`grammar_writing`
  	</select>
+ 	
+ 	
+ 	
+ 	<select id="selectGrammarByGrammarId" parameterType="int" resultType="com.language.grammar.model.Grammar">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`content`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`grammar_writing`
+		WHERE
+			`id` = #{grammarId}
+ 	
+ 	</select>
+ 	
+ 	
+ 	
+ 	<delete id="deleteGrammarByGrammarIdUserId" parameterType="map">
+ 		DELETE
+ 		FROM
+ 			`grammar_writing`
+		WHERE
+			`id` = #{grammarId}
+			AND `userId` = #{userId}
+ 	
+ 	</delete>
+ 	
  </mapper>
