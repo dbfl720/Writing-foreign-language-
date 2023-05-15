@@ -23,13 +23,16 @@
 					<div class="GrammarDetailTextBox2">
 						<textarea id="content" class="GrammarDetailText" placeholder="Today is...">${grammar.content}</textarea>
 					</div>
-					<div class="d-flex">
-						<div class="GrammarSaveIcon">
-							<a href="#" id="deleteGrammarBtn" data-grammar-id="${grammar.id}">
-								<img class="updateProfileIcon" alt="글 삭제 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Editing-Delete-icon.png">
-							</a>
-						</div>
-					</div>	
+					
+					<c:if test="${grammar.userId eq userId}">
+						<div class="d-flex">
+							<div class="GrammarSaveIcon">
+								<a href="#" id="deleteGrammarBtn" data-grammar-id="${grammar.id}">
+									<img class="updateProfileIcon" alt="글 삭제 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Editing-Delete-icon.png">
+								</a>
+							</div>
+						</div>	
+					</c:if>
 				</div>	
 			</div>
 </div>
