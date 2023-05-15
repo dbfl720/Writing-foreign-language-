@@ -21,13 +21,13 @@
 	<tbody>
 		<c:forEach items="${grammarList}" var="grammarLists">
 			<tr>
-				<td class="GrammarTableFont">${grammarLists.loginId}</td>
+				<td class="GrammarTableFont">${grammarLists.user.loginId}</td>
 				<td class="GrammarTableFont">
-				<a href="/grammar/grammar_detail_view?userId=${grammarLists.id}">
-				${grammarLists.title}
+				<a href="/grammar/grammar_detail_view?userId=${grammarLists.grammar.userId}">
+				${grammarLists.grammar.title}
 				</a>
 				</td>
-				<td class="GrammarTableFont">${grammarLists.languageCategoryId}</td>
+				<td class="GrammarTableFont">${grammarLists.grammar.languageCategoryId}</td>
 			</tr>
 		</c:forEach>
 	</tbody>

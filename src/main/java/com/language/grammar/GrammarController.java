@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.language.grammar.bo.GrammarBO;
 import com.language.grammar.model.Grammar;
+import com.language.grammar.model.GrammarView;
 
 @RequestMapping("/grammar")
 @Controller
@@ -19,6 +20,7 @@ public class GrammarController {
 	
 	@Autowired
 	private GrammarBO grammarBO;
+	
 	
 	
 	
@@ -40,6 +42,7 @@ public class GrammarController {
 		
 		// select db 
 		
+		
 		model.addAttribute("view", "grammar/grammarDetail");
 		return "template/layout";
 	}
@@ -52,7 +55,8 @@ public class GrammarController {
 	public String grammarListView(Model model) {
 		
 		// select db
-		List<Grammar> grammarList = grammarBO.getGrammarList();
+		List<GrammarView> grammarList = grammarBO.generateGrammarList();
+		
 		
 		model.addAttribute("grammarList", grammarList);
 		model.addAttribute("view", "grammar/grammarList");

@@ -23,10 +23,10 @@ public interface GrammarMapper {
 	
 	
 	// select
+	public List<Grammar> selectGrammarListByUserId();
+	
+	
+
+	// select 
 	public List<Grammar> selectGrammarList();
-	
-	
-	
-	// select
-	public Grammar selectGrammarByUserId
 }

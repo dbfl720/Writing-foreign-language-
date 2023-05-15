@@ -32,24 +32,27 @@ public class GrammarBO {
 	
 	
 	
-	// select - grammar 글들 - 유저 정보 얻기 위해서. (로그인 아이디)
-	public List<GrammarView> generateGrammarList(Integer userId) {
+	// select - grammar 글들 - 글쓴이(loginId)를 알기 위해. 
+	public List<GrammarView> generateGrammarList() {
 		
 		// 결과 리스트
-		List<GrammarView> grammarViewList = new ArrayList<>();
+		List<GrammarView> grammarViewList = new ArrayList<>(); // ** breakpoint
 		
-		// Grammar 글에 해당하는 loginId 
-		List<User> userList = userBO.getGrammarUser();
+		// Grammar 글들
+		List<Grammar> grammarList = grammarMapper.selectGrammarList();
 		
-		for (User userOne : userList) {
+		// Grammar => GrammarView 담기.
+		for (Grammar grammar : grammarList) {
+			
 			GrammarView grammarView = new GrammarView();
+				
 			
+			// ** GrammarView 클래스의 필드 수만큼 똑같이 세팅. 
+			// 그래머 글 하나
+			grammarView.setGrammar(grammar);
 			
-			//** GrammarView 클래스의 필드 수만큼 똑같이 세팅.  
-			
-			
-			// ** 유저 정보들 (로그인 아이디)
-			User user = userBO.getUserByLoginId(userOne.getLoginId());
+			// 글쓴이 (loginId) 
+			User user = userBO.getUserById(grammar.getUserId());
 			grammarView.setUser(user);
 			
 			// 리스트 채우기
@@ -59,6 +62,7 @@ public class GrammarBO {
 		
 		return grammarViewList;
 	}
+	
 	
 
 }

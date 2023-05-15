@@ -17,6 +17,7 @@ public class CommunityBO {
 	private UserBO userBO;
 	
 	 
+	
 	public List<CommunityView> generateCommunityList(Integer userId) {
 		
 		List<CommunityView> communityList = new ArrayList<>();
