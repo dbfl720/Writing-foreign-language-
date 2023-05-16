@@ -59,7 +59,7 @@ public class GrammarController {
 	
 	
 	
-	// localhost/grammar/grammar_list_view?languageCategoryId=KO    
+	// localhost/grammar/grammar_list_view
 	@GetMapping("/grammar_list_view")
 	public String grammarListView(
 			@RequestParam(value="languageCategoryId", defaultValue="EN") String languageCategoryId,

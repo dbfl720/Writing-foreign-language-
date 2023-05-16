@@ -172,7 +172,7 @@
 </div>
 
 
-<table class="table text-center  GrammarListTable table-striped">
+<table class="table text-center  GrammarListTable ">
 	<thead>
 		<tr class="GrammarTableFont">
 			<th class="GrammarTableFont"><img alt="글쓴이 이모티콘" width="36"
