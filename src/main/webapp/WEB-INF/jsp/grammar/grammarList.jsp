@@ -7,59 +7,33 @@
 
 
 
-<div class="swiper-container">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide"><a href="#"><img src="/static/img/CN.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/DE.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/ES.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/FR.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/JP.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/KO.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/OTHERS.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/US.gif"></a></div>
-		<div class="swiper-slide"><a href="#"><img src="/static/img/VN.gif"></a></div>
-	</div>
-
-	<!-- 네비게이션 -->
-	<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-	<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-
-	<!-- 페이징 -->
-	<div class="swiper-pagination"></div>
-</div>
 
 
 
 
-
-
-
-
-
-
-<!-- <div class="d-flex">
+<div class="d-flex">
 	<div class="item-wrapper d-flex">
 		<div class="item">
 		<a href="#">
-			<img id="startImg" alt="한국 국기" width="170" height="170" src="/static/img/KO.gif">
+			<img id="bannerImage" class="countryImg" alt="한국 국기" width="170" height="170" src="/static/img/KO.gif">
 		</a>
 		</div>
 	
 		<div class="item">
 		<a href="#">
-			<img alt="미국 국기" width="170" height="170" src="/static/img/US.gif">
+			<img alt="미국 국기" class="countryImg" width="50" height="50" src="/static/img/US.gif">
 		</a>
 		</div>
 		
 		<div class="item">
 		<a href="#">
-			<img id="endImg" alt="일본 국기" width="170" height="170" src="/static/img/JP.gif">
+			<img id="endImg" class="countryImg" alt="일본 국기" width="170" height="170" src="/static/img/JP.gif">
 		</a>
 		</div>
 		
 		<div class="item">
 		<a href="#">
-			<img id="endImg" alt="중국 국기" width="170" height="170" src="/static/img/CN.gif">
+			<img id="endImg" class="countryImg" alt="중국 국기" width="170" height="170" src="/static/img/CN.gif">
 		</a>
 		</div>
 	</div>	
@@ -67,21 +41,6 @@
 </div>
 
 
-  <div class="d-flex justify-content-between">
-   <div class="slider-btn-wrapper slider-btn-wrapper-left">
-       <a id="left-btn" href="#">
-       		<img alt="글쓴이 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Arrows-Back-icon.png">
-		</a>
-	</div>	
-
-    
-	<div class="slider-btn-wrapper slider-btn-wrapper-right">
-       <a id="right-btn" href="#">
-       		<img alt="글쓴이 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Arrows-Forward-icon.png">
-	   </a>	
-	</div>    	
-  </div>	
- -->
 
 
 <div>
@@ -123,29 +82,38 @@
 	
 	
 	
+	
+	
 
 
 <script>
-new Swiper('.swiper-container', {
 
-	slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
-	spaceBetween : 30, // 슬라이드간 간격
-	slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
 
-	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
-	// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-	loopFillGroupWithBlank : true,
+$(document).ready( function(){
+ 	
+	// 배너 순회
+	let bannerList = [ "/static/img/KO.gif",
+						"/static/img/CN.gif",
+						"/static/img/ES.gif",
+						"/static/img/FR.gif"
+						 ];
+	let currentIndex = 1;
 
-	loop : true, // 무한 반복
+	setInterval(function() {
+		$('#bannerImage').attr('src', bannerList[currentIndex]) // 속성 변경 - attr
+		console.log(currentIndex);
+		currentIndex++;
+		// 4 -  0 1 2 3       
+		if (currentIndex == bannerList.length) {
+			currentIndex = 0;
+		}
 
-	pagination : { // 페이징
-		el : '.swiper-pagination',
-		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	},
-	navigation : { // 네비게이션
-		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	},
-});
+	}, 2000); // 임명함수 , 3초 - 3000 
+
+}); // ready
+
+
+
+
 
 </script>

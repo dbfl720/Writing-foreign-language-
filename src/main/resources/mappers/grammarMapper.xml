@@ -39,7 +39,7 @@
  	
  	
  	
- 	<select id="selectGrammarList" resultType="com.language.grammar.model.Grammar">
+ 	<select id="selectGrammarListByLanguage" resultType="com.language.grammar.model.Grammar">
  		SELECT
  			`id`
  			,`userId`
@@ -50,7 +50,27 @@
  			,`updatedAt`
  		FROM
  			`grammar_writing`
+		WHERE
+			`languageCategoryId` = #{languageCategoryId}
  	</select>
+ 	
+ 	
+ 	
+ 	 	<select id="selectGrammarList" resultType="com.language.grammar.model.Grammar">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`content`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`grammar_writing`
+	
+ 	</select>
+ 	
+ 	
  	
  	
  	

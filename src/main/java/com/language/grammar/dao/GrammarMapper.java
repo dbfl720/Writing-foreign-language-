@@ -25,8 +25,11 @@ public interface GrammarMapper {
 	
 
 	// select 
-	public List<Grammar> selectGrammarList();
+	public List<Grammar> selectGrammarListByLanguage(String languageCategoryId);
 	
+	
+	// select 
+	public List<Grammar> selectGrammarList();
 	
 	
 
