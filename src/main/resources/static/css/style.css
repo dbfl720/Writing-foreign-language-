@@ -3,7 +3,10 @@
 #wrap{ height:1200px;/*  background-color:grey; */}
 
 /*header*/
-.header{height:100px; /* background-color:#A9E2F3; */}
+header{
+	background-color:#64CD3C;
+	max-width: 165rem;
+}
 .ami{font-size:5.0rem; margin-left:2.9rem; padding-top:7.0rem; font-weight:bold}
 .nameHeader{font-size:4rem;}
 .headerBox{margin-top: 3rem;}
@@ -17,13 +20,23 @@
 .v-line {border-left : thin solid black; height : 1080px;}
 
 
-/*section */
-.section{width:2295px; height:1080px; background-color:#A9F5D0}
+/* section  */
+section {
+	max-width: 140rem;
+	max-height:160rem;
+	background-color:#A9F5D0;
+	padding-top:10rem;
+}
 
 
 /*footer*/
-.footer{height:60px; /* background-color:#F5D0A9 */}
 .footerText{font-size: 17px;}
+footer{
+	background-color:#F5D0A9;
+	max-width: 165rem;
+	height:6rem;
+}
+
 
 /* signIn */
 .signInBox5555{margin-top:120px; margin-bottom:180px;}
@@ -49,12 +62,15 @@
 	--text-color: #000;
 }
 
+/* body */
  *, body {
 	margin: 0px;
 	padding: 0px;
 	font-size: 10px; 
 	color: var(--text-color);
 	box-sizing: border-box;
+	max-width: 175rem;
+	max-height:170rem;
 } 
 
 body {
@@ -62,6 +78,9 @@ body {
 	background-color: var(--background-theme);
 	font-family: 'Bad Script', cursive;
 }
+
+
+
 
 h1 {
 	font-size: 5.8rem;
@@ -83,8 +102,8 @@ p {
 
 .accounts_container {
     /* 상하좌우 정중앙 정렬하기 */
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 92%;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
@@ -336,9 +355,26 @@ p {
 
 
 /* Grammar 목록   */
-.GrammarListTable{margin:15rem; padding:15rem; }
+.GrammarListTable{ width: 110rem; }
 .GrammarTableFont{font-size:2.0rem;}
 
+.swiper-container {
+	width:100rem;
+	height:200px;
+	border:5px solid silver;
+	border-radius:7px;
+	box-shadow:0 0 20px #ccc inset;
+}
+.swiper-slide {
+	text-align:center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+}
+.swiper-slide img {
+	box-shadow:0 0 	1px #555;
+	max-width:40%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+}
 
 
 /* Grammar 상세 */
@@ -346,3 +382,9 @@ p {
 .grammarDetailFontLang{font-size:1.9rem; margin-top:1.5rem; margin-left:1rem;}
 .dateMark{margin-left:2rem; margin-top:0.7rem;}
 .grammarDateBox{margin-left:2rem; }
+
+
+
+
+
+
