@@ -39,56 +39,40 @@ public class GrammarController {
 	
 	
 	// localhost/grammar/grammar_detail_view?grammarId=9
-//	@GetMapping("/grammar_detail_view")
-//	public String grammarDetailView(
-//			@RequestParam(value="grammarId") int grammarId,
-//			Model model) {
-//		
-//		
-//		
-//		// select db 
-//		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
-//		
-//		model.addAttribute("grammar", grammar);
-//		model.addAttribute("view", "grammar/grammarDetail");
-//		return "template/layout";
-//	}
-	
-	
-	
-	
-	
-	
-	// localhost/grammar/grammar_list_view
-	@GetMapping("/grammar_list_view")
-	public String grammarListView(Model model) {
-		
-		// select db
-		List<GrammarView> grammarList = grammarBO.generateGrammarList();
+	@GetMapping("/grammar_detail_view")
+	public String grammarDetailView(
+			@RequestParam(value="grammarId") int grammarId,
+			Model model) {
 		
 		
-		model.addAttribute("grammarList", grammarList);
-		model.addAttribute("view", "grammar/grammarList");
+		
+		// select db 
+		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
+		
+		model.addAttribute("grammar", grammar);
+		model.addAttribute("view", "grammar/grammarDetail");
 		return "template/layout";
 	}
 	
 	
 	
 	
-//	// localhost/grammar/grammar_list_view?languageCategoryId=KO    http://localhost/grammar/grammar_list_view?languageCategoryId=CHN#
-//	@GetMapping("/grammar_list_view")
-//	public String grammarListView(
-//			@RequestParam(value="languageCategoryId") String languageCategoryId,
-//			Model model) {
-//		
-//		// select db
-//		List<GrammarView> grammarList = grammarBO.generateGrammarList();
-//		
-//		
-//		model.addAttribute("grammarList", grammarList);
-//		model.addAttribute("view", "grammar/grammarList");
-//		return "template/layout";
-//	}
+	
+	
+	// localhost/grammar/grammar_list_view?languageCategoryId=KO    
+	@GetMapping("/grammar_list_view")
+	public String grammarListView(
+			@RequestParam(value="languageCategoryId", defaultValue="EN") String languageCategoryId,
+			Model model) {
+		
+		// select db
+		List<GrammarView> grammarList = grammarBO.generateGrammarListByLanguage(languageCategoryId);
+		
+		
+		model.addAttribute("grammarList", grammarList);
+		model.addAttribute("view", "grammar/grammarList");
+		return "template/layout";
+	}
 	
 	
 	
