@@ -32,6 +32,12 @@ public interface GrammarMapper {
 			@Param("limit") int limit);
 	
 	
+	// select
+	public int selectGrammarListByLanguageSort(
+			@Param("languageCategoryId") String languageCategoryId,
+			@Param("sort") String sort);  
+	
+	
 	// select 
 	public List<Grammar> selectGrammarList();
 	

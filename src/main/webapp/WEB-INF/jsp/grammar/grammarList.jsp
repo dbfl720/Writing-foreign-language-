@@ -192,11 +192,11 @@
 	<tbody>
 		<c:forEach items="${grammarList}" var="grammarLists">
 			<tr>
-				<td class="GrammarTableFont">${grammarLists.user.loginId}</td>
+				<td class="GrammarTableFont">${grammarLists.id}</td>
 				<td class="GrammarTableFont"><a
-					href="/grammar/grammar_detail_view?grammarId=${grammarLists.grammar.id}" class="tableFont">
-						${grammarLists.grammar.title} </a></td>
-				<td class="GrammarTableFont">${grammarLists.grammar.languageCategoryId}</td>
+					href="/grammar/grammar_detail_view?grammarId=${grammarLists.id}" class="tableFont">
+						${grammarLists.title} </a></td>
+				<td class="GrammarTableFont">${grammarLists.languageCategoryId}</td>
 			</tr>
 		</c:forEach>
 	</tbody>

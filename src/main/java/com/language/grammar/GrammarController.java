@@ -67,10 +67,31 @@ public class GrammarController {
 			@RequestParam(value="nextId", required=false) Integer nextIdParam, // 비필수
 			Model model) {
 		
+		
 		// select db
-		List<GrammarView> grammarList = grammarBO.generateGrammarListByLanguage(languageCategoryId);
+		List<Grammar> grammarList = grammarBO.getGrammarListByLanguage(languageCategoryId, prevIdParam, nextIdParam);
+		int prevId = 0;
+		int nextId = 0;
+		if (grammarList.isEmpty() == false) {  // postList가 비어있을 때 에러 방지
+			// 리스트가 비어있지 않으면 처리
+			prevId = grammarList.get(0).getId();   // 가져온 리스트의 가장 맨 앞 (큰 id)  // order by로 정렬 되어 있어서...
+			nextId = grammarList.get(grammarList.size() - 1).getId();   // 가져온 리스트의 가장 끝 값(작은 id)
+			
+			// 이전 방향의 끝인가? 
+			// prevId와 post 테이블의 가장 큰 id와 같다면 이전 페이지 없음.
+			if (grammarBO.isPrevLastPage(languageCategoryId, prevId)) {
+				prevId = 0;
+				
+			}
+			// 다음 방향의 끝인가?
+			// nextId와 post 테이블의 가장 작은 id와 같다면 다음 페이지 없음.
+			if (grammarBO.isNextLastPage(languageCategoryId, nextId)) {
+				nextId = 0;
+			}
+		}
 		
-		
+		model.addAttribute("prevId", prevId);		
+		model.addAttribute("nextId", nextId);	
 		model.addAttribute("grammarList", grammarList);
 		model.addAttribute("view", "grammar/grammarList");
 		return "template/layout";
