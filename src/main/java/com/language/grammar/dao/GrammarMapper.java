@@ -25,7 +25,11 @@ public interface GrammarMapper {
 	
 
 	// select 
-	public List<Grammar> selectGrammarListByLanguage(String languageCategoryId);
+	public List<Grammar> selectGrammarListByLanguage(
+			@Param("languageCategoryId") String languageCategoryId,
+			@Param("direction") String direction,
+			@Param("standardId") Integer standardId,
+			@Param("limit") int limit);
 	
 	
 	// select 

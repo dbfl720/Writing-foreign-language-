@@ -52,6 +52,21 @@
  			`grammar_writing`
 		WHERE
 			`languageCategoryId` = #{languageCategoryId}
+			<if test="direction == null">
+			ORDER BY `id` DESC		
+			</if>
+			<if test="direction == 'next'">
+			<![CDATA[
+			AND `id` < #{standardId}
+			]]>
+			ORDER BY `id` DESC
+			</if>
+			<if test="direction == 'prev'">
+			<![CDATA[
+			AND `id` > #{standardId}
+			]]>
+			</if>
+ 			LIMIT ${limit}   
  	</select>
  	
  	

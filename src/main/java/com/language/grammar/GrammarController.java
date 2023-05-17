@@ -63,6 +63,8 @@ public class GrammarController {
 	@GetMapping("/grammar_list_view")
 	public String grammarListView(
 			@RequestParam(value="languageCategoryId", defaultValue="EN") String languageCategoryId,
+			@RequestParam(value="prevId", required=false) Integer prevIdParam, // 비필수
+			@RequestParam(value="nextId", required=false) Integer nextIdParam, // 비필수
 			Model model) {
 		
 		// select db
