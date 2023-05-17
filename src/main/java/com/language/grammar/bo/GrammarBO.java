@@ -23,7 +23,7 @@ public class GrammarBO {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());  
 
 	
-	private static final int POST_MAX_SIZE = 3; // 페이지 수 바꿀 때 여기 숫자만 바꾸면 됨.
+	private static final int POST_MAX_SIZE = 6; // 페이지 수 바꿀 때 여기 숫자만 바꾸면 됨.
 	
 	
 	
@@ -51,7 +51,7 @@ public class GrammarBO {
 		
 	
 		String direction = null;     // 방향
-		Integer standardId = null;   // 기준 postId
+		Integer standardId = null;   // 기준 grammarId
 		if (prevId != null) { // 이전
 			direction = "prev";
 			standardId = prevId;
@@ -77,8 +77,8 @@ public class GrammarBO {
 	
 	// 이전 방향의 끝인지 확인
 	public boolean isPrevLastPage(String languageCategoryId, int prevId) {
-		int postId = grammarMapper.selectGrammarListByLanguageSort(languageCategoryId, "DESC");
-		return postId == prevId;  // 같으면 끝이고 아니면 끝 아님.    prevId ? true : false
+		int grammarId = grammarMapper.selectGrammarListByLanguageSort(languageCategoryId, "DESC");
+		return grammarId == prevId;  // 같으면 끝이고 아니면 끝 아님.    prevId ? true : false
 	}
 	
 	

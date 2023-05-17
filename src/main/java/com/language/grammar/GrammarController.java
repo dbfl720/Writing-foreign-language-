@@ -78,18 +78,20 @@ public class GrammarController {
 			nextId = grammarList.get(grammarList.size() - 1).getId();   // 가져온 리스트의 가장 끝 값(작은 id)
 			
 			// 이전 방향의 끝인가? 
-			// prevId와 post 테이블의 가장 큰 id와 같다면 이전 페이지 없음.
+			// prevId와 grammar 테이블의 가장 큰 id와 같다면 이전 페이지 없음.
 			if (grammarBO.isPrevLastPage(languageCategoryId, prevId)) {
 				prevId = 0;
 				
 			}
 			// 다음 방향의 끝인가?
-			// nextId와 post 테이블의 가장 작은 id와 같다면 다음 페이지 없음.
+			// nextId와 grammar 테이블의 가장 작은 id와 같다면 다음 페이지 없음.
 			if (grammarBO.isNextLastPage(languageCategoryId, nextId)) {
 				nextId = 0;
 			}
 		}
 		
+		
+		model.addAttribute("languageCategoryId", languageCategoryId);
 		model.addAttribute("prevId", prevId);		
 		model.addAttribute("nextId", nextId);	
 		model.addAttribute("grammarList", grammarList);

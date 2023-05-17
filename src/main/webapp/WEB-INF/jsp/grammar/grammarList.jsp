@@ -175,9 +175,9 @@
 <table class="table text-center  GrammarListTable ">
 	<thead>
 		<tr class="GrammarTableFont">
-			<th class="GrammarTableFont"><img alt="글쓴이 이모티콘" width="36"
+			<th class="GrammarTableFont"><img alt="순서 이모티콘" width="36"
 				height="36"
-				src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
+				src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-list-ol-icon.png">
 			</th>
 			<th class="GrammarTableFont"><img alt="제목 이모티콘" width="36"
 				height="36"
@@ -206,12 +206,16 @@
 
 
 <!-- 페이징 -->
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-around GrammarListPage">
 	<c:if test="${prevId ne 0}">
-		<a href="/post/post_list_view?prevId=${prevId}" class="mr-5">&lt;&lt; 이전</a> <%-- 계산안하고 서버에 넘기기. --%>
+		<a href="/grammar/grammar_list_view?prevId=${prevId}&languageCategoryId=${languageCategoryId}" class="mr-5">
+		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Arrows-Back-icon.png">
+		</a> <%-- 계산안하고 서버에 넘기기. --%>
 	</c:if>
 	<c:if test="${nextId ne 0}">
-	<a href="/post/post_list_view?nextId=${nextId}">다음 &gt;&gt;</a>
+		<a href="/grammar/grammar_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}">
+		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Arrows-Forward-icon.png">		
+		</a>
 	</c:if>
 </div>
 
@@ -222,7 +226,7 @@
 			function() {
 
 				// 배너 순회
-				let bannerList = [ "/static/img/BR.gif",
+				/* let bannerList = [ "/static/img/BR.gif",
 									"/static/img/CA.gif",
 									"/static/img/CN.gif",
 									"/static/img/DE.gif",
@@ -252,7 +256,7 @@
 						currentIndex = 0;
 					}
 
-				}, 2000); // 임명함수 , 3초 - 3000 
+				}, 2000); // 임명함수 , 3초 - 3000  */
 
 			}); // ready
 </script>
