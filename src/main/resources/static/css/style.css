@@ -24,7 +24,7 @@ header{
 section {
 	max-width: 115rem;
 	max-height:160rem;
-	/* background-color:#A9F5D0; */
+	background-color:#A9F5D0; 
 	padding-top:10rem;
 }
 
@@ -332,8 +332,8 @@ p {
 
 
 
-/* Grammar 디테일 */
-.GrammarDetailText{  margin: 1rem; width: 45rem;  height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+/* GrammarComment 왼쪽 디테일 */
+.GrammarDetailText{  margin: 1rem; width: 38rem;  height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
      background-attachment: local;
   background-image:
@@ -348,11 +348,27 @@ p {
 .GrammarModifyIcon{margin:3rem;}
 .GrammarDeleteIcon{margin:2rem;}
 .GrammarDetailTextBox2{margin-top:1rem;}
-.GrammarLeftInfo{margin-top:12rem;}
+.GrammarLeftInfo{margin-top:2.5rem;}
+
+/* GrammarCommnet 오른쪽 댓글 쓰기 */
+.GrammarDetailComment{ margin: 1rem; width: 65rem;  height:15rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding: 8px 10px;}
+.GrammarDetailComment:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;} 
+.CommentSaveIcon{margin:2rem;}
 
 
-
-
+/* GrammarComment 오른쪽 댓글 목록*/
+.commentTotlaBox222{width: 65rem; object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 6.5rem; }
+.oldContentArea{height:7rem;}
+.newContentArea{height:7rem;}
 
 /* Grammar 목록   */
 .GrammarListTable{ width: 80rem;  display: table; margin-left: auto; margin-right: auto; color:black; }

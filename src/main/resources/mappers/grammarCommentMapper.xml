@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ 
+ <mapper namespace="com.language.grammar_comment.dao.GrammarCommentMapper">
+ 	<insert id="insertGrammarComment" parameterType="map">
+ 		INSERT INTO `grammar_comment`
+ 		(
+ 			`grammarId`
+ 			,`userId`
+ 			,`oldContent`
+ 			,`newContent`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		
+ 		)
+ 		VALUES
+ 		(
+ 			#{grammarId}
+ 			,#{userId}
+ 			,#{oldContent}
+ 			,#{newContent}
+ 			,NOW()
+ 			,NOW()
+ 		)
+ 	
+ 	</insert>
+ 
+ 
+ </mapper>

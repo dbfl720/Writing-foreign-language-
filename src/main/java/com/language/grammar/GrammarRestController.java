@@ -22,8 +22,15 @@ public class GrammarRestController {
 	@Autowired
 	private GrammarBO grammarBO;
 	
-	
-	@PostMapping("create")
+	/**
+	 * Grammar 글쓰기
+	 * @param languageCategoryId
+	 * @param title
+	 * @param content
+	 * @param session
+	 * @return
+	 */
+	@PostMapping("/create")
 	public Map<String, Object> create(
 			@RequestParam("selectLanguageValue") String languageCategoryId,
 			@RequestParam("title") String title,
@@ -56,6 +63,12 @@ public class GrammarRestController {
 	
 	
 	
+	/**
+	 * Grammar 글 삭제
+	 * @param grammarId
+	 * @param session
+	 * @return
+	 */
 	 @DeleteMapping("/delete")
 	 public Map<String, Object> delete(
 			 @RequestParam("grammarId") int grammarId,
@@ -79,4 +92,9 @@ public class GrammarRestController {
 			return result;
 		 
 	 }
+	 
+	 
+	 
+	
+	 
 }

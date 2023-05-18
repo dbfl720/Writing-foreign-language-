@@ -21,7 +21,7 @@
 
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=EN"> <img alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=EN" onclick="javascript:click()"> <img  alt="국기" class="countryImg" width="50"
 						height="50" src="/static/img/US.gif">
 					</a>
 				</div>
@@ -224,9 +224,14 @@
 <script>
 	$(document).ready(
 			function() {
+				
+				// a태그 올라감 방지
+				$(".aaaa").on('click', function(e){
+					e.preventDefault();
+				});  // aaaa
 
 				// 배너 순회
-				/* let bannerList = [ "/static/img/BR.gif",
+				 let bannerList = [ "/static/img/BR.gif",
 									"/static/img/CA.gif",
 									"/static/img/CN.gif",
 									"/static/img/DE.gif",
@@ -256,7 +261,7 @@
 						currentIndex = 0;
 					}
 
-				}, 2000); // 임명함수 , 3초 - 3000  */
+				}, 2000); // 임명함수 , 3초 - 3000  
 
 			}); // ready
 </script>
