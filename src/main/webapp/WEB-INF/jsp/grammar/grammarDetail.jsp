@@ -47,17 +47,12 @@
 		</div>
 	</div>
 
+		<div class='v-line'></div>
 		
 		<!--오른쪽 댓글  -->
-		<div class="GrammarDetailTextBox">
+		<div class="GrammarDetailTextBox6666">
 		<div class="GrammarLeftInfo">
-			<div class="d-flex">
-				<img class="updateProfileIcon ml-3" alt="제목 이모티콘" width="35"
-					height="35"
-					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Science-Literature-icon.png">
-				<div class="grammarDetailFont">${grammar.title}</div>
-			</div>
-			<div class="d-flex">
+			<div class="d-flex commentLangagugeIcon">
 				<div class="d-flex">
 					<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
 						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
@@ -70,39 +65,45 @@
 						<fmt:formatDate value="${grammar.updatedAt}" pattern="dd-MM-yyyy" />
 					</div>
 				</div>
+				<div class="d-flex justify-content-end CommentSaveIcon">
+					<div class="CommentSaveIcon">
+						<a href="#" id="saveCommentIcon" data-grammar-id="${grammar.id}">
+							<img class="saveCommentIcon" alt="댓글 저장 이모티콘" width="38"
+							height="38"
+							src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-As-icon.png">
+						</a>
+					</div>
+				</div>
 			</div>
 			
 			
 			<!-- Comment -->
-			<div class="GrammarDetailTextBox2">
+			<div class="GrammarDetailTextBox999999">
 				<textarea id="oldContent" class="GrammarDetailComment"
 					placeholder="OldText"></textarea>
 					<textarea id="newContent" class="GrammarDetailComment"
 					placeholder="NewText"></textarea>
 			</div>
-		
-				<div class="d-flex justify-content-end">
-					<div class="CommentSaveIcon">
-						<a href="#" id="saveCommentIcon" data-grammar-id="${grammar.id}">
-							<img class="saveCommentIcon" alt="댓글 저장 이모티콘" width="43"
-							height="43"
-							src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/comment-text-icon.png">
-						</a>
-					</div>
-				</div>
-		
 		</div>
 		
 	<!-- 댓글 뿌리기 -->
-<c:forEach items="${grammarView}" var="grammarViews">
-	<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
-	<div class="commentTotlaBox222 border">
-		<div class="border oldContentArea">${comments.grammarComment.oldContent}</div>
-		<div class="border newContentArea">${comments.grammarComment.newContent}</div>
+	<div class="commentsBoxIcon">
+		<img  alt="댓글 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/github/octicons/128/comment-discussion-24-icon.png">
 	</div>
-	</c:forEach>
-</c:forEach>	
-	
+	<div class="commentTotalBox3333">
+		<c:forEach items="${grammarView}" var="grammarViews">
+			<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
+			<div class="commentTotlaBox222">
+				<div class="d-flex">
+				<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
+					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
+				<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div></div>
+				<div class="border-bottom oldContentArea">${comments.grammarComment.oldContent}</div>
+				<div class="newContentArea">${comments.grammarComment.newContent}</div>
+			</div>
+			</c:forEach>
+		</c:forEach>	
+	</div>
 	
 	</div> <!-- 오른쪽 댓글  -->
 </div> <!-- text 부분 -->

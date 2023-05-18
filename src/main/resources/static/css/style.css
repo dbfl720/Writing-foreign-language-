@@ -24,7 +24,7 @@ header{
 section {
 	max-width: 115rem;
 	max-height:160rem;
-	background-color:#A9F5D0; 
+	/* background-color:#A9F5D0;  */
 	padding-top:10rem;
 }
 
@@ -333,7 +333,7 @@ p {
 
 
 /* GrammarComment 왼쪽 디테일 */
-.GrammarDetailText{  margin: 1rem; width: 38rem;  height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+.GrammarDetailText{  margin-right:3rem; width: 38rem;  height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
      background-attachment: local;
   background-image:
@@ -343,15 +343,14 @@ p {
   line-height: 50px;
   padding: 8px 10px;}
 .GrammarDetailText:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-.GrammarDetailTextBox{margin-left:0.6rem;}
+.GrammarDetailTextBox{margin-left:1rem;}
 .GrammarSaveIcon{margin:3rem;}
 .GrammarModifyIcon{margin:3rem;}
 .GrammarDeleteIcon{margin:2rem;}
-.GrammarDetailTextBox2{margin-top:1rem;}
-.GrammarLeftInfo{margin-top:2.5rem;}
+
 
 /* GrammarCommnet 오른쪽 댓글 쓰기 */
-.GrammarDetailComment{ margin: 1rem; width: 65rem;  height:15rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+.GrammarDetailComment{ margin: 1rem; width: 65rem;  height:12rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
      background-attachment: local;
   background-image:
@@ -361,14 +360,20 @@ p {
   line-height: 50px;
   padding: 8px 10px;}
 .GrammarDetailComment:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;} 
-.CommentSaveIcon{margin:2rem;}
+.CommentSaveIcon{margin-left:17rem; }
 
 
 /* GrammarComment 오른쪽 댓글 목록*/
-.commentTotlaBox222{width: 65rem; object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 6.5rem; }
-.oldContentArea{height:7rem;}
-.newContentArea{height:7rem;}
+.commentTotlaBox222{ overflow: scroll; width: 60rem;  border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; /* border-color:#FF8200;  */   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
+.commentTotalBox3333{width:70rem; height:50rem; overflow: scroll;}
+.oldContentArea{ height:5rem; text-decoration: line-through; font-size: 2rem; padding-top:2.3rem;}
+.newContentArea{ height:5rem; font-size: 2rem; padding-top:2.3rem;}
+.commentsBoxIcon{ margin-top:6rem; margin-left:3rem; margin-bottom:2rem;}
+.GrammarDetailTextBox2{margin-right:3rem;}
+.commentLangagugeIcon{margin-left:2rem;}
+.GrammarDetailTextBox999999{margin-left:2rem;}
+.commentsId{font-size:2.2rem; font-weight:bold;}
 
 /* Grammar 목록   */
 .GrammarListTable{ width: 80rem;  display: table; margin-left: auto; margin-right: auto; color:black; }

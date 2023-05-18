@@ -209,12 +209,12 @@
 <div class="d-flex justify-content-around GrammarListPage">
 	<c:if test="${prevId ne 0}">
 		<a href="/grammar/grammar_list_view?prevId=${prevId}&languageCategoryId=${languageCategoryId}" class="mr-5">
-		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Arrows-Back-icon.png">
+		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
 		</a> <%-- 계산안하고 서버에 넘기기. --%>
 	</c:if>
 	<c:if test="${nextId ne 0}">
-		<a href="/grammar/grammar_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}">
-		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Arrows-Forward-icon.png">		
+		<a href="/grammar/grammar_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}"> 
+		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
 		</a>
 	</c:if>
 </div>
@@ -230,6 +230,8 @@
 					e.preventDefault();
 				});  // aaaa
 
+				
+				
 				// 배너 순회
 				 let bannerList = [ "/static/img/BR.gif",
 									"/static/img/CA.gif",
