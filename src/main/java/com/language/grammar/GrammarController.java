@@ -45,10 +45,11 @@ public class GrammarController {
 			Model model) {
 		
 		
-		
 		// select db 
 		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
+		List<GrammarView> grammarView = grammarBO.generateGrammarList(grammarId);
 		
+		model.addAttribute("grammarView", grammarView);
 		model.addAttribute("grammar", grammar);
 		model.addAttribute("view", "grammar/grammarDetail");
 		return "template/layout";

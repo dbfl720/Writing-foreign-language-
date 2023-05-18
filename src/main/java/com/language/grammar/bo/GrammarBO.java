@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import com.language.grammar.dao.GrammarMapper;
 import com.language.grammar.model.Grammar;
 import com.language.grammar.model.GrammarView;
+import com.language.grammar_comment.bo.GrammarCommentBO;
+import com.language.grammar_comment.model.GrammarCommentView;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -33,6 +35,9 @@ public class GrammarBO {
 	@Autowired
 	private UserBO userBO;
 	
+	@Autowired
+	private GrammarCommentBO grammarCommentBO;
+	
 	
 	
 	
@@ -46,7 +51,7 @@ public class GrammarBO {
 	
 	
 	
-	// select - grammar 글들 - 글쓴이(loginId)를 알기 위해. 
+	// select 
 	public List<Grammar> getGrammarListByLanguage(String languageCategoryId, Integer prevId, Integer nextId) {
 		
 	
@@ -94,13 +99,13 @@ public class GrammarBO {
 	
 	
 	
-	// select - grammar 글들 - 글쓴이(loginId)를 알기 위해. 
-	public List<GrammarView> generateGrammarList() {
+	// select 
+	public List<GrammarView> generateGrammarList(int grammarId) {
 		
 		// 결과 리스트
 		List<GrammarView> grammarViewList = new ArrayList<>(); // ** breakpoint
 		
-		// Grammar 글들
+		// Grammar 글
 		List<Grammar> grammarList = grammarMapper.selectGrammarList();
 		
 		// Grammar => GrammarView 담기.
@@ -113,11 +118,15 @@ public class GrammarBO {
 			// 그래머 글 하나
 			grammarView.setGrammar(grammar);
 			
-			// 글쓴이 (loginId) 
+			// 글쓴이 정보
 			User user = userBO.getUserById(grammar.getUserId());
 			grammarView.setUser(user);
+
+			// 댓글들
+			List<GrammarCommentView> grammarCommentList = grammarCommentBO.generateGrammarCommentList(grammar.getId());
+			grammarView.setGrammarCommentViewList(grammarCommentList);
 			
-			// 리스트 채우기
+			// 결과 담기
 			grammarViewList.add(grammarView);
 		}
 		
@@ -132,6 +141,8 @@ public class GrammarBO {
 	public Grammar getGrammarByGrammarId (int grammarId) {
 		return grammarMapper.selectGrammarByGrammarId(grammarId);
 	}
+	
+
 	
 	
 	

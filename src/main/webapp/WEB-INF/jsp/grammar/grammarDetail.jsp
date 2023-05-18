@@ -94,11 +94,14 @@
 		</div>
 		
 	<!-- 댓글 뿌리기 -->
+<c:forEach items="${grammarView}" var="grammarViews">
+	<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
 	<div class="commentTotlaBox222 border">
-		<div class="border oldContentArea">sdfd</div>
-		<div class="border newContentArea">sdfsdsdfs</div>
+		<div class="border oldContentArea">${comments.grammarComment.oldContent}</div>
+		<div class="border newContentArea">${comments.grammarComment.newContent}</div>
 	</div>
-	
+	</c:forEach>
+</c:forEach>	
 	
 	
 	</div> <!-- 오른쪽 댓글  -->

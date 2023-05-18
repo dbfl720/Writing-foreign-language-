@@ -28,4 +28,19 @@
  	</insert>
  
  
+ 	<select id="selectGrammarCommentListByGrammarId" parameterType="int" resultType="com.language.grammar_comment.model.GrammarComment">
+ 		SELECT
+ 			`id`
+ 			,`grammarId`
+ 			,`userId`
+ 			,`oldContent`
+ 			,`newContent`
+ 			,`createdAt`
+ 			,`updatedAt`
+		FROM
+			`grammar_comment`
+		WHERE
+			`grammarId` = #{grammarId}
+ 	</select>
+ 
  </mapper>
