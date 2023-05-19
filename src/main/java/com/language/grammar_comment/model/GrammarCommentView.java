@@ -12,5 +12,12 @@ public class GrammarCommentView {
 
 	private GrammarComment grammarComment;
 	
+	
 	private User user;
+	
+	// 좋아요 개수
+	private int likeCount;
+	
+	// 내가 좋아요 한지 여부 boolean
+	private boolean filledLike; // 기본값 false 
 }

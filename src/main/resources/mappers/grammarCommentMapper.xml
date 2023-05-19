@@ -41,6 +41,7 @@
 			`grammar_comment`
 		WHERE
 			`grammarId` = #{grammarId}
+		ORDER BY `id` DESC
  	</select>
  
  </mapper>

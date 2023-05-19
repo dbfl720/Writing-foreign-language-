@@ -25,7 +25,6 @@ public class GrammarController {
 	
 	
 	
-	
 	// localhost/grammar/grammar_writing_view
 	@GetMapping("/grammar_writing_view")
 	public String grammarWritingView(Model model) {
@@ -44,10 +43,13 @@ public class GrammarController {
 			@RequestParam(value="grammarId") int grammarId,
 			Model model) {
 		
+
+		
 		
 		// select db 
 		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
 		List<GrammarView> grammarView = grammarBO.generateGrammarList(grammarId);
+		
 		
 		model.addAttribute("grammarView", grammarView);
 		model.addAttribute("grammar", grammar);

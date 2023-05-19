@@ -367,7 +367,7 @@ p {
 .commentTotlaBox222{ overflow: scroll; width: 60rem;  border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:40px 40px 40px 40px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; /* border-color:#FF8200;  */   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
 .commentTotalBox3333{width:70rem; height:50rem; overflow: scroll;}
-.oldContentArea{ height:5rem; text-decoration: line-through;  text-decoration-color: red; font-size: 2rem; padding-top:0.6rem;}
+.oldContentArea{ height:5rem; text-decoration: line-through underline; text-decoration-color: red; font-size: 2rem; padding-top:0.6rem;}
 .grammarOldContentText{font-size:2.3rem; margin:1rem; }
 .newContentArea{ height:5rem; font-size: 2rem; padding-top:0.8rem;}
 .commentsBoxIcon{ margin-top:6rem; margin-left:3rem; margin-bottom:2rem;}

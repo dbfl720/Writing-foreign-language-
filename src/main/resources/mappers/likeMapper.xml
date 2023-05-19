@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ 
+ <mapper namespace="com.language.grammar_like.dao.GrammarLikeMapper">
+ 	<insert id="insertLike" parameterType="map">
+ 		INSERT INTO `grammar_like`
+ 		(
+ 			`commentId`
+ 			,`userId`
+ 			,`createdAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{commentId}
+ 			,#{userId}
+ 			,NOW()
+ 		)
+ 	</insert>
+ 	
+ 	
+ 	<select id="selectLikeCountByCommentIdOrUserId" parameterType="map" resultType="int">
+ 		SELECT
+ 			COUNT(*)
+		FROM
+			`grammar_like`
+		WHERE
+			`commentId` = #{commentId}
+			<if test="userId != null">
+			AND `userId` = #{userId}
+			</if>
+ 	</select>
+ 	
+ 	
+ 	<delete id="deleteLikeByUserIdCommentId" parameterType="int">
+ 		DELETE
+ 		FROM
+ 			`grammar_like`
+		WHERE
+			`commentId` = #{commentId}
+			AND `userId` = #{userId}
+ 	
+ 	</delete>
+ 
+ </mapper>

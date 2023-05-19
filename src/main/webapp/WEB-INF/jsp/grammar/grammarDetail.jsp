@@ -92,43 +92,53 @@
 	</div>
 	<div class="commentTotalBox3333">
 		<c:forEach items="${grammarView}" var="grammarViews">
+		<!-- 여기다가 if문 만들어서 댓글 확인 -->
 			<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
-			<c:choose>
-			<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
-			<div class="commentTotlaBox222">
-				<div class="d-flex">
-				<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
-					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
-				<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div></div>
-				<div class="border-bottom oldContentArea d-flex">
-				<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
-					src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
-				<div class="grammarOldContentText">${comments.grammarComment.oldContent}</div></div>
-				<div class="newContentArea d-flex">
-				<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
-					src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
-				<div class="grammarOldContentText">${comments.grammarComment.newContent}</div></div>
-			</div>
-			</c:when>
-			</c:choose>
+				<c:choose>
+					<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
+					<div class="commentTotlaBox222">
+					<!-- 댓글쓴이, 좋아요  -->
+						<div class="d-flex justify-content-between	">
+							<div class="d-flex"><img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
+								src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
+							<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div></div>
+							<!-- 좋아요 하트 -->
+							<c:if test="">
+							<a href="#" class="like-btn" data-comment-id="${comments.grammarComment.id}"><img class="languageMark ml-3" alt="하트 이모티콘" width="35" height="35"
+								src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
+							</c:if>
+							<!-- 좋아요 끝 -->
+						</div>
+						<div class="border-bottom oldContentArea d-flex">
+						<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
+							src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
+						<div class="grammarOldContentText">${comments.grammarComment.oldContent}</div></div>
+						<div class="newContentArea d-flex">
+						<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
+							src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
+						<div class="grammarOldContentText">${comments.grammarComment.newContent}</div></div>
+					</div>
+					</c:when>
+					<!--댓글 없을 시  -->
+					<c:when test="${empty comments.grammarComment.id}">
+						<div class="commentTotlaBox222">
+							<div class="d-flex">
+							<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
+								src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
+							<div class="commentsId mt-4 ml-2"></div></div>
+							<div class="border-bottom oldContentArea d-flex">
+							<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
+								src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
+							<div class="grammarOldContentText"></div></div>
+							<div class="newContentArea d-flex">
+							<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
+								src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
+							<div class="grammarOldContentText"></div></div>
+						</div>
+					</c:when>
+				</c:choose>
 			</c:forEach>
 		</c:forEach>
-			<%-- <c:otherwise>
-			<div class="commentTotlaBox222">
-				<div class="d-flex">
-				<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
-					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
-				<div class="commentsId mt-4 ml-2"></div></div>
-				<div class="border-bottom oldContentArea d-flex">
-				<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
-					src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
-				<div class="grammarOldContentText"></div></div>
-				<div class="newContentArea d-flex">
-				<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
-					src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
-				<div class="grammarOldContentText"></div></div>
-			</div>
-			</c:otherwise> --%>
 				
 	</div>
 	
@@ -214,8 +224,8 @@
 		 		// response
 	 		 	,success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
 					if (data.code = 1) {
-						swal("Your comment is saved.");
 						location.reload(true);
+						swal(data.code);
 					} else {
 						swal(data.errorMessage);
 					}
@@ -226,6 +236,44 @@
 				
 		 	}); // ajax 
 		}); // saveCommentIcon
+		
+		
+		
+		
+		
+		
+		// 좋아요 / 해제
+		$('.like-btn').on('click', function(e) {
+			e.preventDefault();  // 올라감 방지
+			
+			let commentId = $(this).data("comment-id");
+			//alert(commentId);
+			
+			
+			$.ajax({
+				// request
+				url:"/like/" + commentId    // /comment/13
+				
+				// response
+				, success : function(data) {
+					if (data.code == 1) {
+						location.reload();
+					} else if (data.code == 300){
+						swal(data.errorMessage);
+						// 비로그인 시 로그인 페이지로 이동
+						location.href="/user/sign_up_view";
+					}
+				},
+				error : function(request, status, error) {
+					swal("Failed to save your like. Please contact the administrator.");
+				}
+			
+			}); // ajax
+			
+			
+		});  // like-btn
+		
+		
 
 	}); // ready
 </script>

@@ -14,6 +14,7 @@ import com.language.grammar.model.Grammar;
 import com.language.grammar.model.GrammarView;
 import com.language.grammar_comment.bo.GrammarCommentBO;
 import com.language.grammar_comment.model.GrammarCommentView;
+import com.language.grammar_like.bo.GrammarLikeBO;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -37,6 +38,7 @@ public class GrammarBO {
 	
 	@Autowired
 	private GrammarCommentBO grammarCommentBO;
+	
 	
 	
 	
@@ -105,6 +107,8 @@ public class GrammarBO {
 		// 결과 리스트
 		List<GrammarView> grammarViewList = new ArrayList<>(); // ** breakpoint
 		
+		
+		
 		// Grammar 글
 		List<Grammar> grammarList = grammarMapper.selectGrammarList();
 		
@@ -126,6 +130,8 @@ public class GrammarBO {
 			List<GrammarCommentView> grammarCommentList = grammarCommentBO.generateGrammarCommentList(grammarId);  // 오류 - grammar.getId()
 			grammarView.setGrammarCommentViewList(grammarCommentList);
 			
+			
+			
 			// 결과 담기
 			grammarViewList.add(grammarView);
 		}
@@ -143,6 +149,9 @@ public class GrammarBO {
 	}
 	
 
+	
+	
+	
 	
 	
 	

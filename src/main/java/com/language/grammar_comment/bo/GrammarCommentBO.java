@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.language.grammar_comment.dao.GrammarCommentMapper;
 import com.language.grammar_comment.model.GrammarComment;
 import com.language.grammar_comment.model.GrammarCommentView;
+import com.language.grammar_like.bo.GrammarLikeBO;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -22,6 +23,8 @@ public class GrammarCommentBO {
 	@Autowired
 	private UserBO userBO;
 	
+	@Autowired
+	private GrammarLikeBO grammarLikeBO;
 	
 	
 	// insert
@@ -59,6 +62,8 @@ public class GrammarCommentBO {
 			User user = userBO.getUserById(grammarComment.getUserId());
 			grammarCommentView.setUser(user);
 			
+			// 좋아요 눌렀는지 여부
+			grammarCommentView.setFilledLike(false);
 			
 			// 결과 담기
 			grammarCommentViewList.add(grammarCommentView);
@@ -67,4 +72,9 @@ public class GrammarCommentBO {
 		
 		return grammarCommentViewList;
 	}
+	
+	
+	
+	// select
+	
 }
