@@ -93,16 +93,43 @@
 	<div class="commentTotalBox3333">
 		<c:forEach items="${grammarView}" var="grammarViews">
 			<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
+			<c:choose>
+			<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
 			<div class="commentTotlaBox222">
 				<div class="d-flex">
 				<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
 					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
 				<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div></div>
-				<div class="border-bottom oldContentArea">${comments.grammarComment.oldContent}</div>
-				<div class="newContentArea">${comments.grammarComment.newContent}</div>
+				<div class="border-bottom oldContentArea d-flex">
+				<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
+					src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
+				<div class="grammarOldContentText">${comments.grammarComment.oldContent}</div></div>
+				<div class="newContentArea d-flex">
+				<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
+					src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
+				<div class="grammarOldContentText">${comments.grammarComment.newContent}</div></div>
 			</div>
+			</c:when>
+			</c:choose>
 			</c:forEach>
-		</c:forEach>	
+		</c:forEach>
+			<%-- <c:otherwise>
+			<div class="commentTotlaBox222">
+				<div class="d-flex">
+				<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
+					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
+				<div class="commentsId mt-4 ml-2"></div></div>
+				<div class="border-bottom oldContentArea d-flex">
+				<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
+					src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
+				<div class="grammarOldContentText"></div></div>
+				<div class="newContentArea d-flex">
+				<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
+					src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
+				<div class="grammarOldContentText"></div></div>
+			</div>
+			</c:otherwise> --%>
+				
 	</div>
 	
 	</div> <!-- 오른쪽 댓글  -->
