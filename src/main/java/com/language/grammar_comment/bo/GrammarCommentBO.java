@@ -41,7 +41,7 @@ public class GrammarCommentBO {
 	
 	// select
 	// 댓글쓴이를 알기 위해서 
-	public List<GrammarCommentView> generateGrammarCommentList(int grammarId, Integer userId) {
+	public List<GrammarCommentView> generateGrammarCommentList( int grammarId, Integer userId) {
 		
 		// 결과 리스트
 		List<GrammarCommentView> grammarCommentViewList = new ArrayList<>();
@@ -80,5 +80,9 @@ public class GrammarCommentBO {
 	
 	
 	// select
+	public List<GrammarComment> getGrammarCommentList (Integer commentId) {
+		
+		return grammarCommentMapper.selectGrammarCommentListByCommentId(commentId);
+	}
 	
 }

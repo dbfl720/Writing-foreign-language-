@@ -100,8 +100,12 @@
 												src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
 											<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div>
 										</div>
+											<!-- Modal 더보기  -->
+											 <a href="#" class="more-btn " data-toggle="modal" data-target="#modal" data-comment-id="${comments.grammarComment.id}"> 
+											<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30">
+											</a> 
+										
 										<!-- 좋아요 빈하트(안눌러 졌을 때) -->
-								
 											<c:if test="${comments.filledLike == false}">
 												<a href="#" class="like-btn"
 													data-comment-id="${comments.grammarComment.id}"><img
@@ -182,15 +186,44 @@
 
 
 
+
+<!-- Modal -->
+ <c:forEach items="${grammarView}" var="grammarViews">
+	<c:if test="${not empty grammarCommentView}">
+		<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
+			<c:choose>
+				<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
+					<div class="modal fade" id="modal">
+						<!-- modal-dialog-centered : 모달 창을 수직 가운데 정렬
+						modal-sm: small 모달 -->
+						<div class="modal-dialog modal-dialog-centered modal-xl">
+							<div class="modal-content text-center">
+								<div class="py-3 border-bottom">
+									<a href="#" id="deletePostBtn" class="text-dark">${comments.grammarComment.newContent}</a>
+								</div>
+								<div class="py-3">
+									<!-- data-dismiss="modal" => 모달창 닫힘 -->
+									<a href="#" data-dismiss="modal" class="text-dark">Close</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+	</c:if>
+</c:forEach>  
+
+
+
+
 <script>
 	$(document).ready(function() {
 						// 삭제 버튼 클릭
-						$('#deleteGrammarBtn')
-								.on('click',function() {
+						$('#deleteGrammarBtn').on('click',function() {
 											//alert("dd");
 
-											let grammarId = $(this).data(
-													'grammar-id');
+											let grammarId = $(this).data('grammar-id');
 
 											$.ajax({
 														type : "DELETE",
@@ -206,28 +239,24 @@
 																swal(data.errorMessage);
 															}
 														},
-														error : function(
-																request,
-																status, error) {
+														error : function(request, status, error) {
 															swal("Failed to save information. Please contact the administrator.");
 														}
 
 													}); // ajax
 										}); // deleteGrammarBtn
+										
+										
+										
 
 						// 댓글 쓰기
-						$('#saveCommentIcon')
-								.on(
-										'click',
-										function(e) {
+						$('#saveCommentIcon').on('click',function(e) {
 											e.preventDefault(); // a태그 올라감 방지
 
 											let grammarId = $(this).data(
 													"grammar-id");
-											let oldContent = $("#oldContent")
-													.val();
-											let newContent = $("#newContent")
-													.val();
+											let oldContent = $("#oldContent").val();
+											let newContent = $("#newContent").val();
 
 											// validation
 											if (!oldContent) {
@@ -241,8 +270,7 @@
 											}
 
 											// ajax
-											$
-													.ajax({
+											$.ajax({
 														// request
 														type : "POST",
 														url : "/grammar_comment/create",
@@ -256,56 +284,98 @@
 														,
 														success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
 															if (data.code = 1) {
-																location
-																		.reload(true);
+																location.reload(true);
 																swal(data.code);
 															} else {
 																swal(data.errorMessage);
 															}
 														},
-														error : function(
-																request,
-																status, error) {
+														error : function(request, status, error) {
 															swal("Failed to save information. Please contact the administrator.");
 														}
 
 													}); // ajax 
 										}); // saveCommentIcon
 
+										
+										
+										
+										
 						// 좋아요 / 해제
 						$('.like-btn').on('click',function(e) {
 											e.preventDefault(); // 올라감 방지
 
-											let commentId = $(this).data(
-													"comment-id");
+											let commentId = $(this).data("comment-id");
 											//alert(commentId);
 
 											$.ajax({
 														// request
-														url : "/like/"
-																+ commentId // /comment/13
+														url : "/like/" + commentId // /comment/13
 
 														// response
 														,
 														success : function(data) {
 															if (data.code == 1) {
-																location
-																		.reload();
+																location.reload();
 															} else if (data.code == 300) {
 																swal(data.errorMessage);
 																// 비로그인 시 로그인 페이지로 이동
 																location.href = "/user/sign_up_view";
 															}
 														},
-														error : function(
-																request,
-																status, error) {
+														error : function(request, status, error) {
 															swal("Failed to save your like. Please contact the administrator.");
 														}
 
-													}); // ajax
+												}); // ajax
 
-										}); // like-btn
+							}); // like-btn
+							
+							
+							
+							
+							
+							
+							
+							// Modal - 더보기 
+							$('.more-btn').on('click', function(e) {
+								e.preventDefault();
+								
+								let commentId = $(this).data('comment-id');
+								//alert(commentId);
+								
+								//$('#modal').data('comment-id', commentId);     // setting -  modal태그에 세팅한 것임. 내부적으로 commentId심어져있음 
+								
+								
+								
+								
+								// ajax
+								$.ajax({
+									// request
+									type: "GET"
+									,url : "/grammar/grammar_detail_view"
+									,data : {
+										"commentId" : commentId
+									}
+									
+									
+									// response
+									,
+									success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
+										if (data.code = 1) {
+											swal(data.result);
+										} else {
+											swal(data.errorMessage);
+										}
+									},
+									error : function(request, status, error) {
+										swal("Failed to save information. Please contact the administrator.");
+									}
+									
+								}); // ajax
+								
+								
+							}); // more-btn
 
 					}); // ready
 </script>

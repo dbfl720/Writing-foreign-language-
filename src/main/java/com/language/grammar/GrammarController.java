@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,6 +16,7 @@ import com.language.grammar.bo.GrammarBO;
 import com.language.grammar.model.Grammar;
 import com.language.grammar.model.GrammarView;
 import com.language.grammar_comment.bo.GrammarCommentBO;
+import com.language.grammar_comment.model.GrammarComment;
 import com.language.grammar_comment.model.GrammarCommentView;
 
 @RequestMapping("/grammar")
@@ -46,6 +48,7 @@ public class GrammarController {
 	@GetMapping("/grammar_detail_view")
 	public String grammarDetailView(
 			@RequestParam(value="grammarId") int grammarId,
+			@RequestParam(value="commentId",required=false) Integer commentId,  // 비필수
 			HttpSession session,
 			Model model) {
 		
@@ -57,8 +60,9 @@ public class GrammarController {
 		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
 		List<GrammarView> grammarView = grammarBO.generateGrammarList(grammarId, userId);
 		List<GrammarCommentView> grammarCommentView = grammarCommentBO.generateGrammarCommentList(grammarId, userId);
+		List<GrammarComment> grammarCommentList = grammarCommentBO.getGrammarCommentList(commentId);
 		
-		
+		model.addAttribute("grammarCommentList", grammarCommentList);
 		model.addAttribute("grammarCommentView", grammarCommentView);
 		model.addAttribute("grammarView", grammarView);
 		model.addAttribute("grammar", grammar);

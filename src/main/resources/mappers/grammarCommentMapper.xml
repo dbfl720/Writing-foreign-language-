@@ -43,5 +43,24 @@
 			`grammarId` = #{grammarId}
 		ORDER BY `id` DESC
  	</select>
+ 	
+ 	
+
+
+	<select id="selectGrammarCommentListByCommentId" parameterType="Integer" resultType="com.language.grammar_comment.model.GrammarComment">
+ 		SELECT
+ 			`id`
+ 			,`grammarId`
+ 			,`userId`
+ 			,`oldContent`
+ 			,`newContent`
+ 			,`createdAt`
+ 			,`updatedAt`
+		FROM
+			`grammar_comment`
+		WHERE
+			`id` = #{commentId}
+	
+ 	</select>
  
  </mapper>

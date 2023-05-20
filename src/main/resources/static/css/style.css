@@ -370,7 +370,7 @@ p {
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; /* border-color:#FF8200;  */   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
 .commentTotalBox3333{width:70rem; height:50rem; overflow: scroll;}
 .oldContentArea{ height:5rem; text-decoration: line-through; text-decoration-color: red; text-decoration-thickness: 0.25rem; font-size: 2rem; padding-top:0.6rem;}
-.grammarOldContentText{ overflow-x: hidden; font-size:1.7rem; margin:1rem; }
+.grammarOldContentText{ /* overflow-x: hidden; */ font-size:1.7rem; margin:1rem; }
 .newContentArea{ height:5rem; font-size: 2rem; padding-top:0.8rem;}
 .commentsBoxIcon{ margin-top:10rem; margin-left:3rem; margin-bottom:2rem;}
 .GrammarDetailTextBox2{margin-right:3rem;}

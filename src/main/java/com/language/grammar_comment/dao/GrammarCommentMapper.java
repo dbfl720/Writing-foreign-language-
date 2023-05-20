@@ -20,5 +20,10 @@ public interface GrammarCommentMapper {
 	
 	// select
 	public List<GrammarComment> selectGrammarCommentListByGrammarId(int grammarId);
+	
+	
+	// select
+	public List<GrammarComment> selectGrammarCommentListByCommentId (Integer commentId);
+	
 }
 
