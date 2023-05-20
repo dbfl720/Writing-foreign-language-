@@ -41,7 +41,7 @@ public class GrammarCommentBO {
 	
 	// select
 	// 댓글쓴이를 알기 위해서 
-	public List<GrammarCommentView> generateGrammarCommentList(int grammarId) {
+	public List<GrammarCommentView> generateGrammarCommentList(int grammarId, Integer userId) {
 		
 		// 결과 리스트
 		List<GrammarCommentView> grammarCommentViewList = new ArrayList<>();
@@ -63,7 +63,11 @@ public class GrammarCommentBO {
 			grammarCommentView.setUser(user);
 			
 			// 좋아요 눌렀는지 여부
-			grammarCommentView.setFilledLike(false);
+			grammarCommentView.setFilledLike(grammarLikeBO.existLike(grammarComment.getId(), userId));
+			
+			// 좋아요 개수
+			grammarCommentView.setLikeCount(grammarComment.getId());
+			
 			
 			// 결과 담기
 			grammarCommentViewList.add(grammarCommentView);

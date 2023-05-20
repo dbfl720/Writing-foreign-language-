@@ -127,7 +127,7 @@ public class GrammarBO {
 			grammarView.setUser(user);
 
 			// 댓글들
-			List<GrammarCommentView> grammarCommentList = grammarCommentBO.generateGrammarCommentList(grammarId);  // 오류 - grammar.getId()
+			List<GrammarCommentView> grammarCommentList = grammarCommentBO.generateGrammarCommentList(grammarId, null);  // 오류 - grammar.getId()
 			grammarView.setGrammarCommentViewList(grammarCommentList);
 			
 			

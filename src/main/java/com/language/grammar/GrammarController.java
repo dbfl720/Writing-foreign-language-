@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.language.grammar.bo.GrammarBO;
 import com.language.grammar.model.Grammar;
 import com.language.grammar.model.GrammarView;
+import com.language.grammar_comment.bo.GrammarCommentBO;
+import com.language.grammar_comment.model.GrammarCommentView;
 
 @RequestMapping("/grammar")
 @Controller
@@ -22,6 +24,9 @@ public class GrammarController {
 	
 	@Autowired
 	private GrammarBO grammarBO;
+	
+	@Autowired
+	private GrammarCommentBO grammarCommentBO;
 	
 	
 	
@@ -41,16 +46,20 @@ public class GrammarController {
 	@GetMapping("/grammar_detail_view")
 	public String grammarDetailView(
 			@RequestParam(value="grammarId") int grammarId,
+			HttpSession session,
 			Model model) {
 		
-
+		// session
+		Integer userId = (Integer)session.getAttribute("userId");
 		
 		
 		// select db 
 		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
 		List<GrammarView> grammarView = grammarBO.generateGrammarList(grammarId);
+		List<GrammarCommentView> grammarCommentView = grammarCommentBO.generateGrammarCommentList(grammarId, userId);
 		
 		
+		model.addAttribute("grammarCommentView", grammarCommentView);
 		model.addAttribute("grammarView", grammarView);
 		model.addAttribute("grammar", grammar);
 		model.addAttribute("view", "grammar/grammarDetail");

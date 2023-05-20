@@ -47,10 +47,10 @@
 		</div>
 	</div>
 
-		<div class='v-line'></div>
-		
-		<!--오른쪽 댓글  -->
-		<div class="GrammarDetailTextBox6666">
+	<div class='v-line'></div>
+
+	<!--오른쪽 댓글  -->
+	<div class="GrammarDetailTextBox6666">
 		<div class="GrammarLeftInfo">
 			<div class="d-flex commentLangagugeIcon">
 				<div class="d-flex">
@@ -75,205 +75,255 @@
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 			<!-- Comment -->
 			<div class="GrammarDetailTextBox999999">
 				<textarea id="oldContent" class="GrammarDetailComment"
 					placeholder="OldText"></textarea>
-					<textarea id="newContent" class="GrammarDetailComment"
+				<textarea id="newContent" class="GrammarDetailComment"
 					placeholder="NewText"></textarea>
 			</div>
 		</div>
-		
-	<!-- 댓글 뿌리기 -->
-	<div class="commentsBoxIcon">
-		<img  alt="댓글 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/github/octicons/128/comment-discussion-24-icon.png">
-	</div>
-	<div class="commentTotalBox3333">
-		<c:forEach items="${grammarView}" var="grammarViews">
-		<!-- 여기다가 if문 만들어서 댓글 확인 -->
-			<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
-				<c:choose>
-					<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
-					<div class="commentTotlaBox222">
-					<!-- 댓글쓴이, 좋아요  -->
-						<div class="d-flex justify-content-between	">
-							<div class="d-flex"><img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
-								src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
-							<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div></div>
-							<!-- 좋아요 하트 -->
-							<c:if test="">
-							<a href="#" class="like-btn" data-comment-id="${comments.grammarComment.id}"><img class="languageMark ml-3" alt="하트 이모티콘" width="35" height="35"
-								src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
-							</c:if>
-							<!-- 좋아요 끝 -->
-						</div>
-						<div class="border-bottom oldContentArea d-flex">
-						<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
-							src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
-						<div class="grammarOldContentText">${comments.grammarComment.oldContent}</div></div>
-						<div class="newContentArea d-flex">
-						<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
-							src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
-						<div class="grammarOldContentText">${comments.grammarComment.newContent}</div></div>
-					</div>
-					</c:when>
-					<!--댓글 없을 시  -->
-					<c:when test="${empty comments.grammarComment.id}">
-						<div class="commentTotlaBox222">
-							<div class="d-flex">
-							<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
-								src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
-							<div class="commentsId mt-4 ml-2"></div></div>
-							<div class="border-bottom oldContentArea d-flex">
-							<div><img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘" width="30" height="30"
-								src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png"></div>
-							<div class="grammarOldContentText"></div></div>
-							<div class="newContentArea d-flex">
-							<div><img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30" height="30"
-								src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png"></div>
-							<div class="grammarOldContentText"></div></div>
-						</div>
-					</c:when>
-				</c:choose>
+
+		<!-- 댓글 뿌리기 -->
+		<div class="commentsBoxIcon">
+			<img alt="댓글 이모티콘" width="55" height="55"
+				src="https://icons.iconarchive.com/icons/github/octicons/128/comment-discussion-24-icon.png">
+		</div>
+		<div class="commentTotalBox3333">
+			<c:forEach items="${grammarView}" var="grammarViews">
+				<!-- 여기다가 if문 만들어서 댓글 확인 -->
+				<c:if test="${not empty grammarCommentView}">
+					<c:forEach items="${grammarViews.grammarCommentViewList}"
+						var="comments">
+						<c:choose>
+							<c:when
+								test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
+								<div class="commentTotlaBox222">
+									<!-- 댓글쓴이, 좋아요  -->
+									<div class="d-flex justify-content-between	">
+										<div class="d-flex">
+											<img class="languageMark ml-3" alt="언어 이모티콘" width="35"
+												height="35"
+												src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
+											<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div>
+										</div>
+										<!-- 좋아요 빈하트(안눌러 졌을 때) -->
+										<c:forEach items="${grammarCommentView}" var="commentViews">
+											<c:if test="${commentViews.filledLike == false}">
+												<a href="#" class="like-btn"
+													data-comment-id="${comments.grammarComment.id}"><img
+													class="languageMark ml-3" alt="하트 이모티콘" width="35"
+													height="35"
+													src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
+											</c:if>
+											<!-- 좋아요 채워진 하트(눌러 졌을 때) -->
+											<c:if test="${commentViews.filledLike == true}">
+												<a href="#" class="like-btn"
+													data-comment-id="${comments.grammarComment.id}"><img
+													class="languageMark ml-3" alt="하트 이모티콘" width="35"
+													height="35"
+													src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png"></a>
+											</c:if>
+										</c:forEach>
+										<!-- 좋아요 끝 -->
+									</div>
+									<div class="border-bottom oldContentArea d-flex">
+										<div>
+											<img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘"
+												width="30" height="30"
+												src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png">
+										</div>
+										<div class="grammarOldContentText">${comments.grammarComment.oldContent}</div>
+									</div>
+									<div class="newContentArea d-flex">
+										<div>
+											<img class="languageMark ml-3 mb-2" alt="checked 이모티콘"
+												width="30" height="30"
+												src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png">
+										</div>
+										<div class="grammarOldContentText">${comments.grammarComment.newContent}</div>
+									</div>
+								</div>
+							</c:when>
+						</c:choose>
+					</c:forEach>
+				</c:if>
+
 			</c:forEach>
-		</c:forEach>
-				
+			<c:if test="${empty grammarCommentView}">
+				<div class="commentTotlaBox222">
+					<!-- 댓글쓴이, 좋아요  -->
+					<div class="d-flex justify-content-between	">
+						<div class="d-flex">
+							<img class="languageMark ml-3" alt="언어 이모티콘" width="35"
+								height="35"
+								src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
+							<div class="commentsId mt-4 ml-2"></div>
+						</div>
+					</div>
+					<div class="border-bottom oldContentArea d-flex">
+						<div>
+							<img class="languageMark ml-3 mb-2" alt="unchecked 이모티콘"
+								width="30" height="30"
+								src="https://icons.iconarchive.com/icons/icons8/windows-8/128/User-Interface-Unchecked-Checkbox-icon.png">
+						</div>
+						<div class="grammarOldContentText"></div>
+					</div>
+					<div class="newContentArea d-flex">
+						<div>
+							<img class="languageMark ml-3 mb-2" alt="checked 이모티콘" width="30"
+								height="30"
+								src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png">
+						</div>
+						<div class="grammarOldContentText"></div>
+					</div>
+				</div>
+			</c:if>
+		</div>
 	</div>
-	
-	</div> <!-- 오른쪽 댓글  -->
-</div> <!-- text 부분 -->
+	<!-- 오른쪽 댓글  -->
+</div>
+<!-- text 부분 -->
 
 
 
 
 
 <script>
-	$(document).ready( function() {
-		// 삭제 버튼 클릭
-		$('#deleteGrammarBtn').on('click', function() {
-							//alert("dd");
+	$(document)
+			.ready(
+					function() {
+						// 삭제 버튼 클릭
+						$('#deleteGrammarBtn')
+								.on(
+										'click',
+										function() {
+											//alert("dd");
 
-							let grammarId = $(this).data('grammar-id');
+											let grammarId = $(this).data(
+													'grammar-id');
 
-							$.ajax({
-									type : "DELETE",
-									url : "/grammar/delete",
-									data : {
-										"grammarId" : grammarId
-									},
-									success : function(data) {
-										if (data.code == 1) {
-											swal("The post is deleted.");
-											location.href = "/grammar/grammar_list_view";
-										} else {
-											swal(data.errorMessage);
-										}
-									},
-									error : function(
-											request,
-											status, error) {
-										swal("Failed to save information. Please contact the administrator.");
-									}
+											$
+													.ajax({
+														type : "DELETE",
+														url : "/grammar/delete",
+														data : {
+															"grammarId" : grammarId
+														},
+														success : function(data) {
+															if (data.code == 1) {
+																swal("The post is deleted.");
+																location.href = "/grammar/grammar_list_view";
+															} else {
+																swal(data.errorMessage);
+															}
+														},
+														error : function(
+																request,
+																status, error) {
+															swal("Failed to save information. Please contact the administrator.");
+														}
 
-							}); // ajax
-		}); // deleteGrammarBtn
-		
-		
-		
-		
-		
-		
-		
-		
-		// 댓글 쓰기
-		$('#saveCommentIcon').on('click', function(e) {
-			e.preventDefault(); // a태그 올라감 방지
-			
-			let grammarId = $(this).data("grammar-id");
-			let oldContent = $("#oldContent").val();
-			let newContent = $("#newContent").val();
+													}); // ajax
+										}); // deleteGrammarBtn
 
-			
-			
-			// validation
-			if (!oldContent) {
-				swal("Please write the sentence to be corrected.");
-				return;
-			}
-			
-			if (!newContent) {
-				swal("Please write the sentence to be corrected.");
-				return;
-			}
-			
-			
-			
-			// ajax
-		 	$.ajax({
-				// request
-				type : "POST"
-				,url : "/grammar_comment/create"
-				,data : {
-					"grammarId" : grammarId,
-					"oldContent" : oldContent,
-					"newContent" : newContent				
-				}
-		 	
-		 		// response
-	 		 	,success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
-					if (data.code = 1) {
-						location.reload(true);
-						swal(data.code);
-					} else {
-						swal(data.errorMessage);
-					}
-				}
-	 		 	,error : function(request, status, error) {
-					swal("Failed to save information. Please contact the administrator.");
-				}
-				
-		 	}); // ajax 
-		}); // saveCommentIcon
-		
-		
-		
-		
-		
-		
-		// 좋아요 / 해제
-		$('.like-btn').on('click', function(e) {
-			e.preventDefault();  // 올라감 방지
-			
-			let commentId = $(this).data("comment-id");
-			//alert(commentId);
-			
-			
-			$.ajax({
-				// request
-				url:"/like/" + commentId    // /comment/13
-				
-				// response
-				, success : function(data) {
-					if (data.code == 1) {
-						location.reload();
-					} else if (data.code == 300){
-						swal(data.errorMessage);
-						// 비로그인 시 로그인 페이지로 이동
-						location.href="/user/sign_up_view";
-					}
-				},
-				error : function(request, status, error) {
-					swal("Failed to save your like. Please contact the administrator.");
-				}
-			
-			}); // ajax
-			
-			
-		});  // like-btn
-		
-		
+						// 댓글 쓰기
+						$('#saveCommentIcon')
+								.on(
+										'click',
+										function(e) {
+											e.preventDefault(); // a태그 올라감 방지
 
-	}); // ready
+											let grammarId = $(this).data(
+													"grammar-id");
+											let oldContent = $("#oldContent")
+													.val();
+											let newContent = $("#newContent")
+													.val();
+
+											// validation
+											if (!oldContent) {
+												swal("Please write the sentence to be corrected.");
+												return;
+											}
+
+											if (!newContent) {
+												swal("Please write the sentence to be corrected.");
+												return;
+											}
+
+											// ajax
+											$
+													.ajax({
+														// request
+														type : "POST",
+														url : "/grammar_comment/create",
+														data : {
+															"grammarId" : grammarId,
+															"oldContent" : oldContent,
+															"newContent" : newContent
+														}
+
+														// response
+														,
+														success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
+															if (data.code = 1) {
+																location
+																		.reload(true);
+																swal(data.code);
+															} else {
+																swal(data.errorMessage);
+															}
+														},
+														error : function(
+																request,
+																status, error) {
+															swal("Failed to save information. Please contact the administrator.");
+														}
+
+													}); // ajax 
+										}); // saveCommentIcon
+
+						// 좋아요 / 해제
+						$('.like-btn')
+								.on(
+										'click',
+										function(e) {
+											e.preventDefault(); // 올라감 방지
+
+											let commentId = $(this).data(
+													"comment-id");
+											//alert(commentId);
+
+											$
+													.ajax({
+														// request
+														url : "/like/"
+																+ commentId // /comment/13
+
+														// response
+														,
+														success : function(data) {
+															if (data.code == 1) {
+																location
+																		.reload();
+															} else if (data.code == 300) {
+																swal(data.errorMessage);
+																// 비로그인 시 로그인 페이지로 이동
+																location.href = "/user/sign_up_view";
+															}
+														},
+														error : function(
+																request,
+																status, error) {
+															swal("Failed to save your like. Please contact the administrator.");
+														}
+
+													}); // ajax
+
+										}); // like-btn
+
+					}); // ready
 </script>
