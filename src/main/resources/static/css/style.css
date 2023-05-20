@@ -43,7 +43,7 @@ footer{
 .signInTitle {font-size:60px; font-weight:bold; /*margin-top:100px;*/}
 .signInText{font-size: 80px;}
 .loginInPhotoBox4{height:1000px;}
-.signInSecondTitleText{font-size:1.73rem;}
+.signInSecondTitleText{font-size:1.75rem;}
 
 
 /*signUp*/
@@ -369,8 +369,8 @@ p {
 .commentTotlaBox222{ overflow: scroll; width: 60rem; height:19rem; border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:30px 30px 30px 30px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; /* border-color:#FF8200;  */   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
 .commentTotalBox3333{width:70rem; height:50rem; overflow: scroll;}
-.oldContentArea{ height:5rem; text-decoration: line-through underline; text-decoration-color: red; font-size: 2rem; padding-top:0.6rem;}
-.grammarOldContentText{font-size:2.3rem; margin:1rem; }
+.oldContentArea{ height:5rem; text-decoration: line-through; text-decoration-color: red; text-decoration-thickness: 0.25rem; font-size: 2rem; padding-top:0.6rem;}
+.grammarOldContentText{ overflow-x: hidden; font-size:1.7rem; margin:1rem; }
 .newContentArea{ height:5rem; font-size: 2rem; padding-top:0.8rem;}
 .commentsBoxIcon{ margin-top:10rem; margin-left:3rem; margin-bottom:2rem;}
 .GrammarDetailTextBox2{margin-right:3rem;}
