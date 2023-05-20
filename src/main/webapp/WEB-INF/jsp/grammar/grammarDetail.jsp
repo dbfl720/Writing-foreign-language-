@@ -9,19 +9,19 @@
 	<div class="GrammarDetailTextBox">
 		<div class="GrammarLeftInfo">
 			<div class="d-flex">
-				<img class="updateProfileIcon ml-3" alt="제목 이모티콘" width="35"
-					height="35"
+				<img class="updateProfileIcon ml-3" alt="제목 이모티콘" width="32"
+					height="32"
 					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Science-Literature-icon.png">
 				<div class="grammarDetailFont">${grammar.title}</div>
 			</div>
-			<div class="d-flex">
+			<div class="d-flex leftLangagueAndDate">
 				<div class="d-flex">
-					<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
+					<img class="languageMark ml-3" alt="언어 이모티콘" width="32" height="32"
 						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
 					<div class="grammarDetailFontLang">${grammar.languageCategoryId}</div>
 				</div>
 				<div class="d-flex grammarDateBox">
-					<img class="dateMark ml-3" alt="날짜 이모티콘" width="35" height="35"
+					<img class="dateMark ml-3" alt="날짜 이모티콘" width="32" height="32"
 						src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Time-Tear-Off-Calendar-icon.png">
 					<div class="grammarDetailFont">
 						<fmt:formatDate value="${grammar.updatedAt}" pattern="dd-MM-yyyy" />
@@ -52,20 +52,13 @@
 	<!--오른쪽 댓글  -->
 	<div class="GrammarDetailTextBox6666">
 		<div class="GrammarLeftInfo">
-			<div class="d-flex commentLangagugeIcon">
+			<div class="d-flex justify-content-between commentLangagugeIcon">
 				<div class="d-flex">
-					<img class="languageMark ml-3" alt="언어 이모티콘" width="35" height="35"
-						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
-					<div class="grammarDetailFontLang">${grammar.languageCategoryId}</div>
+					<img class="languageMark ml-3" alt="unchekced 이모티콘" width="45" height="45"
+						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-edit-icon.png">
+					<div class="detailRgithFont">${grammar.languageCategoryId}</div>
 				</div>
-				<div class="d-flex grammarDateBox">
-					<img class="dateMark ml-3" alt="날짜 이모티콘" width="35" height="35"
-						src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Time-Tear-Off-Calendar-icon.png">
-					<div class="grammarDetailFont">
-						<fmt:formatDate value="${grammar.updatedAt}" pattern="dd-MM-yyyy" />
-					</div>
-				</div>
-				<div class="d-flex justify-content-end CommentSaveIcon">
+				<div class="CommentSaveIcon">
 					<div class="CommentSaveIcon">
 						<a href="#" id="saveCommentIcon" data-grammar-id="${grammar.id}">
 							<img class="saveCommentIcon" alt="댓글 저장 이모티콘" width="38"
@@ -80,16 +73,16 @@
 			<!-- Comment -->
 			<div class="GrammarDetailTextBox999999">
 				<textarea id="oldContent" class="GrammarDetailComment"
-					placeholder="OldText"></textarea>
+					placeholder="Please write the sentence you want to correct on the left."></textarea>
 				<textarea id="newContent" class="GrammarDetailComment"
-					placeholder="NewText"></textarea>
+					placeholder="Please correct the sentence."></textarea>
 			</div>
 		</div>
 
 		<!-- 댓글 뿌리기 -->
 		<div class="commentsBoxIcon">
-			<img alt="댓글 이모티콘" width="55" height="55"
-				src="https://icons.iconarchive.com/icons/github/octicons/128/comment-discussion-24-icon.png">
+			<img alt="댓글 이모티콘" width="42" height="42"
+				src="https://icons.iconarchive.com/icons/icons8/ios7/128/User-Interface-Checklist-icon.png">
 		</div>
 		<div class="commentTotalBox3333">
 			<c:forEach items="${grammarView}" var="grammarViews">

@@ -146,7 +146,7 @@
 				<div class="accounts_forms  w-100 h-100" id="login">
 					<div class="title  mt-4 p-4 w-100">
 						<h1 class="signInTitle">Sign In</h1>
-						<p class="mt-3">Share your writing with people in the world.</p>
+						<p class="mt-3 signInSecondTitleText">Share your writing with people in the world.</p>
 					</div>
 					<!--title-->
 					<form method="post" name="form" class="form  w-100 p-4 signInBigBox"
