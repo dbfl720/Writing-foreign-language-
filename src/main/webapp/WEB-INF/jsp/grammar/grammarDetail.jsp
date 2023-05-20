@@ -95,11 +95,9 @@
 			<c:forEach items="${grammarView}" var="grammarViews">
 				<!-- 여기다가 if문 만들어서 댓글 확인 -->
 				<c:if test="${not empty grammarCommentView}">
-					<c:forEach items="${grammarViews.grammarCommentViewList}"
-						var="comments">
+					<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
 						<c:choose>
-							<c:when
-								test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
+							<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
 								<div class="commentTotlaBox222">
 									<!-- 댓글쓴이, 좋아요  -->
 									<div class="d-flex justify-content-between	">
@@ -110,23 +108,23 @@
 											<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div>
 										</div>
 										<!-- 좋아요 빈하트(안눌러 졌을 때) -->
-										<c:forEach items="${grammarCommentView}" var="commentViews">
-											<c:if test="${commentViews.filledLike == false}">
+								
+											<c:if test="${comments.filledLike == false}">
 												<a href="#" class="like-btn"
 													data-comment-id="${comments.grammarComment.id}"><img
-													class="languageMark ml-3" alt="하트 이모티콘" width="35"
+													class="languageMark ml-3" alt="빈하트 이모티콘" width="35"
 													height="35"
 													src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
 											</c:if>
 											<!-- 좋아요 채워진 하트(눌러 졌을 때) -->
-											<c:if test="${commentViews.filledLike == true}">
+											<c:if test="${comments.filledLike == true}">
 												<a href="#" class="like-btn"
 													data-comment-id="${comments.grammarComment.id}"><img
-													class="languageMark ml-3" alt="하트 이모티콘" width="35"
+													class="languageMark ml-3" alt="채워진 하트 이모티콘" width="35"
 													height="35"
 													src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png"></a>
 											</c:if>
-										</c:forEach>
+										
 										<!-- 좋아요 끝 -->
 									</div>
 									<div class="border-bottom oldContentArea d-flex">
@@ -192,21 +190,16 @@
 
 
 <script>
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 						// 삭제 버튼 클릭
 						$('#deleteGrammarBtn')
-								.on(
-										'click',
-										function() {
+								.on('click',function() {
 											//alert("dd");
 
 											let grammarId = $(this).data(
 													'grammar-id');
 
-											$
-													.ajax({
+											$.ajax({
 														type : "DELETE",
 														url : "/grammar/delete",
 														data : {
@@ -287,18 +280,14 @@
 										}); // saveCommentIcon
 
 						// 좋아요 / 해제
-						$('.like-btn')
-								.on(
-										'click',
-										function(e) {
+						$('.like-btn').on('click',function(e) {
 											e.preventDefault(); // 올라감 방지
 
 											let commentId = $(this).data(
 													"comment-id");
 											//alert(commentId);
 
-											$
-													.ajax({
+											$.ajax({
 														// request
 														url : "/like/"
 																+ commentId // /comment/13

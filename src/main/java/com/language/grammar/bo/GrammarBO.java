@@ -102,7 +102,7 @@ public class GrammarBO {
 	
 	
 	// select 
-	public List<GrammarView> generateGrammarList(int grammarId) {
+	public List<GrammarView> generateGrammarList(int grammarId, Integer userId) {
 		
 		// 결과 리스트
 		List<GrammarView> grammarViewList = new ArrayList<>(); // ** breakpoint
@@ -127,7 +127,7 @@ public class GrammarBO {
 			grammarView.setUser(user);
 
 			// 댓글들
-			List<GrammarCommentView> grammarCommentList = grammarCommentBO.generateGrammarCommentList(grammarId, null);  // 오류 - grammar.getId()
+			List<GrammarCommentView> grammarCommentList = grammarCommentBO.generateGrammarCommentList(grammarId, userId);  // 오류 - grammar.getId()
 			grammarView.setGrammarCommentViewList(grammarCommentList);
 			
 			

@@ -55,7 +55,7 @@ public class GrammarController {
 		
 		// select db 
 		Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
-		List<GrammarView> grammarView = grammarBO.generateGrammarList(grammarId);
+		List<GrammarView> grammarView = grammarBO.generateGrammarList(grammarId, userId);
 		List<GrammarCommentView> grammarCommentView = grammarCommentBO.generateGrammarCommentList(grammarId, userId);
 		
 		
