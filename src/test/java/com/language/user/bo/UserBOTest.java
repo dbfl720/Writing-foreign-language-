@@ -82,9 +82,24 @@ class UserBOTest {
 		assertNotNull(user);
 	}
 	
+	
+	
+	//@Transactional
 	//@Test
-	void test() {
-		fail("Not yet implemented");
+	void 커뮤니티_유저정보들가져오기() {
+		logger.info("##### 커뮤니티 유저정보들 가져오기");
+		List<User> user = userBO.getCommunityUser();
+		
+	}
+	
+	
+	
+	//@Transactional
+	//@Test
+	void 그래머_유저정보들가져오기() {
+		logger.info("##### 그래머 유저정보들 가져오기");
+		List<User> user = userBO.getGrammarUser();
+		
 	}
 
 }
