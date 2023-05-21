@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.language.grammar.model.Grammar;
+import com.language.grammar.model.GrammarView;
 
 @SpringBootTest
 class GrammarBOTest {
@@ -42,6 +43,16 @@ class GrammarBOTest {
 		logger.info("###### 그래머 글 리스트 가져오기");
 		List<Grammar> grammar = grammarBO.getGrammarListByLanguage("EN",3,3);
 		
+	}
+	
+	
+	
+	//@Transactional
+	//@Test
+	void 그래머뷰_리스트가져오기() {
+		logger.info("##### 그래머뷰_리스트 가져오기");
+		List<GrammarView> grammarView = grammarBO.generateGrammarList(12, 12);
+		assertNotNull(grammarView);
 	}
 	
 	

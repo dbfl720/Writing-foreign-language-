@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.language.grammar_comment.model.GrammarComment;
 import com.language.grammar_comment.model.GrammarCommentView;
 
 
@@ -48,11 +49,12 @@ Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	
 	
-	@Transactional
-	@Test
+	//@Transactional
+	//@Test
 	void 그래머댓글리스트_가져오기() {
 		logger.info("####### 그래머댓글리스트 가져오기");
-		
+		List<GrammarComment> grammarComment = grammarCommentBO.getGrammarCommentList(12);
+		assertNotNull(grammarComment);
 	}
 
 }
