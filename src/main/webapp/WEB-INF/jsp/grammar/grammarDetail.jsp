@@ -100,10 +100,34 @@
 												src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
 											<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div>
 										</div>
-											<!-- Modal 더보기  -->
-											 <a href="#" class="more-btn " data-toggle="modal" data-target="#modal" data-comment-id="${comments.grammarComment.id}"> 
-											<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30">
+										
+										
+										
+										
+										 	<!-- Modal 더보기  -->
+											 <a href="#" class="more-btn " data-toggle="modal" data-target=".modal" data-comment-id="${comments.grammarComment.id}"> 
+											<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
 											</a> 
+										
+											<div class="modal fade" class="modal">
+											<!-- modal-dialog-centered : 모달 창을 수직 가운데 정렬
+											modal-sm: small 모달 -->
+											<div class="modal-dialog modal-dialog-centered modal-xl">
+												<div class="modal-content text-center">
+													<div class="py-3 border-bottom">
+														<a href="#" id="deletePostBtn" class="text-dark"  data-comment-id="${comments.grammarComment.id}">${comments.grammarComment.newContent}</a>
+													</div>
+													<div class="py-3">
+														<!-- data-dismiss="modal" => 모달창 닫힘 -->
+														<a href="#" data-dismiss="modal" class="text-dark">Close</a>
+													</div>
+												</div>
+											</div>
+										</div> 
+		
+		
+		
+		
 										
 										<!-- 좋아요 빈하트(안눌러 졌을 때) -->
 											<c:if test="${comments.filledLike == false}">
@@ -188,31 +212,24 @@
 
 
 <!-- Modal -->
- <c:forEach items="${grammarView}" var="grammarViews">
-	<c:if test="${not empty grammarCommentView}">
-		<c:forEach items="${grammarViews.grammarCommentViewList}" var="comments">
-			<c:choose>
-				<c:when test="${comments.grammarComment.grammarId eq grammarViews.grammar.id}">
-					<div class="modal fade" id="modal">
-						<!-- modal-dialog-centered : 모달 창을 수직 가운데 정렬
-						modal-sm: small 모달 -->
-						<div class="modal-dialog modal-dialog-centered modal-xl">
-							<div class="modal-content text-center">
-								<div class="py-3 border-bottom">
-									<a href="#" id="deletePostBtn" class="text-dark">${comments.grammarComment.newContent}</a>
-								</div>
-								<div class="py-3">
-									<!-- data-dismiss="modal" => 모달창 닫힘 -->
-									<a href="#" data-dismiss="modal" class="text-dark">Close</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</c:when>
-			</c:choose>
-		</c:forEach>
-	</c:if>
-</c:forEach>  
+<%-- <div class="modal fade" id="modal">
+	<!-- modal-dialog-centered : 모달 창을 수직 가운데 정렬
+	modal-sm: small 모달 -->
+	<div class="modal-dialog modal-dialog-centered modal-xl">
+		<div class="modal-content text-center">
+			<div class="py-3 border-bottom">
+				<a href="#" id="deletePostBtn" class="text-dark">${comments.grammarComment.newContent}</a>
+			</div>
+			<div class="py-3">
+				<!-- data-dismiss="modal" => 모달창 닫힘 -->
+				<a href="#" data-dismiss="modal" class="text-dark">Close</a>
+			</div>
+		</div>
+	</div>
+</div> --%>
+		
+	
+
 
 
 
@@ -253,8 +270,7 @@
 						$('#saveCommentIcon').on('click',function(e) {
 											e.preventDefault(); // a태그 올라감 방지
 
-											let grammarId = $(this).data(
-													"grammar-id");
+											let grammarId = $(this).data("grammar-id");
 											let oldContent = $("#oldContent").val();
 											let newContent = $("#newContent").val();
 
@@ -334,36 +350,20 @@
 							
 							
 							
-							
-							
-							
-							// Modal - 더보기 
-							$('.more-btn').on('click', function(e) {
-								e.preventDefault();
+							// 더보기 
+						/* 	$('.more-btn').on('click', function(){
 								
-								let commentId = $(this).data('comment-id');
-								//alert(commentId);
-								
-								//$('#modal').data('comment-id', commentId);     // setting -  modal태그에 세팅한 것임. 내부적으로 commentId심어져있음 
+								let commentId = $(this).data("comment-id");
+								let grammarId = $(this).data("grammar-id");
 								
 								
-								
-								
-								// ajax
 								$.ajax({
-									// request
 									type: "GET"
-									,url : "/grammar/grammar_detail_view"
-									,data : {
-										"commentId" : commentId
-									}
-									
-									
-									// response
-									,
-									success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
-										if (data.code = 1) {
-											swal(data.result);
+									, url : "/grammar/grammar_detail_view"
+									, data : {"commentId" : commentId}
+									, success : function(data){
+										if (data.code == 1){
+											alert(data.grammarCommentList.newContent);
 										} else {
 											swal(data.errorMessage);
 										}
@@ -373,9 +373,10 @@
 									}
 									
 								}); // ajax
-								
-								
-							}); // more-btn
+							}); // more-btn */
+							
+							
+		
 
 					}); // ready
 </script>

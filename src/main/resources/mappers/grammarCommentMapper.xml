@@ -47,7 +47,7 @@
  	
 
 
-	<select id="selectGrammarCommentListByCommentId" parameterType="Integer" resultType="com.language.grammar_comment.model.GrammarComment">
+	<select id="selectGrammarCommentListByCommentId" parameterType="map" resultType="com.language.grammar_comment.model.GrammarComment">
  		SELECT
  			`id`
  			,`grammarId`
