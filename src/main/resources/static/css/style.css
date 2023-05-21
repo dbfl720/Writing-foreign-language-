@@ -366,7 +366,7 @@ p {
 
 
 /* GrammarComment 오른쪽 댓글 목록*/
-.commentTotlaBox222{ overflow: scroll; width: 60rem; height:19rem; border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:30px 30px 30px 30px;
+.commentTotlaBox222{ overflow: scroll; width: 60rem; height:24rem; border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:30px 30px 30px 30px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; /* border-color:#FF8200;  */   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
 .commentTotalBox3333{width:70rem; height:50rem; overflow: scroll;}
 .oldContentArea{ height:5rem; text-decoration: line-through; text-decoration-color: red; text-decoration-thickness: 0.25rem; font-size: 2rem; padding-top:0.6rem;}
@@ -377,6 +377,7 @@ p {
 .commentLangagugeIcon{margin-left:2rem;}
 .GrammarDetailTextBox999999{margin-left:2rem;}
 .commentsId{font-size:2.2rem; font-weight:bold;}
+.modalFont{font-size:2.2rem;}
 
 /* Grammar 목록   */
 .GrammarListTable{ width: 80rem;  display: table; margin-left: auto; margin-right: auto; color:black; }
@@ -389,7 +390,7 @@ p {
 .GrammarListPage{margin-top:3.5rem;}
 
 
-/* .swiper-container {
+ .swiper-container {
 	width:110rem;
 	height:230px;
 	border:5px solid silver;
@@ -398,16 +399,16 @@ p {
 }
 .swiper-slide {
 	text-align:center;
-	display:flex; 내용을 중앙정렬 하기위해 flex 사용
-	align-items:center; 위아래 기준 중앙정렬
-	justify-content:center; 좌우 기준 중앙정렬
+	display:flex;/*  내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center;/*  위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
 }
 .swiper-slide img {
 	 box-shadow:0 0 1px #555; 
-	max-width:40%; 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요
+	max-width:40%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
 }
 
-.swiper-button-prev{margin-top:6rem;} */
+.swiper-button-prev{margin-top:6rem;} 
 
 
 
@@ -423,5 +424,67 @@ p {
 
 
 
-
-
+/* Review-Writing */
+.reviewTotalBox{ margin-left:3rem; width: 120rem; height:100rem; font-size:30rem;}
+.standardHeight{height:5rem; font-size:1.7rem;}
+#insert_TextArea{height: 15rem; font-size:1.7rem; padding:2rem;}
+#ReivewTypeId{ object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem;}
+#ReivewTypeId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+#ReviewTitleId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem;}
+#ReviewTitleId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+#ReviewLanguageId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem;}
+#ReviewLanguageId{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+#ReviewRatingId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem;}
+#ReviewRatingId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+#ReviewTextareaId{margin: 1rem;   height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding: 8px 20px;}
+#ReviewTextareaId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+.ReviewImageUrl{ object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem;}
+.ReviewImageUrl:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}

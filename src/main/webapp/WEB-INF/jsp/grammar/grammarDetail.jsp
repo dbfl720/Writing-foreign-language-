@@ -109,22 +109,29 @@
 											<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
 											</a> 
 										
-											<div class="modal fade" class="modal">
-											<!-- modal-dialog-centered : 모달 창을 수직 가운데 정렬
-											modal-sm: small 모달 -->
-											<div class="modal-dialog modal-dialog-centered modal-xl">
-												<div class="modal-content text-center">
-													<div class="py-3 border-bottom">
-														<a href="#" id="deletePostBtn" class="text-dark"  data-comment-id="${comments.grammarComment.id}">${comments.grammarComment.newContent}</a>
-													</div>
-													<div class="py-3">
-														<!-- data-dismiss="modal" => 모달창 닫힘 -->
-														<a href="#" data-dismiss="modal" class="text-dark">Close</a>
-													</div>
-												</div>
+										
+										
+											
+										<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+											    <div class="modal-content">
+											      <div class="modal-header">
+											        <h5 class="modal-title modalFont" id="exampleModalLabel">Corrected sentences</h5>
+											        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											          <span aria-hidden="true">&times;</span>
+											        </button>
+											      </div>
+											      <div class="modal-body modalFont">
+											       ${comments.grammarComment.newContent}
+											      </div>
+											      <div class="modal-footer">
+											        <button type="button" class="btn btn-secondary modalFont" data-dismiss="modal">Close</button>
+											      </div>
+											    </div>
+											  </div>
 											</div>
-										</div> 
-		
+										
+									
 		
 		
 		

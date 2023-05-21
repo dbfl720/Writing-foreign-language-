@@ -7,7 +7,7 @@
 		Community</a></div>
 		<div class="communityText"><a href="/grammar/grammar_list_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="50" height="50" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png" >
 		Grammar</a></div>
-		<div class="communityText"><a href="#" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="50" height="50" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png" >
+		<div class="communityText"><a href="/review/review_list_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="50" height="50" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png" >
 		Review</a></div>
 		<div class="communityText"><a href="#" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="50" height="50" src="https://icons.iconarchive.com/icons/praveen/minimal-outline/128/microphone-icon.png" >
 		Live</a></div>

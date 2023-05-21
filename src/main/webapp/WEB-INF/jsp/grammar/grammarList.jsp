@@ -165,9 +165,9 @@
 
 
 <div class="pencilIcon">
-	<a href="/grammar/grammar_writing_view"> <img alt="글쓴이 이모티콘"
+	<a href="/grammar/grammar_writing_view"> <img alt="연필 이모티콘"
 		width="55" height="55"
-		src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/pencil-icon.png">
+		src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 	</a>
 </div>
 
