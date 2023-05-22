@@ -32,4 +32,16 @@ public class ReviewController {
 		return "template/layout";
 	}
 	
+	
+	
+	
+	//localhost/review/review_detail_view
+	@GetMapping("/review_detail_view")
+	public String review_detail_view(
+			Model model) {
+		
+		
+		model.addAttribute("view", "review/reviewDetail");
+		return "template/layout";
+	}
 }
