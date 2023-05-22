@@ -25,7 +25,7 @@
 				<input id= "ReviewTitleId" name="title" type="text" 
 					class="form-control col-5 mr-3 ml-3 standardHeight" placeholder="Title">
 				
-				<select name="id" id= "ReviewLanguageId" class="form-select form-select-sm form-control col-2 standardHeight">
+				<select name="id" id= languageCategoryId class="form-select form-select-sm form-control col-2 standardHeight">
 						<option value="none" selected>language</option>
 						<option value="KO">KO</option>
 						<option value="EN">EN</option>
@@ -53,19 +53,119 @@
 
 			<div class="input-group mb-3 mt-3 ">
 				<span class="input-group-text standardHeight" id="basic-addon1">Image url</span> <input
-					name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl">
+					 id="ReviewImageUrl" name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl">
 			</div>
 		
 			
 			<div class="GrammarSaveIcon text-center pt-3">
-				<a href="#" id="saveGrammarBtn">
-					<img class="updateProfileIcon" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+				<a href="#" id="saveReviewBtn">
+					<img class="saveReviewBtn" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 				</a>
 			</div>
 </div>
 
 
 <script>
+$(document).ready(function(){
+	
+	// 리뷰 저장
+	$('#saveReviewBtn').on('click', function(e){
+		e.preventDefault();
+		
+		var selectType = document.getElementById('ReivewTypeId');
+		var selectTypeIndex = document.getElementById('ReivewTypeId').options.selectedIndex;
+		var selectTypeValue = selectType.options[selectTypeIndex].value;
+		
+		
+		var selectLanguage = document.getElementById('languageCategoryId');
+		var selectLanguageIndex = document.getElementById('languageCategoryId').options.selectedIndex;
+		var selectLanguageValue = selectLanguage.options[selectLanguageIndex].value;
+		
 
+		var selectRating = document.getElementById('ReviewRatingId');
+		var selectRatingIndex = document.getElementById('ReviewRatingId').options.selectedIndex;
+		var selectRatingValue = selectRating.options[selectRatingIndex].value;
+		
+		
+		let title = $('#ReviewTitleId').val();
+		let content = $('#ReviewTextareaId').val();
+		let ImagePath = $('#ReviewImageUrl').val(); 
+		
+		
+		// validation
+		if (selectTypeValue == 'none'){
+			swal("Please select one type.");
+			return;
+		}
+		
+		if (!title) {
+			swal("Please enter a title.");
+			return;
+		}
+		
+		
+		if (selectLanguageValue == 'none') {
+			swal("Please select one foreign language.");
+			return;
+		}
+		
+		if (selectRatingValue == 'none') {
+			swal("Please select a star rating.");
+			return;
+		}
+		
+		
+		if (!content) {
+			swal("Please enter your content.");
+			return;
+		}
+		
+		if (content.length < 10) {
+			swal("Please write at least 10 characters.");
+			return;
+		}
+		
+		
+		if (!ImagePath) {
+			swal("Please enter the image url.");
+			return;
+		}
+		
+		
+		
+		
+		// AJAX
+		$.ajax({
+			// request
+			type:"POST"
+			, url: "/review/create"
+			, data:{
+				"selectTypeValue" : selectTypeValue
+				, "selectLanguageValue" : selectLanguageValue
+				, "title" : title
+				, "selectRatingValue" : selectRatingValue
+				, "content" : content
+				, "ImagePath" : ImagePath}
+			
+		
+			 // response
+				, success : function(data) {
+					if (data.code == 1) {
+						//location.reload();
+						swal(data.result);
+					} else {
+						swal(data.errorMessage);
+					}
+					
+				}
+				, error : function(request, status, error) {
+					swal("Failed to save information. Please contact the administrator.");
+				}
+		});  // ajax
+		
+	}); // saveReveiwBtn
+	
+	
+});  // document
 
 </script>
