@@ -32,6 +32,27 @@
  		)
  	
  	</insert>
+ 	
+ 	
+ 	
+ 	<select id="selectReviewListByLanguage" parameterType="String" resultType="com.language.review.model.Review">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+ 			,`reviewCategoryId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`rating`
+ 			,`content`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`review_writing`
+		WHERE
+			`languageCategoryId` = #{languageCategoryId}
+ 	
+ 	</select>
  
  
  </mapper>

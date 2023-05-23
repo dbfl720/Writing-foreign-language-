@@ -1,7 +1,11 @@
 package com.language.review.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import com.language.review.model.Review;
 
 @Repository
 public interface ReviewMapper {
@@ -16,4 +20,11 @@ public interface ReviewMapper {
 			@Param("rating") int rating,
 			@Param("content") String content,
 			@Param("ImagePath") String ImagePath);
+	
+	
+	
+	// select
+	public List<Review> selectReviewListByLanguage(
+			@Param("languageCategoryId") String languageCategoryId);
+	
 }
