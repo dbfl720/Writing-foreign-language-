@@ -6,13 +6,15 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.language.grammar_comment.bo.GrammarCommentBO;
+import com.language.grammar_comment.model.GrammarComment;
 
 @RequestMapping("/grammar_comment")
 @RestController
@@ -53,6 +55,29 @@ public class GrammarCommentRestController {
 	
 		}
 	
+	
+	
+	
+	
+	 
+	 @GetMapping("/get")
+	 public Map<String, Object> get(
+			 @RequestParam("commentId") Integer commentId){
+		 
+		 Map<String, Object> result = new HashMap<>();
+		 
+		 // db
+		 GrammarComment grammarComment = grammarCommentBO.getGrammarComment(commentId);
+		 
+		 if (grammarComment == null) {
+				result.put("join", "조회 불가");
+			} else {
+				result.put("grammarComment", grammarComment);
+
+			}
+			return result;
+		 
+	 }
 	
 	
 	}

@@ -62,5 +62,25 @@
 			`id` = #{commentId}
 	
  	</select>
+ 	
+ 	
+ 	
+ 	
+ 	<select id="selectGrammarComment" parameterType="Integer" resultType="com.language.grammar_comment.model.GrammarComment">
+ 		SELECT
+ 			`id`
+ 			,`grammarId`
+ 			,`userId`
+ 			,`oldContent`
+ 			,`newContent`
+ 			,`createdAt`
+ 			,`updatedAt`
+		FROM
+			`grammar_comment`
+		WHERE
+			`id` = #{commentId}
+	
+ 	
+ 	</select>
  
  </mapper>

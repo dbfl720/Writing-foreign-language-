@@ -99,43 +99,16 @@
 												height="35"
 												src="https://icons.iconarchive.com/icons/icons8/ios7/128/Users-Talk-icon.png">
 											<div class="commentsId mt-4 ml-2">${comments.user.loginId}</div>
+											
 										</div>
 										
 										
-										
-										
-										 	<!-- Modal 더보기  -->
-											 <a href="#" class="more-btn " data-toggle="modal" data-target=".modal" data-comment-id="${comments.grammarComment.id}"> 
+										<div>
+										 	<!--더보기  -->
+											 <a href="#" class="more-btn"  data-comment-id="${comments.grammarComment.id}"> 
 											<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
 											</a> 
-										
-										
-										
-											
-										<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-											  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-											    <div class="modal-content">
-											      <div class="modal-header">
-											        <h5 class="modal-title modalFont" id="exampleModalLabel">Corrected sentences</h5>
-											        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											          <span aria-hidden="true">&times;</span>
-											        </button>
-											      </div>
-											      <div class="modal-body modalFont">
-											       ${comments.grammarComment.newContent}
-											      </div>
-											      <div class="modal-footer">
-											        <button type="button" class="btn btn-secondary modalFont" data-dismiss="modal">Close</button>
-											      </div>
-											    </div>
-											  </div>
-											</div>
-										
-									
-		
-		
-		
-										
+								
 										<!-- 좋아요 빈하트(안눌러 졌을 때) -->
 											<c:if test="${comments.filledLike == false}">
 												<a href="#" class="like-btn"
@@ -152,7 +125,7 @@
 													height="35"
 													src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png"></a>
 											</c:if>
-										
+										</div>
 										<!-- 좋아요 끝 -->
 									</div>
 									<div class="border-bottom oldContentArea d-flex">
@@ -216,26 +189,6 @@
 
 
 
-
-
-<!-- Modal -->
-<%-- <div class="modal fade" id="modal">
-	<!-- modal-dialog-centered : 모달 창을 수직 가운데 정렬
-	modal-sm: small 모달 -->
-	<div class="modal-dialog modal-dialog-centered modal-xl">
-		<div class="modal-content text-center">
-			<div class="py-3 border-bottom">
-				<a href="#" id="deletePostBtn" class="text-dark">${comments.grammarComment.newContent}</a>
-			</div>
-			<div class="py-3">
-				<!-- data-dismiss="modal" => 모달창 닫힘 -->
-				<a href="#" data-dismiss="modal" class="text-dark">Close</a>
-			</div>
-		</div>
-	</div>
-</div> --%>
-		
-	
 
 
 
@@ -357,30 +310,37 @@
 							
 							
 							
+							
+							
+							
 							// 더보기 
-						/* 	$('.more-btn').on('click', function(){
+						 	$('.more-btn').on('click', function(e){
+								e.preventDefault();
 								
 								let commentId = $(this).data("comment-id");
-								let grammarId = $(this).data("grammar-id");
 								
-								
+						 	
+						 	
+						 	 
 								$.ajax({
 									type: "GET"
-									, url : "/grammar/grammar_detail_view"
+									, url : "/grammar_comment/get"
 									, data : {"commentId" : commentId}
-									, success : function(data){
-										if (data.code == 1){
-											alert(data.grammarCommentList.newContent);
+									, success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
+										if (data.join == "There are no comments written.") {
+											swal("Please log in.");
 										} else {
-											swal(data.errorMessage);
+											//data.booking.name
+											swal("Corrected sentence : " + data.grammarComment.newContent);
+											
 										}
-									},
-									error : function(request, status, error) {
+									}
+									,error : function(request, status, error) {
 										swal("Failed to save information. Please contact the administrator.");
 									}
 									
-								}); // ajax
-							}); // more-btn */
+								}); // ajax 
+							}); // more-btn 
 							
 							
 		

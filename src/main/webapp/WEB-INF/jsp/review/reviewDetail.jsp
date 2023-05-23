@@ -47,7 +47,7 @@
 	
 		</div> <!-- d-flex  -->
 					<%-- 유저 정보들 --%>	
-				<div class="ReviewUserInfo border-bottom">
+				<div class="ReviewUserInfo border-right">
 					<div class="profileLoginIdText">
 					<img alt="유저 사진" width="32" height="32"
 						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
@@ -74,3 +74,4 @@
 	
 		</div> <!-- reviewTotal55 끝 -->
 </div>
+

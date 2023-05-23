@@ -85,4 +85,12 @@ public class GrammarCommentBO {
 		return grammarCommentMapper.selectGrammarCommentListByCommentId(commentId);
 	}
 	
+	
+	
+	// select
+	public GrammarComment getGrammarComment (Integer commentId) {
+		
+		return grammarCommentMapper.selectGrammarComment(commentId);
+	}
+	
 }
