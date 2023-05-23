@@ -11,7 +11,11 @@
 
 
 
-<div>
+<div class="container">
+		<div class="display-4 pt-5 pb-5">
+				<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
+			Write your own Review!</div>
+			
 	<div class="item-wrapper">
 		<div class="GrammarCountriesIcons d-flex">
 			<a href="#"> <img id="bannerImage" alt="여러 국기들" width="170"
@@ -155,7 +159,7 @@
 		</div>
 	</div>
 
-</div>
+
 
 
 
@@ -219,7 +223,7 @@
 	</c:if>
 </div>
 
-
+</div>
 
 <script>
 	$(document).ready(

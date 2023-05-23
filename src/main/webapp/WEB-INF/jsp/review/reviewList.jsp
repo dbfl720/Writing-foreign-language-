@@ -4,7 +4,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
    
-<div class="container">    
+<div class="container">   
+	<div class="display-4 pt-5 pb-5">
+		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
+	Great Writer!</div>
+			 
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide"><a href="#" class="swiperAAA"><img src="/static/img/CN.gif"></a></div>
@@ -31,8 +35,53 @@
 		width="55" height="55"
 		src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 	</a>
+</div><!-- swiper 끝 -->
+
+
+
+
+<div class="article1  d-flex flex-wrap align-items-center justify-content-between">
+	<div class="ReviewListbox mt-3">
+		<img class="ReveiwImgBox2" src="https://cdn.pixabay.com/photo/2023/04/29/18/12/goslings-7959052_1280.jpg" id="imageUrl" name="iamgeUrl" alt="이미지 " width="280"
+			height="150">
+		<div class="reviewListTextBox22">
+			<h4 ">title</h4>
+			<small class="text-secondary" name="price">2000원</small><br>
+			<small class="article-text">nickname</small>
+		</div>
+	</div>		
+	
+	<div class="ReviewListbox mt-3">
+		<img class="ReveiwImgBox2" src="https://cdn.pixabay.com/photo/2023/04/29/18/12/goslings-7959052_1280.jpg" id="imageUrl" name="iamgeUrl" alt="이미지 " width="280"
+			height="150">
+		<div class="reviewListTextBox22">
+			<h4 ">title</h4>
+			<small class="text-secondary" name="price">2000원</small><br>
+			<small class="article-text">nickname</small>
+		</div>
+	</div>
+	<div class="ReviewListbox mt-3">
+		<img class="ReveiwImgBox2" src="https://cdn.pixabay.com/photo/2023/04/29/18/12/goslings-7959052_1280.jpg" id="imageUrl" name="iamgeUrl" alt="이미지 " width="280"
+			height="150">
+		<div class="reviewListTextBox22">
+			<h4 ">title</h4>
+			<small class="text-secondary" name="price">2000원</small><br>
+			<small class="article-text">nickname</small>
+		</div>
+	</div>
+	<div class="ReviewListbox mt-3">
+		<img class="ReveiwImgBox2" src="https://cdn.pixabay.com/photo/2023/04/29/18/12/goslings-7959052_1280.jpg" id="imageUrl" name="iamgeUrl" alt="이미지 " width="280"
+			height="150">
+		<div class="reviewListTextBox22">
+			<h4 ">title</h4>
+			<small class="text-secondary" name="price">2000원</small><br>
+			<small class="article-text">nickname</small>
+		</div>
+	</div>		
 </div>
-</div>
+
+
+</div> <!-- container -->
 
 
 

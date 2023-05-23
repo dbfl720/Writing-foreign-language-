@@ -22,10 +22,13 @@ header{
 
 /* section  */
 section {
-	max-width: 115rem;
+	min-width:110rem;
+	min-height:120rem;
+	max-width: 150rem;
 	max-height:160rem;
 	/* background-color:#A9F5D0;  */
 	padding-top:7rem;
+	padding-left:6rem;
 }
 
 
@@ -369,9 +372,9 @@ p {
 .commentTotlaBox222{ overflow: scroll; width: 60rem; height:24rem; border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:30px 30px 30px 30px;
    transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; /* border-color:#FF8200;  */   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
 .commentTotalBox3333{width:70rem; height:50rem; overflow: scroll;}
-.oldContentArea{ height:5rem; text-decoration: line-through; text-decoration-color: red; text-decoration-thickness: 0.25rem; font-size: 2rem; padding-top:0.6rem;}
-.grammarOldContentText{ /* overflow-x: hidden; */ font-size:1.7rem; margin:1rem; }
-.newContentArea{ height:5rem; font-size: 2rem; padding-top:0.8rem;}
+.oldContentArea{ height:5rem; text-decoration: line-through; text-decoration-color: red; text-decoration-thickness: 0.25rem; font-size: 2rem; padding-top:0.6rem; margin-top:3rem;}
+.grammarOldContentText{ text-overflow: ellipsis; font-size:1.7rem; margin:1rem; width:50rem; height:3rem; overflow: hidden;}
+.newContentArea{ text-overflow: ellipsis; height:5rem; font-size: 2rem; padding-top:0.8rem; width:55rem;}
 .commentsBoxIcon{ margin-top:10rem; margin-left:3rem; margin-bottom:2rem;}
 .GrammarDetailTextBox2{margin-right:3rem;}
 .commentLangagugeIcon{margin-left:2rem;}
@@ -390,25 +393,7 @@ p {
 .GrammarListPage{margin-top:3.5rem;}
 
 
- .swiper-container {
-	width:110rem;
-	height:230px;
-	border:5px solid silver;
-	border-radius:7px;
-	box-shadow:0 0 20px #ccc inset;
-}
-.swiper-slide {
-	text-align:center;
-	display:flex;/*  내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center;/*  위아래 기준 중앙정렬 */
-	justify-content:center; /* 좌우 기준 중앙정렬 */
-}
-.swiper-slide img {
-	 box-shadow:0 0 1px #555; 
-	max-width:40%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
-}
 
-.swiper-button-prev{margin-top:6rem;} 
 
 
 
@@ -509,6 +494,33 @@ p {
 
 
 
+
+
+
+
+/* Review-list  */
+ .swiper-container {
+	width:110rem;
+	height:230px;
+	border:5px solid silver;
+	border-radius:7px;
+	box-shadow:0 0 20px #ccc inset;
+}
+.swiper-slide {
+	text-align:center;
+	display:flex;/*  내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center;/*  위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+}
+.swiper-slide img {
+	 box-shadow:0 0 1px #555; 
+	max-width:40%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+}
+
+.swiper-button-prev{margin-top:6rem;} 
+.ReviewListbox{overflow: hidden;  border: 2px solid black; border-radius: 18%; width:33rem; height:30rem;}
+.reviewListTextBox22{margin-left:2rem; font-size:2rem;}
+.ReveiwImgBox2{margin:2.3rem;}
 
 
 
