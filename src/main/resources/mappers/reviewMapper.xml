@@ -51,8 +51,38 @@
  			`review_writing`
 		WHERE
 			`languageCategoryId` = #{languageCategoryId}
- 	
+ 		ORDER BY `id` DESC
  	</select>
  
+ 
+ 
+ 	<select id="selectReviewList" resultType="com.language.review.model.Review">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+ 			,`reviewCategoryId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`rating`
+ 			,`content`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`review_writing`
+ 	
+ 	</select>
+ 	
+ 	
+ 	<select id="selectReviewCountByReviewIdUserId" parameterType="map" resultType="com.language.review.model.Review">
+ 		SELECT
+ 			COUNT(*)
+		FROM
+			`review_writing`
+		WHERE
+			`id` = #{reviewId}
+			AND `userId` = #{userId}
+
+ 	</select>
  
  </mapper>

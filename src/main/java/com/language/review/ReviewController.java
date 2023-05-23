@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.language.review.bo.ReviewBO;
 import com.language.review.model.Review;
+import com.language.review.model.ReviewView;
 
 @RequestMapping("/review")
 @Controller
@@ -21,6 +22,10 @@ public class ReviewController {
 	
 	@Autowired
 	private ReviewBO reviewBO;
+	
+	
+	
+	
 	
 	
 	//localhost/review/review_list_view
@@ -33,7 +38,10 @@ public class ReviewController {
 		
 		// db
 		List<Review> reviewList = reviewBO.getReviewListByLanguage(languageCategoryId);
+		List<ReviewView> reviewViewList = reviewBO.generateReviewUserList(userId);
 		
+		
+		model.addAttribute("reviewViewList", reviewViewList);
 		model.addAttribute("reviewList", reviewList);
 		model.addAttribute("view", "review/reviewList");
 		return "template/layout";

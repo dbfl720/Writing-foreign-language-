@@ -109,7 +109,7 @@ public class GrammarBO {
 		
 		
 		
-		// Grammar 글
+		// Grammar 글들
 		List<Grammar> grammarList = grammarMapper.selectGrammarList();
 		
 		// Grammar => GrammarView 담기.

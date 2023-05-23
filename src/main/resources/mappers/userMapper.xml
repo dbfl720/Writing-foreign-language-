@@ -96,7 +96,6 @@
  			,`ImagePath`
  		FROM
  			`user`
-	
  	</select>
  	
  	

@@ -53,7 +53,7 @@ public class GrammarController {
 			HttpSession session,
 			Model model) {
 		
-		Map<String, Object> result = new HashMap<>();
+		
 		
 		
 		// session

@@ -27,4 +27,14 @@ public interface ReviewMapper {
 	public List<Review> selectReviewListByLanguage(
 			@Param("languageCategoryId") String languageCategoryId);
 	
+	
+	
+	// select
+	public List<Review> selectReviewList();
+	
+	
+	// select
+	public int selectReviewCountByReviewIdUserId(
+			@Param("reviewId") int reviewId,
+			@Param("userId") Integer userId);
 }

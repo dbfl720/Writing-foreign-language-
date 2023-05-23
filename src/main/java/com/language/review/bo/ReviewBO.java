@@ -1,5 +1,6 @@
 package com.language.review.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -9,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.language.review.dao.ReviewMapper;
 import com.language.review.model.Review;
+import com.language.review.model.ReviewView;
+import com.language.user.bo.UserBO;
+import com.language.user.model.User;
 
 @Service
 public class ReviewBO {
@@ -20,6 +24,8 @@ public class ReviewBO {
 	 @Autowired
 	 private ReviewMapper reviewMapper;
 	 
+	 @Autowired
+	 private UserBO userBO;
 	 
 	 
 	 // insert
@@ -41,10 +47,62 @@ public class ReviewBO {
 	 // select
 	 public List<Review> getReviewListByLanguage(String languageCategoryId){
 		 
-		 
-		 
 		 return reviewMapper.selectReviewListByLanguage(languageCategoryId);
 		 
+	 }
+	 
+	 
+	 
+	 
+	 // select
+	 public List<Review> getReveiwList(){
+		 
+		 return reviewMapper.selectReviewList();
+	 }
+	 
+	 
+	 
+	 
+	 // select
+	 public List<ReviewView> generateReviewUserList(Integer userId) {
+		 
+		 // 결과 리스트
+		 List<ReviewView> reviewViewList = new ArrayList<>();
+		 
+		 // Reveiw 글들
+		 List<Review> reviewList = reviewMapper.selectReviewList();
+		 
+		 
+		 for (Review review : reviewList) {
+			 
+			 ReviewView reviewView = new ReviewView();
+			 
+			 
+			 // 리뷰 글 하나
+			 reviewView.setReview(review);
+			 
+			 // 유저 정보들
+			 User user = userBO.getUserById(review.getUserId());
+			 reviewView.setUser(user);
+			 
+			 // 리뷰 글 개수
+			 reviewView.setReviewCount(getReviewCountByUserId(review.getId(),review.getUserId()));
+			 
+			 // 결과 담기
+			 reviewViewList.add(reviewView);
+			 
+		 }
+		 
+		 return reviewViewList;
+	 }
+	 
+	 
+	 
+	 
+	 
+	 // select - 개수 리턴
+	 public int getReviewCountByUserId(int reviewId, int userId) {
+		 return reviewMapper.selectReviewCountByReviewIdUserId(reviewId, userId);
 	 }
 	 
 	 
