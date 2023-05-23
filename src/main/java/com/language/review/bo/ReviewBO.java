@@ -101,7 +101,7 @@ public class ReviewBO {
 	 
 	 
 	 // select - 개수 리턴
-	 public int getReviewCountByUserId(int reviewId, int userId) {
+	 public int getReviewCountByUserId(int reviewId, Integer userId) {
 		 return reviewMapper.selectReviewCountByReviewIdUserId(reviewId, userId);
 	 }
 	 

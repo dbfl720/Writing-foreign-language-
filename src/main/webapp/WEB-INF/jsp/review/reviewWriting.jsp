@@ -153,6 +153,7 @@ $(document).ready(function(){
 					if (data.code == 1) {
 						//location.reload();
 						swal(data.result);
+						location.href = "/review/review_list_view";
 					} else {
 						swal(data.errorMessage);
 					}

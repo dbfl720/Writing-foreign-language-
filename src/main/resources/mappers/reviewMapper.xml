@@ -74,15 +74,17 @@
  	</select>
  	
  	
- 	<select id="selectReviewCountByReviewIdUserId" parameterType="map" resultType="com.language.review.model.Review">
+ 	<select id="selectReviewCountByReviewIdUserId" parameterType="map" resultType="int">
  		SELECT
  			COUNT(*)
 		FROM
 			`review_writing`
 		WHERE
 			`id` = #{reviewId}
+			<if test="userId != null">
 			AND `userId` = #{userId}
-
+			</if>
+ 	
  	</select>
  
  </mapper>
