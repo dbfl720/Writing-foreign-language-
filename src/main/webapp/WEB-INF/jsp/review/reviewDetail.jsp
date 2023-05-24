@@ -10,13 +10,23 @@
 		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
 			How do you like this article?</div>
 			
+	
+		
+			
 	<%-- 프로필 사진 --%>
 	<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
 	<input type="file" id="file" multiple='multiple' class="d-none"
 						accept=".gif, .jpg, .png, .jpeg , .webp">
 	<div class="reviewTotal55">
 		<div class="d-flex">
+		<!--더보기  -->
+		<c:forEach items="${reviewList}" var="reviewLists">
+				 <a href="#" class="more-btn ReviewMoreIcon"  data-review-id="${reviewLists.id}"> 
+					<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
+				 </a>	
+		 </c:forEach>
 			<div class="reviewDetailBox">
+			
 				<%-- 수정 아이콘 --%>
 				<c:if test="${user.id eq userId}">
 				<a href="#" id="updateProfileBtn">
@@ -73,5 +83,108 @@
 	
 	
 		</div> <!-- reviewTotal55 끝 -->
+		
+		
+		
+		<!-- 댓글 -->
+		<div>
+			<div class="mb-2">
+						<div>
+							<div class="text-secondary">댓글</div>
+						</div>
+					</div>
+
+
+					<%-- 댓글 목록 --%>
+					<div>
+						<c:forEach items="${card.commentList}" var="comments">
+							<c:choose>
+								<c:when test="${comments.comment.userId eq userId}">
+									<div class="d-flex justify-content-between align-items-center">	
+										<%-- 댓글 내용 --%>
+										<div>
+											<small class="font-weight-bold">${comments.user.loginId}</small>
+											<small>${comments.comment.content}</small>
+										</div>
+										<%-- 댓글 삭제 버튼 --%>
+											<div>
+												<a href="#" data-comment-id="${comments.comment.id}" class="deleteBtn" >
+												 <img
+													class=" mr-3" width="15px" height="15px" alt="x-icon"
+													src="/static/img/x-icon.png">
+												</a>
+											</div>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="d-flex justify-content-between align-items-center">	
+										<%-- 댓글 내용 --%>
+										<div>
+											<small class="font-weight-bold">${comments.user.loginId}</small>
+											<small>${comments.comment.content}</small>
+										</div>
+									</div>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						
+
+						
+						
+						<%-- 댓글 쓰기 --%>
+						<c:if test="${not empty userId}">
+							<div class="d-flex mt-2 justify-content-between">
+								<%-- border-top: 윗부분 경계 --%>
+								<input type="text"
+									class="commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
+									placeholder="댓글 달기..." />
+								<button type="button" class="commentBtn btn btn-light mt-2"
+									data-post-id="${card.post.id}">게시</button>
+								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
+							</div>
+						</c:if>
+					</div><%-- 댓글 목록 --%>
+		
+		</div>
 </div>
 
+
+
+
+<script>
+	$(document).ready(function(){
+		$('.more-btn').on('click', function(e){
+			e.preventDefault();
+			
+			let reviewId = $(this).data("review-id");
+			alert(reviewId);
+			
+			$.ajax({
+				type: "GET"
+				, url : "/review/get"
+				, data : {"reviewId" : reviewId}
+				, success : function(data) {
+					if (data.join == "There are no review written.") {
+							swal("Please log in.");
+						} else {
+							//data.booking.name
+							swal("Corrected sentence : " + data.grammarComment.newContent);
+							
+						}
+					}
+				,error : function(request, status, error) {
+					swal("Failed to save information. Please contact the administrator.");
+				}
+				
+				
+				
+			}); // ajax
+			
+			
+		}); // more-btn
+		
+		
+		
+	});  // ready
+
+</script>

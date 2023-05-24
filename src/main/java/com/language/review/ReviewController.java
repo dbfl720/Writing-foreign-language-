@@ -90,12 +90,20 @@ public class ReviewController {
 	
 	
 	
+	
+	
 	//localhost/review/review_detail_view
 	@GetMapping("/review_detail_view")
 	public String review_detail_view(
-			Model model) {
+			Model model, HttpSession session) {
 		
+		// session
+		Integer userId = (Integer)session.getAttribute("userId");
 		
+		// db
+		List<Review> reviewList = reviewBO.getReveiwList();
+		
+		model.addAttribute("reviewList", reviewList);
 		model.addAttribute("view", "review/reviewDetail");
 		return "template/layout";
 	}
