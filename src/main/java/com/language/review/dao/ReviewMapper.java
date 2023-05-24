@@ -34,7 +34,9 @@ public interface ReviewMapper {
 	
 	
 	// select
-	public int selectReviewCountByReviewIdUserId(
-			@Param("reviewId") int reviewId,
-			@Param("userId") Integer userId);
+	public int selectReviewCountByReviewIdUserId(@Param("userId") Integer userId);
+	
+	
+	// select - 리뷰 글 한개.
+	public List<Review> selectReviewCountList();
 }

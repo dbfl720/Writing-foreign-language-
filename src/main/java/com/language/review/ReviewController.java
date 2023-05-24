@@ -35,6 +35,7 @@ public class ReviewController {
 			Model model, HttpSession session) {
 		
 		Integer userId = (Integer)session.getAttribute("userId");
+
 		
 		// db
 		List<Review> reviewList = reviewBO.getReviewListByLanguage(languageCategoryId);

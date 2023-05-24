@@ -70,7 +70,7 @@ public class ReviewBO {
 		 List<ReviewView> reviewViewList = new ArrayList<>();
 		 
 		 // Reveiw 글들
-		 List<Review> reviewList = reviewMapper.selectReviewList();
+		 List<Review> reviewList = reviewMapper.selectReviewCountList();
 		 
 		 
 		 for (Review review : reviewList) {
@@ -86,7 +86,7 @@ public class ReviewBO {
 			 reviewView.setUser(user);
 			 
 			 // 리뷰 글 개수
-			 reviewView.setReviewCount(getReviewCountByUserId(review.getId(),review.getUserId()));
+			 reviewView.setReviewCount(getReviewCountByUserId(review.getUserId()));
 			 
 			 // 결과 담기
 			 reviewViewList.add(reviewView);
@@ -101,8 +101,15 @@ public class ReviewBO {
 	 
 	 
 	 // select - 개수 리턴
-	 public int getReviewCountByUserId(int reviewId, Integer userId) {
-		 return reviewMapper.selectReviewCountByReviewIdUserId(reviewId, userId);
+	 public int getReviewCountByUserId(Integer userId) {
+		 return reviewMapper.selectReviewCountByReviewIdUserId(userId);
+	 }
+	 
+	 
+	 
+	 // select - 리뷰 글 한개.
+	 public List<Review> getReviewCountList() {
+		 return reviewMapper.selectReviewCountList();
 	 }
 	 
 	 
