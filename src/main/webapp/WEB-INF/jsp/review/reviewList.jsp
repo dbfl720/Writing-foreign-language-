@@ -4,10 +4,36 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
    
-<div class="container">   
-	<div class="display-4 pt-5 pb-5">
-		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
-	Great Writer!</div>
+<div class="container">  
+	<div class="d-flex justify-content-between"> 
+		<div class="display-4 pt-5 pb-5 ">
+			<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
+		Great Writer!
+		</div>
+		
+		<div class="d-flex justify-content-end">
+				<select name="id" id= ReviewlanguageId class="form-select form-select-sm form-control col-2 standardHeight">
+						<option value="none" selected>language</option>
+						<option value="KO">KO</option>
+						<option value="EN">EN</option>
+						<option value="JP">JP</option>
+						<option value="CHN">CHN</option>
+						<option value="FRA">FRA</option>
+						<option value="SWE">SWE</option>
+						<option value="DEU">DEU</option>
+						<option value="VNM">VNM</option>
+						<option value="Others">Others</option>
+				</select>
+		
+			<!-- 리뷰쓰기 아이콘 -->
+			<div class="ReviewPencilIcon ">
+				<a href="/review/review_writing_view"> <img alt="연필 이모티콘"
+					width="40" height="40"
+					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
+				</a>
+			</div>
+		</div>
+	</div>	
 			 
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
@@ -34,16 +60,11 @@
 		<div class="swiper-button-next mt-5"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
 		<div class="swiper-button-prev mt-5"></div><!-- 이전 버튼 -->
 	
-		<!-- 페이징 -->
+		<!-- swiper -->
 		<div class="swiper-pagination"></div>
-	</div>
+	</div><!-- swiper 끝 -->
 	
-	<div class="pencilIcon">
-	<a href="/review/review_writing_view"> <img alt="연필 이모티콘"
-		width="55" height="55"
-		src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
-	</a>
-</div><!-- swiper 끝 -->
+	
 
 
 
@@ -103,7 +124,19 @@
 	</div>
 
 
-
+<!-- 페이징 -->
+<div class="d-flex justify-content-around GrammarListPage">
+	<c:if test="${prevId ne 0}">
+		<a href="/review/review_list_view?prevId=${prevId}&languageCategoryId=${languageCategoryId}" class="mr-5">
+		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
+		</a> <%-- 계산안하고 서버에 넘기기. --%>
+	</c:if>
+	<c:if test="${nextId ne 0}">
+		<a href="/review/review_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}"> 
+		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
+		</a>
+	</c:if>
+</div>
 
 
 

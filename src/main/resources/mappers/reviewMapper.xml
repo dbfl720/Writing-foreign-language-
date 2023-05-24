@@ -35,7 +35,7 @@
  	
  	
  	
- 	<select id="selectReviewListByLanguage" parameterType="String" resultType="com.language.review.model.Review">
+ 	<select id="selectReviewListByLanguage"  resultType="com.language.review.model.Review">
  		SELECT
  			`id`
  			,`userId`
@@ -51,8 +51,40 @@
  			`review_writing`
 		WHERE
 			`languageCategoryId` = #{languageCategoryId}
- 		ORDER BY `id` DESC
+ 			<if test="direction == null">
+			ORDER BY `id` DESC		
+			</if>
+			<if test="direction == 'next'">
+			<![CDATA[
+			AND `id` < #{standardId}
+			]]>
+			ORDER BY `id` DESC
+			</if>
+			<if test="direction == 'prev'">
+			<![CDATA[
+			AND `id` > #{standardId}
+			]]>
+			</if>
+ 			LIMIT ${limit} 
  	</select>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<select id="selectReviewListByLanguageSort" parameterType="map" resultType="int">
+		SELECT 
+			`id`
+		FROM
+			`review_writing`
+		WHERE
+			`languageCategoryId` = #{languageCategoryId}
+		ORDER BY `id` ${sort}
+		LIMIT 1
+	</select>
+ 	
+ 
+ 
  
  
  
@@ -93,9 +125,9 @@
 		SELECT
  			userId, count(userId)
  		FROM
- 			`review_writing` group by 1
-		ORDER by 2 DESC
- 	
+ 			`review_writing` group by 1   <!-- group by 1 : 1번째 컬럼 -->
+		ORDER by 2 DESC   <!-- ORDER BY 2 : 컬럼 순서   -->
+ 		Limit 18
  	</select>
  
  </mapper>

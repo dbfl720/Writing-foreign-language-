@@ -58,7 +58,7 @@ public class GrammarBO {
 		
 	
 		String direction = null;     // 방향
-		Integer standardId = null;   // 기준 grammarId
+		Integer standardId = null;   // 기준 reviewId
 		if (prevId != null) { // 이전
 			direction = "prev";
 			standardId = prevId;

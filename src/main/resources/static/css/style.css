@@ -431,7 +431,7 @@ p {
     repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
   line-height: 50px;
   padding-left:2rem;}
-#languageCategoryId{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+#languageCategoryId:fucus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 #ReviewRatingId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
    transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
      background-attachment: local;
@@ -491,9 +491,9 @@ p {
  .swiper-container {
 	width:110rem;
 	height:230px;
-	border:5px solid silver;
+	border:0.04rem solid #FF9100;
 	border-radius:7px;
-	box-shadow:0 0 20px #ccc inset;
+	box-shadow:0 0 18px #FF9100 inset;
 }
 .swiper-slide {
 	text-align:center;
@@ -507,10 +507,19 @@ p {
 }
 
 .swiper-button-prev{margin-top:6rem;} 
-.ReviewListbox{overflow: hidden;  border: 2px solid black; border-radius: 18%; width:33rem; height:31rem;}
+.ReviewListbox{overflow: hidden;  border: 2px solid black; border-radius: 18%; width:33rem; height:30rem;}
 .reviewListTextBox22{margin-left:2rem; font-size:2rem;}
 .ReveiwImgBox2{margin:2.3rem;}
 .reveiwLangagueText{color:#FFA500; font-size:3rem; }
 .ReviewListUserName{font-size:2rem;}
-
-
+.ReviewPencilIcon{margin:2rem; margin-top:3rem;}
+.article1{margin-top:10rem;}
+#ReviewlanguageId{height:5rem; width:80rem; object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;}
+#ReviewlanguageId:fucus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}

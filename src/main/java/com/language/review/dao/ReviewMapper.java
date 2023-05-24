@@ -25,7 +25,17 @@ public interface ReviewMapper {
 	
 	// select
 	public List<Review> selectReviewListByLanguage(
-			@Param("languageCategoryId") String languageCategoryId);
+			@Param("languageCategoryId") String languageCategoryId,
+			@Param("direction") String direction,
+			@Param("standardId") Integer standardId,
+			@Param("limit") int limit);
+	
+	
+	
+	// select
+	public int selectReviewListByLanguageSort(
+			@Param("languageCategoryId") String languageCategoryId,
+			@Param("sort") String sort);  
 	
 	
 	
