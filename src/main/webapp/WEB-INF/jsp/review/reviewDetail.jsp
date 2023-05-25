@@ -6,7 +6,7 @@
 
 <div class="container"> 
 
-	<div class="display-4 pt-5 pb-5">
+	<div class="display-4 pt-5 pb-5 TopLogoEffects">
 		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
 			How do you like this article?</div>
 			
@@ -18,7 +18,7 @@
 	<input type="file" id="file" multiple='multiple' class="d-none"
 						accept=".gif, .jpg, .png, .jpeg , .webp">
 	<div class="reviewTotal55">
-		<div class="d-flex">
+		<div class="d-flex ReveiwTopBot">
 				<!--더보기  -->
 				 <a href="#" class="more-btn ReviewMoreIcon"  data-review-id="${review.id}"> 
 					<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
@@ -34,7 +34,7 @@
 				
 				<div class="reviewBox mr-3">
 					<img id="reviewImg" class=" review" alt="프로필 사진"
-						src="https://cdn.pixabay.com/photo/2023/04/29/18/12/goslings-7959052_1280.jpg" height="300" width="300">
+						src="${review.imagePath}" height="300" width="300">
 				</div>
 				
 				
@@ -49,10 +49,12 @@
 					
 			</div>
 		
-			<div class="d-flex justify-content-center">
-			<textarea name="description" type="text" id= "ReviewDetailText" class="form-control mt-3"></textarea>
+			<!-- 쓰기  -->
+			<div class="ReviewDetailTextBox effect5">
+				<div class="reviewDetailTitle">${review.title}</div>
+				<div class="reviewDetailContent">${review.content}</div>
 			</div>
-	
+				
 		</div> <!-- d-flex  -->
 		</div> <!-- reviewTotal55 끝 -->
 		
@@ -61,8 +63,8 @@
 		<!-- 댓글 -->
 			<div>
 					<div class="mb-2">
-						<div>
-							<div class="text-secondary">댓글</div>
+						<div class="DetailCommentBox555">
+							<div class="text-secondary DetailCommentBox666 ml-4">댓글</div>
 						</div>
 					</div>
 
@@ -107,10 +109,8 @@
 						<c:if test="${not empty userId}">
 							<div class="d-flex mt-2 justify-content-between">
 								<%-- border-top: 윗부분 경계 --%>
-								<input type="text"
-									class="commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
-									placeholder="댓글 달기..." />
-								<button type="button" class="commentBtn btn btn-light mt-2"
+								<input type="text" class=" detailCommentBox commentInput border-0 form-control mt-2 mr-2 col-10" placeholder="댓글 달기..." />
+								<button type="button" class="detailCommentBox btn btn-light mt-2"
 									data-post-id="${card.post.id}">게시</button>
 								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
 							</div>
