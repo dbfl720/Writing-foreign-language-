@@ -154,6 +154,11 @@ public class ReviewBO {
 	 
 	 
 	 
+	 
+	 // select
+	 public Review getReview(int reviewId) {
+		 return reviewMapper.selectReview(reviewId);
+	 }
 
 	 
 }

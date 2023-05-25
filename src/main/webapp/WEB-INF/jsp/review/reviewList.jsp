@@ -74,9 +74,10 @@
 	<div class="article1  d-flex flex-wrap align-items-center justify-content-between">
 		<c:forEach items="${reviewList}" var="reviewLists">
 			<div class="ReviewListbox mt-3 card">
-				<small class="reveiwLangagueText card-img-overlay" name="price">${reviewLists.languageCategoryId}</small>
-				<img class="ReveiwImgBox2 " src="${reviewLists.imagePath}"
-					id="imageUrl" name="iamgeUrl" alt="이미지 " width="280" height="150">
+				<a href="/review/review_detail_view?reviewId=${reviewLists.id}">
+					<small class="reveiwLangagueText card-img-overlay">${reviewLists.languageCategoryId}</small>
+						<img class="ReveiwImgBox2 " src="${reviewLists.imagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="280" height="150">
+				</a>
 				<div class="reviewListTextBox22">
 					<h3 class="text-secondary" name="price">
 						<img alt="타입 이미지" height="22" width="22"

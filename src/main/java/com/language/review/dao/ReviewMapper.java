@@ -51,4 +51,7 @@ public interface ReviewMapper {
 	public List<Review> selectReviewCountList();
 	
 	
+	
+	// select
+	public Review selectReview(int reviewId);
 }

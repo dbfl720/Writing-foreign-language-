@@ -6,12 +6,14 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.language.review.bo.ReviewBO;
+import com.language.review.model.Review;
 
 @RequestMapping("/review") // 클라이언트가 요청한 URL path와 일치하는 메소드가 수행된다.
 @RestController // 웹 주소로 요청하면, 웹사이트 View 화면이 아닌 json 같은 데이터를 응답값으로 보내준다.
@@ -51,4 +53,26 @@ public class ReviewRestController {
 		
 		
 	}
+	
+	
+	
+	
+	
+	@GetMapping("/get")
+	public Map<String, Object> get(
+			@RequestParam("reviewId") int reviewId){
+		
+		Map<String, Object> result = new HashMap<>();
+		
+		// db
+		Review review = reviewBO.getReview(reviewId);
+		
+		if (review == null) {
+			result.put("join", "please log in.");
+		} else {
+			result.put("review", review);
+		}
+		return result;
+	}
+	
 }

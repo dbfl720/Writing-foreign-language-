@@ -70,7 +70,7 @@ public class GrammarCommentRestController {
 		 GrammarComment grammarComment = grammarCommentBO.getGrammarComment(commentId);
 		 
 		 if (grammarComment == null) {
-				result.put("join", "조회 불가");
+				result.put("join", "please log in.");
 			} else {
 				result.put("grammarComment", grammarComment);
 

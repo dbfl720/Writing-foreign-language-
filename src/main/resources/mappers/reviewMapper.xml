@@ -129,5 +129,24 @@
 		ORDER by 2 DESC   <!-- ORDER BY 2 : 컬럼 순서   -->
  		Limit 18
  	</select>
+ 	
+ 	
+ 	<select id="selectReview"  parameterType="int" resultType="com.language.review.model.Review">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+ 			,`reviewCategoryId`
+ 			,`languageCategoryId`
+ 			,`title`
+ 			,`rating`
+ 			,`content`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`review_writing`
+		WHERE
+			`id` = #{reviewId}
+ 	</select>
  
  </mapper>

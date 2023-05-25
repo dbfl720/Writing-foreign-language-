@@ -77,6 +77,8 @@ public class ReviewController {
 	
 	
 	
+	
+	
 	//localhost/review/review_writing_view
 	@GetMapping("/review_writing_view")
 	public String review_writing_view(
@@ -92,9 +94,12 @@ public class ReviewController {
 	
 	
 	
+	
+	
 	//localhost/review/review_detail_view
 	@GetMapping("/review_detail_view")
 	public String review_detail_view(
+			@RequestParam(value="reviewId") int reviewId,
 			Model model, HttpSession session) {
 		
 		// session
@@ -102,7 +107,9 @@ public class ReviewController {
 		
 		// db
 		List<Review> reviewList = reviewBO.getReveiwList();
+		Review review = reviewBO.getReview(reviewId);
 		
+		model.addAttribute("review", review);
 		model.addAttribute("reviewList", reviewList);
 		model.addAttribute("view", "review/reviewDetail");
 		return "template/layout";
