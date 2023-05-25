@@ -78,7 +78,7 @@
 										<%-- 댓글 내용 --%>
 										<div>
 											<small class="font-weight-bold">${comments.user.loginId}</small>
-											<small>${comments.comment.content}</small>
+											<small id="reviewCommentContentId">${comments.comment.content}</small>
 										</div>
 										<%-- 댓글 삭제 버튼 --%>
 											<div>
@@ -109,9 +109,9 @@
 						<c:if test="${not empty userId}">
 							<div class="d-flex mt-2 justify-content-between">
 								<%-- border-top: 윗부분 경계 --%>
-								<input type="text" class=" detailCommentBox commentInput border-0 form-control mt-2 mr-2 col-10" placeholder="댓글 달기..." />
-								<button type="button" class="detailCommentBox btn btn-light mt-2"
-									data-post-id="${card.post.id}">게시</button>
+								<input  id="reviewCommentInput" type="text" class=" detailCommentBox commentInput border-0 form-control mt-2 mr-2 col-10" placeholder="댓글 달기..." />
+								<button  id="reviewCommentBtn" type="button" class="detailCommentBox btn btn-light mt-2"
+								 data-review-id="${review.id}">게시</button>
 								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
 							</div>
 						</c:if>
@@ -163,6 +163,55 @@
 		}); // more-btn
 		
 		
+		
+		
+		
+		
+		// 댓글 쓰기
+		$('#reviewCommentBtn').on('click',function(e){
+			e.preventDefault();
+			
+			let reviewId = $(this).data("review-id");
+			let content = $("#reviewCommentInput").val();
+			alert(reviewId);
+			
+			// validation
+			if (!content){
+				swal("Please write your comment.");
+				return;
+			}
+			
+			
+			
+			
+			// ajax
+			$.ajax({
+				// request
+				type : "POST"
+				, url : "/review_comment/create"
+				, data : {
+					"reviewId" : reviewId
+					,"content" : content
+				}
+			
+			
+				// response
+				,success : function(data) {
+					if (data.code = 1) {
+						location.reload(true);
+						swal(data.code);
+					} else {
+						swal(data.errorMessage);
+					}
+				},
+				error : function(request, status, error) {
+					swal("Failed to save information. Please contact the administrator.");
+				}
+				
+				
+			}); // ajax
+			
+		}); // reviewCommentid
 		
 	});  // ready
 
