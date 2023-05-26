@@ -479,7 +479,7 @@ p {
   line-height: 50px;
   padding: 8px 20px;}
 #ReviewDetailText:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-.reviewTotal55{padding:1rem;  margin-top:6rem; margin-bottom:22rem;}
+.reviewTotal55{padding:1rem;  margin-top:6rem; margin-bottom:3rem;}
 .reviewBox{ width: 250px; height:250px;  border-radius: 30%; border: 2px solid black; overflow: hidden; margin-top:1rem;}
 .ReviewUserInfo{width:27rem; margin-top:3rem;}
 
@@ -578,7 +578,11 @@ p {
   left: auto;
 	
 }
-
+.ReviewDetailCommentContents{font-size:2.1rem; }
+.DetailCommentBox666{font-size:1.5rem; margin-top:3rem; margin-bottom:1rem;}
+.reviewDetailContentsBox22{width:107rem; margin-left:3rem;}
+#reviewCommentInput{font-size:1.8rem;}
+#reviewCommentBtn{font-size:1.8rem; font-weight:bold;}
 
 
 

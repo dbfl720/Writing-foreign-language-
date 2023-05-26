@@ -62,12 +62,24 @@
 		
 		<!-- 댓글 -->
 			<div>
-					<div class="mb-2">
-						<div class="DetailCommentBox555">
-							<div class="text-secondary DetailCommentBox666 ml-4">댓글</div>
+			
+				<%-- 댓글 쓰기 --%>
+						<c:if test="${not empty userId}">
+							<div class="d-flex mt-2 justify-content-between">
+								<%-- border-top: 윗부분 경계 --%>
+								<input  id="reviewCommentInput" type="text" class=" detailCommentBox commentInput border-0 form-control mt-2 mr-2 col-10" placeholder="Add your comment..." />
+								<button  id="reviewCommentBtn" type="button" class="detailCommentBox btn btn-light mt-2"
+								 data-review-id="${review.id}">save</button>
+								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
+							</div>
+						</c:if>
+						
+						
+					
+						<div class="reviewDetailContentsBox22">
+							<div class="text-secondary DetailCommentBox666">comment</div>
 						</div>
-					</div>
-
+				
 
 					<%-- 댓글 목록 --%>
 					<div>
@@ -75,9 +87,9 @@
 							 <c:forEach items="${reviewCommentView}" var="comments"> 
 					 	 	 <c:choose> 
 								 <c:when test="${comments.reviewComment.userId eq userId}">
-									<div class="d-flex justify-content-between align-items-center">	
+									<div class="reviewDetailContentsBox22 d-flex justify-content-between align-items-center">	
 										<!-- 댓글 내용 -->
-										<div>
+										<div class="ReviewDetailCommentContents">
 											<small class="font-weight-bold">${comments.user.loginId}</small>
 											<small id="reviewCommentContentId">${comments.reviewComment.content}</small>
 										</div>
@@ -85,7 +97,7 @@
 											<div>
 												<a href="#" data-comment-id="${comments.reviewComment.id}" class="deleteBtn" >
 												 <img
-													class=" mr-3" width="15px" height="15px" alt="x-icon"
+													class=" mr-3" width="20" height="20" alt="more-icon"
 													src="https://icons.iconarchive.com/icons/colebemis/feather/128/more-horizontal-icon.png">
 												</a>
 											</div>
@@ -93,9 +105,11 @@
 								 </c:when>
 								 <c:otherwise>
 								 	<!-- 댓글 내용 -->
-										<div>
-											<small class="font-weight-bold">${comments.user.loginId}</small>
-											<small id="reviewCommentContentId">${comments.reviewComment.content}</small>
+								 		<div class="reviewDetailContentsBox22 d-flex justify-content-between align-items-center">	
+											<div class="ReviewDetailCommentContents">
+												<small class="reviewDetailLoginId">${comments.user.loginId}</small>
+												<small id="reviewCommentContentId">${comments.reviewComment.content}</small>
+											</div>
 										</div>
 								 </c:otherwise>
 							 </c:choose>  
@@ -106,9 +120,9 @@
 						
 						
 						<c:if test="${empty reviewCommentView}">
-								<div class="d-flex justify-content-between align-items-center">	
+								<div class="reviewDetailContentsBox22 d-flex justify-content-between align-items-center">	
 									<%-- 댓글 내용 --%>
-									<div>
+									<div class="ReviewDetailCommentContents">
 										<small class="font-weight-bold">d</small>
 										<small>d</small>
 									</div>
@@ -117,16 +131,7 @@
 						
 						
 						
-						<%-- 댓글 쓰기 --%>
-						<c:if test="${not empty userId}">
-							<div class="d-flex mt-2 justify-content-between">
-								<%-- border-top: 윗부분 경계 --%>
-								<input  id="reviewCommentInput" type="text" class=" detailCommentBox commentInput border-0 form-control mt-2 mr-2 col-10" placeholder="댓글 달기..." />
-								<button  id="reviewCommentBtn" type="button" class="detailCommentBox btn btn-light mt-2"
-								 data-review-id="${review.id}">게시</button>
-								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
-							</div>
-						</c:if>
+					
 					</div><%-- 댓글 목록 --%>
 		
 		</div>
@@ -185,7 +190,7 @@
 			
 			let reviewId = $(this).data("review-id");
 			let content = $("#reviewCommentInput").val();
-			alert(reviewId);
+			//alert(reviewId);
 			
 			// validation
 			if (!content){
