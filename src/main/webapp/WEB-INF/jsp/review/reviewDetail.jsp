@@ -95,9 +95,8 @@
 										</div>
 										<!-- 댓글 삭제 버튼 -->
 											<div>
-												<a href="#" data-comment-id="${comments.reviewComment.id}" class="deleteBtn" >
-												 <img
-													class=" mr-3" width="20" height="20" alt="more-icon"
+												<a href="#" class="delete-btn" data-toggle="modal" data-target="#modal" data-comment-id="${comments.reviewComment.id}" >
+												 <img class=" mr-3" width="20" height="20" alt="more-icon"
 													src="https://icons.iconarchive.com/icons/colebemis/feather/128/more-horizontal-icon.png">
 												</a>
 											</div>
@@ -136,6 +135,28 @@
 		
 		</div>
 </div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal" >
+	<%-- modal-dialog-centered : 모달 창을 수직 가운데 정렬 --%>
+	<%-- modal-sm: small 모달 --%>
+  	<div class="modal-dialog modal-dialog-centered modal-sm"> 
+    	<div class="modal-content text-center">
+      		<div class="py-3 border-bottom"> 
+      			<a href="#" id="deletePostBtn" class="text-dark">Delete</a>
+   			</div>
+   			<div class="py-3">
+   				<%-- data-dismiss="modal" => 모달창 닫힘 --%>
+   				<a href="#" data-dismiss="modal" class="text-dark">Close</a>
+   			</div>
+    	</div>
+  </div>
+</div>
+
 
 
 
@@ -229,6 +250,69 @@
 			}); // ajax
 			
 		}); // reviewCommentid
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 댓글 삭제
+		$('.delete-btn').on('click',function(e){
+			e.preventDefault();
+			
+			let commentId = $(this).data('comment-id');
+			//alert(commentId);
+			
+			// 모달 태그에 (재활용 되는) data-post-id를 심어줌
+			$('#modal').data('comment-id', commentId);  // setting - modal태그에 세팅한 것임. 내부적으로 commentId심어져있음 
+			
+		}); // more-btn
+		
+		
+		
+		
+		
+		
+		
+		// 모달 안에 있는 삭제하기 버튼 클릭 => 진짜 삭제
+		$('#modal #deletePostBtn').on('click', function(e){   // modal 안에 있는 deletePostBtn  띄어쓰기. #modal 안써도 됨. 그냥 알아보기 쉬우라고..
+			e.preventDefault();
+			
+		
+			let commentId = $('#modal').data('comment-id');
+			 //alert(commentId);
+		
+	
+			
+			// ajax 글 삭제 
+			$.ajax({
+				// request
+				type : "DELETE",
+				url : "/review_comment/delete",
+				data : {
+					"commentId" : commentId
+				}
+
+				// response
+				,success : function(data) {
+					if (data.code = 1) {
+						location.reload(true);
+						swal(data.result);
+					} else {
+						swal(data.errorMessage);
+					}
+				},
+				error : function(request, status, error) {
+					swal("Failed to save information. Please contact the administrator.");
+				}
+				
+				
+			}); // ajax 
+		});
+		
 		
 	});  // ready
 

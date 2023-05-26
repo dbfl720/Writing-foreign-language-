@@ -3,6 +3,8 @@ package com.language.review_comment.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +17,18 @@ import com.language.user.model.User;
 @Service
 public class ReviewCommentBO {
 
+	// logger 
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	
 	
 	@Autowired
 	private ReviewCommentMapper reviewCommentMapper;
 	
 	@Autowired
 	private UserBO userBO;
+	
+	
 	
 	
 	// select
@@ -49,7 +57,7 @@ public class ReviewCommentBO {
 		
 		// 해당 글 댓글 가져오기
 		List<ReviewComment> reviewCommentList = reviewCommentMapper.selectReviewCommentListByReviewId(reviewId);
-		
+			
 		// reviewComment => reviewCommentView
 		for (ReviewComment reviewComment : reviewCommentList) {
 			
@@ -70,5 +78,11 @@ public class ReviewCommentBO {
 		}
 		
 		return reviewCommentViewList;
+	}
+	
+	
+	// delete
+	public int deleteComment (int commentId) {
+		return reviewCommentMapper.deleteComment(commentId);
 	}
 }

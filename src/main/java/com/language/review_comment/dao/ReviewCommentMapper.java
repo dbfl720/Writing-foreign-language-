@@ -21,4 +21,6 @@ public interface ReviewCommentMapper {
 			@Param("content") String content);
 			
 	
+	// delete
+	public int deleteComment (int commentId);
 }
