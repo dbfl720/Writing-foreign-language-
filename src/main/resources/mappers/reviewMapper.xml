@@ -162,7 +162,7 @@
  			,`ImagePath` = #{ImagePath}
  			,`updatedAt` = NOW()
 		WHERE
-			`userId` = #{userId}
+			`id` = #{reviewId}
  	</update>
 
  

@@ -57,9 +57,13 @@
 			</div>
 		
 			
-			<div class="GrammarSaveIcon text-center pt-3">
-				<a href="#" id="saveReviewBtn">
-					<img class="saveReviewBtn" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+			<div class="ReviewSaveIcon text-center pt-3 d-flex justify-content-around">
+					<a href="#" id="saveReviewBtn">
+						<img class="saveReviewBtn" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+					</a>
+			
+				<a href="/review/review_list_view">
+					<img  alt="목록 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
 				</a>
 			</div>
 </div>

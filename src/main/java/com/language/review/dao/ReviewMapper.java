@@ -59,7 +59,7 @@ public interface ReviewMapper {
 	
 	// update
 	 public void updateReviewByUserId(
-			 @Param("userId") int userId,
+			 @Param("reviewId") int reviewId,
 			 @Param("reviewCategoryId") String reviewCategoryId,
 			 @Param("languageCategoryId") String languageCategoryId,
 			 @Param("title") String title,

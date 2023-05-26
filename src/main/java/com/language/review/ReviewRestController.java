@@ -101,6 +101,7 @@ public class ReviewRestController {
 	// 리뷰 글 수정
 	@PutMapping("/update")
 	public Map<String, Object> update(
+		@RequestParam("reviewId") int reviewId,
 		@RequestParam("selectTypeValue") String reviewCategoryId,
 		@RequestParam("selectLanguageValue")String languageCategoryId,
 		@RequestParam("title")String title,
@@ -114,7 +115,7 @@ public class ReviewRestController {
 	
 		
 		// db
-	    reviewBO.updateReview(userId, reviewCategoryId, languageCategoryId, title, rating, content, ImagePath);
+	    reviewBO.updateReview(reviewId, reviewCategoryId, languageCategoryId, title, rating, content, ImagePath);
 		
 		// response		
 		Map<String, Object> result = new HashMap<>();

@@ -175,7 +175,7 @@ public class ReviewBO {
 	 
 	 // update
 	 public void updateReview( 
-			 	int userId,
+			 	int reviewId,
 				String reviewCategoryId,
 				String languageCategoryId,
 				String title,
@@ -184,7 +184,7 @@ public class ReviewBO {
 				String ImagePath) {
 		 
 		 // db
-		reviewMapper.updateReviewByUserId(userId, reviewCategoryId, languageCategoryId, title, rating, content, ImagePath);
+		reviewMapper.updateReviewByUserId(reviewId, reviewCategoryId, languageCategoryId, title, rating, content, ImagePath);
 		 
 	 }
 

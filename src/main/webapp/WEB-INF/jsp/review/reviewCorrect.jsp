@@ -56,13 +56,17 @@
 
 			<div class="input-group mb-3 mt-3 ">
 				<span class="input-group-text standardHeight" id="basic-addon1">Image url</span> <input
-					 id="ReviewImageUrl" name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl" placeholder="${review.imagePath}">
+					 id="ReviewImageUrl" name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl">
 			</div>
 		
 			
-			<div class="GrammarSaveIcon text-center pt-3">
-				<a href="#" id="saveReviewCorrectBtn">
-					<img class="saveReviewBtn" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+			<div class="ReviewSaveIcon text-center pt-3 d-flex justify-content-around">
+				<a href="#" id="saveReviewCorrectBtn" data-review-id="${review.id}">
+					<img class="saveReviewBtn" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+				</a>
+				
+				<a href="/review/review_list_view">
+					<img  alt="목록 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
 				</a>
 			</div>
 </div>
@@ -88,11 +92,12 @@
 		var selectRatingIndex = document.getElementById('ReviewRatingId').options.selectedIndex;
 		var selectRatingValue = selectRating.options[selectRatingIndex].value;
 		
-		
+		let reviewId = $(this).data("review-id");
 		let title = $('#ReviewTitleId').val();
 		let content = $('#ReviewTextareaId').val();
 		let ImagePath = $('#ReviewImageUrl').val(); 
 		
+	
 		
 		// validation
 		if (selectTypeValue == 'none'){
@@ -141,7 +146,8 @@
 			type:"PUT"
 			, url: "/review/update"
 			, data:{
-				"selectTypeValue" : selectTypeValue
+				"reviewId" : reviewId
+				,"selectTypeValue" : selectTypeValue
 				, "selectLanguageValue" : selectLanguageValue
 				, "title" : title
 				, "selectRatingValue" : selectRatingValue
@@ -152,9 +158,7 @@
 		 // response
 			, success : function(data) {
 				if (data.code == 1) {
-					
 					swal("The update was successful.");
-					location.reload();
 				} else {
 					swal(data.errorMessage);
 				}

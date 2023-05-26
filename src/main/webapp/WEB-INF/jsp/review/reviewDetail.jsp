@@ -26,31 +26,17 @@
 				
 
 			<div class="reviewDetailBox">	
-				<%-- 수정 아이콘 --%>
-				<c:if test="${review.userId eq userId}">
-				<a href="#" id="updateProfileBtn">
-				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
-				</a>
-				</c:if>
-				
 				<div class="reviewBox mr-3">
 					<img id="reviewImg" class=" review" alt="프로필 사진"
 						src="${review.imagePath}" height="300" width="300">
 				</div>
 				<!-- 업데이트 아이콘 -->
+				<c:if test="${review.userId eq userId}">
 				<div class="reveiwCorrectIcon"><a href="/review/review_correct_view?reviewId=${review.id}"> 
 					<img width="26" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/tools-icon.png" > 
 					 </a>	
-			    </div>
-				<c:if test="${review.userId eq userId}">
-					<a href="#" id="profileBtn">
-					<img alt="프로필 변경 이모티콘" width="36" height="36"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
-					</a>
-				
-					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
-					<div id="fileName" class="text-secondary ml-2 mt-2"></div>
-				</c:if>	
-					
+			    </div>	
+			    </c:if>	
 			</div>
 
 		
@@ -127,8 +113,8 @@
 								<div class="reviewDetailContentsBox22 d-flex justify-content-between align-items-center">	
 									<%-- 댓글 내용 --%>
 									<div class="ReviewDetailCommentContents">
-										<small class="font-weight-bold">d</small>
-										<small>d</small>
+										<small class="font-weight-bold"></small>
+										<small>We look forward to your comments.</small>
 									</div>
 								</div>
 						</c:if>
