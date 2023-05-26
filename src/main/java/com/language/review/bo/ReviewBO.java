@@ -9,10 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.language.grammar.model.Grammar;
 import com.language.review.dao.ReviewMapper;
 import com.language.review.model.Review;
 import com.language.review.model.ReviewView;
+import com.language.review_comment.bo.ReviewCommentBO;
+import com.language.review_comment.model.ReviewCommentView;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -32,6 +33,9 @@ public class ReviewBO {
 	 
 	 @Autowired
 	 private UserBO userBO;
+	 
+	 @Autowired
+	 private ReviewCommentBO reviewCommentBO;
 	 
 	 
 	 // insert
@@ -111,6 +115,7 @@ public class ReviewBO {
 		 
 		 // Reveiw 글들
 		 List<Review> reviewList = reviewMapper.selectReviewCountList();
+		
 		 
 		 
 		 for (Review review : reviewList) {
@@ -127,6 +132,10 @@ public class ReviewBO {
 			 
 			 // 리뷰 글 개수
 			 reviewView.setReviewCount(getReviewCountByUserId(review.getUserId()));
+			 
+			 
+			 // 댓글들
+			 
 			 
 			 // 결과 담기
 			 reviewViewList.add(reviewView);

@@ -71,38 +71,50 @@
 
 					<%-- 댓글 목록 --%>
 					<div>
-						<c:forEach items="${card.commentList}" var="comments">
-							<c:choose>
-								<c:when test="${comments.comment.userId eq userId}">
+							<c:if test="${not empty reviewCommentView}">
+							 <c:forEach items="${reviewCommentView}" var="comments"> 
+					 	 	 <c:choose> 
+								 <c:when test="${comments.reviewComment.userId eq userId}">
 									<div class="d-flex justify-content-between align-items-center">	
-										<%-- 댓글 내용 --%>
+										<!-- 댓글 내용 -->
 										<div>
 											<small class="font-weight-bold">${comments.user.loginId}</small>
-											<small id="reviewCommentContentId">${comments.comment.content}</small>
+											<small id="reviewCommentContentId">${comments.reviewComment.content}</small>
 										</div>
-										<%-- 댓글 삭제 버튼 --%>
+										<!-- 댓글 삭제 버튼 -->
 											<div>
-												<a href="#" data-comment-id="${comments.comment.id}" class="deleteBtn" >
+												<a href="#" data-comment-id="${comments.reviewComment.id}" class="deleteBtn" >
 												 <img
 													class=" mr-3" width="15px" height="15px" alt="x-icon"
-													src="/static/img/x-icon.png">
+													src="https://icons.iconarchive.com/icons/colebemis/feather/128/more-horizontal-icon.png">
 												</a>
 											</div>
 									</div>
-								</c:when>
-								<c:otherwise>
-									<div class="d-flex justify-content-between align-items-center">	
-										<%-- 댓글 내용 --%>
+								 </c:when>
+								 <c:otherwise>
+								 	<!-- 댓글 내용 -->
 										<div>
 											<small class="font-weight-bold">${comments.user.loginId}</small>
-											<small>${comments.comment.content}</small>
+											<small id="reviewCommentContentId">${comments.reviewComment.content}</small>
 										</div>
-									</div>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>
+								 </c:otherwise>
+							 </c:choose>  
+							</c:forEach>
+							</c:if> 
 						
 
+						
+						
+						<c:if test="${empty reviewCommentView}">
+								<div class="d-flex justify-content-between align-items-center">	
+									<%-- 댓글 내용 --%>
+									<div>
+										<small class="font-weight-bold">d</small>
+										<small>d</small>
+									</div>
+								</div>
+						</c:if>
+						
 						
 						
 						<%-- 댓글 쓰기 --%>

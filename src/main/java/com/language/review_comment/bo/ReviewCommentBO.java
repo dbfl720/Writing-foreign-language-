@@ -41,8 +41,8 @@ public class ReviewCommentBO {
 	
 	
 	
-	// select
-	public List<ReviewCommentView> generateReviewCommentList(int reviewId, Integer userId){
+	// select - 댓글쓴이를 알기 위해.
+	public List<ReviewCommentView> generateReviewCommentList(int reviewId){
 		
 		// 결과 리스트
 		List<ReviewCommentView> reviewCommentViewList = new ArrayList<>();
@@ -62,8 +62,6 @@ public class ReviewCommentBO {
 			// 댓글쓴이
 			User user = userBO.getUserById(reviewComment.getUserId());
 			reviewCommentView.setUser(user);
-			
-			
 			
 			
 			// 결과 담기

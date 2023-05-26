@@ -53,9 +53,7 @@ public class GrammarController {
 			HttpSession session,
 			Model model) {
 		
-		
-		
-		
+
 		// session
 		Integer userId = (Integer)session.getAttribute("userId");
 		

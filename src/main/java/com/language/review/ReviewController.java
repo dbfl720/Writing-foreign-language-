@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.language.review.bo.ReviewBO;
 import com.language.review.model.Review;
 import com.language.review.model.ReviewView;
+import com.language.review_comment.bo.ReviewCommentBO;
+import com.language.review_comment.model.ReviewCommentView;
 
 @RequestMapping("/review")
 @Controller
@@ -24,7 +26,8 @@ public class ReviewController {
 	private ReviewBO reviewBO;
 	
 	
-	
+	@Autowired
+	private ReviewCommentBO reviewCommentBO;
 	
 	
 	
@@ -106,11 +109,14 @@ public class ReviewController {
 		Integer userId = (Integer)session.getAttribute("userId");
 		
 		// db
-		List<Review> reviewList = reviewBO.getReveiwList();
+		List<ReviewCommentView> reviewCommentView = reviewCommentBO.generateReviewCommentList(reviewId);
+		List<ReviewView> reviewView = reviewBO.generateReviewUserList(userId);
 		Review review = reviewBO.getReview(reviewId);
 		
+		
+		model.addAttribute("reviewCommentView", reviewCommentView);
 		model.addAttribute("review", review);
-		model.addAttribute("reviewList", reviewList);
+		model.addAttribute("reviewView", reviewView);
 		model.addAttribute("view", "review/reviewDetail");
 		return "template/layout";
 	}

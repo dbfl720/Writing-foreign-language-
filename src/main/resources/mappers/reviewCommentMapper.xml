@@ -15,7 +15,7 @@
 		FROM
 			`review_comment`
 		WHERE 
-			`id` = #{reviewId}
+			`reviewId` = #{reviewId}
 		ORDER BY `id` DESC
  	</select>
  	
