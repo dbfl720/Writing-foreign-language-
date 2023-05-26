@@ -54,4 +54,17 @@ public interface ReviewMapper {
 	
 	// select
 	public Review selectReview(int reviewId);
+	
+	
+	
+	// update
+	 public void updateReviewByUserId(
+			 @Param("userId") int userId,
+			 @Param("reviewCategoryId") String reviewCategoryId,
+			 @Param("languageCategoryId") String languageCategoryId,
+			 @Param("title") String title,
+			 @Param("rating") int rating,
+			 @Param("content") String content,
+			 @Param("ImagePath") String ImagePath);
+
 }

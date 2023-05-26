@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.language.review.dao.ReviewMapper;
 import com.language.review.model.Review;
@@ -167,6 +168,24 @@ public class ReviewBO {
 	 // select
 	 public Review getReview(int reviewId) {
 		 return reviewMapper.selectReview(reviewId);
+	 }
+	 
+	
+	 
+	 
+	 // update
+	 public void updateReview( 
+			 	int userId,
+				String reviewCategoryId,
+				String languageCategoryId,
+				String title,
+				int rating,
+				String content,
+				String ImagePath) {
+		 
+		 // db
+		reviewMapper.updateReviewByUserId(userId, reviewCategoryId, languageCategoryId, title, rating, content, ImagePath);
+		 
 	 }
 
 	 

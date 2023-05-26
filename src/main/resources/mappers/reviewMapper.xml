@@ -148,5 +148,22 @@
 		WHERE
 			`id` = #{reviewId}
  	</select>
+ 	
+ 	
+ 	
+ 	<update id="updateReviewByUserId" parameterType="map">
+ 		UPDATE 	`review_writing`
+ 		SET
+ 			`reviewCategoryId` = #{reviewCategoryId}
+ 			,`languageCategoryId` = #{languageCategoryId}
+ 			,`title` = #{title}
+ 			,`rating` = #{rating}
+ 			,`content` = #{content}
+ 			,`ImagePath` = #{ImagePath}
+ 			,`updatedAt` = NOW()
+		WHERE
+			`userId` = #{userId}
+ 	</update>
+
  
  </mapper>

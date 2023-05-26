@@ -23,10 +23,11 @@
 				 <a href="#" class="more-btn ReviewMoreIcon"  data-review-id="${review.id}"> 
 					<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
 				 </a>	
+				
 
 			<div class="reviewDetailBox">	
 				<%-- 수정 아이콘 --%>
-				<c:if test="${user.id eq userId}">
+				<c:if test="${review.userId eq userId}">
 				<a href="#" id="updateProfileBtn">
 				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 				</a>
@@ -36,9 +37,12 @@
 					<img id="reviewImg" class=" review" alt="프로필 사진"
 						src="${review.imagePath}" height="300" width="300">
 				</div>
-				
-				
-				<c:if test="${user.id eq userId}">
+				<!-- 업데이트 아이콘 -->
+				<div class="reveiwCorrectIcon"><a href="/review/review_correct_view?reviewId=${review.id}"> 
+					<img width="26" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/tools-icon.png" > 
+					 </a>	
+			    </div>
+				<c:if test="${review.userId eq userId}">
 					<a href="#" id="profileBtn">
 					<img alt="프로필 변경 이모티콘" width="36" height="36"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
 					</a>
@@ -48,6 +52,7 @@
 				</c:if>	
 					
 			</div>
+
 		
 			<!-- 쓰기  -->
 			<div class="ReviewDetailTextBox effect5">

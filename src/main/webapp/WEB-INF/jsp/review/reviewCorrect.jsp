@@ -5,10 +5,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
+
+
+
 <div class="container reviewTotalBox">
 			<div class="display-4 pt-5 pb-5 TopLogoEffects">
 				<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
-			Write your own Review!</div>
+			Update your own Review!</div>
 			<div class="d-flex justify-content-between mb-5 reviewWritingBox22">
 				<select name="id" id= "ReivewTypeId" class="form-select form-select-sm form-control standardHeight col-2">
 					<option value="none" selected>type</option>
@@ -23,7 +26,7 @@
 					<option value="Others">Others</option>
 				</select> 
 				<input id= "ReviewTitleId" name="title" type="text" 
-					class="form-control col-5 mr-3 ml-3 standardHeight" placeholder="Title">
+					class="form-control col-5 mr-3 ml-3 standardHeight" placeholder="${review.title}">
 				
 				<select name="id" id= languageCategoryId class="form-select form-select-sm form-control col-2 standardHeight">
 						<option value="none" selected>language</option>
@@ -49,27 +52,26 @@
 				
 			</div>
 
-			<textarea name="description" type="text" id= "ReviewTextareaId" class="form-control mt-3 mb-5"></textarea>
+			<textarea name="description" type="text" id= "ReviewTextareaId" class="form-control mt-3 mb-5">${review.content}</textarea>
 
 			<div class="input-group mb-3 mt-3 ">
 				<span class="input-group-text standardHeight" id="basic-addon1">Image url</span> <input
-					 id="ReviewImageUrl" name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl">
+					 id="ReviewImageUrl" name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl" placeholder="${review.imagePath}">
 			</div>
 		
 			
 			<div class="GrammarSaveIcon text-center pt-3">
-				<a href="#" id="saveReviewBtn">
+				<a href="#" id="saveReviewCorrectBtn">
 					<img class="saveReviewBtn" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 				</a>
 			</div>
 </div>
 
 
+
 <script>
-$(document).ready(function(){
-	
-	// 리뷰 저장
-	$('#saveReviewBtn').on('click', function(e){
+	// 글 수정
+	$('#saveReviewCorrectBtn').on('click', function(e){
 		e.preventDefault();
 		
 		var selectType = document.getElementById('ReivewTypeId');
@@ -133,12 +135,11 @@ $(document).ready(function(){
 		
 		
 		
-		
 		// AJAX
 		$.ajax({
 			// request
-			type:"POST"
-			, url: "/review/create"
+			type:"PUT"
+			, url: "/review/update"
 			, data:{
 				"selectTypeValue" : selectTypeValue
 				, "selectLanguageValue" : selectLanguageValue
@@ -148,25 +149,22 @@ $(document).ready(function(){
 				, "ImagePath" : ImagePath}
 			
 		
-			 // response
-				, success : function(data) {
-					if (data.code == 1) {
-						//location.reload();
-						swal(data.result);
-						location.href = "/review/review_list_view";
-					} else {
-						swal(data.errorMessage);
-					}
+		 // response
+			, success : function(data) {
+				if (data.code == 1) {
 					
+					swal("The update was successful.");
+					location.reload();
+				} else {
+					swal(data.errorMessage);
 				}
-				, error : function(request, status, error) {
-					swal("Failed to save information. Please contact the administrator.");
-				}
+				
+			}
+			, error : function(request, status, error) {
+				swal("Failed to save information. Please contact the administrator.");
+			}
 		});  // ajax
 		
-	}); // saveReveiwBtn
-	
-	
-});  // document
+	}); // saveReviewBtn
 
 </script>

@@ -31,6 +31,16 @@ public class ReviewController {
 	
 	
 	
+	
+	/**
+	 * 리뷰 리스트 페이지
+	 * @param languageCategoryId
+	 * @param prevIdParam
+	 * @param nextIdParam
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	//localhost/review/review_list_view
 	@GetMapping("/review_list_view")
 	public String review_list_view(
@@ -81,7 +91,11 @@ public class ReviewController {
 	
 	
 	
-	
+	/**
+	 * 리뷰 쓰기 페이지
+	 * @param model
+	 * @return
+	 */
 	//localhost/review/review_writing_view
 	@GetMapping("/review_writing_view")
 	public String review_writing_view(
@@ -98,7 +112,13 @@ public class ReviewController {
 	
 	
 	
-	
+	/**
+	 * 리뷰 디테일 페이지
+	 * @param reviewId
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	//localhost/review/review_detail_view
 	@GetMapping("/review_detail_view")
 	public String review_detail_view(
@@ -118,6 +138,27 @@ public class ReviewController {
 		model.addAttribute("review", review);
 		model.addAttribute("reviewView", reviewView);
 		model.addAttribute("view", "review/reviewDetail");
+		return "template/layout";
+	}
+	
+	
+	
+	
+	
+	// localhost/review/review_correct_view
+	@GetMapping("/review_correct_view")
+	public String review_correct_view(
+			@RequestParam(value="reviewId") int reviewId,
+			Model model, HttpSession session) {
+		
+		// session
+		int userId = (int)session.getAttribute("userId");
+		
+		//db
+		Review review = reviewBO.getReview(reviewId);
+		
+		model.addAttribute("review", review);
+		model.addAttribute("view", "review/reviewCorrect");
 		return "template/layout";
 	}
 }
