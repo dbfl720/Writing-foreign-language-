@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.language.grammar.bo.GrammarBO;
+import com.language.grammar.model.Grammar;
 
 @RequestMapping("/grammar")
 @RestController  
@@ -99,8 +100,54 @@ public class GrammarRestController {
 	 
 	
 	 
+	 /**
+	  * 그래머 디테일 페이지 유저 글 내용 
+	  * @param grammarId
+	  * @return
+	  */
+	 @GetMapping("/get")
+	 public Map<String, Object> get(
+			 @RequestParam("grammarId") int grammarId){
+		 
+		 Map<String, Object> result = new HashMap<>();
+		 
+		 // db
+		 Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
+		 
+		 if (grammar == null) {
+				result.put("join", "please log in.");
+			} else {
+				result.put("grammar", grammar);
+
+			}
+			return result;
+		 
+	 }
 	 
 	 
-	
+	 
+	 /**
+	  * 그래머 디테일 페이지 유저 글 정보들 
+	  * @param grammarId
+	  * @return
+	  */
+	 @GetMapping("/getOthers")
+	 public Map<String, Object> getOthers(
+			 @RequestParam("grammarId") int grammarId){
+		 
+		 Map<String, Object> result = new HashMap<>();
+		 
+		 // db
+		 Grammar grammar = grammarBO.getGrammarByGrammarId(grammarId);
+		 
+		 if (grammar == null) {
+				result.put("join", "please log in.");
+			} else {
+				result.put("grammar", grammar);
+
+			}
+			return result;
+		 
+	 }
 	 
 }

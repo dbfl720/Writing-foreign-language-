@@ -101,7 +101,7 @@
 									<div class="reviewDetailContentsBox22 d-flex justify-content-between align-items-center">	
 										<!-- 댓글 내용 -->
 										<div class="ReviewDetailCommentContents">
-											<small class="font-weight-bold">${comments.user.loginId}</small>
+											<small class="reviewDetailLoginId">${comments.user.loginId}</small>
 											<small id="reviewCommentContentId">${comments.reviewComment.content}</small>
 										</div>
 										<!-- 댓글 삭제 버튼 -->

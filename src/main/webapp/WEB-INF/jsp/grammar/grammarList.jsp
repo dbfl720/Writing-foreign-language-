@@ -18,26 +18,26 @@
 			
 	<div class="item-wrapper">
 		<div class="GrammarCountriesIcons d-flex">
-			<a href="#"> <img id="bannerImage" alt="여러 국기들" width="170"
+			 <img class="shadowToTalEffects" id="bannerImage" alt="여러 국기들" width="170"
 				height="170" src="/static/img/KO.gif">
-			</a>
+			
 
 
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=EN" onclick="javascript:click()"> <img  alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=EN" onclick="javascript:click()"> <img  alt="국기" class="countryImg shadowToTalEffects" width="50"
 						height="50" src="/static/img/US.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=JP"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=JP"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/JP.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=CHN"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=CHN"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/CN.gif">
 					</a>
 				</div>
@@ -47,19 +47,19 @@
 
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img alt="국기" class="countryImg shadowToTalEffects" width="50"
 						height="50" src="/static/img/BR.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=EN"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=EN"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/CA.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=DEU"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=DEU"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/DE.gif">
 					</a>
 				</div>
@@ -70,19 +70,19 @@
 			
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=ESP"> <img alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=ESP"> <img alt="국기" class="countryImg shadowToTalEffects" width="50"
 						height="50" src="/static/img/ES.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=FRA"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=FRA"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/FR.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/GE.gif">
 					</a>
 				</div>
@@ -92,19 +92,19 @@
 			
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=KO"> <img alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=KO"> <img alt="국기" class="countryImg shadowToTalEffects" width="50"
 						height="50" src="/static/img/KO.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/GR.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/MA.gif">
 					</a>
 				</div>
@@ -114,19 +114,19 @@
 			
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img alt="국기" class="countryImg shadowToTalEffects" width="50"
 						height="50" src="/static/img/NP.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/SO.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=VNM"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=VNM"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/VN.gif">
 					</a>
 				</div>
@@ -137,19 +137,19 @@
 			
 			<div>
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img alt="국기" class="countryImg" width="50"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img alt="국기" class="countryImg shadowToTalEffects" width="50"
 						height="50" src="/static/img/ZA.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/TZ.gif">
 					</a>
 				</div>
 
 				<div class="item">
-					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg" alt="국기"
+					<a href="/grammar/grammar_list_view?languageCategoryId=OTHERS"> <img id="endImg" class="countryImg shadowToTalEffects" alt="국기"
 						width="170" height="170" src="/static/img/OTHERS.gif">
 					</a>
 				</div>
@@ -169,8 +169,8 @@
 
 
 <div class="pencilIcon">
-	<a href="/grammar/grammar_writing_view"> <img alt="연필 이모티콘"
-		width="55" height="55"
+	<a href="/grammar/grammar_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
+		width="40" height="40"
 		src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 	</a>
 </div>
@@ -213,12 +213,12 @@
 <div class="d-flex justify-content-around GrammarListPage">
 	<c:if test="${prevId ne 0}">
 		<a href="/grammar/grammar_list_view?prevId=${prevId}&languageCategoryId=${languageCategoryId}" class="mr-5">
-		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
+		<img class="shadowToTalEffects" alt="순서 이모티콘" width="28" height="28" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
 		</a> <%-- 계산안하고 서버에 넘기기. --%>
 	</c:if>
 	<c:if test="${nextId ne 0}">
 		<a href="/grammar/grammar_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}"> 
-		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
+		<img class="shadowToTalEffects" alt="순서 이모티콘" width="28" height="28" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
 		</a>
 	</c:if>
 </div>

@@ -160,12 +160,12 @@
 <div class="d-flex justify-content-around GrammarListPage">
 	<c:if test="${prevId ne 0}">
 		<a href="/review/review_list_view?prevId=${prevId}&languageCategoryId=${languageCategoryId}" class="mr-5">
-		<img class="reviewListPagingIcon" alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
+		<img class="reviewListPagingIcon" alt="순서 이모티콘" width="28" height="28" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
 		</a> <%-- 계산안하고 서버에 넘기기. --%>
 	</c:if>
 	<c:if test="${nextId ne 0}">
 		<a href="/review/review_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}"> 
-		<img class="reviewListPagingIcon" alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
+		<img class="reviewListPagingIcon" alt="순서 이모티콘" width="28" height="28" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
 		</a>
 	</c:if>
 </div>

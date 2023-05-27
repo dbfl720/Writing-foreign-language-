@@ -25,7 +25,14 @@ public class GrammarCommentRestController {
 	private GrammarCommentBO grammarCommentBO;
 	
 	
-	
+	/**
+	 * 그래머 댓글 쓰기
+	 * @param grammarId
+	 * @param oldContent
+	 * @param newContent
+	 * @param session
+	 * @return
+	 */
 	@PostMapping("/create")
 	public Map<String, Object> create( 
 			@RequestParam("grammarId") int grammarId,
@@ -59,7 +66,11 @@ public class GrammarCommentRestController {
 	
 	
 	
-	 
+	 /**
+	  * 그래머 댓글 더보기 
+	  * @param commentId
+	  * @return
+	  */
 	 @GetMapping("/get")
 	 public Map<String, Object> get(
 			 @RequestParam("commentId") Integer commentId){
