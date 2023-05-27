@@ -10,7 +10,7 @@
 				<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
 			Write your own Review!</div>
 			<div class="d-flex justify-content-between mb-5 reviewWritingBox22">
-				<select name="id" id= "ReivewTypeId" class="form-select form-select-sm form-control standardHeight col-2">
+				<select name="id" id= "ReivewTypeId" class="shadowToTalEffects form-select form-select-sm form-control standardHeight col-2">
 					<option value="none" selected>type</option>
 					<option value="book">book</option>
 					<option value="movie">movie</option>
@@ -23,9 +23,9 @@
 					<option value="Others">Others</option>
 				</select> 
 				<input id= "ReviewTitleId" name="title" type="text" 
-					class="form-control col-5 mr-3 ml-3 standardHeight" placeholder="Title">
+					class="shadowToTalEffects form-control col-5 mr-3 ml-3 standardHeight" placeholder="Title">
 				
-				<select name="id" id= languageCategoryId class="form-select form-select-sm form-control col-2 standardHeight">
+				<select name="id" id= languageCategoryId class="shadowToTalEffects form-select form-select-sm form-control col-2 standardHeight">
 						<option value="none" selected>language</option>
 						<option value="KO">KO</option>
 						<option value="EN">EN</option>
@@ -38,7 +38,7 @@
 						<option value="Others">Others</option>
 				</select> 
 			
-				<select name="id" id= "ReviewRatingId" class="form-select form-select-sm form-control col-2 ml-3 standardHeight">
+				<select name="id" id= "ReviewRatingId" class="shadowToTalEffects form-select form-select-sm form-control col-2 ml-3 standardHeight">
 						<option value="none" selected>rating</option>
 						<option value="5">⭐⭐⭐⭐⭐</option>
 						<option value="4">⭐⭐⭐⭐</option>
@@ -49,21 +49,21 @@
 				
 			</div>
 
-			<textarea name="description" type="text" id= "ReviewTextareaId" class="form-control mt-3 mb-5"></textarea>
+			<textarea name="description" type="text" id= "ReviewTextareaId" class="shadowToTalEffects form-control mt-3 mb-5"></textarea>
 
 			<div class="input-group mb-3 mt-3 ">
-				<span class="input-group-text standardHeight" id="basic-addon1">Image url</span> <input
-					 id="ReviewImageUrl" name="imageUrl" type="text" class="form-control standardHeight ReviewImageUrl">
+				<span class="shadowToTalEffects input-group-text standardHeight" id="basic-addon1">Image url</span> <input
+					 id="ReviewImageUrl" name="imageUrl" type="text" class="shadowToTalEffects form-control standardHeight ReviewImageUrl">
 			</div>
 		
 			
 			<div class="ReviewSaveIcon text-center pt-3 d-flex justify-content-around">
 					<a href="#" id="saveReviewBtn">
-						<img class="saveReviewBtn" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+						<img class="saveReviewBtn shadowToTalEffects" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 					</a>
 			
 				<a href="/review/review_list_view">
-					<img  alt="목록 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
+					<img class="shadowToTalEffects" alt="목록 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
 				</a>
 			</div>
 </div>

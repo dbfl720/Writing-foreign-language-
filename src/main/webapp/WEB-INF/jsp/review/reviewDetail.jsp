@@ -20,11 +20,13 @@
 	<div class="reviewTotal55">
 		<div class="d-flex ReveiwTopBot">
 				<!--더보기  -->
+				<div>
 				 <a href="#" class="more-btn ReviewMoreIcon"  data-review-id="${review.id}"> 
-					<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
+					<img class="shadowToTalEffects" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
 				 </a>	
+				</div>
 				
-
+				
 			<div class="reviewDetailBox">	
 				<div class="reviewBox mr-3">
 					<img id="reviewImg" class=" review" alt="프로필 사진"
@@ -33,7 +35,7 @@
 				<!-- 업데이트 아이콘 -->
 				<c:if test="${review.userId eq userId}">
 				<div class="reveiwCorrectIcon"><a href="/review/review_correct_view?reviewId=${review.id}"> 
-					<img width="26" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/tools-icon.png" > 
+					<img class="shadowToTalEffects" width="26" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/tools-icon.png" > 
 					 </a>	
 			    </div>	
 			    </c:if>	
@@ -46,6 +48,24 @@
 				<div class="reviewDetailContent">${review.content}</div>
 			</div>
 				
+				    
+			    <!-- 좋아요 하트-->
+				<div class="mr-2">
+				<!-- 좋아요 빈하트(안눌러 졌을 때) -->
+					 <c:if test="${reviewLikeView.filledLike == false}"> 
+						<a href="#" class="reviewLikeBtn" data-review-id="${review.id}"><img
+							class="languageMark ml-3 reviewDetailHeart" alt="빈하트 이모티콘" width="35"
+							height="35"
+							src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
+					 </c:if> 
+					<!-- 좋아요 채워진 하트(눌러 졌을 때) -->
+					<c:if test="${reviewLikeView.filledLike == true}">
+						<a href="#" class="reviewLikeBtn" data-review-id="${review.id}"><img
+							class="languageMark ml-3 reviewDetailHeart" alt="채워진 하트 이모티콘" width="35"
+							height="35"
+							src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png"></a>
+					</c:if>
+				</div> <!--  좋아요 끝 -->
 		</div> <!-- d-flex  -->
 		</div> <!-- reviewTotal55 끝 -->
 		
@@ -87,7 +107,7 @@
 										<!-- 댓글 삭제 버튼 -->
 											<div>
 												<a href="#" class="delete-btn" data-toggle="modal" data-target="#modal" data-comment-id="${comments.reviewComment.id}" >
-												 <img class=" mr-3" width="20" height="20" alt="more-icon"
+												 <img class="shadowToTalEffects mr-3" width="20" height="20" alt="more-icon"
 													src="https://icons.iconarchive.com/icons/colebemis/feather/128/more-horizontal-icon.png">
 												</a>
 											</div>
@@ -138,11 +158,11 @@
   	<div class="modal-dialog modal-dialog-centered modal-sm"> 
     	<div class="modal-content text-center">
       		<div class="py-3 border-bottom"> 
-      			<a href="#" id="deletePostBtn" class="text-dark">Delete</a>
+      			<a href="#" id="deletePostBtn" class="deletePostFont text-dark">Delete</a>
    			</div>
    			<div class="py-3">
    				<%-- data-dismiss="modal" => 모달창 닫힘 --%>
-   				<a href="#" data-dismiss="modal" class="text-dark">Close</a>
+   				<a href="#" data-dismiss="modal" class="deletePostFont text-dark">Close</a>
    			</div>
     	</div>
   </div>
@@ -302,8 +322,42 @@
 				
 				
 			}); // ajax 
-		});
+		});  // deletePostBtn
 		
+		
+		
+		
+		
+		// 좋아요 / 해제
+		$('.reviewLikeBtn').on('click', function(e){
+			e.preventDefault();
+			
+			let reviewId = $(this).data("review-id");
+			// alert(reviewId);
+			
+			
+			$.ajax({
+				// req
+				url : "/reviewLike/" + reviewId
+				
+				// res
+				,success : function(data) {
+					if (data.code == 1) {
+						location.reload();
+					} else if (data.code == 300) {
+						swal(data.errorMessage);
+						// 비로그인 시 로그인 페이지로 이동
+						location.href = "/user/sign_up_view";
+					}
+				},
+				error : function(request, status, error) {
+					swal("Failed to save your like. Please contact the administrator.");
+				}
+			
+				
+			});  // ajax
+			
+		}); // reviewLikeBtn
 		
 	});  // ready
 

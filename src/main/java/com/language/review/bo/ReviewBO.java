@@ -8,13 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.language.review.dao.ReviewMapper;
 import com.language.review.model.Review;
 import com.language.review.model.ReviewView;
 import com.language.review_comment.bo.ReviewCommentBO;
-import com.language.review_comment.model.ReviewCommentView;
+import com.language.review_like.bo.ReviewLikeBO;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -37,6 +36,10 @@ public class ReviewBO {
 	 
 	 @Autowired
 	 private ReviewCommentBO reviewCommentBO;
+	 
+	 
+	 @Autowired
+	 private ReviewLikeBO reviewLikeBO;
 	 
 	 
 	 // insert
@@ -135,15 +138,28 @@ public class ReviewBO {
 			 reviewView.setReviewCount(getReviewCountByUserId(review.getUserId()));
 			 
 			 
-			 // 댓글들
-			 
-			 
 			 // 결과 담기
 			 reviewViewList.add(reviewView);
 			 
 		 }
 		 
 		 return reviewViewList;
+	 }
+	 
+	 
+	 
+	 
+	 // select - 글 한개 좋아요 
+	 public ReviewView generateReviewView(int reviewId, Integer userId) {
+		 
+		 // 결과 리뷰 
+		 ReviewView reviewLikeView = new ReviewView();
+		 
+		 // 좋아요 눌렀는지 여부
+		 reviewLikeView.setFilledLike(reviewLikeBO.existLike(reviewId, userId));
+		 
+		 
+		 return reviewLikeView;
 	 }
 	 
 	 

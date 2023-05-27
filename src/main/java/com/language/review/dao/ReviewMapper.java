@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.language.review.model.Review;
+import com.language.review.model.ReviewView;
 
 @Repository
 public interface ReviewMapper {
@@ -30,6 +31,7 @@ public interface ReviewMapper {
 			@Param("standardId") Integer standardId,
 			@Param("limit") int limit);
 	
+
 	
 	
 	// select

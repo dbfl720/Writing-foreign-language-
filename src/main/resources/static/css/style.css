@@ -1,10 +1,10 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
-#wrap{ height:120rem;  /*  background-color:grey; */    width:155rem;}
+#wrap{ height:120rem;   /*  background-color:grey; */     width:155rem;}
 
 /*header*/
 header{
-	 background-color:#64CD3C; 
+	/*  background-color:#64CD3C;  */
 	min-width:80rem;
 }
 .ami{font-size:5.0rem; margin-left:4rem; padding-top:5.0rem; font-weight:bold}
@@ -13,7 +13,7 @@ header{
 .headerLoginIcon{margin:6rem;}
 
 /*menu */
-.asideMenu{width:250px; height:1080px; background-color:#F6CEF5;  padding-top:13px;}
+.asideMenu{width:250px; height:1080px;  background-color:#F6CEF5;   padding-top:13px;}
 .asideText{font-size: 2.0rem; color:black; margin-left:2.2rem;}
 .asideText:hover{text-decoration:none;}
 .communityText{padding-top:7.5rem; font-size:26px;}
@@ -26,7 +26,7 @@ section {
 	min-height:120rem;
 	max-width: 150rem;
 	max-height:160rem;
-/* 	  background-color:#A9F5D0;   */ 
+/*  	  background-color:#A9F5D0;  */  
 	padding-top:7rem;
 	padding-left:2rem;
 }
@@ -35,7 +35,7 @@ section {
 /*footer*/
 .footerText{font-size: 17px; margin-top: 5rem;}
 footer{
- 	background-color:#F5D0A9; 
+ 	 background-color:#F5D0A9;  
 	max-width: 165rem;
 	height:10rem;
 }
@@ -518,7 +518,7 @@ p {
 
 .ReviewDetailTextBox {
 	 background: #ccc;
-    width:70%;
+    width:62%;
     height:40rem;
     background:#FFF;
     margin:10px auto;
@@ -586,19 +586,34 @@ p {
 .reveiwCorrectIcon{padding-right:1rem; }
 .ReviewMoreIcon{height:3rem;}
 .ReviewSaveIcon{margin-top:7rem;}
-
-
+.reviewDetailHeart{box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);}
+.deletePostFont{font-size:2rem;}
 
 
 
 /* Review-list  */
  .swiper-container {
+    margin-top:3rem;
 	width:110rem;
 	height:230px;
-	border:0.04rem solid #FF9100;
+	border:0.04rem solid #dcdcdc;
 	border-radius:7px;
-	box-shadow:0 0 18px #FF9100 inset;
-}
+	/* box-shadow:0 0 30px #dcdcdc inset; */
+	 box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11),
+              0 0 30px #dcdcdc inset; 
+ }
+
+
 .swiper-slide {
 	text-align:center;
 	display:flex;/*  내용을 중앙정렬 하기위해 flex 사용 */
@@ -611,11 +626,17 @@ p {
 }
 
 .swiper-button-prev{margin-top:6rem;} 
-.ReviewListbox{overflow: hidden;  border: 2px solid black; border-radius: 18%; width:33rem; height:30rem;}
+.ReviewListbox{overflow: hidden; /*  border: 2px solid black; */ border-radius: 18%; width:33rem; height:30rem;
+box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);}
 .reviewListTextBox22{margin-left:2rem; font-size:2rem;}
 .ReveiwImgBox2{margin:2.3rem;}
 .reveiwLangagueText{color:#FFA500; font-size:3rem; }
-.ReviewListUserName{font-size:2rem;}
+.ReviewListUserName{font-size:1.7rem;}
 .ReviewPencilIcon{margin:2rem; margin-top:3rem;}
 .article1{margin-top:10rem;}
 #ReviewlanguageId{margin-top:2.3rem; height:4.8rem; width:80rem; object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
@@ -628,8 +649,25 @@ p {
   line-height: 50px; background-color:#FFA500;}
 #ReviewlanguageId:fucus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 .reviewTopText{width:60rem; height:15rem;}
-.reviewTopSelectBox{width:100rem; padding-right:15rem; padding-top:3rem;}
-.reviewTopGreatText{width:20rem; margin-top:1.5rem; margin-left:1rem;} 
+.reviewTopSelectBox{width:100rem; padding-right:20rem; padding-top:3rem;}
+.reviewTopGreatText{width:26rem; margin-top:1.5rem; margin-left:1rem;} 
 .ReveiwImgBox3{margin:3rem; margin-left:6rem;}
-.reviewTopInfoBox44{margin-left:11rem; margin-top:1rem;}
+.reviewTopInfoBox44{margin-left:8rem; margin-top:1rem;}
 .reviewTopImgBox2{border-radius: 70%;  overflow: hidden;}
+.reviewListPagingIcon{
+	margin-top:3rem;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
+}
+.shadowToTalEffects{
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
+}

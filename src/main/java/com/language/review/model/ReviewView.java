@@ -19,4 +19,7 @@ public class ReviewView {
 	private int reviewCount;
 	
 	private List<ReviewCommentView> reveiwCommentViewList;
+	
+	// 내가 좋아요 한지 여부 boolean
+	private boolean filledLike; 
 }

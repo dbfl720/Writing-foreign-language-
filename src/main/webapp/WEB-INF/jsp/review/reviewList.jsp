@@ -8,11 +8,11 @@
 	<div class="d-flex justify-content-between"> 
 		<div class="display-4 pt-5 pb-5 d-flex TopLogoEffects">
 			<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
-		<div class="reviewTopGreatText display-4 ">Great Writer!</div>
+		<div class="reviewTopGreatText display-4 ">Excellent Writer!!</div>
 		</div>
 		
 		<div class="d-flex justify-content-end reviewTopSelectBox selectBox">
-				<select onchange="if(this.value) location.href=(this.value);" name="id" id= ReviewlanguageId class="select form-select form-select-sm form-control col-2 standardHeight">
+				<select onchange="if(this.value) location.href=(this.value);" name="id" id= ReviewlanguageId class="shadowToTalEffects select form-select form-select-sm form-control col-2 standardHeight">
 						<option value="none" selected>language</option>
 						<option value="/review/review_list_view?languageCategoryId=KO">KO</option>
 						<option value="/review/review_list_view?languageCategoryId=EN">EN</option>
@@ -27,7 +27,7 @@
 			
 			<!-- 리뷰쓰기 아이콘 -->
 			<div class="ReviewPencilIcon ">
-				<a href="/review/review_writing_view"> <img alt="연필 이모티콘"
+				<a href="/review/review_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
 					width="40" height="40"
 					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 				</a>
@@ -39,8 +39,8 @@
 		<div class="swiper-wrapper">
 		<c:forEach items="${reviewViewList}" var="reviewViewLists">
 			<div class="swiper-slide">
-				<div>
-					<div><img class="reviewTopImgBox2" src="${reviewViewLists.user.imagePath}" width="600" height="100"></div>
+				<div class="">
+					<div><img class="reviewTopImgBox2 shadowToTalEffects" src="${reviewViewLists.user.imagePath}" width="600" height="100"></div>
 					<div class="d-flex reviewTopInfoBox44">
 						<div class="mt-3 ReviewListUserName">
 							<img alt="유저 아이콘" width="25" height="25"
@@ -48,9 +48,9 @@
 							${reviewViewLists.user.loginId}
 						</div>
 						<div class="mt-3 ml-4 ReviewListUserName">
-							<img alt="리뷰 개수 아이콘" width="46" height="29"
+							<img alt="리뷰 개수 아이콘" width="25" height="25"
 									src=https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png>
-							${reviewViewLists.reviewCount}
+							Total Review : ${reviewViewLists.reviewCount}
 						</div>
 					</div>
 				</div>
@@ -59,8 +59,8 @@
 		</div>
 	
 		<!-- 네비게이션 -->
-		<div class="swiper-button-next mt-5"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-		<div class="swiper-button-prev mt-5"></div><!-- 이전 버튼 -->
+		<div class="swiper-button-next mt-5 swiperBtnColor"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+		<div class="swiper-button-prev mt-5 swiperBtnColor"></div><!-- 이전 버튼 -->
 	
 		<!-- swiper -->
 		<div class="swiper-pagination"></div>
@@ -160,12 +160,12 @@
 <div class="d-flex justify-content-around GrammarListPage">
 	<c:if test="${prevId ne 0}">
 		<a href="/review/review_list_view?prevId=${prevId}&languageCategoryId=${languageCategoryId}" class="mr-5">
-		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
+		<img class="reviewListPagingIcon" alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Left-icon.png">
 		</a> <%-- 계산안하고 서버에 넘기기. --%>
 	</c:if>
 	<c:if test="${nextId ne 0}">
 		<a href="/review/review_list_view?nextId=${nextId}&languageCategoryId=${languageCategoryId}"> 
-		<img alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
+		<img class="reviewListPagingIcon" alt="순서 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/steve/zondicons/128/Arrow-Outline-Right-icon.png">		
 		</a>
 	</c:if>
 </div>

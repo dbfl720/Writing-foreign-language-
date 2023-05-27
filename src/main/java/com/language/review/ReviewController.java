@@ -16,6 +16,7 @@ import com.language.review.model.Review;
 import com.language.review.model.ReviewView;
 import com.language.review_comment.bo.ReviewCommentBO;
 import com.language.review_comment.model.ReviewCommentView;
+import com.language.review_like.bo.ReviewLikeBO;
 
 @RequestMapping("/review")
 @Controller
@@ -29,6 +30,8 @@ public class ReviewController {
 	@Autowired
 	private ReviewCommentBO reviewCommentBO;
 	
+	
+
 	
 	
 	
@@ -132,8 +135,10 @@ public class ReviewController {
 		List<ReviewCommentView> reviewCommentView = reviewCommentBO.generateReviewCommentList(reviewId);
 		List<ReviewView> reviewView = reviewBO.generateReviewUserList(userId);
 		Review review = reviewBO.getReview(reviewId);
+		ReviewView reviewLikeView = reviewBO.generateReviewView(reviewId, userId);
 		
 		
+		model.addAttribute("reviewLikeView", reviewLikeView);
 		model.addAttribute("reviewCommentView", reviewCommentView);
 		model.addAttribute("review", review);
 		model.addAttribute("reviewView", reviewView);
@@ -145,6 +150,13 @@ public class ReviewController {
 	
 	
 	
+	/** 
+	 * 리뷰 수정 페이지
+	 * @param reviewId
+	 * @param model
+	 * @param session
+	 * @return
+	 */
 	// localhost/review/review_correct_view
 	@GetMapping("/review_correct_view")
 	public String review_correct_view(
