@@ -4,9 +4,12 @@
 
 <div class="container">
 	<div class="GrammarTotalOutline"> 
+	<div class="display-4 pt-5 pb-5 TopLogoEffects">
+		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
+			Write what you want to be corrected !</div>
 		<div class="d-flex  GrammarBox">
-			<input  id="title"  type="text" class=" GrammarTitleInput" placeholder="title">
-				<select id="languageCategoryId" class="GrammarSelective" name="languageCategoryId">
+			<input  id="title"  type="text" class=" GrammarTitleInput shadowToTalEffects" placeholder="title">
+				<select id="languageCategoryId" class="GrammarSelective shadowToTalEffects" name="languageCategoryId">
 					<%-- name은 필드명과 같아야 한다. --%>
 					<option value="none" selected>language</option>
 					<option value="KO">KO</option>
@@ -22,17 +25,22 @@
 		</div>
 			<div class="GrammarTextBox">
 					<div class="GrammarTextBox2">
-						<textarea id="content" class="GrammarText" placeholder="Today is..."></textarea>
+						<textarea id="content" class="GrammarText shadowToTalEffects" placeholder="Today is..."></textarea>
 					</div>
 					<div class="d-flex">
 						<div class="GrammarSaveIcon">
 							<a href="#" id="saveGrammarBtn">
-								<img class="updateProfileIcon" alt="저장 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+								<img class="shadowToTalEffects updateProfileIcon" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 							</a>
 						</div>
 						<div class="GrammarDeleteIcon">
 							<a href="#" id="deleteGrammarBtn">
-								<img class="updateProfileIcon mt-1" alt="삭제 이모티콘" width="50" height="50" src="https://icons.iconarchive.com/icons/github/octicons/128/x-16-icon.png">
+								<img class="shadowToTalEffects updateProfileIcon mt-3" alt="삭제 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/github/octicons/128/x-16-icon.png">
+							</a>
+						</div>
+						<div class="GrammarListIcon6666">
+							<a href="/grammar/grammar_list_view">
+								<img class="shadowToTalEffects" alt="목록 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
 							</a>
 						</div>
 					</div>		
@@ -116,6 +124,17 @@ $(document).ready(function() {
 	}); // saveGrammarBtn
 	
 	
+	
+	
+	
+	
+	// 모두 지우기 버튼
+	$('#deleteGrammarBtn').on('click', function(){
+		let title = $('').val();
+		let content = $('').val();
+		location.reload(true);
+		
+	}); // deleteGrammarBtn
 	
 	
 }); // ready

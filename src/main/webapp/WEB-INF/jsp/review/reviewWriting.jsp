@@ -57,13 +57,18 @@
 			</div>
 		
 			
-			<div class="ReviewSaveIcon text-center pt-3 d-flex justify-content-around">
-					<a href="#" id="saveReviewBtn">
-						<img class="saveReviewBtn shadowToTalEffects" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
-					</a>
+			<div class="ReviewSaveIcon text-center pt-3 d-flex ">
+				<a href="#" id="saveReviewBtn">
+					<img class="reviewBottomBtnBox saveReviewBtn shadowToTalEffects" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+				</a>
 			
+		
+				<a href="#" id="deleteReviewBtn987">
+					<img class="deleteReviewIcon34 reviewBottomBtnBox shadowToTalEffects updateProfileIcon " alt="삭제 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/github/octicons/128/x-16-icon.png">
+				</a>
+				
 				<a href="/review/review_list_view">
-					<img class="shadowToTalEffects" alt="목록 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
+					<img class="reviewBottomBtnBox shadowToTalEffects" alt="목록 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
 				</a>
 			</div>
 </div>
@@ -170,6 +175,16 @@ $(document).ready(function(){
 		
 	}); // saveReveiwBtn
 	
+	
+	
+	
+	// 글 삭제
+	$('#deleteReviewBtn987').on('click', function(){
+		let title = $('').val();
+		let content = $('').val();
+		location.reload(true);
+		
+	}); // deleteGrammarBtn
 	
 });  // document
 

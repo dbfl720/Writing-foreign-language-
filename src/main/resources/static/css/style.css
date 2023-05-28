@@ -302,27 +302,49 @@ p {
 
 
 /*  Grammar  쓰기   */
-.GrammarTitleInput{border-width: 0.4rem; margin:3rem; width: 60rem; height:5rem; font-size:2rem; object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 2.0s linear; overflow: hidden;  padding: 2rem;}
-.GrammarTitleInput:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; }
-.GrammarSelective{border-width: 0.4rem;  margin:3rem; width: 10rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; transition: all 2.0s linear;}
-.GrammarSelective:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-.GrammarText{ margin: 1rem; width: 80rem;  height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
+.GrammarTitleInput{border-width: 0.4rem;  margin:3rem;  width: 100rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; 
+	object-fit: cover; 
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
      background-attachment: local;
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
     repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
   line-height: 50px;
-  padding: 8px 10px;}
+  padding-left:2rem;}
+.GrammarTitleInput:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; }
+.GrammarSelective{
+	
+	border-width: 0.4rem;  margin:3rem; margin-right:14rem; width: 18rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; 
+	object-fit: cover; 
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem;}
+.GrammarSelective:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+.GrammarText{ margin: 1rem; width: 89rem;  height:50rem; 
+border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px; 
+	object-fit: cover; 
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+     background-attachment: local;
+  background-image:
+    linear-gradient(to right, white 20px, transparent 20px),
+    linear-gradient(to left, white 20px, transparent 20px),
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+  line-height: 50px;
+  padding-left:2rem; }
 .GrammarText:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 .GrammarTextBox{margin-left:0.6rem;}
-.GrammarTotalOutline{margin:9rem;}
+.GrammarTotalOutline{margin:4rem;}
 .GrammarSaveIcon{margin:3rem;}
 .GrammarModifyIcon{margin:3rem;}
-.GrammarDeleteIcon{margin:2rem;}
-
+.GrammarDeleteIcon{margin:3rem;}
+.GrammarBox{margin-top:4rem;}
+.GrammarListIcon6666{margin:3rem;}
 
 
 
@@ -494,8 +516,8 @@ p {
   padding-left:2rem;}
 .ReviewImageUrl:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 .reviewWritingBox22{margin-top:7rem;}
-
-
+.reviewBottomBtnBox{margin:2rem;}
+.deleteReviewIcon34{margin-top:2rem;}
 
 
 
@@ -619,7 +641,7 @@ p {
 #reviewCommentBtn{font-size:1.8rem; font-weight:bold;}
 .reveiwCorrectIcon{padding-right:1rem; }
 .ReviewMoreIcon{height:3rem;}
-.ReviewSaveIcon{margin-top:7rem;}
+.ReviewSaveIcon{margin-top:4rem;}
 .reviewDetailHeart{box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
               0 2px 2px rgba(0,0,0,0.11), 
               0 4px 4px rgba(0,0,0,0.11), 

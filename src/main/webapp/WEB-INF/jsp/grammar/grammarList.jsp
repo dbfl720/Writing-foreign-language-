@@ -176,8 +176,8 @@
 </div>
 
 
-<table class="table text-center  GrammarListTable ">
-	<thead>
+<table class="table text-center  GrammarListTable shadowToTalEffects">
+	<thead class="shadowToTalEffects">
 		<tr class="GrammarTableFont">
 			<th class="GrammarTableFont"><img alt="순서 이모티콘" width="36"
 				height="36"
