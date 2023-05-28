@@ -7,9 +7,9 @@
 <div class="container">
 
 	<!-- Top 제목부분   -->
-		<div class="display-4 pt-5 pb-5 TopLogoEffects">
-		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
-			How do you like this article?</div>
+		<div class="grammarDetailTopText pt-5 pb-5 TopLogoEffects">
+		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png">
+			Click the magnifying glass and check the incorrect grammar !</div>
 	
 <%-- 		<div class="GrammarLeftInfo">
 			<div class="d-flex">

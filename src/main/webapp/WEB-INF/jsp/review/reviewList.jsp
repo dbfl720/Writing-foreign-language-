@@ -28,7 +28,7 @@
 			<!-- 리뷰쓰기 아이콘 -->
 			<div class="ReviewPencilIcon ">
 				<a href="/review/review_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
-					width="40" height="40"
+					width="33" height="33"
 					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 				</a>
 			</div>

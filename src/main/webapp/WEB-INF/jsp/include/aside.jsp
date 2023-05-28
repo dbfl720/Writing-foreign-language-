@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="d-flex">
+<div class="d-flex aside">
 	<div class="asideMenu">
 		<div class="communityText"><a href="/community/community_view" class="asideText"><img id="communityImg" alt="커뮤니티 이미지" width="50" height="50" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png" >
 		Community</a></div>

@@ -53,16 +53,18 @@
 
 <body>
 	<div id="wrap">
-		<header>
-			<jsp:include page="../include/header.jsp" />
-		</header>
-		<div class="d-flex">
-			<aside>
-				<jsp:include page="../include/aside.jsp" />
-			</aside>
-			<section>
-				<jsp:include page="../${view}.jsp"  />
-			</section>
+		<div id="warpper">
+			<header>
+				<jsp:include page="../include/header.jsp" />
+			</header>
+			<div class="d-flex">
+				<aside>
+					<jsp:include page="../include/aside.jsp" />
+				</aside>
+				<section>
+					<jsp:include page="../${view}.jsp"  />
+				</section>
+			</div>
 		</div>
 		<footer>
 			<jsp:include page="../include/footer.jsp" />

@@ -1,18 +1,31 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
-#wrap{ height:120rem;   /*  background-color:grey; */     width:155rem;}
+#wrap{ 
+	min-height:120rem;
+	
+ /*    background-color:grey;   */  }
+
+
+/* #wrapper{
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 10rem;
+} */
+
 
 /*header*/
 header{
-	/*  background-color:#64CD3C;  */
-	min-width:80rem;
-}
+	background-color:#64CD3C; 
+	min-width:135rem;
+	height:13rem;}
 .ami{font-size:5.0rem; margin-left:4rem; padding-top:5.0rem; font-weight:bold}
 .nameHeader{font-size:5rem;}
 .headerBox{margin-top: 3rem;}
 .headerLoginIcon{margin:6rem;}
 
 /*menu */
+.aside{ position: sticky; top:100px;
+    right: 300px;}
 .asideMenu{width:250px; height:1080px;  background-color:#F6CEF5;   padding-top:13px;}
 .asideText{font-size: 2.0rem; color:black; margin-left:2.2rem;}
 .asideText:hover{text-decoration:none;}
@@ -22,11 +35,11 @@ header{
 
 /* section  */
 section {
-	min-width:130rem;
+	min-width:135rem;
 	min-height:120rem;
 	max-width: 150rem;
 	max-height:160rem;
-/*   	  background-color:#A9F5D0;  */  
+/*    	  background-color:#A9F5D0;  */ 
 	padding-top:7rem;
 	padding-left:2rem;
 }
@@ -35,9 +48,10 @@ section {
 /*footer*/
 .footerText{font-size: 17px; margin-top: 5rem;}
 footer{
- 	 background-color:#F5D0A9;  
-	max-width: 165rem;
-	height:10rem;
+ background-color:#F5D0A9;  
+ height: 10rem;
+
+
 }
 
 
@@ -73,11 +87,15 @@ footer{
 	font-size: 10px; 
 	color: var(--text-color);
 	box-sizing: border-box;
-	max-width: 175rem;
-	max-height:170rem;
+	
 } 
 
+html, body {
+    height: 100%
+}
+
 body {
+	height: 100%;
 	width: 100%;
 	background-color: var(--background-theme);
 	font-family: 'Bad Script', cursive;
@@ -302,10 +320,10 @@ p {
 
 
 /*  Grammar  쓰기   */
-.GrammarTitleInput{border-width: 0.4rem;  margin:3rem;  width: 100rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; 
-	object-fit: cover; 
+.GrammarTitleInput{border:none; /* border-width: 0.4rem; */  margin:3rem;  width: 100rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; 
+/* 	object-fit: cover; 
    transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+     background-attachment: local; */
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -314,11 +332,11 @@ p {
   padding-left:2rem;}
 .GrammarTitleInput:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; }
 .GrammarSelective{
-	
-	border-width: 0.4rem;  margin:3rem; margin-right:14rem; width: 18rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; 
-	object-fit: cover; 
+	border:none;
+	/* border-width: 0.4rem; */ margin:3rem; margin-right:14rem; width: 18rem; height:5rem; font-size:2rem; border-radius:40px 40px 40px 40px; 
+	/* object-fit: cover; 
    transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+     background-attachment: local; */
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -326,15 +344,15 @@ p {
   line-height: 50px;
   padding-left:2rem;}
 .GrammarSelective:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-.GrammarText{ margin: 1rem; width: 89rem;  height:50rem; 
-border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px; 
+.GrammarText{ border: none; margin: 1rem; width: 89rem;  height:50rem; font-size:2rem;
+/* border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px; 
 	object-fit: cover; 
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
+   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem;  */
      background-attachment: local;
-  background-image:
+   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
-    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
+    repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px); 
   line-height: 50px;
   padding-left:2rem; }
 .GrammarText:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
@@ -408,8 +426,7 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
 
 
 
-.commentTotlaBox222{/*  overflow: scroll; */ /* width: 60rem; height:24rem; */ /* border: 0.2rem solid black;   margin-left:3rem; object-fit: cover; font-size:6rem; border-radius:30px 30px 30px 30px;
-   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.2rem; border-color:#FF8200;    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); */}
+
 .commentTotalBox3333{width:70rem; height:50rem; /* overflow: scroll; */}
 .oldContentArea{ height:5rem; text-decoration: line-through; text-decoration-color: red; text-decoration-thickness: 0.25rem; font-size: 2rem; padding-top:0.6rem; margin-top:1rem;}
 .grammarOldContentText{ padding-left:1rem; text-overflow: ellipsis; font-size:1.7rem; margin:1rem; width:100rem; height:3rem; overflow: hidden;}
@@ -447,17 +464,15 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
 .GrammarDetailTopTitle{width:20rem; height:20rem; font-size:3rem;}
 .ReadingGlassesIcon{margin-top:9rem; margin-left:1rem; margin-bottom:4rem;}
 .GrammarDetailOthers{margin-left:3rem;}
-
+.grammarDetailTopText{font-size:3.5rem;}
 
 
 
 /* Review-Writing */
-.reviewTotalBox{ margin-left:3rem; width: 120rem; height:100rem; font-size:30rem;}
+.reviewTotalBox{ margin-left:7.5rem; width: 120rem; height:100rem; font-size:30rem;}
 .standardHeight{height:5rem; font-size:1.7rem;}
 #insert_TextArea{height: 15rem; font-size:1.7rem; padding:2rem;}
-#ReivewTypeId{ object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+#ReivewTypeId{ border:none; font-size:20px; margin-left:2rem;
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -465,9 +480,7 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
   line-height: 50px;
   padding-left:2rem;}
 #ReivewTypeId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-#ReviewTitleId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+#ReviewTitleId{ border:none; font-size:20px; 
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -475,19 +488,15 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
   line-height: 50px;
   padding-left:2rem;}
 #ReviewTitleId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-#languageCategoryId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+#languageCategoryId{border:none; font-size:20px; 
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
     repeating-linear-gradient(white, white 50px, #ccc 50px, #ccc 51px, white 51px);
   line-height: 50px;
   padding-left:2rem;}
-#languageCategoryId:fucus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-#ReviewRatingId{object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+#languageCategoryId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+#ReviewRatingId{ border:none; font-size:20px; 
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -495,9 +504,7 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
   line-height: 50px;
   padding-left:2rem;}
 #ReviewRatingId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-#ReviewTextareaId{margin: 1rem;   height:50rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;  padding: 2rem; border-width: 0.4rem; 
-     background-attachment: local;
+#ReviewTextareaId{border:none; margin: 1rem;   height:50rem;  font-size:20px; 
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -505,9 +512,7 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
   line-height: 50px;
   padding: 8px 20px;}
 #ReviewTextareaId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-.ReviewImageUrl{ object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+.ReviewImageUrl{border:none;  font-size:20px; 
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -600,7 +605,7 @@ border-width: 0.4rem;  font-size:2rem; border-radius:40px 40px 40px 40px;
   width: 300px;   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);}
 .ReveiwTopBoxes7777{margin-bottom:20rem;}
 .TopLogoEffects{
-	   width:70%;
+	 
     height:100px;
     background:#FFF;
 	position: relative;	
@@ -701,9 +706,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .ReviewListUserName{font-size:1.7rem;}
 .ReviewPencilIcon{margin:2rem; margin-top:3rem;}
 .article1{margin-top:10rem;}
-#ReviewlanguageId{margin-top:2.3rem; height:4.8rem; width:80rem; object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
-   transition: all 7.0s linear; overflow: hidden;   border-width: 0.2rem; 
-     background-attachment: local;
+#ReviewlanguageId{border:none; margin-top:2.3rem; height:4.3rem;  width:71rem;font-size:20px;
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
     linear-gradient(to left, white 20px, transparent 20px),
@@ -742,3 +745,13 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
               0 16px 16px rgba(0,0,0,0.11), 
               0 32px 32px rgba(0,0,0,0.11);
 }
+
+
+
+
+
+
+/*   live쓰기   */
+#writeTextArea{height:50rem; width:60rem;}
+.liveWritingBox444{margin-top:7rem; width:60rem;}
+.liveWritingFileIcon{width:85rem; margin-left:3rem; margin-bottom:4rem; height:6.5rem; padding:1rem;}

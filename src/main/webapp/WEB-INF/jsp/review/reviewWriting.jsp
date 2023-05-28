@@ -49,10 +49,10 @@
 				
 			</div>
 
-			<textarea name="description" type="text" id= "ReviewTextareaId" class="shadowToTalEffects form-control mt-3 mb-5"></textarea>
+			<textarea name="description" type="text" id= "ReviewTextareaId" class="shadowToTalEffects form-control mt-3 mb-5" placeholder="Today is..."></textarea>
 
 			<div class="input-group mb-3 mt-3 ">
-				<span class="shadowToTalEffects input-group-text standardHeight" id="basic-addon1">Image url</span> <input
+				<span class="shadowToTalEffects input-group-text standardHeight  ml-4" id="basic-addon1">Image url</span> <input
 					 id="ReviewImageUrl" name="imageUrl" type="text" class="shadowToTalEffects form-control standardHeight ReviewImageUrl">
 			</div>
 		
@@ -179,7 +179,9 @@ $(document).ready(function(){
 	
 	
 	// 글 삭제
-	$('#deleteReviewBtn987').on('click', function(){
+	$('#deleteReviewBtn987').on('click', function(e){
+		e.preventDefault();
+		
 		let title = $('').val();
 		let content = $('').val();
 		location.reload(true);
