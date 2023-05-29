@@ -768,3 +768,8 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .liveMoreBtn{margin-top:2rem;}
 .liveContentBox{width:48rem; max-height:20rem; min-height:15rem; background-color:green;}
 .liveContentText{font-size:2rem;}
+#livelanguageId{width:10rem; border:none;}
+#livelanguageId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+.liveTopText{width:80rem;}
+.LiveTopLogo56{height:3rem;}
+.TopLogoMain{height:10rem; margin:1rem; padding:2rem; padding-bottom:2rem;}
