@@ -24,20 +24,24 @@
 				</select> 
 				<input id= "ReviewTitleId" name="title" type="text" 
 					class="shadowToTalEffects form-control col-5 mr-3 ml-3 standardHeight" placeholder="Title">
+					
+					
 				
-				<select name="id" id= languageCategoryId class="shadowToTalEffects form-select form-select-sm form-control col-2 standardHeight">
-						<option value="none" selected>language</option>
-						<option value="KO">KO</option>
-						<option value="EN">EN</option>
-						<option value="JP">JP</option>
-						<option value="CHN">CHN</option>
-						<option value="FRA">FRA</option>
-						<option value="SWE">SWE</option>
-						<option value="DEU">DEU</option>
-						<option value="VNM">VNM</option>
-						<option value="Others">Others</option>
-				</select> 
-			
+					<select name="id" id= languageCategoryId class="shadowToTalEffects form-select form-select-sm form-control col-2 standardHeight">
+							<option value="none" selected>language</option>
+							<option value="KO">KO</option>
+							<option value="EN">EN</option>
+							<option value="JP">JP</option>
+							<option value="CHN">CHN</option>
+							<option value="FRA">FRA</option>
+							<option value="SWE">SWE</option>
+							<option value="DEU">DEU</option>
+							<option value="VNM">VNM</option>
+							<option value="Others">Others</option>
+					</select> 
+				
+				
+				
 				<select name="id" id= "ReviewRatingId" class="shadowToTalEffects form-select form-select-sm form-control col-2 ml-3 standardHeight">
 						<option value="none" selected>rating</option>
 						<option value="5">⭐⭐⭐⭐⭐</option>

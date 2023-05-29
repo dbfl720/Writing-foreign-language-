@@ -8,6 +8,7 @@
  		INSERT INTO `live`
  		(
  			`userId`
+ 			,`languageCategoryId`
  			,`content`
  			,`ImagePath`
  			,`createdAt`
@@ -16,6 +17,7 @@
  		VALUES
  		(
  			#{userId}
+ 			,#{languageCategoryId}
  			,#{content}
  			,#{ImagePath}
  			,NOW()
@@ -24,5 +26,21 @@
 
  	</insert>
  
+ 
+ 
+ 
+ 	<select id="selectLiveListByLanguage" resultType="com.language.live.model.Live">
+ 		SELECT
+ 			`id`
+ 			,`userId`
+ 			,`content`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+		FROM
+			`live`
+ 		WHERE
+ 			`languageCategoryId` = #{languageCategoryId}
+ 	</select>
  
  </mapper>

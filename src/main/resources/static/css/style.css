@@ -753,5 +753,18 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 
 /*   live쓰기   */
 #writeTextArea{height:50rem; width:60rem;}
-.liveWritingBox444{margin-top:7rem; width:60rem;}
-.liveWritingFileIcon{width:85rem; margin-left:3rem; margin-bottom:4rem; height:6.5rem; padding:1rem;}
+.liveWritingBox444{margin-top:7rem; width:90rem;}
+.liveWritingFileIcon{width:200rem; margin-left:3rem; margin-bottom:4rem; height:5rem; padding:1rem;  }
+.liveFileName222{font-size:1.8rem; margin-left:2rem;  }
+#liveWritingLanguage{width:2rem; margin-left:2rem; margin-right:2rem;}
+#liveWritingLanguage:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
+
+
+/*  live 디테일   */
+.LiveDetailTopBox333{width:47rem; height:8rem;}
+.liveTopFont{font-size:1.7rem; font-weight: bold; }
+.liveToploginIdText{margin-bottom:1rem; margin-top:1rem; margin-left:1.5rem;}
+.liveTopLanguageText{margin-left:1.5rem; font-size:1.4rem;}
+.liveMoreBtn{margin-top:2rem;}
+.liveContentBox{width:48rem; max-height:20rem; min-height:15rem; background-color:green;}
+.liveContentText{font-size:2rem;}

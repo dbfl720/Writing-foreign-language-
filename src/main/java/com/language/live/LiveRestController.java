@@ -28,6 +28,7 @@ public class LiveRestController {
 	// live 글쓰기
 	@PostMapping("/create")
 	public Map<String, Object> create(
+			@RequestParam("selectLanguageValue") String  languageCategoryId,
 			@RequestParam("content") String content,
 			@RequestParam("file") MultipartFile file, 
 			HttpSession session){
@@ -37,7 +38,7 @@ public class LiveRestController {
 		String loginId = (String)session.getAttribute("loginId");
 		
 		// db
-		int rowCount = liveBO.addLive(userId, content, file);
+		int rowCount = liveBO.addLive(userId, languageCategoryId, content, file);
 		
 		
 		// response
