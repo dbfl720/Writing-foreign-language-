@@ -96,7 +96,7 @@ $(document).ready(function() {
 				let ext = fileName.split(".").pop().toLowerCase();
 				if (ext != "jpg" && ext != "png" && ext != "jpeg"
 						&& ext != "gif" && ext != "webp") {
-					alert("이미지 파일만 업로드 할 수 있습니다.");
+					swal("You can only upload image files.");
 					$("#file").val(""); // 파일 태그에 파일 제거
 					$("#fileName").text(""); // 파일 이름 비우기
 					return;
