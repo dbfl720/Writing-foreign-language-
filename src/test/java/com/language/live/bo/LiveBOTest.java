@@ -1,6 +1,9 @@
 package com.language.live.bo;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -8,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.language.live.model.LiveView;
 
 
 @SpringBootTest   // spring 수행. 있어야만 수행됨.
@@ -30,6 +35,15 @@ class LiveBOTest {
 	
 	
 	
+	
+	
+	//@Transactional
+	//@Test
+	void 라이브View_가져오기() {
+		logger.info("###### 라이브 View 정보들 가져오기");
+		List<LiveView> liveViewList = liveBO.generateCardList("EN");
+		assertNotNull(liveViewList);
+	}
 	
 	
 	

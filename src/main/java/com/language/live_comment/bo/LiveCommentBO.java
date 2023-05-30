@@ -85,4 +85,12 @@ public class LiveCommentBO {
 		
 		return liveCommentViewList;
 	}
+	
+	
+	
+	
+	// delete
+	public int deleteLiveComment(int commentId) {
+		 return liveCommentMapper.deleteLiveComment(commentId);
+	}
 }

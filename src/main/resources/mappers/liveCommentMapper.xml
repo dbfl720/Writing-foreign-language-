@@ -41,4 +41,15 @@
 			`liveId` = #{liveId}
  	
  	</select>
+ 	
+ 	
+ 	
+ 	<delete id="deleteLiveComment" parameterType="int">
+ 		DELETE
+ 		FROM
+ 			`live_comment`
+		WHERE
+			`id` = #{commentId}
+ 	
+ 	</delete>
  </mapper>

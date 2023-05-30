@@ -130,7 +130,7 @@
 					<div>
 						 <c:forEach items="${card.liveCommentList}" var="liveComments"> 
 							 <c:choose>
-								<c:when test="${comments.liveComment.userId eq userId}"> 
+								<c:when test="${liveComments.liveComment.userId eq userId}"> 
 									<div class="d-flex justify-content-between align-items-center">	
 										<%-- 댓글 내용 --%>
 										<div>
@@ -139,10 +139,9 @@
 										</div>
 										<%-- 댓글 삭제 버튼 --%>
 											<div>
-												<a href="#" data-comment-id="" class="deleteBtn" >
-												 <img
-													class=" mr-3" width="15px" height="15px" alt="x-icon"
-													src="">
+												<a href="#" data-comment-id="${liveComments.liveComment.id}" class="LiveDeleteBtn" >
+												 <img class=" mr-3" width="15px" height="15px" alt="댓글 삭제 아이콘"
+													src="https://icons.iconarchive.com/icons/custom-icon-design/mono-general-4/128/trash-icon.png">
 												</a>
 											</div>
 									</div>
@@ -238,6 +237,44 @@ $(document).ready(function() {
 		
 	});  // liveCommentBtn
 	
+	
+	
+	
+	
+	
+	// 댓글 삭제
+	$('.LiveDeleteBtn').on('click', function(e) {
+		e.preventDefault();
+		
+		let commentId = $(this).data("comment-id");
+		//alert(commentId);
+		
+		
+		
+		$.ajax({
+			// request
+			type : "POST"
+			, url : "/live_comment/delete"
+			, data : {"commentId" : commentId}
+			
+			
+		
+			// response
+			, success : function(data) { // jquery ajax 함수가 json string을 object로 파싱해줌
+				if (data.code == 1) {
+					swal(data.result);
+					location.reload();
+				} else {
+					swal(data.errorMessage);
+				}
+			}
+			,error : function(request, status, error) {
+				alert("요청에 실패했습니다. 관리자에게 문의해주세요.");
+			}
+			
+		}); // ajax
+		
+	});  // LiveDeleteBtn
 	
 });  // ready
 

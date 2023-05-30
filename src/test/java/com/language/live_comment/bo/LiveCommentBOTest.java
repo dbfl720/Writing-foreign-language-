@@ -22,12 +22,23 @@ class LiveCommentBOTest {
 	
 	
 	
-	@Transactional
-	@Test
+	//@Transactional
+	//@Test
 	void 댓글쓰기() {
 		logger.info("####### 댓글 쓰기 ######");
 		liveCommentBO.addLiveComment(2, 2, "content");
 	}
+	
+	
+	//@Transactional
+	//@Test
+	void 댓글삭제() {
+		logger.info("####### 댓글 삭제");
+		liveCommentBO.deleteLiveComment(3);
+	}
+	
+	
+	
 	
 	//@Test
 	void test() {

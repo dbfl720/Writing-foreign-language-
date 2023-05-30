@@ -74,22 +74,16 @@ public class ReviewCommentRestController {
 		
 		Map<String, Object> result = new HashMap<>();
 		
-//		Integer userId = (Integer)session.getAttribute("userId");
-//		if (userId == null) {
-//			result.put("code", 500);
-//			result.put("errorMessage", "로그인을 다시 해주세요.");
-//			return result;
-//		}
 		
 		// db delete
 		int rowCount = reviewCommentBO.deleteComment(commentId);
 		
 		if (rowCount > 0) {
 			result.put("code", 1);
-			result.put("result", "성공");
+			result.put("result", "Your comment has been deleted.");
 		} else {
 			result.put("code", 500);
-			result.put("errorMessage", "메모를 삭제하는데 실패했습니다. 관리자에게 문의해주세요.");
+			result.put("errorMessage", "Failed to save. Please contact the administrator.");
 		}
 		return result;
 		

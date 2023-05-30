@@ -21,4 +21,9 @@ public interface LiveCommentMapper {
 	// select
 	public List<LiveComment> selectLiveCommentListByLiveId(int liveId);
 	
+	
+	
+	
+	// delete
+	public int deleteLiveComment(int commentId);
 }

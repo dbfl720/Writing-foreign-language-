@@ -49,4 +49,28 @@ public class LiveCommentRestController {
 		return result;
 	}
 	
+	
+	
+	
+	@PostMapping("/delete")
+	public Map<String, Object> delete(
+			@RequestParam("commentId") int commentId){
+		
+		// db
+		int rowCount = liveCommentBO.deleteLiveComment(commentId);
+		
+		// response
+		Map<String, Object> result = new HashMap<>();
+		 if (rowCount > 0) {
+			 	result.put("code", 1);
+				result.put("result", "Your comment has been deleted.");
+				
+		} else {
+			result.put("code", 500);
+			result.put("errorMessage", "Failed to save. Please contact the administrator.");
+		}
+		
+		return result;
+	}
+	
 }
