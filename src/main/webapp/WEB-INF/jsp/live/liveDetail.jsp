@@ -101,14 +101,14 @@
 							<%-- 좋아요가 안눌러졌을 때, 비로그인 일 때.  (빈 하트) --%>
 							<a href="#" class="like-btn" data-post-id="">
 								<img width="18px" height="18px" alt="empty heart"
-								src="/static/img/heart-icon.png">
+								src="">
 							</a>
 					
 					
 							<%-- 좋아요가 눌러졌을 때 (채워진 하트) --%>
 							<a href="#" class="like-btn" data-post-id="">
 								<img width="18px" height="18px" alt="filled heart"
-								src="/static/img/heart-icon (1).png">
+								src="">
 							</a>
 					
 						<small>명이 좋아합니다.</small>
@@ -140,7 +140,7 @@
 												<a href="#" data-comment-id="" class="deleteBtn" >
 												 <img
 													class=" mr-3" width="15px" height="15px" alt="x-icon"
-													src="/static/img/x-icon.png">
+													src="">
 												</a>
 											</div>
 									</div>
@@ -160,11 +160,10 @@
 				
 							<div class="d-flex mt-2 justify-content-between">
 								<%-- border-top: 윗부분 경계 --%>
-								<input type="text"
-									class="shadowToTalEffects commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
+								<input type="text" class="liveCommentInput shadowToTalEffects commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
 									placeholder="댓글 달기..." />
-								<button id="liveCommentBtn" type="button" class="shadowToTalEffects commentBtn btn btn-light mt-2 col-2"
-									data-comment-id="${card.live.id}">게시</button>
+								<button  type="button" class="liveCommentBtn shadowToTalEffects commentBtn btn btn-light mt-2 col-2"
+									data-live-id="${card.live.id}">게시</button>
 								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
 							</div>
 				
@@ -187,7 +186,52 @@
 $(document).ready(function() {
 	
 	// 댓글 쓰기 
-	
+	$('.liveCommentBtn').on('click', function(e){  // 글이 여러개 이기 때문에 class로 liveCommentBtn만들어야 됨.
+		e.preventDefault();
+		
+		let liveId = $(this).data("live-id");
+		let content = $(this).siblings("input").val();  // *** jquery .siblings() 문법 - 형제중에 input태그 가져온다. 
+		
+		//alert(content);
+		
+		// validation
+		if (!content) {
+			swal("Please write your comment.");
+			return;
+		}
+		
+		
+		// ajax
+		$.ajax({
+			
+			// request
+			type : "POST"
+			, url : "/live_comment/create"
+			, data : {
+				"liveId" : liveId
+				,"content" : content
+			}
+		
+		
+		
+			// response
+			, success : function(data) {
+				if (data.code = 1) {
+					location.reload(true);
+					swal(data.result);
+				} else {
+					swal(data.errorMessage);
+				}
+			},
+			error : function(request, status, error) {
+				swal("Failed to save information. Please contact the administrator.");
+			}
+			
+			
+			
+		}); // ajax
+		
+	});  // liveCommentBtn
 	
 	
 });  // ready

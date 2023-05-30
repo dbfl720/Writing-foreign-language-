@@ -26,7 +26,13 @@ public class ReviewCommentRestController {
 	private ReviewCommentBO reviewCommentBO;
 	
 	
-	
+	/**
+	 * 리뷰 코멘트 쓰기
+	 * @param reviewId
+	 * @param content
+	 * @param session
+	 * @return
+	 */
 	@PostMapping("/create")
 	public Map<String, Object> create(
 			@RequestParam("reviewId") int reviewId,
@@ -55,7 +61,12 @@ public class ReviewCommentRestController {
 	}
 	
 	
-	
+	/**
+	 * 리뷰 코멘트 삭제
+	 * @param commentId
+	 * @param session
+	 * @return
+	 */
 	@DeleteMapping("/delete")
 	public Map<String, Object> delete(
 			@RequestParam("commentId") int commentId,

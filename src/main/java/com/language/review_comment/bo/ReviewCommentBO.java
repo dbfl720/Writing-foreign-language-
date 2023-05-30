@@ -58,6 +58,8 @@ public class ReviewCommentBO {
 		// 해당 글 댓글 가져오기
 		List<ReviewComment> reviewCommentList = reviewCommentMapper.selectReviewCommentListByReviewId(reviewId);
 			
+		
+	
 		// reviewComment => reviewCommentView
 		for (ReviewComment reviewComment : reviewCommentList) {
 			
