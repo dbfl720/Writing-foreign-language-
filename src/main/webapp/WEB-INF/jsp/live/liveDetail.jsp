@@ -97,18 +97,18 @@
 
 					<%-- 좋아요 --%>
 					<div class="mt-3 mb-3">
-					
+						<c:if test="${ }">
 							<%-- 좋아요가 안눌러졌을 때, 비로그인 일 때.  (빈 하트) --%>
-							<a href="#" class="like-btn" data-post-id="">
+							<a href="#" class="LiveLike-btn" data-live-id="${card.live.id}">
 								<img width="18px" height="18px" alt="empty heart"
-								src="">
+								src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
 							</a>
 					
 					
 							<%-- 좋아요가 눌러졌을 때 (채워진 하트) --%>
-							<a href="#" class="like-btn" data-post-id="">
+							<a href="#" class="LiveLike-btn" data-live-id="${card.live.id}">
 								<img width="18px" height="18px" alt="filled heart"
-								src="">
+								src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
 							</a>
 					
 						<small>명이 좋아합니다.</small>
@@ -275,6 +275,44 @@ $(document).ready(function() {
 		}); // ajax
 		
 	});  // LiveDeleteBtn
+	
+	
+	
+	
+	
+	
+	
+	// 좋아요 / 해제
+	$('.LiveLike-btn').on('click', function(e){
+		e.preventDefault();
+		
+		let liveId = $(this).data("live-id");
+		//alert(liveId);
+		
+		
+		$.ajax({
+			// request
+			url : "/liveLike/" + liveId   
+
+			
+			// response
+			,success : function(data) {
+				if (data.code == 1) {
+					location.reload();
+				} else if (data.code == 300) {
+					alert(data.errorMessage);
+					// 비로그인 시 로그인 페이지로 이동
+					location.href = "/user/sign_in_view";
+				}
+			},
+			error : function(request, status, error) {
+				alert("Failed to save your like. Please contact the administrator.");
+			}
+			
+		});  //ajax
+		
+	});  // LiveLike-btn
+	
 	
 });  // ready
 

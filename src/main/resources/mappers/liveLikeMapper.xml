@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.language.live_like.dao.LiveLikeMapper">
+	<select id="selectLiveLikeByLiveIdOrUserId" parameterType="map" resultType="int">
+		SELECT
+ 			COUNT(*)
+		FROM
+			`live_like`
+		WHERE
+			`liveId` = #{liveId}
+			<if test="userId != null">
+			AND `userId` = #{userId}
+			</if>
+	
+	</select>
+	
+	
+	
+	<delete id="deleteLiveLikeByLiveIdUserId" parameterType="int">
+		DELETE
+		FROM
+			`live_like`
+		WHERE
+			`liveId` = #{liveId}
+			AND `userId` = #{userId}
+	</delete>
+
+
+
+
+	<insert id="insertLiveLike" parameterType="map">
+		INSERT INTO `live_like`
+		(
+			`liveId`
+			,`userId`
+			,`createdAt`
+		)
+		VALUES
+		(
+			#{liveId}
+			,#{userId}
+			,NOW()
+		)
+	</insert>
+</mapper>

@@ -13,6 +13,7 @@ import com.language.live.model.Live;
 import com.language.live.model.LiveView;
 import com.language.live_comment.bo.LiveCommentBO;
 import com.language.live_comment.model.LiveCommentView;
+import com.language.live_like.bo.LiveLikeBO;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -34,6 +35,11 @@ public class LiveBO {
 	
 	@Autowired
 	private LiveCommentBO liveCommentBO;
+	
+	
+	@Autowired
+	private LiveLikeBO liveLikeBO;
+	
 	
 	
 	

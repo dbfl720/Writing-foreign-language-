@@ -22,4 +22,10 @@ public class LiveView {
 		// 댓글들
 		private List<LiveCommentView> liveCommentList;
 		
+		
+		// 좋아요 n개
+		private int liveLikeCount;
+		
+		// 좋아요 여부 
+		private boolean liveFilledLike;
 }
