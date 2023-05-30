@@ -19,7 +19,7 @@ public class LiveLikeBO {
 		}
 
 		// 로그인  // 개수는 boolean이 될 수 없기 때문에 조건문 만들기. => 0보다 크면 ture.
-		return liveLikeMapper.selectLiveLikeByLiveIdOrUserId(liveId, liveId) > 0;
+		return liveLikeMapper.selectLiveLikeByLiveIdOrUserId(liveId, userId) > 0;
 	}
 	
 	

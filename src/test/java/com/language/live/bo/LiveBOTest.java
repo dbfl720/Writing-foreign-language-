@@ -41,7 +41,7 @@ class LiveBOTest {
 	//@Test
 	void 라이브View_가져오기() {
 		logger.info("###### 라이브 View 정보들 가져오기");
-		List<LiveView> liveViewList = liveBO.generateCardList("EN");
+		List<LiveView> liveViewList = liveBO.generateCardList("EN",4);
 		assertNotNull(liveViewList);
 	}
 	

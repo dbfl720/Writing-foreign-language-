@@ -64,7 +64,7 @@ public class LiveBO {
 	
 	
 	// select - 가공 라이브
-	public List<LiveView> generateCardList(String Language) {
+	public List<LiveView> generateCardList(String Language, Integer userId) {
 		
 		
 		List<LiveView> liveViewList = new ArrayList<>();  // []
@@ -89,12 +89,12 @@ public class LiveBO {
 		card.setLiveCommentList(liveCommentList);
 		
 		
+		// 좋아요  개수
+		card.setLiveLikeCount(liveLikeBO.getLiveLikeCountByLiveId(live.getId()));
+		
+		
 		// 좋아요 눌렀는지 여부
-		
-		
-		
-		// 좋아요 개수
-		
+		card.setLiveFilledLike(liveLikeBO.existLiveLike(live.getId(), userId));
 		
 		// 카드 리스트 채우기 *
 		liveViewList.add(card);

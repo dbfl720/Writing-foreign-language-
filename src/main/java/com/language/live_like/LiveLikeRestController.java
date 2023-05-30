@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.language.live_like.bo.LiveLikeBO;
 
+
 @RestController // like table에 가는 것 이기 때문에 LikeRestController 만듬
 public class LiveLikeRestController {
 
@@ -24,7 +25,7 @@ public class LiveLikeRestController {
 	
 	//  GET :  /like?postId=13      @RequestParam으로 받기.
 	//  GET or POST: /like/13       @PathVariable으로 받기. (와일드카드) - URL 경로에 변수를 넣어주는 것
-	@RequestMapping("/like/{liveId}")
+	@RequestMapping("/liveLike/{liveId}")
 	public Map<String, Object> liveLike(
 			@PathVariable int liveId,
 			HttpSession session){

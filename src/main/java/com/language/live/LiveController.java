@@ -55,7 +55,7 @@ public class LiveController {
 		
 		
 		// db
-		List<LiveView> liveViewList = liveBO.generateCardList(languageCategoryId);
+		List<LiveView> liveViewList = liveBO.generateCardList(languageCategoryId, userId);
 		
 		
 		model.addAttribute("liveViewList", liveViewList);

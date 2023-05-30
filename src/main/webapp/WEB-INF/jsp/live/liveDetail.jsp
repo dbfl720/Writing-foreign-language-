@@ -97,20 +97,20 @@
 
 					<%-- 좋아요 --%>
 					<div class="mt-3 mb-3">
-						<c:if test="${ }">
+						 <c:if test="${card.liveFilledLike == false}"> 
 							<%-- 좋아요가 안눌러졌을 때, 비로그인 일 때.  (빈 하트) --%>
 							<a href="#" class="LiveLike-btn" data-live-id="${card.live.id}">
 								<img width="18px" height="18px" alt="empty heart"
 								src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
 							</a>
-					
-					
+						 </c:if> 
+						 <c:if test="${card.liveFilledLike == true}"> 
 							<%-- 좋아요가 눌러졌을 때 (채워진 하트) --%>
 							<a href="#" class="LiveLike-btn" data-live-id="${card.live.id}">
 								<img width="18px" height="18px" alt="filled heart"
 								src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
 							</a>
-					
+					     </c:if> 
 						<small>명이 좋아합니다.</small>
 					</div>
 
