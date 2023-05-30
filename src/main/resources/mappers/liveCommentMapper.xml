@@ -24,4 +24,21 @@
  		)
  	</insert>
  
+ 
+ 
+ 
+ 	<select id="selectLiveCommentListByLiveId" parameterType="int" resultType="com.language.live_comment.model.LiveComment">
+ 		SELECT
+ 			`id`
+ 			,`liveId`
+ 			,`userId`
+ 			,`content`
+ 			,`createdAt`
+ 			,`updatedAt`
+		FROM
+			`live_comment`
+		WHERE
+			`liveId` = #{liveId}
+ 	
+ 	</select>
  </mapper>

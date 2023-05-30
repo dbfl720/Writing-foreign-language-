@@ -128,12 +128,14 @@
 
 					<%-- 댓글 목록 --%>
 					<div>
-					
+						 <c:forEach items="${card.liveCommentList}" var="liveComments"> 
+							 <c:choose>
+								<c:when test="${comments.liveComment.userId eq userId}"> 
 									<div class="d-flex justify-content-between align-items-center">	
 										<%-- 댓글 내용 --%>
 										<div>
-											<small class="font-weight-bold liveLoginIdText33">loginId</small>
-											<small class="liveContentText">content</small>
+											<small class="font-weight-bold liveLoginIdText33">${liveComments.user.loginId}</small>
+											<small class="liveContentText">${liveComments.liveComment.content}</small>
 										</div>
 										<%-- 댓글 삭제 버튼 --%>
 											<div>
@@ -144,15 +146,18 @@
 												</a>
 											</div>
 									</div>
-							
+								 	 </c:when> 
+									<c:otherwise> 
 									<div class="d-flex justify-content-between align-items-center">	
 										<%-- 댓글 내용 --%>
 										<div>
-											<small class="font-weight-bold"></small>
-											<small></small>
+											<small class="font-weight-bold">${liveComments.user.loginId}</small>
+											<small>${liveComments.liveComment.content}</small>
 										</div>
 									</div>
-						
+								 </c:otherwise>
+							</c:choose> 
+						</c:forEach> 
 
 						
 						

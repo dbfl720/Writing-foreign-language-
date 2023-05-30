@@ -1,5 +1,8 @@
 package com.language.live.model;
 
+import java.util.List;
+
+import com.language.live_comment.model.LiveCommentView;
 import com.language.user.model.User;
 
 import lombok.Getter;
@@ -16,5 +19,7 @@ public class LiveView {
 		// 글쓴이 정보
 		private User user;
 		
+		// 댓글들
+		private List<LiveCommentView> liveCommentList;
 		
 }

@@ -11,6 +11,8 @@ import com.language.common.FileManagerService;
 import com.language.live.dao.LiveMapper;
 import com.language.live.model.Live;
 import com.language.live.model.LiveView;
+import com.language.live_comment.bo.LiveCommentBO;
+import com.language.live_comment.model.LiveCommentView;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -28,6 +30,10 @@ public class LiveBO {
 	
 	@Autowired
 	private UserBO userBO;
+	
+	
+	@Autowired
+	private LiveCommentBO liveCommentBO;
 	
 	
 	
@@ -73,6 +79,8 @@ public class LiveBO {
 		card.setUser(user); // 지금 가져온 user정보를 카드에 넣기.
 		
 		// 댓글들
+		List<LiveCommentView> liveCommentList = liveCommentBO.generateLiveCommentViewList(live.getId());
+		card.setLiveCommentList(liveCommentList);
 		
 		
 		// 좋아요 눌렀는지 여부
@@ -84,10 +92,8 @@ public class LiveBO {
 		
 		// 카드 리스트 채우기 *
 		liveViewList.add(card);
-	
-			
+				
 		}
-		
 		
 		return liveViewList;
 	}
