@@ -46,7 +46,7 @@
 					<img class="languageMark" alt="언어 사진" width="40" height="40"
 						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
 					${user.nativeCategoryId}
-						<img alt="화살표" height="35" width="35" src="https://icons.iconarchive.com/icons/pictogrammers/material-arrow/128/arrow-left-right-icon.png">
+						<img alt="화살표" height="18" width="18" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
 						${user.foreignCategoryId}
 					</div>
 					<div class="profileTotalText"><img alt="좋아요 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">

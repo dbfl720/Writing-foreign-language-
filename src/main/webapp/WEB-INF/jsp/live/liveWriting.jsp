@@ -67,7 +67,7 @@
 							</a>
 						</div>
 						<div class="GrammarListIcon6666">
-							<a href="">
+							<a href="/live/live_view">
 								<img class="shadowToTalEffects" alt="목록 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png">
 							</a>
 						</div>

@@ -9,8 +9,8 @@
 	
 	<div class=" d-flex TopLogoEffects justify-content-between TopLogoMain">
 			<div class="d-flex LiveTopLogo56">
-				<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
-				<div class="liveTopText">Excellent Writer!!</div>
+				<img alt="글쓴이 이모티콘" width="65" height="65" src="https://icons.iconarchive.com/icons/praveen/minimal-outline/128/microphone-icon.png">
+				<div class="liveTopText">Talk about your day with people !</div>
 			</div>
 	
 	
@@ -28,16 +28,24 @@
 						<option value="/live/live_view?languageCategoryId=VNM">VNM</option>
 						<option value="/live/live_view?languageCategoryId=Others">Others</option>
 				</select>
+				
+				<!-- 리뷰쓰기 아이콘 -->
+			<div class="ReviewPencilIcon ">
+				<a href="/live/live_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
+					width="33" height="33"
+					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
+				</a>
+			</div>
 		</div>
 	</div>
 	
 	
 	
-	<div class="d-flex justify-content-center">
-	<div class="contents-box">
 	<c:forEach items="${liveViewList}" var="card">
+	<div class="d-flex justify-content-center">
+	<div>
 			<%-- 타임라인 영역 --%>
-			<div class="my-5 border-bottom">
+			<div class="my-5 border-bottom contents-box">
 				<%--y : y축 -> top , bottom --%>
 				<div class=" rounded mt-2">
 					<%-- 글쓴이,팔로잉 --%>
@@ -56,19 +64,22 @@
 										</a>
 									</div>
 									<div class="liveTopLanguage">
-										<div class="liveTopLanguageText text-secondary">${card.user.nativeCategoryId} <-> ${card.user.foreignCategoryId}</div>
+										<div class="liveTopLanguageText text-secondary">
+										${card.user.nativeCategoryId}
+										<img alt="화살표" height="14" width="14" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
+										 ${card.user.foreignCategoryId}</div>
 									</div>
 								</div>
 							</div>
 						<%-- 더보기, 삭제(내가 쓴 글일 때만 노출) --%>
 						
 							<a href="#" class="liveMoreBtn" data-toggle="modal" data-target="#modal" data-post-id=""> <img
-								 width="20" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
+								width="20" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
 							</a>
 					</div>
 					</div>
 						<%-- 글 --%>
-					<div class="liveContentBox">
+					<div class="liveContentBox shadowToTalEffects">
 						<span class="liveContentText">${card.live.content}</span>
 					</div>
 				
@@ -78,7 +89,7 @@
 				
 					<%-- 카드 이미지 --%>
 					<div>
-						<img class="w-100" height="300px" alt="본문 이미지"
+						<img class="w-100 shadowToTalEffects liveImageBox111"  height="300" alt="본문 이미지"
 							src="${card.live.imagePath}">
 					</div>
 
@@ -110,7 +121,7 @@
 					<%-- 댓글 --%>
 					<div class="mb-2">
 						<div>
-							<div class="text-secondary">댓글</div>
+							<div class="text-secondary liveCommentText4567">comment</div>
 						</div>
 					</div>
 
@@ -121,8 +132,8 @@
 									<div class="d-flex justify-content-between align-items-center">	
 										<%-- 댓글 내용 --%>
 										<div>
-											<small class="font-weight-bold">loginId</small>
-											<small>content</small>
+											<small class="font-weight-bold liveLoginIdText33">loginId</small>
+											<small class="liveContentText">content</small>
 										</div>
 										<%-- 댓글 삭제 버튼 --%>
 											<div>
@@ -150,22 +161,22 @@
 							<div class="d-flex mt-2 justify-content-between">
 								<%-- border-top: 윗부분 경계 --%>
 								<input type="text"
-									class="commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
+									class="shadowToTalEffects commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
 									placeholder="댓글 달기..." />
-								<button type="button" class="commentBtn btn btn-light mt-2"
-									data-post-id="">게시</button>
+								<button id="liveCommentBtn" type="button" class="shadowToTalEffects commentBtn btn btn-light mt-2 col-2"
+									data-comment-id="${card.live.id}">게시</button>
 								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
 							</div>
 				
 					</div>
 					<%-- 댓글 목록 --%>
-
+	
+					</div>
 				</div>
-				</c:forEach>
-				<%-- 타임라인 영역 끝 --%>
-			</div>
-
-	</div>
+	
+		</div>
+		</c:forEach>
+		<%-- 타임라인 영역 끝 --%>
 </div>
 	
 
@@ -173,7 +184,13 @@
 
 
 <script>
-
+$(document).ready(function() {
+	
+	// 댓글 쓰기 
+	
+	
+	
+});  // ready
 
 
 </script>

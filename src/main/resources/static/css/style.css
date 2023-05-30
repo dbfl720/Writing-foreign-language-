@@ -756,20 +756,24 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .liveWritingBox444{margin-top:7rem; width:90rem;}
 .liveWritingFileIcon{width:200rem; margin-left:3rem; margin-bottom:4rem; height:5rem; padding:1rem;  }
 .liveFileName222{font-size:1.8rem; margin-left:2rem;  }
-#liveWritingLanguage{width:2rem; margin-left:2rem; margin-right:2rem;}
+#liveWritingLanguage{width:2rem; margin-left:2rem; margin-right:2rem; border:none;}
 #liveWritingLanguage:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 
 
 /*  live 디테일   */
-.LiveDetailTopBox333{width:47rem; height:8rem;}
+.LiveDetailTopBox333{width:70rem; height:8rem; margin-bottom:1rem;}
 .liveTopFont{font-size:1.7rem; font-weight: bold; }
 .liveToploginIdText{margin-bottom:1rem; margin-top:1rem; margin-left:1.5rem;}
 .liveTopLanguageText{margin-left:1.5rem; font-size:1.4rem;}
 .liveMoreBtn{margin-top:2rem;}
-.liveContentBox{width:48rem; max-height:20rem; min-height:15rem; background-color:green;}
-.liveContentText{font-size:2rem;}
-#livelanguageId{width:10rem; border:none;}
+.liveContentBox{width:70rem; max-height:20rem; min-height:15rem; /* background-color:green; */ }
+#livelanguageId{width:10rem; border:none; margin-top:2.3rem; height:4rem;}
 #livelanguageId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
-.liveTopText{width:80rem;}
+.liveTopText{width:80rem; font-size:3.8rem; margin-top:1.3rem;}
 .LiveTopLogo56{height:3rem;}
-.TopLogoMain{height:10rem; margin:1rem; padding:2rem; padding-bottom:2rem;}
+.TopLogoMain{height:10rem; margin:1rem; padding:2.2rem; margin-bottom:8rem;}
+.commentInput{height:4rem; font-size:1.8rem;}
+.liveLoginIdText33{font-size:2rem;}
+.liveContentText{font-size:2rem; margin-left:1.5rem;}
+.contents-box{width:70rem;}
+.liveCommentText4567{font-size:1.6rem;}
