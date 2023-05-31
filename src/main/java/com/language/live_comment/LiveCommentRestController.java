@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,8 @@ import com.language.live_comment.bo.LiveCommentBO;
 @RestController
 public class LiveCommentRestController {
 
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private LiveCommentBO liveCommentBO;
@@ -31,6 +35,11 @@ public class LiveCommentRestController {
 		
 		// 세션
 		int userId = (int)session.getAttribute("userId");  // breakpoint
+		
+		if (userId == 0) {
+			logger.error("[########insert live_comment] liveId:{}, userId:{}", liveId, userId);
+		}
+		
 		
 		// db
 		int rowCount = liveCommentBO.addLiveComment(liveId, userId, content);
@@ -48,6 +57,10 @@ public class LiveCommentRestController {
 		
 		return result;
 	}
+	
+	
+	
+	
 	
 	
 	

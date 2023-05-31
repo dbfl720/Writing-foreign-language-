@@ -70,7 +70,7 @@ footer{
 .signUpNativeLanguage {font-size: 10px; font-family: 'Marck Script', cursive;}
 .fileName{font-size:15px;}
 .duplicatedCheck{height: 53px; width:85px; font-size:13px;}
-.signUpBox2{width:22.3rem; height:53px;}
+.signUpBox2{width:28rem; height:53px;}
 .loginDublicatedBox33{margin-left:16px; margin-top:10px;}
 .duplicatedText{font-size:18px; margin-top:-20px; margin-left: 2.0rem;}
 
@@ -198,9 +198,9 @@ p {
 }
 
 
-.selectBox88{margin-left:-5rem;}
+
 #selectLanguage{
-    border: 1px solid #C4C4C4;
+    border: 1px solid 	#dcdcdc;
     box-sizing: border-box;
     border-radius: 4px;
 
@@ -226,7 +226,7 @@ p {
 
 
 #selectNative{
-    border: 1px solid #C4C4C4;
+    border: 1px solid 	#dcdcdc;
     box-sizing: border-box;
     border-radius: 4px;
 
@@ -761,12 +761,12 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 
 
 /*  live 디테일   */
-.LiveDetailTopBox333{width:60rem; height:8rem; margin-bottom:1rem;}
+.LiveDetailTopBox333{width:55rem; height:8rem; margin-bottom:1rem;}
 .liveTopFont{font-size:1.7rem; font-weight: bold; }
 .liveToploginIdText{margin-bottom:1rem; margin-top:1rem; margin-left:1.5rem;}
 .liveTopLanguageText{margin-left:1.5rem; font-size:1.4rem;}
 .liveMoreBtn{margin-top:2rem;}
-.liveContentBox{width:60rem; max-height:20rem; min-height:15rem; /* background-color:green; */ }
+.liveContentBox{width:55rem; max-height:20rem; min-height:15rem; /* background-color:green; */ }
 #livelanguageId{width:10rem; border:none; margin-top:2.3rem; height:4rem;}
 #livelanguageId:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 .liveTopText{width:80rem; font-size:3.8rem; margin-top:1.3rem;}
@@ -775,5 +775,11 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .commentInput{height:4rem; font-size:1.8rem;}
 .liveLoginIdText33{font-size:2rem;}
 .liveContentText{font-size:2rem; margin-left:1.5rem;}
-.contents-box{width:60rem;}
+.contents-box{width:55rem;}
 .liveCommentText4567{font-size:1.6rem;}
+.liveCommentBtn{font-size:1.8rem;}
+.liveLikeCounttext{font-size:1.8rem; margin-left:0.7rem; margin-top:2rem;}
+.liveLikeCountText222{font-size:1.9rem; font-weight:bold; margin-left:0.5rem; }
+.liveLikeCountText333{font-size:1.5rem; margin-left:0.4rem;}
+.commentBtn{font-size:1.8rem;}
+.liveEmptyLoginId{font-size:1.9rem;}

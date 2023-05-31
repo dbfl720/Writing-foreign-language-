@@ -40,7 +40,7 @@
 	</div>
 	
 	
-	
+  <c:if test="${not empty liveViewList}">
 	<c:forEach items="${liveViewList}" var="card">
 	<div class="d-flex justify-content-center">
 	<div>
@@ -97,22 +97,25 @@
 
 
 					<%-- 좋아요 --%>
-					<div class="mt-3 mb-3">
+					<div class=" liveLikeHeart d-flex">
 						 <c:if test="${card.liveFilledLike == false}"> 
 							<%-- 좋아요가 안눌러졌을 때, 비로그인 일 때.  (빈 하트) --%>
 							<a href="#" class="LiveLike-btn" data-live-id="${card.live.id}">
-								<img width="18px" height="18px" alt="empty heart"
-								src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
+								<img class="mt-4 mb-3 shadowToTalEffects" width="25px" height="25px" alt="empty heart"
+								src="https://icons.iconarchive.com/icons/aniket-suvarna/box-regular/128/bx-like-icon.png">
 							</a>
 						 </c:if> 
 						 <c:if test="${card.liveFilledLike == true}"> 
 							<%-- 좋아요가 눌러졌을 때 (채워진 하트) --%>
 							<a href="#" class="LiveLike-btn" data-live-id="${card.live.id}">
-								<img width="18px" height="18px" alt="filled heart"
-								src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
+								<img class="mt-4 mb-3 shadowToTalEffects" width="25px" height="25px" alt="filled heart"
+								src="https://icons.iconarchive.com/icons/aniket-suvarna/box/128/bxs-like-icon.png">
 							</a>
 					     </c:if> 
-						<small>${card.liveLikeCount}명이 좋아합니다.</small>
+						<div class="liveLikeCounttext d-flex">
+							<div class="liveLikeCountText222">${card.liveLikeCount}</div>
+							<div class="liveLikeCountText333">people like it.</div>
+						</div>
 					</div>
 
 
@@ -166,9 +169,9 @@
 							<div class="d-flex mt-2 justify-content-between">
 								<%-- border-top: 윗부분 경계 --%>
 								<input type="text" class="liveCommentInput shadowToTalEffects commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
-									placeholder="댓글 달기..." />
-								<button  type="button" class="liveCommentBtn shadowToTalEffects commentBtn btn btn-light mt-2 col-2"
-									data-live-id="${card.live.id}">게시</button>
+									placeholder="Add your comment..." />
+								<button  type="button" class="liveCommentBtn shadowToTalEffects commentBtn btn btn-light mt-2  col-2"
+									data-live-id="${card.live.id}">save</button>
 								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
 							</div>
 				
@@ -180,8 +183,116 @@
 	
 		</div>
 		</c:forEach>
+		</c:if>
 		<%-- 타임라인 영역 끝 --%>
-</div>
+		
+		
+		
+		
+		
+		<%-- empty 타임라인 시작. --%>
+		<c:if test="${empty liveViewList}">
+	<div class="d-flex justify-content-center">
+	<div>
+			<%-- 타임라인 영역 --%>
+			<div class="my-5 border-bottom contents-box">
+				<%--y : y축 -> top , bottom --%>
+				<div class=" rounded mt-2">
+					<%-- 글쓴이,팔로잉 --%>
+					<div class="p-2 d-flex justify-content-between LiveDetailTopBox333">	
+						<%-- 사용자 프로필 사진 --%>
+							<div class="d-flex">
+								<img class="reviewTopImgBox2 shadowToTalEffects" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/language-icon.png" 
+								width="70" height="70">
+								
+								
+								<%-- loginId --%>
+								<div class="liveDetailTopBox444">
+									<div  class="liveToploginIdText">
+										<a href="#" data-user-id="" >
+											<span class="liveTopFont">Ami</span>
+										</a>
+									</div>
+									<div class="liveTopLanguage">
+										<div class="liveTopLanguageText text-secondary">
+										native language
+										<img alt="화살표" height="14" width="14" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
+										foreign language</div>
+									</div>
+								</div>
+							</div>
+					</div>
+					</div>
+						<%-- 글 --%>
+					<div class="liveContentBox shadowToTalEffects">
+						<span class="liveContentText">We look forward to your writing !!</span>
+					</div>
+				
+			
+					
+
+				
+					<%-- 카드 이미지 --%>
+					<div>
+						<img class="w-100 shadowToTalEffects liveImageBox111"  height="300" alt="본문 이미지"
+							src="https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg">
+					</div>
+
+
+
+					<%-- 좋아요 --%>
+					<div class=" liveLikeHeart d-flex">
+							<%-- 좋아요가 안눌러졌을 때, 비로그인 일 때.  (빈 하트) --%>
+							<a href="#">
+								<img class="mt-4 mb-3 shadowToTalEffects" width="25px" height="25px" alt="empty heart"
+								src="https://icons.iconarchive.com/icons/aniket-suvarna/box-regular/128/bx-like-icon.png">
+							</a>
+					
+					</div>
+
+
+				
+
+
+					<%-- 댓글 --%>
+					<div class="mb-2">
+						<div>
+							<div class="text-secondary liveCommentText4567">comment</div>
+						</div>
+					</div>
+
+
+					<%-- 댓글 목록 --%>
+					<div>
+									<div class="d-flex justify-content-between align-items-center">	
+										<%-- 댓글 내용 --%>
+										<div>
+											<small class="font-weight-bold liveEmptyLoginId">We look forward to your writing !!</small>
+										</div>
+									</div>
+	
+						
+						
+						<%-- 댓글 쓰기 --%>
+				
+							<div class="d-flex mt-2 justify-content-between">
+								<%-- border-top: 윗부분 경계 --%>
+								<input type="text" class="liveCommentInput shadowToTalEffects commentBox commentInput border-0 form-control mt-2 mr-2 col-10"
+									placeholder="Add your comment..." />
+								<button  type="button" class="shadowToTalEffects commentBtn btn btn-light mt-2  col-2"
+									>save</button>
+								<%-- id로하면 안됨. class로 해야됨. 계쏙 나오는 거라서.  --%>
+							</div>
+				
+					</div>
+					<%-- 댓글 목록 --%>
+	
+					</div>
+				</div>
+	
+		</div>
+		</c:if> <%-- empty 타임라인 끝. --%>
+</div> <!-- container -->
 	
 
 

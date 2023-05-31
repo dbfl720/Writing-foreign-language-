@@ -84,7 +84,7 @@
 							<!-- select : native language, foreign language -->
 							<div class="form-group container">
 								<div class=" selectBox88 d-flex">
-									<select class="col-7" name="selectNative" id="selectNative">
+									<select class="col-6" name="selectNative" id="selectNative">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>native language</option>
 										<option value="KO">KO</option>
@@ -96,7 +96,7 @@
 										<option value="DEU">DEU</option>
 										<option value="VNM">VNM</option>
 										<option value="Others">Others</option>
-									</select> <select class="col-7" name="selectLanguage" id="selectLanguage">
+									</select> <select class="col-6" name="selectLanguage" id="selectLanguage">
 										<%-- name은 필드명과 같아야 한다. --%>
 										<option value="none" selected>foreign language</option>
 										<option value="KO">KO</option>
@@ -113,13 +113,13 @@
 							</div>
 							<div class="form-group">
 								<label for="lname">Who are you?</label>
-								<textarea id="selfIntroduction" class="signup-textarea w-100" rows="3"
+								<textarea id="selfIntroduction" class="signup-textarea w-100 shadowToTalEffects" rows="3"
 									name="selfIntroduction" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required></textarea>
 							</div>
 							<div class="form-group ">
 								<label for="lname">Purpose of writing</label>
-								<textarea id="languageGoals" class="signup-textarea w-100" rows="3"
+								<textarea id="languageGoals" class="signup-textarea w-100 shadowToTalEffects" rows="3"
 									name="languageGoals" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required></textarea>
 							</div>
