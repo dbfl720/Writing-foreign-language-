@@ -18,6 +18,10 @@ public interface GrammarLikeMapper {
 			@Param("userId") Integer userId);
 	
 	
+	// select
+	public int selectLikeCountByUserId(int userId);
+	
+	
 	// delete
 	public int deleteLikeByUserIdCommentId(
 			@Param("commentId")int commentId,

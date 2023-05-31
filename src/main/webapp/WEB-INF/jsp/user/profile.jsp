@@ -50,13 +50,13 @@
 						${user.foreignCategoryId}
 					</div>
 					<div class="profileTotalText"><img alt="좋아요 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
-						Grammar heart 개수
+						${grammarLikeCount} 그래머 하트를 누른 개수
 					</div>	
 					<div class="profileTotalText"><img alt="리뷰 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
-						Review heart 개수
+						 ${liveLikeCount}라이브 하트를 누른 개수
 					</div>	
 					<div class="profileTotalText"><img alt="리뷰 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
-						Total Review 개수
+						${reviewLikeCount} Total Review 개수
 					</div>	
 				</div>
 			</div> <%-- d-flex 끝. --%>

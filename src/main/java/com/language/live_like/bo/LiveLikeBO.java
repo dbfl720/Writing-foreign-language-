@@ -50,4 +50,12 @@ public class LiveLikeBO {
 	public int getLiveLikeCountByLiveId (int liveId) {
 		return liveLikeMapper.selectLiveLikeByLiveIdOrUserId(liveId, null);
 	}
+	
+	
+	
+	// select 좋아요 개수 (userId)
+	public int getLiveLikeCountByUserId (int userId) {
+		return liveLikeMapper.selectLiveLikeCountByUserId(userId);
+	}
+	
 }

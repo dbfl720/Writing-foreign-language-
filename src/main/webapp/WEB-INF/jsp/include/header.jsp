@@ -15,7 +15,7 @@
 				<div class="nameHeader ">Hello__</div>
 				<div class="ml-3 headerProfileText ">${loginId}</div>
 				<div class="nameHeader"> _?</div>
-				<a href="/user/profile_view?loginId=${loginId}" class="ml-5 "><img
+				<a href="/user/profile_view?userId=${userId}" class="ml-5 "><img
 					alt="프로필 이모티콘" height="30" width="30" class="shadowToTalEffects"
 					src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-setting-icon.png"></a>
 			</div>

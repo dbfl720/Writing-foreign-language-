@@ -33,6 +33,20 @@
  	</select>
  	
  	
+ 	
+ 	<select id="selectLikeCountByUserId" parameterType="int" resultType="int">
+ 		SELECT
+ 			COUNT(*)
+		FROM
+			`grammar_like`
+		WHERE
+			`userId` = #{userId}
+ 	
+ 	</select>
+ 	
+ 	
+ 	
+ 	
  	<delete id="deleteLikeByUserIdCommentId" parameterType="int">
  		DELETE
  		FROM

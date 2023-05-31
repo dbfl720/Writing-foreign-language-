@@ -12,13 +12,13 @@
 	<c:forEach items="${communityList}" var="communityLists">
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55">
 			<div class="communityImg">
-				<a href="/user/profile_view?loginId=${communityLists.user.loginId}"><img class="profilePicture2" id="communityImg" alt="프로필 사진"
+				<a href="/user/profile_view?userId=${communityLists.user.id}"><img class="profilePicture2" id="communityImg" alt="프로필 사진"
 					src="${communityLists.user.imagePath}"
 					height="200" width="200"></a>
 			</div>
 			<div class="infoCommunity">
 				<div class="fontCommunity mb-3">
-					<a class="loginIdFont" href="/user/profile_view?loginId=${communityLists.user.loginId}"><img alt="유저 사진" width="30" height="30"
+					<a class="loginIdFont" href="/user/profile_view?userId=${communityLists.user.id}"><img alt="유저 사진" width="30" height="30"
 						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
 					${communityLists.user.loginId}</a>
 				</div>

@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.language.grammar_comment.bo.GrammarCommentBO;
+import com.language.grammar_like.bo.GrammarLikeBO;
+import com.language.live_like.bo.LiveLikeBO;
+import com.language.review.bo.ReviewBO;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -19,6 +23,23 @@ public class UserController {
 	
 	@Autowired
 	private UserBO userBO;
+	
+	
+	
+	@Autowired
+	private GrammarLikeBO grammarLikeBO;
+	
+	
+	@Autowired
+	private LiveLikeBO liveLikeBO;
+	
+	
+	@Autowired
+	private ReviewBO reviewBO;
+	
+	
+	
+	
 	
 	/**
 	 * 회원가입 및 로그인 화면 
@@ -65,12 +86,20 @@ public class UserController {
 	//localhost/user/profile_view?loginId=yuri
 		@GetMapping("/profile_view")
 		public String profileView(
-				@RequestParam(value="loginId") String loginId,
-				Model model) {
+				@RequestParam(value="userId") int userId,
+				Model model, HttpSession session) {
 		
-			User user = userBO.getUserByLoginId(loginId);
+			
 
-	
+			// db
+			int grammarLikeCount = grammarLikeBO.getLikeCountByUserId(userId);
+			int reviewLikeCount = reviewBO.getReviewCountByUserId(userId);
+			int liveLikeCount = liveLikeBO.getLiveLikeCountByUserId(userId);
+			User user = userBO.getUserById(userId);
+			
+			model.addAttribute("liveLikeCount", liveLikeCount);
+			model.addAttribute("reviewLikeCount", reviewLikeCount);
+			model.addAttribute("grammarLikeCount", grammarLikeCount);
 			model.addAttribute("user", user); 
 			model.addAttribute("view", "user/profile");
 			return "template/layout";

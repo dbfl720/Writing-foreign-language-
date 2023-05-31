@@ -42,4 +42,9 @@ public class GrammarLikeBO {
 		return grammarLikeMapper.selectLikeCountByCommentIdOrUserId(commentId, null);
 	}
 	
+	
+	// select 좋아요 개수 (userId)
+	public int getLikeCountByUserId(int userId) {
+	return grammarLikeMapper.selectLikeCountByUserId(userId);
+	}
 }

@@ -16,6 +16,8 @@ public interface LiveLikeMapper {
 	
 	
 	
+	// select
+	public int selectLiveLikeCountByUserId(int userId);
 	
 	
 	
