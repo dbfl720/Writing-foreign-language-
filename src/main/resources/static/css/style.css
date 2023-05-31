@@ -266,20 +266,20 @@ p {
 .profileTotal55{padding:3rem; margin:3.5rem;}
 .profileBox{    width: 350px; height:350px;  border-radius: 45%; overflow: hidden;}
 .profileTotalBox{margin-left:100px;}
-.my-box  { border:none;  padding-right:235px; margin-top:7rem; margin-left:100px; margin-bottom:3rem; width:495px; height:300px;}
+/* .my-box  { border:none;  padding-right:235px; margin-top:7rem; margin-left:100px; margin-bottom:3rem; width:495px; height:300px;} */
 .firstProfileBox{width:80px; height:150px;  }
 .headerPics{padding-top:10px; padding-left:100px; width:1000px; height:600px;}
 .headerProfileText{font-size:30px;}
 #headerImg{    width: 90px; height: 90px;  border-radius: 100%; overflow: hidden;}
 .profileLoginIdText{font-size:30px; font-weight:bold; margin-bottom:17px;}
 .profileTotalText{font-size:18px; margin-bottom:17px;}
-.selfTitle{font-weight:bold; font-size:2.5rem; margin-left:55rem;}
+.selfTitle{font-weight:bold; font-size:2.5rem; margin-left:2rem; margin-top:2rem;}
 .goalTitle{font-weight:bold; font-size:2.5rem; margin-left:55rem; margin-top:10px;}
-.profileTextArea:focus {outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; }
+/* .profileTextArea:focus {outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; } */
 
 
-.secondMyBox{  margin-left:55rem; margin-top:1rem; margin-bottom: 2rem; width: 53rem; height:16rem; overflow: hidden;  border: 2px solid black; border-radius:40px 40px 40px 40px; }
-.profileTextArea{ margin: 1rem; width: 50rem;  height:14rem;  object-fit: cover; font-size:20px; border-radius:40px 40px 40px 40px;
+.secondMyBox{ margin-top:1rem; margin-bottom: 2rem; width: 100rem; height:16rem; overflow: hidden;  } 
+.profileTextArea{ margin: 1rem; width: 100rem;  height:14rem;  object-fit: cover; font-size:20px; 
    transition: all 0.2s linear; overflow: hidden;  padding: 2rem;  border:none;} /* 왼쪽 위, 오른쪽 위, 오른쪽 아래, 왼쪽 아래  */
 
 
@@ -578,7 +578,7 @@ p {
 }
 
 .ReviewDetailTextBox {
-	 background: #ccc;
+	background: #ccc;
     width:62%;
     height:40rem;
     background:#FFF;
@@ -760,6 +760,9 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 #liveWritingLanguage:focus{outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28;}
 
 
+
+
+
 /*  live 디테일   */
 .LiveDetailTopBox333{width:55rem; height:8rem; margin-bottom:1rem;}
 .liveTopFont{font-size:1.7rem; font-weight: bold; }
@@ -784,3 +787,18 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .commentBtn{font-size:1.8rem;}
 .liveEmptyLoginId{font-size:1.9rem;}
 .liveDeleteMoreBtn33{margin-top:2rem;}
+.LiveDetailTextBox {
+	background: #ccc;
+    width:50%;
+    height:25rem;
+    background:#FFF;
+    margin:10px auto;
+}
+.profileLoginId{font-size:2rem; margin-left:1rem;}
+.profileNativeText{font-size:1.6rem; margin-top:1rem;}
+.profileForeignText{font-size:1.6rem; margin-top:1rem;}
+.profileArrowImg{margin-top:1rem; margin-left:0.5rem; margin-right:0.5rem;}
+.languageMark{margin-right:1rem;}
+
+
+

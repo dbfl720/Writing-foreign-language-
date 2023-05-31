@@ -37,36 +37,37 @@
 
 				
 					<%-- 유저 정보들 --%>	
-				<div class="my-box border-bottom">
-					<div class="profileLoginIdText">
-					<img alt="유저 사진" width="40" height="40"
+				<div class="LiveDetailTextBox effect5 mt-5">
+					<div class="profileLoginIdText d-flex">
+					<img alt="유저 사진" width="27" height="27"
 						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
-						${user.loginId}</div>
-					<div class="profileTotalText">
-					<img class="languageMark" alt="언어 사진" width="40" height="40"
-						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
-					${user.nativeCategoryId}
-						<img alt="화살표" height="18" width="18" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
-						${user.foreignCategoryId}
+					<div class="profileLoginId">${user.loginId}</div>
 					</div>
-					<div class="profileTotalText"><img alt="좋아요 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png">
-						${grammarLikeCount} 그래머 하트를 누른 개수
+					<div class="profileTotalText d-flex">
+						<img class="languageMark" alt="언어 사진" width="27" height="27"
+							src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">					
+						<div class="profileNativeText">${user.nativeCategoryId}</div>
+							<img class="profileArrowImg" alt="화살표" height="18" width="18" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
+						<div class="profileForeignText">${user.foreignCategoryId}</div>
+					</div>
+					<div class="profileTotalText"><img alt="좋아요 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png">
+						${grammarLikeCount} Hearts
 					</div>	
-					<div class="profileTotalText"><img alt="리뷰 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
-						 ${liveLikeCount}라이브 하트를 누른 개수
+					<div class="profileTotalText"><img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/praveen/minimal-outline/128/microphone-icon.png">
+						 ${liveLikeCount} Hearts
 					</div>	
-					<div class="profileTotalText"><img alt="리뷰 하트" height="40" width="40" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user2-edit-icon.png">
-						${reviewLikeCount} Total Review 개수
+					<div class="profileTotalText"><img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
+						${reviewLikeCount} Total Review
 					</div>	
 				</div>
 			</div> <%-- d-flex 끝. --%>
 			
 			
 					<%-- 자기소개 --%>
-					<div class="totalSecondMyBox">
+					<div class="totalSecondMyBox shadowToTalEffects">
 						<div class="selfTitle">Who are you?</div>
-							<div class="secondMyBox profileSelfIntroduction">
-								<textarea id="selfIntroduction" class="profileTextArea" >${user.selfIntroduction}</textarea>
+							<div class="secondMyBox profileSelfIntroduction ">
+								<textarea id="selfIntroduction" class="profileTextArea profileTextArea2" >${user.selfIntroduction}</textarea>
 							</div>
 					</div>
 						<div class="goalTitle">The purpose of writing</div>
