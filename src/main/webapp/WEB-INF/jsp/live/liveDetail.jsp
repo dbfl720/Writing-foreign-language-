@@ -72,10 +72,11 @@
 								</div>
 							</div>
 						<%-- 더보기, 삭제(내가 쓴 글일 때만 노출) --%>
-						
-							<a href="#" class="liveMoreBtn" data-toggle="modal" data-target="#modal" data-post-id=""> <img
+						 <c:if test="${card.user.id eq userId}">
+							<a href="#" class="delete-btn" data-toggle="modal" data-target="#modal" data-live-id="${card.live.id}"> <img
 								width="20" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
 							</a>
+						 </c:if>
 					</div>
 					</div>
 						<%-- 글 --%>
@@ -111,7 +112,7 @@
 								src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png">
 							</a>
 					     </c:if> 
-						<small>명이 좋아합니다.</small>
+						<small>${card.liveLikeCount}명이 좋아합니다.</small>
 					</div>
 
 
@@ -182,6 +183,32 @@
 		<%-- 타임라인 영역 끝 --%>
 </div>
 	
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal" >
+	<%-- modal-dialog-centered : 모달 창을 수직 가운데 정렬 --%>
+	<%-- modal-sm: small 모달 --%>
+  	<div class="modal-dialog modal-dialog-centered modal-sm"> 
+    	<div class="modal-content text-center">
+      		<div class="py-3 border-bottom"> 
+      			<a href="#" id="deletePostBtn" class="deletePostFont text-dark">Delete</a>
+   			</div>
+   			<div class="py-3">
+   				<%-- data-dismiss="modal" => 모달창 닫힘 --%>
+   				<a href="#" data-dismiss="modal" class="deletePostFont text-dark">Close</a>
+   			</div>
+    	</div>
+  </div>
+</div>
+
+
+
+
+
+
 
 
 
@@ -312,6 +339,63 @@ $(document).ready(function() {
 		});  //ajax
 		
 	});  // LiveLike-btn
+	
+	
+	
+	
+	
+	
+	
+
+	// 글 삭제
+	$('.delete-btn').on('click', function(e){
+		e.preventDefault();
+		
+		let liveId = $(this).data('live-id');
+		//alert(liveId);
+		
+		// 모달 태그에 data-live-id 심기
+		$('#modal').data('live-id', liveId);
+	}); // delete-btn
+		
+		
+	
+	
+	
+	// 모달 안에 있는 delete 버튼
+	$('#modal #deletePostBtn').on ('click', function(e) {  // modal 안에 있는 deletePostBtn  띄어쓰기. #modal 안써도 됨.
+	
+		let liveId = $('#modal').data('live-id');
+		//alert(liveId);
+	
+		// ajax
+		$.ajax({
+			// request
+			type : "DELETE"
+			, url : "/live/delete"
+			, data : {
+				"liveId" : liveId
+			}
+			
+			
+			// response
+			,success : function(data) {
+				if (data.code = 1) {
+					location.reload(true);
+					swal(data.result);
+				} else {
+					swal(data.errorMessage);
+				}
+			},
+			error : function(request, status, error) {
+				swal("Failed to save information. Please contact the administrator.");
+			}
+		
+			
+		});  // ajax
+		
+	});    //deletePostBtn
+	
 	
 	
 });  // ready

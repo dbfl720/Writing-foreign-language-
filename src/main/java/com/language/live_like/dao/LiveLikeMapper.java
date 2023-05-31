@@ -3,6 +3,8 @@ package com.language.live_like.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.language.live.model.Live;
+
 @Repository
 public interface LiveLikeMapper {
 
@@ -11,6 +13,10 @@ public interface LiveLikeMapper {
 	public int selectLiveLikeByLiveIdOrUserId(
 			@Param("liveId") int liveId,
 			@Param("userId") Integer userId);
+	
+	
+	
+	
 	
 	
 	// delete

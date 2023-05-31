@@ -3,6 +3,8 @@ package com.language.live.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,6 +23,7 @@ import com.language.user.model.User;
 public class LiveBO {
 
 	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private LiveMapper liveMapper;
@@ -111,6 +114,38 @@ public class LiveBO {
 	public List<Live> getLiveListByLanguage(String Language){
 		return liveMapper.selectLiveListByLanguage(Language);
 		
+	}
+	
+	
+	
+	
+	// select
+	public Live getLiveByLiveIdUserId(int liveId, int userId) {
+		return liveMapper.selectLiveByLiveIdUserId(liveId, userId);
+	}
+	
+	
+	
+	// delete
+	public int deleteLiveByLiveIdUserId(int liveId, int userId) {
+		
+		// 기존글 가져오기
+		Live live = getLiveByLiveIdUserId(liveId, userId); // * breakpoint
+		if (live == null) {
+			logger.error("[########delete live] liveId:{}, userId:{}", liveId, userId);
+			return 0;
+		}
+		
+		// 댓글
+		liveCommentBO.deleteLiveComment(userId);
+		
+		// 좋아요
+		liveLikeBO.deleteLikeByLiveIdUserId(liveId, userId);
+		
+		// 사진
+		fileManager.deleteFile(live.getImagePath());
+		
+		return liveMapper.deleteLiveByLiveIdUserId(liveId, userId);
 	}
 	
 }

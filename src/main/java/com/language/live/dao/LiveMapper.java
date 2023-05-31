@@ -22,5 +22,17 @@ public interface LiveMapper {
 	public List<Live> selectLiveListByLanguage(
 			@Param("languageCategoryId") String languageCategoryId);
 
+	
+	
+	// select
+	public Live selectLiveByLiveIdUserId(
+			@Param("liveId") int liveId,
+			@Param("userId") int userId);
 
+	
+	
+	// delete
+	public int deleteLiveByLiveIdUserId(
+			@Param("liveId") int liveId,
+			@Param("userId") int userId);
 }

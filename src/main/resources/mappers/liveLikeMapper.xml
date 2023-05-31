@@ -20,6 +20,10 @@
 	
 	
 	
+	
+
+	
+	
 	<delete id="deleteLiveLikeByLiveIdUserId" parameterType="int">
 		DELETE
 		FROM

@@ -42,5 +42,34 @@
  		WHERE
  			`languageCategoryId` = #{languageCategoryId}
  	</select>
+ 	
+ 	
+ 	
+	<select id="selectLiveByLiveIdUserId" parameterType="map" resultType="com.language.live.model.Live">
+		SELECT
+			`id`
+			,`userId`
+ 			,`content`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+		FROM
+			`live`
+ 		WHERE
+ 			`id` = #{liveId}
+			AND `userId` = #{userId}
+	
+	</select>
+	
  
+ 
+ 
+ 	<delete id="deleteLiveByLiveIdUserId" parameterType="map">
+ 		DELETE
+ 		FROM
+ 			`live`
+		WHERE
+			`id` = #{liveId}
+		AND	`userId` = #{userId}	
+ 	</delete>
  </mapper>

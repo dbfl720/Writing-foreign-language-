@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,5 +54,40 @@ public class LiveRestController {
 		}
 		
 		return result;
+	}
+	
+	
+	
+	
+	
+	
+	// live 글삭제
+	@DeleteMapping("/delete")
+	public Map<String, Object> delete(
+		@RequestParam("liveId") int liveId,
+		HttpSession session){
+		
+		Map<String, Object> result = new HashMap<>();
+		
+		Integer userId = (Integer)session.getAttribute("userId");
+		
+		if (userId == null) {
+			result.put("code", 500);
+			result.put("errorMessage", "Please log in.");
+			return result;
+		}
+				
+		// db delete
+		int rowCount = liveBO.deleteLiveByLiveIdUserId(liveId, userId);
+		
+		if (rowCount > 0) {
+			result.put("code", 1);
+			result.put("result", "Your comment has been deleted.");
+		} else {
+			result.put("code", 500);
+			result.put("errorMessage", "Failed to save. Please contact the administrator.");
+		}
+		return result;
+		
 	}
 }
