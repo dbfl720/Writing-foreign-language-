@@ -74,7 +74,7 @@
 						<%-- 더보기, 삭제(내가 쓴 글일 때만 노출) --%>
 						 <c:if test="${card.user.id eq userId}">
 							<a href="#" class="delete-btn" data-toggle="modal" data-target="#modal" data-live-id="${card.live.id}"> <img
-								width="20" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
+								 class="liveDeleteMoreBtn33 shadowToTalEffects" width="20" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
 							</a>
 						 </c:if>
 					</div>

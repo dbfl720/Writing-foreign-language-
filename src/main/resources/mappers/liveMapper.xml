@@ -41,6 +41,7 @@
 			`live`
  		WHERE
  			`languageCategoryId` = #{languageCategoryId}
+		ORDER BY `id` DESC
  	</select>
  	
  	
