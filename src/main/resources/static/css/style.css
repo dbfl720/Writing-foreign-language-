@@ -276,9 +276,9 @@ p {
 .selfTitle{font-weight:bold; font-size:2.5rem; margin-left:2rem; margin-top:2rem;}
 .goalTitle{font-weight:bold; font-size:2.5rem; margin-left:55rem; margin-top:10px;}
 /* .profileTextArea:focus {outline: none !important; border-color: #d6a8e9; box-shadow: 0 0 10px 	#FFAA28; } */
+.totalSecondMyBox{width:80rem;}
 
-
-.secondMyBox{ margin-top:1rem; margin-bottom: 2rem; width: 100rem; height:16rem; overflow: hidden;  } 
+ .secondMyBox{ margin-top:1rem; margin-bottom: 2rem; width: 50rem; height:16rem; overflow: hidden;  }  
 .profileTextArea{ margin: 1rem; width: 100rem;  height:14rem;  object-fit: cover; font-size:20px; 
    transition: all 0.2s linear; overflow: hidden;  padding: 2rem;  border:none;} /* 왼쪽 위, 오른쪽 위, 오른쪽 아래, 왼쪽 아래  */
 

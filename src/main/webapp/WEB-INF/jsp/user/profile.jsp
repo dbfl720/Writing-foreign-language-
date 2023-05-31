@@ -64,12 +64,14 @@
 			
 			
 					<%-- 자기소개 --%>
-					<div class="totalSecondMyBox shadowToTalEffects">
+					<div class="totalSecondMyBox">
 						<div class="selfTitle">Who are you?</div>
 							<div class="secondMyBox profileSelfIntroduction ">
-								<textarea id="selfIntroduction" class="profileTextArea profileTextArea2" >${user.selfIntroduction}</textarea>
+								<div id="selfIntroduction" class="profileTextArea profileTextArea2" >${user.selfIntroduction}</div>
 							</div>
 					</div>
+					
+					
 						<div class="goalTitle">The purpose of writing</div>
 						<div class="secondMyBox profileLanguageGoal">
 							<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
