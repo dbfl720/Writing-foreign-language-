@@ -194,6 +194,7 @@ $(document).ready(function(){
 				, success : function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
 					if (data.code == 1) {
 						swal(data.result);
+						location.href = "/live/live_view";
 					} else {
 						swal(data.errorMessage);
 					}

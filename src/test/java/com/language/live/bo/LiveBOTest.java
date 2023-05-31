@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.language.live.model.Live;
 import com.language.live.model.LiveView;
 
 
@@ -45,6 +46,27 @@ class LiveBOTest {
 		assertNotNull(liveViewList);
 	}
 	
+	
+	
+	
+	//@Transactional
+	//@Test
+	void 라이브가져오기ByLiveIdUserId() {
+		logger.info("####### 라이브 글 가져오기 by LiveId UserId");
+		Live live = liveBO.getLiveByLiveIdUserId(5, 9);  // 실제 db에 있는 id, userId 번호를 써야 됨.
+		assertNotNull(live);
+	}
+	
+	
+	
+	
+	//@Transactional
+	//@Test
+	void 라이브_글_삭제 () {
+		logger.info("######## 라이브 글 삭제 ");
+		int liveDelete = liveBO.deleteLiveByLiveIdUserId(3, 3);
+		assertNotNull(liveDelete);
+	}
 	
 	
 	//@Test
