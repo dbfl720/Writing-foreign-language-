@@ -54,7 +54,7 @@
 						<img class="text-center" alt="언어 사진" width="27" height="27"
 							src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">					
 						<div class="profileNativeText">${user.nativeCategoryId}</div>
-							<img class="profileArrowImg" alt="화살표" height="18" width="18" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
+							<img class="profileArrowImg" alt="화살표" height="16" width="16" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
 						<div class="profileForeignText">${user.foreignCategoryId}</div>
 					</div>
 					<div class="profileTotalText"><img alt="좋아요 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png">

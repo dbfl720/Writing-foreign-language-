@@ -15,7 +15,7 @@
 
 /*header*/
 header{
-	background-color:#64CD3C; 
+	/* background-color:#64CD3C;  */
 	min-width:135rem;
 	height:13rem;}
 .ami{font-size:5.0rem; margin-left:4rem; padding-top:5.0rem; font-weight:bold}
@@ -26,7 +26,7 @@ header{
 /*menu */
 .aside{ position: sticky; top:100px;
     right: 300px;}
-.asideMenu{width:250px; height:1080px;  background-color:#F6CEF5;   padding-top:13px;}
+.asideMenu{width:250px; height:1080px; /*  background-color:#F6CEF5; */   padding-top:13px;}
 .asideText{font-size: 2.0rem; color:black; margin-left:2.2rem;}
 .asideText:hover{text-decoration:none;}
 .communityText{padding-top:7.5rem; font-size:26px;}
@@ -48,7 +48,7 @@ section {
 /*footer*/
 .footerText{font-size: 17px; margin-top: 5rem;}
 footer{
- background-color:#F5D0A9;  
+/*  background-color:#F5D0A9;   */
  height: 10rem;
 
 
@@ -295,15 +295,29 @@ p {
 
 .fontCommunity{font-size: 2.0rem; margin-left:3.5rem;}
 .loginIdFont{font-size:2.5rem; font-weight:bold; color:black;}
-.loginIdFont:hover{text-decoration: none; color:#82F9B7;}
 .languageMark{margin-top:0.7rem;}
 .arrow{margin-top: 1rem; margin-left: 1rem;}
 .selfIntroMark{margin-right:0.8rem;}
 .infoCommunity{margin-top: 2.4rem;}
 .outer{min-width : 2rem; min-height : 2.5rem;  margin-bottom:2.8rem;  border:none;}
-.communityFont{font-size: 1.8rem; margin-top:1.2rem; margin-left:1.5rem; }
-.communityTotal55{padding:5rem; margin:5rem;}
+.communityFont{font-size: 1.6rem; margin-top:1.2rem; margin-left:1rem;}
+.communityTotal55{padding:5rem; margin:5rem;
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
+.communityTotal55:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 
+ .communityLogin23{
+	text-decoration: none;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.communityLogin23:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+} 
+.loginIdFont:hover{text-decoration: none; color:black;}
 
 
 
@@ -786,8 +800,8 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
     margin-left:5rem;
 }
 .profileLoginId{font-size:2rem; margin-left:1rem;}
-.profileNativeText{font-size:1.6rem; margin-top:1rem;}
-.profileForeignText{font-size:1.6rem; margin-top:1rem;}
+.profileNativeText{font-size:1.5rem; margin-top:1rem; margin-left:0.7rem;}
+.profileForeignText{font-size:1.5rem; margin-top:1rem;}
 .profileArrowImg{margin-top:1rem; margin-left:0.5rem; margin-right:0.5rem;}
 .languageMark{margin-right:1rem;}
 
