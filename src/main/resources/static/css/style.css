@@ -347,13 +347,13 @@ p {
 .totalSecondMyBox{width:100rem; margin-top:9rem; }
 .secondMyBox{ margin-top:1rem; margin-bottom: 2rem; width: 75rem; height:10rem; overflow: hidden;  }  
 .profileTotalBox4444{margin-top:6rem;}
-.profileSelfIntrText567{font-size:2rem; text-overflow: ellipsis; overflow: hidden;}
+.profileSelfIntrText567{font-size:2rem; text-overflow: ellipsis; overflow: hidden; padding-bottom:1rem;}
 
 .totalSecondMyBox22{width:100rem; margin-top:4rem; }
 .secondMyBox22{ margin-top:1rem; margin-bottom: 2rem; width: 75rem; height:10rem; overflow: hidden;} 
 .totalSecondMyBox22{margin-left:20rem;}
 .selfTitle22{font-size:1.9rem;}
-.profileTextArea{font-size:18px; text-overflow: ellipsis; overflow: hidden;}
+.profileTextArea{font-size:18px; text-overflow: ellipsis; overflow: hidden; padding-bottom:1rem;}
 .profileMoreBtn11{margin-left:58rem; margin-top:1.3rem;}
 .profileMoreBtn22{margin-left:52rem; }
 

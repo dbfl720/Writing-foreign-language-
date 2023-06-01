@@ -51,6 +51,16 @@ class LiveBOTest {
 	
 	//@Transactional
 	//@Test
+	void 라이브리스트가져오기ByLanguage() {
+		logger.info("####### 라이브 글 리스트 가져오기 by Language");
+		List<Live> live = liveBO.getLiveListByLanguage("EN");
+		assertNotNull(live);
+	}
+	
+	
+	
+	//@Transactional
+	//@Test
 	void 라이브가져오기ByLiveIdUserId() {
 		logger.info("####### 라이브 글 가져오기 by LiveId UserId");
 		Live live = liveBO.getLiveByLiveIdUserId(5, 9);  // 실제 db에 있는 id, userId 번호를 써야 됨.

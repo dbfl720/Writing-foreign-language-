@@ -59,9 +59,9 @@
 								<%-- loginId --%>
 								<div class="liveDetailTopBox444">
 									<div  class="liveToploginIdText">
-										<a href="#" data-user-id="${card.user.id}" >
+										<div>
 											<span class="liveTopFont">${card.user.loginId}</span>
-										</a>
+										</div>
 									</div>
 									<div class="liveTopLanguage">
 										<div class="liveTopLanguageText text-secondary">
