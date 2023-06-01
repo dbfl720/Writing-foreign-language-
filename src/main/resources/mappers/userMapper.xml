@@ -141,8 +141,6 @@
  		UPDATE `user`
  		SET
  			`ImagePath` = #{ImagePath}
- 			, `selfIntroduction` = #{selfIntroduction}
- 			, `languageGoals` = #{languageGoals}
  			, `updatedAt` = NOW()
 		WHERE
 			`id` = #{userId}

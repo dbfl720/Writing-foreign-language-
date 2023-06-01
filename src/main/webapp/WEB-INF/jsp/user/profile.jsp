@@ -7,23 +7,30 @@
 	<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
 	<input type="file" id="file" multiple='multiple' class="d-none"
 						accept=".gif, .jpg, .png, .jpeg , .webp">
-	<div class="profileTotal55">
-		<div class="d-flex">
+	<div class="profileTotal55 container">
+	
+	<!-- Top 제목부분   -->
+		<div class="grammarDetailTopText pt-5 pb-5 TopLogoEffects">
+		<img alt="글쓴이 이모티콘" width="60" height="60" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Profile-icon.png">
+			Profile</div>
+			
+			
+		<div class="d-flex profileTotalBox4444">
 			<div class="profileTotalBox">
 				<%-- 수정 아이콘 --%>
 				<c:if test="${user.id eq userId}">
 				<a href="#" id="updateProfileBtn">
-				<img class="updateProfileIcon" alt="업데이트 이모티콘" width="36" height="36" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
+				<img class="updateProfileIcon shadowToTalEffects" alt="업데이트 이모티콘" width="25" height="25" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-icon.png">
 				</a>
 				</c:if>
-				<div class=" profileBox mr-3">
-					<img id="profileImg" class=" profile" alt="프로필 사진"
+				<div class="reviewBox mr-3">
+					<img id="profileImg" class=" " alt="프로필 사진"
 						src="${user.imagePath}"
-						height="500" width="500">
+						height="250" width=250">
 				</div>
 				<c:if test="${user.id eq userId}">
 					<a href="#" id="profileBtn">
-					<img alt="프로필 변경 이모티콘" width="36" height="36"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
+					<img class="shadowToTalEffects" alt="프로필 변경 이모티콘" width="25" height="25"	src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Photo-icon.png" >
 					</a>
 				
 					<%-- 업로드 된 임시 파일 이름 저장될 곳 --%>
@@ -37,14 +44,14 @@
 
 				
 					<%-- 유저 정보들 --%>	
-				<div class="LiveDetailTextBox effect5 mt-5">
-					<div class="profileLoginIdText d-flex">
+				<div class="LiveDetailTextBox effect5 text-center">
+					<div class="profileLoginIdText d-flex justify-content-center">
 					<img alt="유저 사진" width="27" height="27"
 						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
 					<div class="profileLoginId">${user.loginId}</div>
 					</div>
-					<div class="profileTotalText d-flex">
-						<img class="languageMark" alt="언어 사진" width="27" height="27"
+					<div class="profileTotalText d-flex justify-content-center">
+						<img class="text-center" alt="언어 사진" width="27" height="27"
 							src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">					
 						<div class="profileNativeText">${user.nativeCategoryId}</div>
 							<img class="profileArrowImg" alt="화살표" height="18" width="18" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
@@ -65,17 +72,21 @@
 			
 					<%-- 자기소개 --%>
 					<div class="totalSecondMyBox">
-						<div class="selfTitle">Who are you?</div>
-							<div class="secondMyBox profileSelfIntroduction ">
-								<div id="selfIntroduction" class="profileTextArea profileTextArea2" >${user.selfIntroduction}</div>
+						<div class="selfTitle text-secondary">Who are you?</div>
+							<div class="secondMyBox">
+								<div id="selfIntroduction" class="profileSelfIntrText567 shadowToTalEffects" >${user.selfIntroduction}</div>
 							</div>
 					</div>
 					
 					
-						<div class="goalTitle">The purpose of writing</div>
-						<div class="secondMyBox profileLanguageGoal">
-							<textarea id="languageGoals" class="profileTextArea" >${user.languageGoals}</textarea>
-						</div>
+					
+					<div class="totalSecondMyBox22">
+						<div class="selfTitle22 text-secondary">The purpose of writing</div>
+							<div class="secondMyBox22">
+								<div id="languageGoals" class="profileTextArea shadowToTalEffects">${user.languageGoals}</div>
+							</div>
+					</div>
+					
 			
 	</div>
 
@@ -118,8 +129,8 @@ $(document).ready(function() {
 			$("#updateProfileBtn").on('click', function() {
 				// validation
 				let file = $('#file').val();
-				let selfIntroduction = $('#selfIntroduction').val();
-				let languageGoals = $('#languageGoals').val();
+			/* 	let selfIntroduction = $('#selfIntroduction').val();
+				let languageGoals = $('#languageGoals').val(); */
 				
 				
 				 if (file == '') {
@@ -141,7 +152,7 @@ $(document).ready(function() {
 				
 				
 				
-				if (selfIntroduction.length < 10) {
+			/* 	if (selfIntroduction.length < 10) {
 					swal("Please write at least 10 characters.");
 					return;
 				}
@@ -149,15 +160,13 @@ $(document).ready(function() {
 				if (languageGoals.length < 10) {
 					swal("Please write at least 10 characters.");
 					return;
-				}
+				} */
 				
 				
 				
 				// form 태그를 자바스크립트에서 만들기.
 				let formData = new FormData();
 				formData.append("file", $('#file')[0].files[0]);
-				formData.append("selfIntroduction", selfIntroduction);
-				formData.append("languageGoals", languageGoals);
 				
 				
 				// AJAX 전송
@@ -174,7 +183,6 @@ $(document).ready(function() {
 					// response
 					, success: function(data) {  // jquery ajax 함수가 json string을 object로 파싱해줌
 						if (data.code == 1) {
-							swal("The update was successful.");
 							location.reload();
 						} else {
 							swal(data.errorMessage);

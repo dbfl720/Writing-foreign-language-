@@ -170,8 +170,6 @@ public class UserRestController {
 	@PutMapping("/update")
 	public Map<String, Object> update(
 			@RequestParam("file") MultipartFile file,
-			@RequestParam("selfIntroduction") String selfIntroduction,
-			@RequestParam("languageGoals") String languageGoals,
 			HttpSession session) {
 		
 		// 세션 정보 꺼내오기.
@@ -180,7 +178,7 @@ public class UserRestController {
 		User user = userBO.getUserByLoginId(loginId);
 		
 		// update  db
-		userBO.updateUser(file, selfIntroduction, languageGoals, loginId, userId);
+		userBO.updateUser(file, loginId, userId);
 		
 		// 응답 
 		Map<String, Object> result = new HashMap<>();

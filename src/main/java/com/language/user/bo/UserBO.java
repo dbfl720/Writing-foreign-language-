@@ -74,8 +74,6 @@ public class UserBO {
 	// update - 프로필
 	public void updateUser(
 			MultipartFile file,
-			String selfIntroduction,
-			String languageGoals,
 			String loginId,
 			int userId) {
 		
@@ -97,7 +95,7 @@ public class UserBO {
 		}
 		
 		// db update
-		userMapper.updateUserByUserId(userId, imagePath, selfIntroduction, languageGoals);
+		userMapper.updateUserByUserId(userId, imagePath);
 	
 	}
 	

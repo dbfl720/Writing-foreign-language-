@@ -35,9 +35,7 @@ public interface UserMapper {
 	
 	public void updateUserByUserId(
 			@Param("userId") int userId,
-			@Param("ImagePath") String ImagePath,
-			@Param("selfIntroduction") String selfIntroduction,
-			@Param("languageGoals") String languageGoals);
+			@Param("ImagePath") String ImagePath);
 	
 	
 	
