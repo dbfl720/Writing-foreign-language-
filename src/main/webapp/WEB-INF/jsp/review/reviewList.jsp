@@ -8,7 +8,7 @@
 	<div class="d-flex justify-content-between"> 
 		<div class="display-4 pt-5 pb-5 d-flex TopLogoEffects">
 			<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
-		<div class="reviewTopGreatText display-4 ">Excellent Writer!!</div>
+		<div class="reviewTopGreatText display-4 ">Excellent Writers!!</div>
 		</div>
 		
 		<div class="d-flex justify-content-end reviewTopSelectBox selectBox">
@@ -28,7 +28,7 @@
 			<!-- 리뷰쓰기 아이콘 -->
 			<div class="ReviewPencilIcon ">
 				<a href="/review/review_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
-					width="33" height="33"
+					width="30" height="30"
 					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 				</a>
 			</div>
@@ -76,7 +76,7 @@
 			<div class="ReviewListbox mt-3 card">
 				<a href="/review/review_detail_view?reviewId=${reviewLists.id}">
 					<small class="reveiwLangagueText card-img-overlay ">${reviewLists.languageCategoryId}</small>
-						<img class="ReveiwImgBox2 shadowToTalEffects" src="${reviewLists.imagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="280" height="150">
+						<img class="ReveiwImgBox2 shadowToTalEffects" src="${reviewLists.imagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="253" height="130">
 				</a>
 				<div class="reviewListTextBox22">
 					<h3 class="text-secondary" name="price">

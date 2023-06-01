@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="display-4 pt-5 pb-5 TopLogoEffects">
 		<img alt="글쓴이 이모티콘" width="60" height="60" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png">
-	New Users !</div>
+	New Writers !</div>
 	
 	<c:forEach items="${communityList}" var="communityLists">
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55 ">

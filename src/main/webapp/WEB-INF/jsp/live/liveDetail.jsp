@@ -137,9 +137,9 @@
 								<c:when test="${liveComments.liveComment.userId eq userId}"> 
 									<div class="d-flex justify-content-between align-items-center">	
 										<%-- 댓글 내용 --%>
-										<div>
-											<small class="font-weight-bold liveLoginIdText33">${liveComments.user.loginId}</small>
-											<small class="liveContentText">${liveComments.liveComment.content}</small>
+										<div class="liveFontSizeUserInfo3 d-flex">
+											<div class="text-secondary liveLoginIdText33">${liveComments.user.loginId}</div>
+											<div class="liveContentText">${liveComments.liveComment.content}</div>
 										</div>
 										<%-- 댓글 삭제 버튼 --%>
 											<div>
@@ -154,8 +154,8 @@
 									<div class="d-flex justify-content-between align-items-center">	
 										<%-- 댓글 내용 --%>
 										<div>
-											<small class="font-weight-bold">${liveComments.user.loginId}</small>
-											<small>${liveComments.liveComment.content}</small>
+											<small class="text-secondary liveLoginIdText33">${liveComments.user.loginId}</small>
+											<small class="liveContentText">${liveComments.liveComment.content}</small>
 										</div>
 									</div>
 								 </c:otherwise>

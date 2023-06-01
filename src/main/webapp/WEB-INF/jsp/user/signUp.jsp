@@ -113,13 +113,13 @@
 							</div>
 							<div class="form-group">
 								<label for="lname">Who are you?</label>
-								<textarea id="selfIntroduction" class="signup-textarea w-100 shadowToTalEffects" rows="3"
+								<textarea id="selfIntroduction" class="signup-textarea w-100 form-control" rows="3"
 									name="selfIntroduction" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required></textarea>
 							</div>
 							<div class="form-group ">
 								<label for="lname">Purpose of writing</label>
-								<textarea id="languageGoals" class="signup-textarea w-100 shadowToTalEffects" rows="3"
+								<textarea id="languageGoals" class="signup-textarea w-100 form-control" rows="3"
 									name="languageGoals" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required></textarea>
 							</div>

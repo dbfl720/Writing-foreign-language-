@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.language.common.Encrypt;
-import com.language.common.EncryptUtils;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
 
@@ -195,4 +195,46 @@ public class UserRestController {
 	}
 	
 	
+	
+	
+	
+	
+	
+	@GetMapping("getIntro")
+	public Map<String, Object> getIntro(
+			@RequestParam("userId") int userId){
+		
+		Map<String, Object> result = new HashMap<>();
+		
+		// db
+		User user = userBO.getUserById(userId);
+				
+		if (user == null) {
+			result.put("join", "Please log in.");
+		} else {
+			result.put("user", user);
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
+	@GetMapping("getGoals")
+	public Map<String, Object> getGoals(
+			@RequestParam("userId") int userId){
+		
+		Map<String, Object> result = new HashMap<>();
+		
+		// db
+		User user = userBO.getUserById(userId);
+				
+		if (user == null) {
+			result.put("join", "Please log in.");
+		} else {
+			result.put("user", user);
+		}
+		return result;
+	}
 }

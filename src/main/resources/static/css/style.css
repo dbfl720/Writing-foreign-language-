@@ -20,7 +20,7 @@ header{
 	height:13rem;}
 .ami{font-size:5.0rem; margin-left:4rem; padding-top:5.0rem; font-weight:bold}
 .nameHeader{font-size:5rem;}
-.headerBox{margin-top: 3rem;}
+.headerBox{margin-top: 3rem; margin-right:3rem;}
 .headerLoginIcon{margin:6rem;}
 
 /*menu */
@@ -47,8 +47,7 @@ section {
 
 /*footer*/
 .footerText{font-size: 17px; margin-top: 5rem;}
-footer{
-/*  background-color:#F5D0A9;   */
+footer{  background-color:#F5D0A9;   
  height: 10rem;
 
 
@@ -214,9 +213,8 @@ p {
 
 .signup-textarea {
 	font-size: 1.8rem;
-	padding-top: 1rem;
 	padding-left: 0.5rem;
-	border:none;
+	border: 1px solid 	#d2d2d2;
 }
 
 .signUpWhoBox{font-size:20px;  padding-top:10px;}
@@ -272,16 +270,13 @@ p {
 .profileTotalBox4444{margin-top:6rem;}
 .profileSelfIntrText567{font-size:2rem;}
 
-
-
-
 .totalSecondMyBox22{width:100rem; margin-top:4rem; }
 .secondMyBox22{ margin-top:1rem; margin-bottom: 2rem; width: 75rem; height:10rem; overflow: hidden;} 
 .totalSecondMyBox22{margin-left:20rem;}
 .selfTitle22{font-size:1.9rem;}
 .profileTextArea{font-size:18px;}
-
-
+.profileMoreBtn11{margin-left:58rem; margin-top:1.3rem;}
+.profileMoreBtn22{margin-left:52rem; }
 
 /* 커뮤니티 */
 .communityImg{width: 180px; height: 180px;  overflow: hidden;  border: 2px solid black; border-radius: 70%;}
@@ -298,10 +293,10 @@ p {
 .languageMark{margin-top:0.7rem;}
 .arrow{margin-top: 1rem; margin-left: 1rem;}
 .selfIntroMark{margin-right:0.8rem;}
-.infoCommunity{margin-top: 2.4rem;}
+.infoCommunity{margin-top: 2.4rem; margin-left:3rem;}
 .outer{min-width : 2rem; min-height : 2.5rem;  margin-bottom:2.8rem;  border:none;}
 .communityFont{font-size: 1.6rem; margin-top:1.2rem; margin-left:1rem;}
-.communityTotal55{padding:5rem; margin:5rem;
+.communityTotal55{padding:4rem; margin-top:5rem; margin-bottom:4rem;
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
 .communityTotal55:hover {
@@ -668,7 +663,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 /* Review-list  */
  .swiper-container {
-    margin-top:3rem;
+    margin-top:4rem;
 	width:110rem;
 	height:230px;
 	border:0.04rem solid #dcdcdc;
@@ -696,7 +691,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .swiper-button-prev{margin-top:6rem;} 
-.ReviewListbox{overflow: hidden; /*  border: 2px solid black; */ border-radius: 18%; width:33rem; height:30rem;
+.ReviewListbox{overflow: hidden;  width:30rem; height:28rem;
 box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
               0 2px 2px rgba(0,0,0,0.11), 
               0 4px 4px rgba(0,0,0,0.11), 
@@ -709,7 +704,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .reveiwLangagueText{color:#FFA500; font-size:3rem; }
 .ReviewListUserName{font-size:1.7rem;}
 .ReviewPencilIcon{margin:2rem; margin-top:3rem;}
-.article1{margin-top:10rem;}
+.article1{margin-top:13rem;}
 #ReviewlanguageId{border:none; margin-top:2.3rem; height:4.3rem;  width:71rem;font-size:20px;
   background-image:
     linear-gradient(to right, white 20px, transparent 20px),
@@ -780,8 +775,8 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .LiveTopLogo56{height:3rem;}
 .TopLogoMain{height:10rem; margin:1rem; padding:2.2rem; margin-bottom:8rem;}
 .commentInput{height:4rem; font-size:1.8rem;}
-.liveLoginIdText33{font-size:2rem;}
-.liveContentText{font-size:2rem; margin-left:1.5rem;}
+.liveLoginIdText33{font-size:1.7rem;}
+.liveContentText{font-size:2rem; margin-left:1.8rem;}
 .contents-box{width:55rem;}
 .liveCommentText4567{font-size:1.6rem;}
 .liveCommentBtn{font-size:1.8rem;}

@@ -72,18 +72,41 @@
 			
 					<%-- 자기소개 --%>
 					<div class="totalSecondMyBox">
-						<div class="selfTitle text-secondary">Who are you?</div>
+						<div class="d-flex">
+							<div class="selfTitle text-secondary"><img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-info-icon.png">
+							Who are you?</div>
+							
+							<!--더보기  -->
+							<div class="profileMoreBtn11">
+							 <a href="#" class="profileBtn11 ReviewMoreIcon"  data-user-id="${user.id}"> 
+								<img class="shadowToTalEffects" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="23"> 
+							 </a>	
+							</div>
+						</div>	
 							<div class="secondMyBox">
-								<div id="selfIntroduction" class="profileSelfIntrText567 shadowToTalEffects" >${user.selfIntroduction}</div>
+								<div id="selfIntroduction" class="profileSelfIntrText567 shadowToTalEffects" >
+								${user.selfIntroduction}</div>
 							</div>
 					</div>
 					
 					
 					
 					<div class="totalSecondMyBox22">
-						<div class="selfTitle22 text-secondary">The purpose of writing</div>
+						<div class="d-flex">
+							<div class="selfTitle22 text-secondary"><img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/github/octicons/128/goal-24-icon.png">
+							The purpose of writing</div>
+							
+						<!--더보기  -->
+							<div class="profileMoreBtn22">
+							 <a href="#" class="profileBtn22 ReviewMoreIcon"  data-user-id="${user.id}"> 
+								<img class="shadowToTalEffects" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="23"> 
+							 </a>	
+							</div>
+						</div>	
+						
 							<div class="secondMyBox22">
-								<div id="languageGoals" class="profileTextArea shadowToTalEffects">${user.languageGoals}</div>
+								<div id="languageGoals" class="profileTextArea shadowToTalEffects">
+								${user.languageGoals}</div>
 							</div>
 					</div>
 					
@@ -199,6 +222,68 @@ $(document).ready(function() {
 			}); // 프로필 수정
 			
 
+			
+			
+			
+			// 더보기
+			$('.profileBtn11').on('click', function(e){
+				e.preventDefault();
+				
+				let userId = $(this).data("user-id");
+				//alert(userId);
+				
+				$.ajax({
+					type : "GET"
+					, url : "/user/getIntro"
+					, data : {"userId" : userId}
+					, success : function(data) {
+						if (data.join == "There are no profile written.") {
+							swal("Please log in.");
+						} else {		
+							swal("Who are you ? : " + data.user.selfIntroduction);
+							
+						}
+					}
+					,error : function(request, status, error) {
+						swal("Failed to save information. Please contact the administrator.");
+					}
+					
+					
+					
+				}); // ajax
+			}); // profileBtn11	
+				
+				
+				
+			// 더보기 2
+			$('.profileBtn22').on('click', function(e){
+				e.preventDefault();
+				
+				let userId = $(this).data("user-id");
+				//alert(userId);
+				
+				$.ajax({
+					type : "GET"
+					, url : "/user/getGoals"
+					, data : {"userId" : userId}
+					, success : function(data) {
+						if (data.join == "There are no profile written.") {
+							swal("Please log in.");
+						} else {		
+							swal("The purpose of writing : " + data.user.languageGoals);
+							
+						}
+					}
+					,error : function(request, status, error) {
+						swal("Failed to save information. Please contact the administrator.");
+					}
+					
+	
+				}); // ajax
+			}); // profileBtn11
+			
+			
+			
 });// ready
 
 </script>
