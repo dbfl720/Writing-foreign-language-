@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="d-flex aside">
 	<div class="asideMenu">
+	
 		<div class="d-flex menuAmi">
 		<img id="communityImg" alt="커뮤니티 이미지" width="38" height="38" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png" >
 		 <button class="custom-btn btn-12" onclick="location.href='/community/community_view'" class="custom-btn btn-12"><span class="communtiFont">Click!</span><span class="communtiFont">Community</span></button>

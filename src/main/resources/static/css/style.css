@@ -22,11 +22,15 @@ header{
 .nameHeader{font-size:5rem;}
 .headerBox{margin-top: 3rem; margin-right:3rem;}
 .headerLoginIcon{margin:6rem;}
+.headerMyInfoFont{font-size:2rem;}
+
 
 /*menu */
+.myinfo-btn{ margin-top:5.5rem; margin-right:11rem;}
+.myinfoImg3344{margin-bottom:5rem; margin-left:1rem;}
 .aside{ position: sticky; top:100px;
     right: 300px;}
-.asideMenu{width:250px; height:1080px; margin-top:4rem;  /* background-color:#F6CEF5; */    padding-top:13px;}
+.asideMenu{width:250px; height:1080px; margin-top:10rem;  /* background-color:#F6CEF5; */    padding-top:13px;}
 .asideText{font-size: 2.0rem; color:black; margin-left:2.2rem;}
 .asideText:hover{text-decoration:none;}
 .communityText{padding-top:7.5rem; font-size:26px;}
@@ -126,7 +130,7 @@ section {
 
 /*footer*/
 .footerText{font-size: 17px; margin-top: 5rem;}
-footer{  background-color:#F5D0A9;   
+footer{ /*  background-color:#F5D0A9;   */ 
  height: 10rem;
 
 

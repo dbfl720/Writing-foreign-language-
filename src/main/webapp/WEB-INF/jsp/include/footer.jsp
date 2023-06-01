@@ -4,6 +4,6 @@
 
 <div class="footer">
 	<small class="text-center d-flex justify-content-center ">
-		<div class="text-secondary footerText">Copyright@2023 YURI. All Rights Reserved.</div>
+		<!-- <div class="text-secondary footerText">Copyright@2023 YURI. All Rights Reserved.</div> -->
 	</small>
 </div>
