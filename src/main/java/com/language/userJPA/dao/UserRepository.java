@@ -7,5 +7,5 @@ import com.language.userJPA.entity.UserEntity;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 
-	public UserEntity findByLoginId(String loginId);
+			UserEntity findByLoginId(String loginId);
 }
