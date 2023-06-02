@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="footer">
+<div class="footer mt-5">
 	<small class="text-center d-flex justify-content-center ">
-		<!-- <div class="text-secondary footerText">Copyright@2023 YURI. All Rights Reserved.</div> -->
+		 <div class="text-secondary footerText">  </div> 
 	</small>
 </div>
