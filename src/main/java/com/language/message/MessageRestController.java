@@ -30,7 +30,6 @@ public class MessageRestController {
 	   @PostMapping("/create")
 	   public Map<String, Object> create(
 			   @RequestParam("receiverId") int receiverId,
-			   @RequestParam("title") String title,
 			   @RequestParam("content") String content,
 			   HttpSession session){
 		   
@@ -45,11 +44,22 @@ public class MessageRestController {
 			   return result;
 		   }
 		   
-		   messageBO.addMessage(userId, receiverId, title, content);
+		   messageBO.addMessage(userId, receiverId, content);
 		   
 		   result.put("code", 1);
 		   result.put("result", "성공");
 		   return result;
 	   }
+	   
+	   
+	   
+	   
+	   
+	   
+	  
+	   
+	   
+	   
+	   
 	
 }

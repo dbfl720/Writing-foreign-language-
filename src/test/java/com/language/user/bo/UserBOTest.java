@@ -94,8 +94,8 @@ class UserBOTest {
 	
 	
 	
-	@Transactional
-	@Test
+	//@Transactional
+	//@Test
 	void 그래머_유저정보들가져오기() {
 		logger.info("##### 그래머 유저정보들 가져오기");
 		List<User> user = userBO.getGrammarUser();

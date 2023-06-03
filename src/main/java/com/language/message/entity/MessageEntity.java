@@ -30,16 +30,13 @@ public class MessageEntity {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private int id;
 		
-		@Column(name="userId") // naems - 객체 필드를 테이블의 컬럼에 매핑시켜주는 어노테이션
+		@Column(name="userId") // name - 객체 필드를 테이블의 컬럼에 매핑시켜주는 어노테이션
 		private int userId;
 		
 		@Column(name="receiverId")
-		private Integer receiverId;
+		private int receiverId;
 
-	    
-	    private String title;
-
-	   
+		@Column(name="content")
 	    private String content;
 
 	    @UpdateTimestamp
