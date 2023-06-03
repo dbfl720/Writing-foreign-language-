@@ -1,63 +1,54 @@
 package com.language.message.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import com.language.user.model.User;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
+@ToString // 객체 예쁘게 출력
+@Getter
+@AllArgsConstructor // 모든 값이 있는 생성자
+@NoArgsConstructor // 기본 생성자
+@Builder(toBuilder = true) // 수정 시 기존 객체 그대로, 세팅한 값만 변경
+@Table(name = "message") //엔티티와 매핑할 테이블을 지정.
 @Entity
 public class MessageEntity {
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private int id;
+		
+		@Column(name="userId") // naems - 객체 필드를 테이블의 컬럼에 매핑시켜주는 어노테이션
+		private int userId;
+		
+		@Column(name="receiverId")
+		private Integer receiverId;
 
-	    @Column(nullable = false)
+	    
 	    private String title;
 
-	    @Column(nullable = false)
+	   
 	    private String content;
 
-	    @Column(nullable = false)
-	    private boolean deletedBySender;
-
-	    @Column(nullable = false)
-	    private boolean deletedByReceiver;
-
-	    @ManyToOne(fetch = FetchType.LAZY) // 사용자 한 명 기준으로 편지를 여러 개 쓸 수 있고, 여러 개 받을 수 있기 때문
-	    @JoinColumn(name = "sender_id")
-	    @OnDelete(action = OnDeleteAction.NO_ACTION)  //작성자 혹은 수신자가 계정을 삭제하면, 같이 지우기 위해
-	    private User sender;
-
-	    @ManyToOne(fetch = FetchType.LAZY)
-	    @JoinColumn(name = "receiver_id")
-	    @OnDelete(action = OnDeleteAction.NO_ACTION)
-	    private User receiver;
-
-	    public void deleteBySender() {
-	        this.deletedBySender = true; //메소드를 호출했을 때 값이 true라면, 메시지를 DB에서 삭제
-	    }
-
-	    public void deleteByReceiver() {
-	        this.deletedByReceiver = true;
-	    }
-
-	    public boolean isDeleted() {
-	        return isDeletedBySender() && isDeletedByReceiver();
-	    }
+	    @UpdateTimestamp
+		@Column(name="createdAt", updatable = false)
+		private Date createdAt;
+		
+		@UpdateTimestamp
+		@Column(name="updatedAt")
+		private Date updatedAt;
+	    
+		
 }

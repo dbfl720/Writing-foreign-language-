@@ -2,13 +2,13 @@ package com.language.message.bo;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.language.message.dao.MessageRepository;
-import com.language.message.dto.MessageDto;
 import com.language.message.entity.MessageEntity;
-import com.language.userJPA.dao.UserRepository;
-import com.language.userJPA.entity.UserEntity;
+import com.language.user.model.User;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,24 +16,26 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class MessageBO {
 
-	private final MessageRepository messageRepository;
-    private final UserRepository userRepository;
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	private final MessageRepository messageRepository;    // final : 필드는 더 이상 수정이 불가능
+    private final User user;
     
-    @Transactional //@Transactional이 붙은 메서드는 메서드가 포함하고 있는 작업 중에 하나라도 실패할 경우 전체 작업을 취소한다.
-    public MessageDto write(MessageDto messageDto) {
-        UserEntity receiver = userRepository.findByName(messageDto.getReceiverName());
-        UserEntity sender = userRepository.findByName(messageDto.getSenderName());
-
-        MessageEntity message = new MessageEntity();
-        message.setReceiver(receiver);
-        message.setSender(sender);
-
-        message.setTitle(messageDto.getTitle());
-        message.setContent(messageDto.getContent());
-        message.setDeletedByReceiver(false);
-        message.setDeletedBySender(false);
-        messageRepository.save(message);
-
-        return MessageDto.toDto(message);
+ 
+    // insert - 메세지 보내기
+    @Transactional
+    public MessageEntity addMessage(
+    		int userId, int receiverId, String title, String content) {
+    	
+    	return messageRepository.save(MessageEntity.builder()
+    			.userId(userId)
+    			.receiverId(receiverId)
+    			.title(title)
+    			.content(content)
+    			.build());
+    	
     }
+    
+    
+    
 }
