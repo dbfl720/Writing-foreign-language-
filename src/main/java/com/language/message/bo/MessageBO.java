@@ -1,5 +1,6 @@
 package com.language.message.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -9,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.language.message.dao.MessageRepository;
 import com.language.message.entity.MessageEntity;
+import com.language.message.entity.MessageView;
 import com.language.user.bo.UserBO;
+import com.language.user.model.User;
 
 
 @Service
@@ -21,10 +24,9 @@ public class MessageBO {
     @Autowired
     private MessageRepository messageRepository;
     
-    
+
     @Autowired
     private UserBO userBO;
-    
     
     
  
@@ -37,19 +39,45 @@ public class MessageBO {
     			.receiverId(receiverId)
     			.content(content)
     			.build());
-    	
     }
     
     
     
-    // select 
+    // select - 유저 명단
     public List<MessageEntity> getMessageListByUserId(int userId){
     	return messageRepository.findByUserId(userId);
     }
     
     
-    // select - 메세지 리스트 유저 명단
-//    public List<MessageEntity> getMessageList(){
-//    	return messageRepository.findAllByOrderByIdDesc();
-//    }
+    
+    
+    // select - 가공 메세지
+    public List<MessageView> generateMessageList(int receiverId) {
+    	
+    	List<MessageView> messageViewList = new ArrayList<>(); // []
+    	
+    	// message들
+    	List<MessageEntity> messageList = messageRepository.findByUserId(receiverId);
+    	
+    	// MessageEntity => MessageView
+    	for(MessageEntity message : messageList) {
+    		MessageView card = new MessageView();
+    		
+		// message 하나 
+        card.setMessageEntity(message);
+    	
+    	// 유저 정보
+    	User user = userBO.getUserById(message.getReceiverId());  // 유저 정보는 메세지 안에 들어있기 때문
+    	card.setUser(user);
+    	
+    	// 카드 리스트 채우기
+    	messageViewList.add(card);
+    	
+    	}
+    	
+    	return messageViewList;
+    }
+    
+    
+
 }

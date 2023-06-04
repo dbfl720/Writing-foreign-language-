@@ -20,6 +20,7 @@ public interface UserMapper {
 	
 	public User selectUserById (Integer id);
 	
+	public User selectUser();
 	
 	public int insertUser(
 			@Param("nativeCategoryId") String nativeCategoryId,

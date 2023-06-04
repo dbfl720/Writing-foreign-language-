@@ -35,6 +35,11 @@ public class UserBO {
 	}
 	
 	
+	
+	// select
+	public User getUser() {
+		return userMapper.selectUser();
+	}
 
 	
 	

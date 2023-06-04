@@ -67,6 +67,25 @@
  	
  	
  	
+ 	<select id="selectUser" resultType="com.language.user.model.User">
+ 		SELECT
+ 			`id`
+ 			,`nativeCategoryId`
+ 			,`foreignCategoryId`
+ 			,`loginId`
+ 			,`email`
+ 			,`selfIntroduction`
+ 			,`languageGoals`
+ 			,`ImagePath`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		FROM
+ 			`user`
+ 	
+ 	
+ 	</select>
+ 	
+ 	
  	
  	<select id="selectCommunityUser" resultType="com.language.user.model.User">
  		SELECT

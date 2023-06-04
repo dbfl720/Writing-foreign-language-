@@ -10,8 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.language.message.bo.MessageBO;
+import com.language.message.entity.MessageEntity;
+import com.language.message.entity.MessageView;
 import com.language.user.bo.UserBO;
-import com.language.user.model.User;
 
 
 
@@ -23,25 +25,29 @@ public class MessageController {
 	@Autowired
 	private UserBO userBO;
 	
+	@Autowired
+	private MessageBO messageBO;
+	
+	
 	
 	//localhost/message/message_view
 	@GetMapping("/message_view")
 	public String message_view(
 			Model model, HttpSession session) {
 		
-		List<User> userList = userBO.getCommunityUser();
+		// session
+		Integer userId = (Integer)session.getAttribute("userId");
 		
-		model.addAttribute("userList",userList);
+		// db
+		//List<MessageEntity> outbox = messageBO.getMessageListByUserId();
+		List<MessageView> messageViewList = messageBO.generateMessageList(userId);
+		
+		
+		model.addAttribute("messageViewList",messageViewList);
+		//model.addAttribute("outbox",outbox);
 		model.addAttribute("view", "message/message_list");
 		return "template/layout";
 	}
 	
-	// localhost/message/message_chattingRoom
-	@GetMapping("/message_chattingRoom")
-	public String message_chattingRoom(
-			Model model) {
-		
-		model.addAttribute("view", "message/message_chattingRoom");
-		return "template/layout";
-	}
+
 }
