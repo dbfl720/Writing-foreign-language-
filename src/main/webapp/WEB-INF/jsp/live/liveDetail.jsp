@@ -407,7 +407,7 @@ $(document).ready(function() {
 				}
 			}
 			,error : function(request, status, error) {
-				alert("요청에 실패했습니다. 관리자에게 문의해주세요.");
+				swal("Failed to save information. Please contact the administrator.");
 			}
 			
 		}); // ajax

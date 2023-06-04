@@ -11,44 +11,7 @@
 		<img alt="글쓴이 이모티콘" width="55" height="55" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png">
 			Click the magnifying glass and check the incorrect grammar !</div>
 	
-<%-- 		<div class="GrammarLeftInfo">
-			<div class="d-flex">
-				<img class="updateProfileIcon ml-3" alt="제목 이모티콘" width="32"
-					height="32"
-					src="https://icons.iconarchive.com/icons/icons8/ios7/128/Science-Literature-icon.png">
-				<div class="grammarDetailFont">${grammar.title}</div>
-			</div>
-			<div class="d-flex leftLangagueAndDate">
-				<div class="d-flex">
-					<img class="languageMark ml-3" alt="언어 이모티콘" width="32" height="32"
-						src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">
-					<div class="grammarDetailFontLang">${grammar.languageCategoryId}</div>
-				</div>
-				<div class="d-flex grammarDateBox">
-					<img class="dateMark ml-3" alt="날짜 이모티콘" width="32" height="32"
-						src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Time-Tear-Off-Calendar-icon.png">
-					<div class="grammarDetailFont">
-						<fmt:formatDate value="${grammar.updatedAt}" pattern="dd-MM-yyyy" />
-					</div>
-				</div>
-			</div>
-			<div class="GrammarDetailTextBox2">
-				<textarea id="content" class="GrammarDetailText"
-					placeholder="Today is...">${grammar.content}</textarea>
-			</div>
 
-			<c:if test="${grammar.userId eq userId}">
-				<div class="d-flex">
-					<div class="GrammarSaveIcon">
-						<a href="#" id="deleteGrammarBtn" data-grammar-id="${grammar.id}">
-							<img class="updateProfileIcon" alt="글 삭제 이모티콘" width="35"
-							height="35"
-							src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Editing-Delete-icon.png">
-						</a>
-					</div>
-				</div>
-			</c:if>
-		</div> --%>
 
 
 	<!--오른쪽 댓글  -->
@@ -64,23 +27,6 @@
 				 <a href="#" class="GrammarDetailOthers shadowToTalEffects"  data-grammar-id="${grammar.id}"> 
 				<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="27"> 
 				</a>
-				
-<%-- 				<div class="d-flex">
-					<img class="languageMark ml-3" alt="unchekced 이모티콘" width="45" height="45"
-						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-edit-icon.png">
-					<div class="detailRgithFont">${grammar.languageCategoryId}</div>
-				</div> --%>
-				
-				<!-- 지워야할 저장버튼 -->
-		<%-- 		<div class="CommentSaveIcon">
-					<div class="CommentSaveIcon">
-						<a href="#" id="saveCommentIcon" data-grammar-id="${grammar.id}">
-							<img class="saveCommentIcon" alt="댓글 저장 이모티콘" width="38"
-							height="38"
-							src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Programming-Save-As-icon.png">
-						</a>
-					</div>
-				</div> --%>
 			</div>
 
 
@@ -106,14 +52,7 @@
 			
 			
 			
-			
-			<!--  지워야할 코멘트쓰기 부분 -->
-		<!-- 	<div class="GrammarDetailTextBox999999">
-				<textarea id="oldContent" class="GrammarDetailComment"
-					placeholder="Please write the sentence you want to correct on the left."></textarea>
-				<textarea id="newContent" class="GrammarDetailComment"
-					placeholder="Please correct the sentence."></textarea>
-			</div> -->
+	
 		</div>
 
 		<!-- 댓글 뿌리기 -->

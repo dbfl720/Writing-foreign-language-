@@ -44,10 +44,11 @@
 
 				
 					<%-- 유저 정보들 --%>	
+				<c:if test="${user.id eq userId}">
 				<div class="LiveDetailTextBox effect5 text-center">
 					<div class="profileLoginIdText d-flex justify-content-center">
 					<img alt="유저 사진" width="27" height="27"
-						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
+						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">		
 					<div class="profileLoginId">${user.loginId}</div>
 					</div>
 					<div class="profileTotalText d-flex justify-content-center">
@@ -67,6 +68,40 @@
 						${reviewLikeCount} Total Review
 					</div>	
 				</div>
+				</c:if>
+				
+				
+				
+				<c:if test="${user.id ne userId}"> 
+					<div class="LiveDetailTextBox effect5 text-center">
+					<div class="profileLoginIdText d-flex justify-content-center">
+					<img class="mt-3" alt="유저 사진" width="27" height="27"
+						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">		
+					<div class="profileLoginId mt-3">${user.loginId}</div>
+					<!--쪽지 보내기 -->
+					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${user.id}" class="profileSendMessage ml-4  shadowToTalEffects" alt="쪽지 사진" width="38" height="36"
+						src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
+					</div> 
+					
+					<div class="profileTotalText d-flex justify-content-center">
+						<img class="text-center" alt="언어 사진" width="27" height="27"
+							src="https://icons.iconarchive.com/icons/ionic/ionicons/128/language-outline-icon.png">					
+						<div class="profileNativeText">${user.nativeCategoryId}</div>
+							<img class="profileArrowImg" alt="화살표" height="16" width="16" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-arrow-left-right-icon.png">
+						<div class="profileForeignText">${user.foreignCategoryId}</div>
+					</div>
+					<div class="profileTotalText"><img alt="좋아요 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/pixelkit/swanky-outlines/128/05-Bookmark-Book-icon.png">
+						${grammarLikeCount} Hearts
+					</div>	
+					<div class="profileTotalText"><img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/praveen/minimal-outline/128/microphone-icon.png">
+						 ${liveLikeCount} Hearts
+					</div>	
+					<div class="profileTotalText"><img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png">
+						${reviewLikeCount} Total Review
+					</div>	
+				</div>
+				</c:if>
+				
 			</div> <%-- d-flex 끝. --%>
 			
 			
@@ -112,6 +147,45 @@
 					
 			
 	</div>
+
+
+
+
+
+<!-- modal  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 
 <script>
@@ -283,6 +357,62 @@ $(document).ready(function() {
 			}); // profileBtn11
 			
 			
+			
+			
+			
+			
+			
+			// 메세지 보내기
+			$('.profileSendMessage').on('click', function(e){
+				e.preventDefault();
+				
+				let receiverId = $(this).data("receiver-id");
+				//alert(receiverId);
+				
+				// 모달 태그에 data-live-id 심기
+				$('#exampleModal').data('receiver-id', receiverId);
+				
+			});  // profileSendMessage
+			
+			
+			
+			
+			
+			
+			// modal 안에 있는 메세지 보내기 버튼
+			$('#exampleModal #profileSendMessage22').on('click', function(e){
+				e.preventDefault();
+				
+				let receiverId = $('#exampleModal').data("receiver-id");
+				alert(receiverId);
+				
+				let content = $('#message-text').val();
+				//alert(content);
+				
+				$.ajax({
+					// request
+					type : "POST"
+					, url : "/message/create"
+					, data : {"receiverId" : receiverId,
+							  "content" : content}
+				
+					
+				 	// response
+				 	, success : function(data) {
+				 		if (data.code == 1) {
+							swal(data.result);
+						} else {
+							swal(data.errorMessage);
+						}
+					}
+					,error : function(request, status, error) {
+						swal("Failed to save information. Please contact the administrator.");
+					}
+				 	
+					
+				}); // ajax
+				
+			}); // profileSendMessage22
 			
 });// ready
 
