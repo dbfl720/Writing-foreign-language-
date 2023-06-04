@@ -38,7 +38,7 @@ class MessageBOTest {
 	//@Test
 	void 메시지조회ByUserId() {
 		logger.info("###### 메시지 조회하기");
-		List<MessageEntity> message = messageBO.getMessageListByUserId(1);
+		List<MessageEntity> message = messageBO.getMessageListByReceiverId(1);
 		assertNotNull(message);
 		
 	}

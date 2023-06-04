@@ -13,6 +13,6 @@ import com.language.user.model.User;
 public interface MessageRepository extends JpaRepository<MessageEntity, Integer>{
 	
 	
-	public List<MessageEntity> findByUserId(int userId); 
+	public List<MessageEntity> findByReceiverId(int receiverId); 
 	
 }

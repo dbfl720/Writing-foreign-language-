@@ -39,12 +39,12 @@ public class MessageController {
 		Integer userId = (Integer)session.getAttribute("userId");
 		
 		// db
-		//List<MessageEntity> outbox = messageBO.getMessageListByUserId();
-		List<MessageView> messageViewList = messageBO.generateMessageList(userId);
+		List<MessageEntity> outbox = messageBO.getMessageListByReceiverId(userId);
+		//List<MessageView> messageViewList = messageBO.generateMessageList(userId);
 		
 		
-		model.addAttribute("messageViewList",messageViewList);
-		//model.addAttribute("outbox",outbox);
+		//model.addAttribute("messageViewList",messageViewList);
+		model.addAttribute("outbox",outbox);
 		model.addAttribute("view", "message/message_list");
 		return "template/layout";
 	}

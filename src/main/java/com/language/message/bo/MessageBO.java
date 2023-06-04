@@ -44,8 +44,8 @@ public class MessageBO {
     
     
     // select - 유저 명단
-    public List<MessageEntity> getMessageListByUserId(int userId){
-    	return messageRepository.findByUserId(userId);
+    public List<MessageEntity> getMessageListByReceiverId(int receiverId){
+    	return messageRepository.findByReceiverId(receiverId);
     }
     
     
@@ -57,7 +57,7 @@ public class MessageBO {
     	List<MessageView> messageViewList = new ArrayList<>(); // []
     	
     	// message들
-    	List<MessageEntity> messageList = messageRepository.findByUserId(receiverId);
+    	List<MessageEntity> messageList = messageRepository.findByReceiverId(receiverId);
     	
     	// MessageEntity => MessageView
     	for(MessageEntity message : messageList) {
