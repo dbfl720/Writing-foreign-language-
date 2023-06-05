@@ -39,15 +39,37 @@ public class MessageController {
 		Integer userId = (Integer)session.getAttribute("userId");
 		
 		// db
-		//List<MessageEntity> outbox = messageBO.getMessageListByReceiverId(userId);
 		List<MessageView> messageViewList = messageBO.generateMessageList(userId);
 		
 		
 		model.addAttribute("messageViewList",messageViewList);
-		//model.addAttribute("outbox",outbox);
 		model.addAttribute("view", "message/message_list");
 		return "template/layout";
 	}
+	
+	
+	
+	
+	
+	
+	
+	//localhost/message/message_outbox_view
+		@GetMapping("/message_outbox_view")
+		public String message_outbox_view(
+				Model model, HttpSession session) {
+			
+			// session
+			Integer userId = (Integer)session.getAttribute("userId");
+			
+			// db
+			List<MessageView> messageViewOutBoxList = messageBO.generateOutBoxMessageList(userId);
+			List<MessageView> messageViewList = messageBO.generateMessageList(userId);
+			
+			model.addAttribute("messageViewList",messageViewList);
+			model.addAttribute("messageViewOutBoxList",messageViewOutBoxList);
+			model.addAttribute("view", "message/message_outbox");
+			return "template/layout";
+		}
 	
 
 }

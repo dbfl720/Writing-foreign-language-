@@ -165,10 +165,6 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>
@@ -384,7 +380,7 @@ $(document).ready(function() {
 				e.preventDefault();
 				
 				let receiverId = $('#exampleModal').data("receiver-id");
-				alert(receiverId);
+				//alert(receiverId);
 				
 				let content = $('#message-text').val();
 				//alert(content);
