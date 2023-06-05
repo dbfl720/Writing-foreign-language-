@@ -890,7 +890,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 
 
 
-/*  채팅 */
+/*  메세지 */
 .chatbox {
     height: 100%;
     width: 100%;
@@ -922,6 +922,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 .chat-window {
+	width:25rem;
     flex: auto;
     max-height: calc(100% - 60px);
     background: #2f323b;

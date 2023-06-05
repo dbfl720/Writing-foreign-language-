@@ -67,7 +67,7 @@ public class MessageBO {
         card.setMessageEntity(message);
     	
     	// 유저 정보
-    	User user = userBO.getUserById(message.getReceiverId());  // 유저 정보는 메세지 안에 들어있기 때문
+    	User user = userBO.getUserById(message.getUserId());  // 유저 정보는 메세지 안에 들어있기 때문
     	card.setUser(user);
     	
     	// 카드 리스트 채우기
