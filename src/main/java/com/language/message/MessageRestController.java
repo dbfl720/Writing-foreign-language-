@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,9 +58,29 @@ public class MessageRestController {
 	   
 	   
 	  
-	   
-	   
-	   
-	   
+	   // 메세지 삭제하기
+	   @DeleteMapping("/delete")
+	   public Map<String, Object> delete(
+			   @RequestParam("messageId") int messageId,
+			   HttpSession session){
+		   
+		   Map<String, Object> result = new HashMap<>();
+			
+			Integer userId = (Integer)session.getAttribute("userId");
+			
+			if (userId == null) {
+				result.put("code", 500);
+				result.put("errorMessage", "Please log in.");
+				return result;
+			}
+					
+			// db delete
+				messageBO.deleteMessageById(messageId);
+				result.put("code", 1);
+				result.put("result", "Your comment has been deleted.");
+		
+			return result;
+	   }
+
 	
 }

@@ -2,6 +2,9 @@ package com.language.message.bo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import com.language.message.dao.MessageRepository;
 import com.language.message.entity.MessageEntity;
-import com.language.message.entity.MessageOutBoxView;
 import com.language.message.entity.MessageView;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
@@ -32,6 +34,7 @@ public class MessageBO {
     
  
     // insert - 메세지 보내기
+    @Transactional
     public MessageEntity addMessage(
     		int userId, int receiverId, String content) {
     	
@@ -53,6 +56,7 @@ public class MessageBO {
     
     
     // select - 가공 메세지 (받는 편지함)
+    @Transactional
     public List<MessageView> generateMessageList(int receiverId) {
     	
     	List<MessageView> messageViewList = new ArrayList<>(); // []
@@ -86,6 +90,7 @@ public class MessageBO {
     
     
     // select - 가공 메세지 (보낸 편지함)
+    @Transactional
     public List<MessageView> generateOutBoxMessageList(int userId) {
     	
     	List<MessageView> messageViewOutBoxList = new ArrayList<>(); // []
@@ -137,5 +142,14 @@ public class MessageBO {
     
 
     
+    
+    
+    // delete
+    public void deleteMessageById(int messageId) {
+    	
+    	// 메세지 삭제   	
+    	Optional<MessageEntity> postOptional = messageRepository.findById(messageId);
+    	postOptional.ifPresent(p -> messageRepository.delete(p));
+    }
 
 }

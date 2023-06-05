@@ -14,10 +14,17 @@
 		        <div class="msg-box">
 		          <img class="user-img" id="user-0" src="${card.user.imagePath}" />
 		          <div class="flr">
-		            <div class="messages">
+		            <div class="messages d-flex justify-content-between">
 		              <p class="msg" id="msg-0">
 		                ${card.messageEntity.content}          
 		              </p>
+		              
+		              <%-- 메세 삭제 버튼 --%>
+						<div>
+						<a href="#" class="messageDeleteBtn" data-toggle="modal" data-target="#modal" data-message-id="${card.messageEntity.id}"> <img
+								 class="ml-4 mt-1 shadowToTalEffects" width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
+							</a>
+						</div>
 		            </div>
 		            <span class="timestamp"><span class="username">${card.user.loginId}</span>
 		            	<!--쪽지 보내기 -->
@@ -34,6 +41,10 @@
 		  </div>
     
     
+  
+ 
+  
+  
   
 
 
@@ -62,6 +73,33 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal" >
+	<%-- modal-dialog-centered : 모달 창을 수직 가운데 정렬 --%>
+	<%-- modal-sm: small 모달 --%>
+  	<div class="modal-dialog modal-dialog-centered modal-sm"> 
+    	<div class="modal-content text-center">
+      		<div class="py-3 border-bottom"> 
+      			<a href="#" id="deletePostBtn" class="deletePostFont text-dark">Delete</a>
+   			</div>
+   			<div class="py-3">
+   				<%-- data-dismiss="modal" => 모달창 닫힘 --%>
+   				<a href="#" data-dismiss="modal" class="deletePostFont text-dark">Close</a>
+   			</div>
+    	</div>
+  </div>
+</div>
+
+
+
+
 
 
 
@@ -134,6 +172,62 @@ $(document).ready(function(){
 	}); // profileSendMessage22
 	  
 	  
+	
+	
+	
+	
+	
+	
+
+	// 메세지 삭제
+	$('.messageDeleteBtn').on('click', function(e){
+		e.preventDefault();
+		
+		let messageId = $(this).data('message-id');
+		//alert(messageId);
+		
+		// 모달 태그에 data-live-id 심기
+		$('#modal').data('message-id', messageId);
+	}); // delete-btn
+		
+		
+	
+	
+	
+	// 모달 안에 있는 delete 버튼
+	$('#modal #deletePostBtn').on ('click', function(e) {  // modal 안에 있는 deletePostBtn  띄어쓰기. #modal 안써도 됨.
+	
+		let messageId = $('#modal').data('message-id');
+		//alert(messageId);
+	
+		// ajax
+		$.ajax({
+			// request
+			type : "DELETE"
+			, url : "/message/delete"
+			, data : {
+				"messageId" : messageId
+			}
+			
+			
+			// response
+			,success : function(data) {
+				if (data.code = 1) {
+					location.reload(true);
+					swal(data.result);
+				} else {
+					swal(data.errorMessage);
+				}
+			},
+			error : function(request, status, error) {
+				swal("Failed to save information. Please contact the administrator.");
+			}
+		
+			
+		});  // ajax
+		
+	});    //deletePostBtn
+	
 	  
   }); // ready
     
