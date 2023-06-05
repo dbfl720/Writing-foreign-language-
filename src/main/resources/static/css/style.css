@@ -892,12 +892,12 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 
 /*  메세지 */
 .chatbox {
+	margin-top:15rem;
     height: 100%;
     width: 100%;
-    margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: #1c1e22;
+    /* background: #1c1e22; */
 }
 .chatbox {
   display: flex;
@@ -925,8 +925,14 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 	width:50rem;
     flex: auto;
     max-height: calc(100% - 60px);
-    background: #2f323b;
+
     overflow: auto;
+    
+    
+/* background: #bdc3c7;  fallback for old browsers
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  Chrome 10-25, Safari 5.1-6
+background: linear-gradient(to right, #2c3e50, #bdc3c7); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 .chat-input {
     flex: 0 0 auto;
@@ -978,7 +984,15 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 }
 .msg-box {
     display: flex;
-    background: #5b5e6c;
+    /* background: #8c8c8c; */
+    
+    background: #E8CBC0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+    
+    
     padding: 10px 10px 0 10px;
     border-radius: 0 6px 6px 0;
     max-width: 80%;
@@ -1005,7 +1019,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 }
 .msg {
     display: inline-block;
-    font-size: 11pt;
+    font-size: 2rem;
     line-height: 13pt;
     color: rgba(255,255,255,.7);
     margin: 0 0 4px 0;
@@ -1020,6 +1034,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 }
 .username {
     margin-right: 3px;
+    font-size: 1.7rem;
 }
 .posttime {
     margin-left: 3px;
@@ -1038,15 +1053,25 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .msg-self .timestamp {
     text-align: right;
 }
+.messageAirplane{margin-right :5rem; margin-top:2rem;}
 
 
 
 
 
 
-
+/* message modal css  */
+#message-text{height:25rem; font-size:2rem;}
+#exampleModalLabel{font-size:1.6rem;}
+.modalMessageText{font-size:1.3rem;}
+.profileSendMessage22{font-size:1.5rem;}
+.messageCloseBtn{font-size:1.5rem;}
  
 /* outbox */
 .messageOutBoxLoginIdText{font-size:2rem;}
 .posttime{font-size:1.3rem;}
 .outBoxContent{font-size:2rem;}
+
+
+
+

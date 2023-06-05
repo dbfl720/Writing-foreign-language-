@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.language.message.bo.MessageBO;
-import com.language.message.entity.MessageOutBoxView;
 import com.language.message.entity.MessageView;
 import com.language.user.bo.UserBO;
 
@@ -64,10 +63,8 @@ public class MessageController {
 			// db
 			List<MessageView> messageViewOutBoxList = messageBO.generateOutBoxMessageList(userId);
 			List<MessageView> messageViewList = messageBO.generateMessageList(userId);
-//			MessageOutBoxView messageViewOutBoxUser = messageBO.generateOutBoxUser(userId);
+
 			
-			
-//			model.addAttribute("messageViewOutBoxUser",messageViewOutBoxUser);
 			model.addAttribute("messageViewList",messageViewList);
 			model.addAttribute("messageViewOutBoxList",messageViewOutBoxList);
 			model.addAttribute("view", "message/message_outbox");

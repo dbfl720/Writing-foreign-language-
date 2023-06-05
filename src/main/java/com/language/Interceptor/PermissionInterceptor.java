@@ -50,6 +50,17 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			return false;
 
 		}
+		
+		
+		
+		
+		// 비로그인 && /message로 온 경우 => 로그인 페이지로 리다이렉트, return false(기존 컨트롤러 수행 방지)
+		if (userId == null && uri.startsWith("/message")) {
+			response.sendRedirect("/user/sign_up_view");
+			return false;
+
+		}
+		
 
 
 		return true; // 컨트롤러 수행

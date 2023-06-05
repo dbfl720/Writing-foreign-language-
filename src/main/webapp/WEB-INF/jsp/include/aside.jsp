@@ -25,6 +25,14 @@
 		   <button class="custom-btn btn-12" onclick="location.href='/live/live_view'" class="custom-btn btn-12"><span class="communtiFont">Click!</span><span class="communtiFont">Live</span></button>
 		 </div>
 
+
+		<div class="d-flex menuAmi">
+		 <img id="communityImg" class="mt-2 ml-2" alt="커뮤니티 이미지" width="32" height="32" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Messaging-Read-Message-icon.png" >
+		   <button class="custom-btn btn-12" onclick="location.href='/message/message_view'" class="custom-btn btn-12"><span class="communtiFont">Click!</span><span class="communtiFont">Message</span></button>
+		 </div>
+
+
+
 		<c:choose>
 			<c:when test="${empty userId}">
 			 <div class="d-flex menuAmi">  

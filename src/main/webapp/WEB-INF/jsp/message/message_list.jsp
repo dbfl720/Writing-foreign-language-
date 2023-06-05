@@ -6,13 +6,26 @@
 
 
 	
-		    
-		 <div class="chatbox">
+	<div class="container">  
+		<div class="d-flex">
+				<img alt="글쓴이 이모티콘" width="65" height="65" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Messaging-Read-Message-icon.png">
+				<div class="liveTopText ml-4">Message Inbox</div>
+				
+				<div class="messageAirplane">
+				<a href="/message/message_outbox_view" id="saveLiveBtn">
+					<img class="shadowToTalEffects" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-send-check-icon.png">
+				</a>
+				</div>
+		</div>
+	
+	
+	  <div class="d-flex justify-content-center">
+		 <div class="chatbox shadowToTalEffects">
 		    <div class="chat-window">
 		    <c:forEach items="${messageViewList}" var="card">
 		      <div class="msg-container msg-remote" id="msg-0">
-		        <div class="msg-box">
-		          <img class="user-img" id="user-0" src="${card.user.imagePath}" />
+		        <div class="msg-box shadowToTalEffects">
+		          <img class="user-img"  id="user-0" src="${card.user.imagePath}" />
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
 		              <p class="msg" id="msg-0">
@@ -22,7 +35,7 @@
 		              <%-- 메세 삭제 버튼 --%>
 						<div>
 						<a href="#" class="messageDeleteBtn" data-toggle="modal" data-target="#modal" data-message-id="${card.messageEntity.id}"> <img
-								 class="ml-4 mt-1 shadowToTalEffects" width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
+								 class="mt-2 ml-2 shadowToTalEffects" width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
 							</a>
 						</div>
 		            </div>
@@ -39,7 +52,8 @@
 		    </div>
 		
 		  </div>
-    
+	  </div>
+    </div>
     
   
  
@@ -53,22 +67,22 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <div class="modal-title" id="exampleModalLabel">New message</div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><img alt="글쓴이 이모티콘" width="25" height="25" src="https://icons.iconarchive.com/icons/github/octicons/128/x-24-icon.png"></span>
         </button>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="message-text" class="modalMessageText col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" ></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="profileSendMessage22" type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="messageCloseBtn btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-warning">Send message</button>
       </div>
     </div>
   </div>
@@ -141,10 +155,26 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 		let receiverId = $('#exampleModal').data("receiver-id");
-		alert(receiverId);
+		//alert(receiverId);
 		
 		let content = $('#message-text').val();
 		//alert(content);
+		
+		
+		// validation
+		if (!content) {
+			swal("Please enter your content.");
+			return;
+		}
+		
+		
+		
+		if (content.length < 10) {
+			swal("Please write at least 10 characters.");
+			return;
+		}
+		
+		
 		
 		$.ajax({
 			// request
@@ -157,7 +187,8 @@ $(document).ready(function(){
 		 	// response
 		 	, success : function(data) {
 		 		if (data.code == 1) {
-					swal(data.result);
+					//swal(data.result);
+					location.href = "/message/message_outbox_view";
 				} else {
 					swal(data.errorMessage);
 				}
@@ -229,6 +260,14 @@ $(document).ready(function(){
 	});    //deletePostBtn
 	
 	  
+	
+	
+	
+	
+	// 스크롤 항상 아래에 고정. 
+	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
+	
+	
   }); // ready
     
 

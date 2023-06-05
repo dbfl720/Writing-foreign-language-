@@ -16,9 +16,8 @@ public interface MessageRepository extends JpaRepository<MessageEntity, Integer>
 	public List<MessageEntity> findByReceiverId(int receiverId); 
 	
 	
-	public List<MessageEntity> findByUserId(int userId);
+	public List<MessageEntity> findAllByUserId(int userId);
 	
-//	public MessageEntity findByUserId(int userId);
 	
 	public Optional<MessageEntity> findById(int messageId);
 }

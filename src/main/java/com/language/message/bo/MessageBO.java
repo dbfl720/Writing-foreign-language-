@@ -49,7 +49,7 @@ public class MessageBO {
     
     // select -  
     public List<MessageEntity> getMessageListByUserId(int userId){
-    	return messageRepository.findByUserId(userId);
+    	return messageRepository.findAllByUserId(userId);
     }
     
     
@@ -96,7 +96,7 @@ public class MessageBO {
     	List<MessageView> messageViewOutBoxList = new ArrayList<>(); // []
     	
     	// message들
-    	List<MessageEntity> messageList = messageRepository.findByUserId(userId);
+    	List<MessageEntity> messageList = messageRepository.findAllByUserId(userId);
     	
     	// MessageEntity => MessageView
     	for(MessageEntity message : messageList) {
@@ -120,25 +120,6 @@ public class MessageBO {
     
     
     
-    
-    // select - 가공 메세지 (보낸 사람 이미지 알기 위해.)
-//    public MessageOutBoxView generateOutBoxUser(int userId) {
-//    	
-//    	MessageOutBoxView messageViewOutBoxView = new MessageOutBoxView(); //
-//    	
-//    	// message들
-//    	MessageEntity message = messageRepository.findByUserId1(userId);
-//    	
-//  
-//    	User user = userBO.getUserById(message.getUserId());  // 유저 정보는 메세지 안에 들어있기 때문
-//    	messageViewOutBoxView.setSender(user);
-//    	
-//
-//    	
-//    	
-//    	
-//    	return messageViewOutBoxView;
-//    }
     
 
     
