@@ -16,4 +16,6 @@ public interface MessageRepository extends JpaRepository<MessageEntity, Integer>
 	
 	
 	public List<MessageEntity> findByUserId(int userId);
+	
+//	public MessageEntity findByUserId(int userId);
 }

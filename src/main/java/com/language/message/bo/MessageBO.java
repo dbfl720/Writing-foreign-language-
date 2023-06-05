@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.language.message.dao.MessageRepository;
 import com.language.message.entity.MessageEntity;
+import com.language.message.entity.MessageOutBoxView;
 import com.language.message.entity.MessageView;
 import com.language.user.bo.UserBO;
 import com.language.user.model.User;
@@ -111,6 +112,30 @@ public class MessageBO {
     	return messageViewOutBoxList;
     }
     
+    
+    
+    
+    
+    // select - 가공 메세지 (보낸 사람 이미지 알기 위해.)
+//    public MessageOutBoxView generateOutBoxUser(int userId) {
+//    	
+//    	MessageOutBoxView messageViewOutBoxView = new MessageOutBoxView(); //
+//    	
+//    	// message들
+//    	MessageEntity message = messageRepository.findByUserId1(userId);
+//    	
+//  
+//    	User user = userBO.getUserById(message.getUserId());  // 유저 정보는 메세지 안에 들어있기 때문
+//    	messageViewOutBoxView.setSender(user);
+//    	
+//
+//    	
+//    	
+//    	
+//    	return messageViewOutBoxView;
+//    }
+    
+
     
 
 }

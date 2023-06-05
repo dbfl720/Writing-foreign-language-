@@ -7,13 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MessageView {
+public class MessageOutBoxView {
+
+
 	
+	// 유저 정보 - 받는 사람
+	private User sender;
 	
-	
-	private MessageEntity messageEntity;
-	
-	// 유저 정보
-	private User user;
 	
 }
