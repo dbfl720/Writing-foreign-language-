@@ -12,8 +12,8 @@
 				<div class="liveTopText ml-4">Message Inbox</div>
 				
 				<div class="messageAirplane">
-				<a href="/message/message_outbox_view" id="saveLiveBtn">
-					<img class="shadowToTalEffects" alt="저장 이모티콘" width="30" height="30" src="https://icons.iconarchive.com/icons/bootstrap/bootstrap/128/Bootstrap-send-check-icon.png">
+				<a href="/message/message_outbox_view" >
+					<img class="shadowToTalEffects messageListSendImg" alt="발신 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Mail-Send-icon.png">
 				</a>
 				</div>
 		</div>
@@ -35,11 +35,11 @@
 		              <%-- 메세 삭제 버튼 --%>
 						<div>
 						<a href="#" class="messageDeleteBtn" data-toggle="modal" data-target="#modal" data-message-id="${card.messageEntity.id}"> <img
-								 class="mt-2 ml-2 shadowToTalEffects" width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
+								 class="messageDeleteImg mt-2 ml-2 shadowToTalEffects" width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
 							</a>
 						</div>
 		            </div>
-		            <span class="timestamp"><span class="username">${card.user.loginId}</span>
+		            <span class="timestamp"><span class="username">From. ${card.user.loginId}</span>
 		            	<!--쪽지 보내기 -->
 					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${card.user.id}" class="profileSendMessage ml-1  shadowToTalEffects" alt="쪽지 사진" width="25" height="25"
 						src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
@@ -53,7 +53,7 @@
 		
 		  </div>
 	  </div>
-    </div>
+    
     
   
  
@@ -112,7 +112,7 @@
 </div>
 
 
-
+</div>
 
 
 
