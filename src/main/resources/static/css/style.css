@@ -928,7 +928,7 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
 
 /*  메세지 */
 .chatbox {
-	margin-top:15rem;
+	margin-top:10rem;
     height: 100%;
     width: 100%;
     padding: 0;
@@ -1015,7 +1015,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
     fill: white;
 }
 .msg-container {
-    position: relative;
+    /* position: relative; */
     display: inline-block;
     width: 100%;
     margin: 0 0 10px 0;
@@ -1094,6 +1094,22 @@ background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, F
 }
 .messageAirplane{margin-right :9rem; margin-top:2rem;}
 .messageListSendImg:hover{transform: scale(1.4);}
+.UserList_img {
+     padding: 15px 20px;
+        background-color: #FDEBC8;
+        border-radius: 5px;
+        color: #ffffff;
+        position: absolute;
+        display: none;
+        font-size:2rem;
+}
+ 
+.messageUserList:hover .UserList_img {
+    display: block;
+}
+.messageUserList{margin-top:10rem;}
+
+
 
 
 

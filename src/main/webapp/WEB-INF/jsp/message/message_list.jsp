@@ -11,12 +11,7 @@
 				<img alt="글쓴이 이모티콘" width="65" height="65" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Messaging-Read-Message-icon.png">
 				<div class="liveTopText ml-4">Message Inbox</div>
 				
-				
-				<div class="my_box">
-        <div class="my_text"> 여기에 마우스를 가져오세요 </div>
-        <div class="my_img"> ㅁㄴㅇㄹㄴㅇㅁㄹ </div>
-       
-    </div>
+			
 				
 				<div class="messageAirplane">
 				<a href="/message/message_outbox_view" >
@@ -24,9 +19,12 @@
 				</a>
 				</div>
 		</div>
-	
-	<c:if test="${not empty messageViewList}">
-	  <div class="d-flex justify-content-center">
+		
+		<!-- 유저리스트 -->
+		<div class="messageUserList">
+	        <div class="UserList_text"> 여기에 마우스를 가져오세요 </div>
+	        <div class="UserList_img">
+	        	<div class="d-flex justify-content-center">
 		 <div class="chatbox shadowToTalEffects">
 		    <div class="chat-window">
 		    <c:forEach items="${messageViewList}" var="card">
@@ -43,6 +41,46 @@
 						<div>
 						<a href="#" class="messageDeleteBtn" data-toggle="modal" data-target="#modal" data-message-id="${card.messageEntity.id}"> <img
 								 class="messageDeleteImg mt-2 ml-2 shadowToTalEffects" width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
+							</a>
+						</div>
+		            </div>
+		            <span class="timestamp"><span class="username font-weight-bold">From. ${card.user.loginId}</span>
+		            	<!--쪽지 보내기 -->
+					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${card.user.id}" class="profileSendMessage ml-1  shadowToTalEffects" alt="쪽지 사진" width="25" height="25"
+						src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
+		            
+		            &bull;<span class="posttime"><fmt:formatDate value="${card.messageEntity.createdAt}" pattern="HH:mm  yyyy-MM-dd" /></span></span>
+		          </div>
+		        </div>
+		      </div>
+		      </c:forEach>
+		    </div>
+		
+		  </div>
+	  </div>
+	 </div><!-- UserList_img -->
+       
+		</div>
+	
+	<!-- 수신함 - 메세지 리스트가 있을 때. -->
+	<c:if test="${not empty messageViewList}">
+	  <div class="d-flex justify-content-center">
+		 <div class="chatbox shadowToTalEffects">
+		    <div class="chat-window scollwDown">
+		    <c:forEach items="${messageViewList}" var="card">
+		      <div class="msg-container msg-remote scrollDownEffect" id="msg-0">
+		        <div class="msg-box shadowToTalEffects">
+		          <img class="user-img"  id="user-0" src="${card.user.imagePath}" />
+		          <div class="flr">
+		            <div class="messages d-flex justify-content-between">
+		              <p class="msg" id="msg-0">
+		                ${card.messageEntity.content}          
+		              </p>
+		              
+		              <%-- 메세 삭제 버튼 --%>
+						<div>
+						<a href="#" class="messageDeleteBtn" data-toggle="modal" data-target="#modal" data-message-id="${card.messageEntity.id}"> <img
+								 class="messageDeleteImg mt-2 ml-2 " width="15" height="15" src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/128/more-vertical-icon.png">
 							</a>
 						</div>
 		            </div>
@@ -294,7 +332,7 @@ $(document).ready(function(){
 	
 	
 	// 스크롤 항상 아래에 고정. 
-	$('.chat-window').scrollTop($('.chat-window')[0].scrollHeight);
+	$('.scollwDown').scrollTop($('.scollwDown')[0].scrollHeight);
 	
 	
   }); // ready
