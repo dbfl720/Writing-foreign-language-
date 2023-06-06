@@ -40,14 +40,14 @@
 		<c:forEach items="${reviewViewList}" var="reviewViewLists">
 			<div class="swiper-slide">
 				<div class="">
-					<div><img class="reviewTopImgBox2 shadowToTalEffects" src="${reviewViewLists.user.imagePath}" width="600" height="100"></div>
+					<div><img class="reviewTopImgBox2" src="${reviewViewLists.user.imagePath}" width="600" height="100"></div>
 					<div class="d-flex reviewTopInfoBox44">
-						<div class="mt-3 ReviewListUserName">
+						<div class="mt-3 ">
 							<img alt="유저 아이콘" width="25" height="25"
 									src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
 							${reviewViewLists.user.loginId}
 						</div>
-						<div class="mt-3 ml-4 ReviewListUserName">
+						<div class="mt-3 ml-4 ">
 							<img alt="리뷰 개수 아이콘" width="25" height="25"
 									src=https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png>
 							Total Review : ${reviewViewLists.reviewCount}
@@ -76,7 +76,7 @@
 			<div class="ReviewListbox mt-3 card">
 				<a href="/review/review_detail_view?reviewId=${reviewLists.id}">
 					<small class="reveiwLangagueText card-img-overlay ">${reviewLists.languageCategoryId}</small>
-						<img class="ReveiwImgBox2 shadowToTalEffects" src="${reviewLists.imagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="253" height="130">
+						<img class="ReveiwImgBox2 " src="${reviewLists.imagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="253" height="130">
 				</a>
 				<div class="reviewListTextBox22">
 					<h3 class="text-secondary" name="price">
