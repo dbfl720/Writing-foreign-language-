@@ -928,7 +928,7 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
 
 /*  메세지 */
 .chatbox {
-	margin-top:10rem;
+	margin-top:5rem;
     height: 100%;
     width: 100%;
     padding: 0;
@@ -950,7 +950,7 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
   width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #dcdcdc;
+  background-color: #aaaaaa	;
   border-radius: 2px;
 }
 .chatbox {
@@ -967,10 +967,14 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
     flex: auto;
     max-height: calc(100% - 60px);
     overflow: auto;
-  background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+ /*  background: #bdc3c7;  fallback for old browsers
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  Chrome 10-25, Safari 5.1-6
+background: linear-gradient(to right, #2c3e50, #bdc3c7); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+   */
+   
+   background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    
 }
 .chat-input {
@@ -1096,26 +1100,106 @@ background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, F
 .messageListSendImg:hover{transform: scale(1.4);}
 .UserList_img {
      padding: 15px 20px;
-        background-color: #FDEBC8;
+           
         border-radius: 5px;
-        color: #ffffff;
+        color: #E1AE68;
         position: absolute;
         display: none;
         font-size:2rem;
+ background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+
+
+
+        
 }
- 
+.userListWindow{
+	width: 50rem;
+    flex: auto;
+    max-height: calc(100% - 60px);
+    overflow: auto;
+ background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+
+
+
+   
+}
+
+.UserListLine{width:28rem; height:5rem; margin-top:5rem; }
+.messageUserList{width:13rem; height:5rem;}
 .messageUserList:hover .UserList_img {
     display: block;
 }
-.messageUserList{margin-top:10rem;}
+
+.messageUserLangaugeFont{font-size: 1.4rem;}
+
+/* message Writers 효과 */
+/* 11 */
+.messagae-btn {
+  width: 28rem;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-11 {
+	font-size:1.7rem;
+  border: none;
+  background-color: #cb99c5;  
+    color: #fff;
+    overflow: hidden;
+}
+.btn-11:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:hover{
+  opacity: .7;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+@-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
 
 
 
-
-
-/* .profilePicture2:hover {
-  transform: scale(1.4);
-}  */
 
 
 

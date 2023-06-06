@@ -503,7 +503,6 @@
 			// response
 			, success : function(data) {
 				if (data.code == 1) {
-					swal("Your information is stored.");
 					location.reload();
 				} else {
 					swal(data.errorMessage);

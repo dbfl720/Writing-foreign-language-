@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.language.message.bo.MessageBO;
 import com.language.message.entity.MessageView;
 import com.language.user.bo.UserBO;
+import com.language.user.model.User;
 
 
 
@@ -39,8 +40,9 @@ public class MessageController {
 		
 		// db
 		List<MessageView> messageViewList = messageBO.generateMessageList(userId);
+		List<User> userList = userBO.getGrammarUser();
 		
-		
+		model.addAttribute("userList",userList);
 		model.addAttribute("messageViewList",messageViewList);
 		model.addAttribute("view", "message/message_list");
 		return "template/layout";
@@ -63,8 +65,10 @@ public class MessageController {
 			// db
 			List<MessageView> messageViewOutBoxList = messageBO.generateOutBoxMessageList(userId);
 			List<MessageView> messageViewList = messageBO.generateMessageList(userId);
-
 			
+			
+			
+		
 			model.addAttribute("messageViewList",messageViewList);
 			model.addAttribute("messageViewOutBoxList",messageViewOutBoxList);
 			model.addAttribute("view", "message/message_outbox");
