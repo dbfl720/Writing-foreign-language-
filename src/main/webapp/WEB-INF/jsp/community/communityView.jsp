@@ -9,6 +9,8 @@
 		<img alt="글쓴이 이모티콘" width="60" height="60" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png">
 	New Writers !</div>
 	
+	
+	
 	<c:forEach items="${communityList}" var="communityLists">
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55 ">
 			<div class="communityImg">
@@ -16,11 +18,20 @@
 					src="${communityLists.user.imagePath}"
 					height="200" width="200"></a>
 			</div>
+			
 			<div class="infoCommunity">
-				<div class="fontCommunity mb-3 loginIdFont">
+				<div class="fontCommunity mb-3 loginIdFont d-flex">
+				
 					<div class="d-flex loginIdFont">
-					<img alt="유저 사진" width="23" height="23" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
-					<div class="ml-3 communityLogin23 loginIdFont"><a class="loginIdFont" href="/user/profile_view?userId=${communityLists.user.id}">${communityLists.user.loginId}</a></div></div>
+						<img  alt="유저 사진" width="23" height="23" src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
+						<div class="my_box ml-3 communityLogin23 loginIdFont">
+							<a class="my_text loginIdFont" href="/user/profile_view?userId=${communityLists.user.id}">${communityLists.user.loginId}</a>
+							<div class="my_img">
+								<img alt="리뷰 하트" height="27" width="27" src="https://icons.iconarchive.com/icons/github/octicons/128/goal-24-icon.png">
+								The purpose of writing : ${communityLists.user.languageGoals}
+							</div>
+						</div>	
+					</div>
 				</div>
 				<div class="fontCommunity d-flex mb-3">
 					<img class="languageMark" alt="언어 사진" width="23" height="23"

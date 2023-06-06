@@ -11,6 +11,13 @@
 				<img alt="글쓴이 이모티콘" width="65" height="65" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Messaging-Read-Message-icon.png">
 				<div class="liveTopText ml-4">Message Inbox</div>
 				
+				
+				<div class="my_box">
+        <div class="my_text"> 여기에 마우스를 가져오세요 </div>
+        <div class="my_img"> ㅁㄴㅇㄹㄴㅇㅁㄹ </div>
+       
+    </div>
+				
 				<div class="messageAirplane">
 				<a href="/message/message_outbox_view" >
 					<img class="shadowToTalEffects messageListSendImg" alt="발신 이모티콘" width="35" height="35" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Mail-Send-icon.png">

@@ -54,22 +54,33 @@
 							<div class="d-flex">
 							
 							<%-- <a href="/user/profile_view?userId=${card.user.id}"> --%>
+							<c:choose>
+								<c:when test="${card.user.id ne userId}">
 								<details>
 									<summary>
 										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.imagePath}" 
 										width="70" height="70">
 									</summary>
 									<div class="tpt">
-										sdffsdfdsfdsfsdfsfs
+										<!--쪽지 보내기 -->
+										<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${card.user.id}" class="profileSendMessage ml-4  shadowToTalEffects" alt="쪽지 사진" width="38" height="36"
+											src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
 									</div>
 								</details>
+								</c:when>
+								<c:otherwise>
+										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.imagePath}" 
+										width="70" height="70">
+								</c:otherwise>
+							</c:choose>
+							
 							<!-- </a> -->	
 								
 								<%-- loginId --%>
 								<div class="liveDetailTopBox444">
 									<div  class="liveToploginIdText">
 										<div>
-											<span class="liveTopFont">${card.user.loginId}</span>
+											<a href="/user/profile_view?userId=${card.user.id}"><span class="liveTopFont">${card.user.loginId}</span></a>
 										</div>
 									</div>
 									<div class="liveTopLanguage">
@@ -330,6 +341,33 @@
 
 
 
+<!-- modal  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img alt="글쓴이 이모티콘" width="25" height="25" src="https://icons.iconarchive.com/icons/github/octicons/128/x-24-icon.png"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="message-text" class="modalMessageText col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="messageCloseBtn btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-warning">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -515,6 +553,82 @@ $(document).ready(function() {
 		});  // ajax
 		
 	});    //deletePostBtn
+	
+	
+	
+	
+	
+	
+	
+	
+	// 메세지 보내기
+	$('.profileSendMessage').on('click', function(e){
+		e.preventDefault();
+		
+		let receiverId = $(this).data("receiver-id");
+		//alert(receiverId);
+		
+		// 모달 태그에 data-live-id 심기
+		$('#exampleModal').data('receiver-id', receiverId);
+		
+	});  // profileSendMessage
+	
+	
+	
+	
+	
+	
+	// modal 안에 있는 메세지 보내기 버튼
+	$('#exampleModal #profileSendMessage22').on('click', function(e){
+		e.preventDefault();
+		
+		let receiverId = $('#exampleModal').data("receiver-id");
+		//alert(receiverId);
+		
+		let content = $('#message-text').val();
+		//alert(content);
+		
+		
+		// validation
+		if (!content) {
+			swal("Please enter your content.");
+			return;
+		}
+		
+		
+		
+		if (content.length < 10) {
+			swal("Please write at least 10 characters.");
+			return;
+		}
+		
+		
+		$.ajax({
+			// request
+			type : "POST"
+			, url : "/message/create"
+			, data : {"receiverId" : receiverId,
+					  "content" : content}
+		
+			
+		 	// response
+		 	, success : function(data) {
+		 		if (data.code == 1) {
+					swal(data.result);
+				
+				} else {
+					swal(data.errorMessage);
+				}
+			}
+			,error : function(request, status, error) {
+				swal("Failed to save information. Please contact the administrator.");
+			}
+		 	
+			
+		}); // ajax
+		
+	}); // profileSendMessage22
+	
 	
 	
 	
