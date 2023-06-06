@@ -1130,18 +1130,22 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
    
 }
 
-.UserListLine{width:28rem; height:5rem; margin-top:5rem; }
+.UserListLine{width:38rem; height:5rem; margin-top:5rem; }
 .messageUserList{width:13rem; height:5rem;}
 .messageUserList:hover .UserList_img {
     display: block;
 }
 
 .messageUserLangaugeFont{font-size: 1.4rem;}
+.messageBigEffect234:hover{transform: scale(1.2);}
+
+
+
 
 /* message Writers 효과 */
 /* 11 */
 .messagae-btn {
-  width: 28rem;
+  width: 38rem;
   height: 40px;
   color: #fff;
   border-radius: 5px;

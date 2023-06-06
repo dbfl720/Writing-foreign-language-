@@ -23,7 +23,7 @@
 		<!-- 유저리스트 -->
 		<div class="messageUserList">   
 	        <div class="UserListLine">
-	        <button class="messagae-btn btn-11 UserList_tex">See more beautiful writers !<div class="dot"></div></button>
+	        <button class="messagae-btn btn-11 UserList_tex">Send messages to more great writers !<div class="dot"></div></button>
 	        </div>
 	        <div class="UserList_img">
 	        	<div class="d-flex justify-content-center">
@@ -32,7 +32,7 @@
 		    <c:forEach items="${userList}" var="userLists">
 		      <div class="msg-container msg-remote" id="msg-0">
 		        <div class="msg-box shadowToTalEffects">
-		          <img class="user-img"  id="user-0" src="${userLists.imagePath}" />
+		          <a href="/user/profile_view?userId=${userLists.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${userLists.imagePath}" /></a>
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
 		             
@@ -72,7 +72,7 @@
 		    <c:forEach items="${messageViewList}" var="card">
 		      <div class="msg-container msg-remote scrollDownEffect" id="msg-0">
 		        <div class="msg-box shadowToTalEffects">
-		          <img class="user-img"  id="user-0" src="${card.user.imagePath}" />
+		          <a href="/user/profile_view?userId=${card.user.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${card.user.imagePath}" /></a>
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
 		              <p class="msg" id="msg-0">
