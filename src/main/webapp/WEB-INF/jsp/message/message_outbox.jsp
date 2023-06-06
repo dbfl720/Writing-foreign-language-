@@ -19,7 +19,7 @@
 
 
 
-
+<c:if test="${not empty messageViewOutBoxList}">
    <div class="d-flex justify-content-center">
 	<div class="chatbox shadowToTalEffects">
 		    <div class="chat-window">
@@ -35,7 +35,7 @@
 		            </div>
 		            <span class="timestamp">
 		            
-		            <span class="messageOutBoxLoginIdText username  ml-2">To. ${card.user.loginId}</span>
+		            <span class="messageOutBoxLoginIdText username  ml-2 font-weight-bold">To. ${card.user.loginId}</span>
 		        
 		            	
 		            
@@ -48,6 +48,35 @@
 		
 	</div><!-- chatbox -->
 	</div>
+</c:if>
+	
+	
+	
+	<c:if test="${empty messageViewOutBoxList}">
+	  <div class="d-flex justify-content-center">
+		 <div class="chatbox shadowToTalEffects">
+		    <div class="chat-window">
+		      <div class="msg-container msg-remote" id="msg-0">
+		        <div class="msg-box shadowToTalEffects">
+		          <img class="user-img"  id="user-0" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Ecommerce-Empty-Box-icon.png" />
+		          <div class="flr">
+		            <div class="messages d-flex justify-content-between">
+		              <p class="msg" id="msg-0">
+		                There is no message.          
+		              </p>
+		            </div>
+		            <span class="timestamp"><span class="username font-weight-bold">To. </span></span>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		  </div>
+	  </div>
+    </c:if>
+	
+	
+	
 </div><!-- container -->    
 		  
 		  

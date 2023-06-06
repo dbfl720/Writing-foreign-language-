@@ -18,7 +18,7 @@
 				</div>
 		</div>
 	
-	
+	<c:if test="${not empty messageViewList}">
 	  <div class="d-flex justify-content-center">
 		 <div class="chatbox shadowToTalEffects">
 		    <div class="chat-window">
@@ -39,7 +39,7 @@
 							</a>
 						</div>
 		            </div>
-		            <span class="timestamp"><span class="username">From. ${card.user.loginId}</span>
+		            <span class="timestamp"><span class="username font-weight-bold">From. ${card.user.loginId}</span>
 		            	<!--쪽지 보내기 -->
 					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${card.user.id}" class="profileSendMessage ml-1  shadowToTalEffects" alt="쪽지 사진" width="25" height="25"
 						src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
@@ -53,11 +53,32 @@
 		
 		  </div>
 	  </div>
-    
+    </c:if>
     
   
  
-  
+  <c:if test="${empty messageViewList}">
+	  <div class="d-flex justify-content-center">
+		 <div class="chatbox shadowToTalEffects">
+		    <div class="chat-window">
+		      <div class="msg-container msg-remote" id="msg-0">
+		        <div class="msg-box shadowToTalEffects">
+		          <img class="user-img"  id="user-0" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Ecommerce-Empty-Box-icon.png" />
+		          <div class="flr">
+		            <div class="messages d-flex justify-content-between">
+		              <p class="msg" id="msg-0">
+		                There is no message.          
+		              </p>
+		            </div>
+		            <span class="timestamp"><span class="username font-weight-bold">From. </span></span>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		  </div>
+	  </div>
+    </c:if>
   
   
 
@@ -227,6 +248,7 @@ $(document).ready(function(){
 	
 	// 모달 안에 있는 delete 버튼
 	$('#modal #deletePostBtn').on ('click', function(e) {  // modal 안에 있는 deletePostBtn  띄어쓰기. #modal 안써도 됨.
+		e.preventDefault(); 
 	
 		let messageId = $('#modal').data('message-id');
 		//alert(messageId);

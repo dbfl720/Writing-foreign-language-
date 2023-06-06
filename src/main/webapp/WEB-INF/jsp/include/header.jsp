@@ -4,7 +4,7 @@
 
 <div class="header">
 	<div class="d-flex justify-content-between">
-		<div class="ami TopLogoEffects">Ami</div>
+		<div class="ami TopLogoEffects brigthEffect headerAmi">Ami</div>
 		<%-- 프로필 사진 --%>
 		<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
 		<c:if test="${not empty userId}">
@@ -12,8 +12,8 @@
 				accept=".gif, .jpg, .png, .jpeg , .webp">
 			<div class=" headerBox d-flex align-items-center TopLogoEffects">
 				<div class="nameHeader ">Hello__</div>
-				<div class="ml-3 headerProfileText ">${loginId}</div>
-				<div class="nameHeader"> _?</div>
+				<div class="ml-3 headerProfileText brigthEffect">${loginId}</div>
+				<div class="nameHeader "> _?</div>
 				<a href="/user/profile_view?userId=${userId}" class="ml-5 "><img
 					alt="프로필 이모티콘" height="30" width="30" class="shadowToTalEffects"
 					src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-setting-icon.png"></a>

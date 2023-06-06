@@ -159,20 +159,20 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">New message</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><img alt="글쓴이 이모티콘" width="25" height="25" src="https://icons.iconarchive.com/icons/github/octicons/128/x-24-icon.png"></span>
         </button>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
+            <label for="message-text" class="modalMessageText col-form-label">Message:</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="profileSendMessage22" type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="messageCloseBtn btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-warning">Send message</button>
       </div>
     </div>
   </div>
@@ -385,6 +385,21 @@ $(document).ready(function() {
 				let content = $('#message-text').val();
 				//alert(content);
 				
+				
+				// validation
+				if (!content) {
+					swal("Please enter your content.");
+					return;
+				}
+				
+				
+				
+				if (content.length < 10) {
+					swal("Please write at least 10 characters.");
+					return;
+				}
+				
+				
 				$.ajax({
 					// request
 					type : "POST"
@@ -397,6 +412,7 @@ $(document).ready(function() {
 				 	, success : function(data) {
 				 		if (data.code == 1) {
 							swal(data.result);
+						
 						} else {
 							swal(data.errorMessage);
 						}

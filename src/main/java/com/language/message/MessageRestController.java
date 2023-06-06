@@ -48,7 +48,7 @@ public class MessageRestController {
 		   messageBO.addMessage(userId, receiverId, content);
 		   
 		   result.put("code", 1);
-		   result.put("result", "성공");
+		   result.put("result", "Your message has been successfully sent.");
 		   return result;
 	   }
 	   

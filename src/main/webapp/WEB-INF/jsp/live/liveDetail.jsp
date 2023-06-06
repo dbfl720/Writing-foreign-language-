@@ -52,9 +52,18 @@
 					<div class="p-2 d-flex justify-content-between LiveDetailTopBox333">	
 						<%-- 사용자 프로필 사진 --%>
 							<div class="d-flex">
-								<img class="reviewTopImgBox2 shadowToTalEffects" src="${card.user.imagePath}" 
-								width="70" height="70">
-								
+							
+							<%-- <a href="/user/profile_view?userId=${card.user.id}"> --%>
+								<details>
+									<summary>
+										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.imagePath}" 
+										width="70" height="70">
+									</summary>
+									<div class="tpt">
+										sdffsdfdsfdsfsdfsfs
+									</div>
+								</details>
+							<!-- </a> -->	
 								
 								<%-- loginId --%>
 								<div class="liveDetailTopBox444">
