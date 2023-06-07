@@ -37,7 +37,7 @@
 				        <div class="headerMyInfoFont">Project name :Writing-foreign-language program</div>
 				        <div class="headerMyInfoFont">Project period : 1st May.2023 ~ 7th June.2023</div>
 				        <div class="headerMyInfoFont">Creator : 홍유리 (YURI HONG)</div>
-				        <div class="headerMyInfoFont">More information - Visit the blog : dbfl720.tistory.com</div>
+				        <div class="headerMyInfoFont">Visit this blog : dbfl720.tistory.com</div>
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-secondary headerMyInfoFont mr-5" data-dismiss="modal">Close</button>
