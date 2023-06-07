@@ -30,17 +30,17 @@
 				      <div class="modal-header">
 				        <h5 class="modal-title" id="staticBackdropLabel" class="headerMyInfoFont">Copyright@2023 YURI. All Rights Reserved.</h5>
 				        <button type="button" class="close headerMyInfoFont" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
+				          <span aria-hidden="true"><img alt="글쓴이 이모티콘" width="25" height="25" src="https://icons.iconarchive.com/icons/github/octicons/128/x-24-icon.png"></span>
 				        </button>
 				      </div>
 				      <div class="modal-body">
 				        <div class="headerMyInfoFont">Project name :Writing-foreign-language program</div>
 				        <div class="headerMyInfoFont">Project period : 1st May.2023 ~ 7th June.2023</div>
 				        <div class="headerMyInfoFont">Creator : 홍유리 (YURI HONG)</div>
-				        <div class="headerMyInfoFont">Visit this blog : dbfl720.tistory.com</div>
+				        <div class="headerMyInfoFont">Blog : dbfl720.tistory.com</div>
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary headerMyInfoFont mr-5" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-white closeMyInfoFont mr-5 mb-2" data-dismiss="modal">Close</button>
 				      </div>
 				    </div>
 				  </div>
