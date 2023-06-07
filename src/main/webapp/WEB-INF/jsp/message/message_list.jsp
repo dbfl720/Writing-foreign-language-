@@ -41,7 +41,7 @@
 			            <span class="username font-weight-bold">${userLists.loginId}
 			            	<!--쪽지 보내기 -->
 							<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${userLists.id}" class="profileSendMessage ml-1 mb-3  shadowToTalEffects" alt="쪽지 사진" width="25" height="25"
-							src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png">
+							src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Paper-Plane-icon.png">
 							</a>  
 			           		<span class="username ml-3">
 							<span class="messageUserLangaugeFont">${userLists.nativeCategoryId}</span>
@@ -75,7 +75,7 @@
 		          <a href="/user/profile_view?userId=${card.user.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${card.user.imagePath}" /></a>
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
-		              <p class="msg" id="msg-0">
+		              <p class="msg mt-2" id="msg-0">
 		                ${card.messageEntity.content}          
 		              </p>
 		              
@@ -86,10 +86,10 @@
 							</a>
 						</div>
 		            </div>
-		            <span class="timestamp"><span class="username font-weight-bold">From. ${card.user.loginId}</span>
+		            <span class="timestamp"><span class="username font-weight-bold"><div class="fromFont mt-5">From.</div> ${card.user.loginId}</span>
 		            	<!--쪽지 보내기 -->
 					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${card.user.id}" class="profileSendMessage ml-1 mt-1 mb-3 shadowToTalEffects" alt="쪽지 사진" width="25" height="25"
-						src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
+						src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Paper-Plane-icon.png"></a>
 		            
 		            &bull;<span class="posttime"><fmt:formatDate value="${card.messageEntity.createdAt}" pattern="HH:mm  yyyy-MM-dd" /></span></span>
 		          </div>
@@ -143,14 +143,14 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="message-text" class="modalMessageText col-form-label">Message:</label>
+            <label for="message-text" class="modalMessageText col-form-label">content</label>
             <textarea class="form-control" id="message-text" ></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="messageCloseBtn btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-warning">Send message</button>
+        <button type="button" class="messageCloseBtn btn btn-white" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-white font-weight-bold">Send message</button>
       </div>
     </div>
   </div>

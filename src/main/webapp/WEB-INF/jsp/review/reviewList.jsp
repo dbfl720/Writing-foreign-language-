@@ -12,7 +12,7 @@
 		</div>
 		
 		<div class="d-flex justify-content-end reviewTopSelectBox selectBox">
-				<select onchange="if(this.value) location.href=(this.value);" name="id" id= ReviewlanguageId class="shadowToTalEffects select form-select form-select-sm form-control col-2 standardHeight">
+				<select onchange="if(this.value) location.href=(this.value);" name="id" id= ReviewlanguageId class="simpleEffectILike select form-select form-select-sm form-control col-2 standardHeight">
 						<option value="none" selected>language</option>
 						<option value="/review/review_list_view?languageCategoryId=KO">KO</option>
 						<option value="/review/review_list_view?languageCategoryId=EN">EN</option>
@@ -27,7 +27,7 @@
 			
 			<!-- 리뷰쓰기 아이콘 -->
 			<div class="ReviewPencilIcon ">
-				<a href="/review/review_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
+				<a href="/review/review_writing_view"> <img class="simpleEffectILike" alt="연필 이모티콘"
 					width="30" height="30"
 					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 				</a>
@@ -42,15 +42,15 @@
 				<div class="">
 					<div><img class="reviewTopImgBox2" src="${reviewViewLists.user.imagePath}" width="600" height="100"></div>
 					<div class="d-flex reviewTopInfoBox44">
-						<div class="mt-3 ">
+						<div class="mt-3 d-flex">
 							<img alt="유저 아이콘" width="25" height="25"
 									src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">
-							${reviewViewLists.user.loginId}
+							<div class="reviewListFont11">${reviewViewLists.user.loginId}</div>
 						</div>
-						<div class="mt-3 ml-4 ">
+						<div class="mt-3 ml-4 d-flex">
 							<img alt="리뷰 개수 아이콘" width="25" height="25"
 									src=https://icons.iconarchive.com/icons/pictogrammers/material/128/movie-open-star-outline-icon.png>
-							Total Review : ${reviewViewLists.reviewCount}
+							<div class="reviewListFont11">Total Review : ${reviewViewLists.reviewCount}</div>
 						</div>
 					</div>
 				</div>

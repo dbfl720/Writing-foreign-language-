@@ -35,7 +35,7 @@
 		            </div>
 		            <span class="timestamp">
 		            
-		            <span class="messageOutBoxLoginIdText username  ml-2 font-weight-bold">To. ${card.user.loginId}</span>
+		            <span class="messageOutBoxLoginIdText username  ml-2 font-weight-bold"><div class="toFont">To.</div> ${card.user.loginId}</span>
 		        
 		            	
 		            

@@ -169,7 +169,7 @@
 
 
 <div class="pencilIcon">
-	<a href="/grammar/grammar_writing_view"> <img class="shadowToTalEffects grammarListPencilIcon" alt="연필 이모티콘"
+	<a href="/grammar/grammar_writing_view"> <img class="simpleEffectILike grammarListPencilIcon" alt="연필 이모티콘"
 		width="34" height="34"
 		src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 	</a>

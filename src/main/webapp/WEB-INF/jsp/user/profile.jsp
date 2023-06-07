@@ -79,8 +79,8 @@
 						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">		
 					<div class="profileLoginId mt-3">${user.loginId}</div>
 					<!--쪽지 보내기 -->
-					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${user.id}" class="profileSendMessage ml-4  shadowToTalEffects" alt="쪽지 사진" width="38" height="36"
-						src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/128/Paper-Plane-icon.png"></a>
+					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${user.id}" class="profileSendMessage ml-4  simpleEffectILike" alt="쪽지 사진" width="38" height="36"
+						src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Paper-Plane-icon.png"></a>
 					</div> 
 					
 					<div class="profileTotalText d-flex justify-content-center">
@@ -165,14 +165,14 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="message-text" class="modalMessageText col-form-label">Message:</label>
+            <label for="message-text" class="modalMessageText col-form-label">content</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="messageCloseBtn btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-warning">Send message</button>
+        <button type="button" class="messageCloseBtn btn btn-white" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-white">Send message</button>
       </div>
     </div>
   </div>

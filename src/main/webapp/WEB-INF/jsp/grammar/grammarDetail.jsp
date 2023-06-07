@@ -20,11 +20,11 @@
 			<div class="d-flex  ReadingGlassesIcon">
 				<!--유저 글정보 (내용)  -->
 				 <a href="#" class="GrammarDetailWritingInfo ReviewMoreIcon"  data-grammar-id="${grammar.id}"> 
-					<img class="shadowToTalEffects" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Very-Basic-Search-icon.png" width="27"> 
+					<img class="simpleEffectILike" src="https://icons.iconarchive.com/icons/icons8/windows-8/128/Very-Basic-Search-icon.png" width="27"> 
 				 </a>	
 		
 				<!--유저 글 정보들(제목,날짜..)  -->
-				 <a href="#" class="GrammarDetailOthers shadowToTalEffects"  data-grammar-id="${grammar.id}"> 
+				 <a href="#" class="GrammarDetailOthers simpleEffectILike"  data-grammar-id="${grammar.id}"> 
 				<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="27"> 
 				</a>
 			</div>
@@ -81,14 +81,14 @@
 										<div>
 										 	<!--더보기  -->
 											 <a href="#" class="more-btn"  data-comment-id="${comments.grammarComment.id}"> 
-											<img class="mt-2 shadowToTalEffects" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="27" height="27"> 
+											<img class="mt-2 simpleEffectILike" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="27" height="27"> 
 											</a> 
 								
 										<!-- 좋아요 빈하트(안눌러 졌을 때) -->
 											<c:if test="${comments.filledLike == false}">
 												<a href="#" class="like-btn"
 													data-comment-id="${comments.grammarComment.id}"><img
-													class="languageMark ml-3 shadowToTalEffects" alt="빈하트 이모티콘" width="27"
+													class="languageMark ml-3 simpleEffectILike" alt="빈하트 이모티콘" width="27"
 													height="27"
 													src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
 											</c:if>
@@ -96,7 +96,7 @@
 											<c:if test="${comments.filledLike == true}">
 												<a href="#" class="like-btn"
 													data-comment-id="${comments.grammarComment.id}"><img
-													class="languageMark ml-3 shadowToTalEffects" alt="채워진 하트 이모티콘" width="27"
+													class="languageMark ml-3 simpleEffectILike" alt="채워진 하트 이모티콘" width="27"
 													height="27"
 													src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png"></a>
 											</c:if>
@@ -153,7 +153,7 @@
 								width="23" height="23"
 								src="https://icons.iconarchive.com/icons/colebemis/feather/128/check-square-icon.png">
 						</div>
-						<div class="grammarOldContentText shadowToTalEffects text-secondary"> We look forward to your comments.</div>
+						<div class="grammarOldContentText simpleEffectILike text-secondary"> We look forward to your comments.</div>
 					</div>
 				</div>
 			</c:if>

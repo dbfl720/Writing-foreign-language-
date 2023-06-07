@@ -3,6 +3,8 @@ package com.language.community.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,11 @@ import com.language.user.model.User;
 
 @Service
 public class CommunityBO {
+	
+	
+	// *** logger 
+	private Logger logger = LoggerFactory.getLogger(this.getClass());  
+	
 
 	@Autowired
 	private UserBO userBO;
@@ -37,5 +44,23 @@ public class CommunityBO {
 		
 		}
 		return communityList;
+	}
+	
+	
+	
+    // search
+	public CommunityView generateCommunity (String loginId) {
+		
+		CommunityView communityView = new CommunityView();
+		
+		// user
+		User user = userBO.getUserByLoginId(loginId);
+		communityView.setUser(user);
+		if (user == null) {
+			logger.warn("[유저 정보] 유저 정보 is null. loginId:{} ");
+		} 
+		
+		return communityView;
+				
 	}
 }

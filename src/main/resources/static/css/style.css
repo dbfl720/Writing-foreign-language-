@@ -794,13 +794,9 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 .swiper-button-prev{margin-top:6rem;} 
 .ReviewListbox{overflow: hidden;  width:30rem; height:28rem;
-box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-              0 2px 2px rgba(0,0,0,0.11), 
-              0 4px 4px rgba(0,0,0,0.11), 
-              0 8px 8px rgba(0,0,0,0.11), 
-              0 16px 16px rgba(0,0,0,0.11), 
-              0 32px 32px rgba(0,0,0,0.11);}
-.ReviewListbox:hover{transform: scale(0.9);}
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
+.ReviewListbox:hover{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .reviewListTextBox22{margin-left:2rem; font-size:2rem;}
 .ReveiwImgBox2{margin:2.3rem;}
 .reveiwLangagueText{color:#FFA500; font-size:3rem; }
@@ -818,7 +814,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
 .reviewTopSelectBox{width:100rem; padding-right:20rem; padding-top:3rem;}
 .reviewTopGreatText{width:26rem; margin-top:1.5rem; margin-left:1rem;} 
 .ReveiwImgBox3{margin:3rem; margin-left:6rem;}
-.reviewTopInfoBox44{margin-left:8rem; margin-top:1rem;}
+.reviewTopInfoBox44{margin-left:7rem; margin-top:1rem;}
 .reviewTopImgBox2{border-radius: 70%;  overflow: hidden;}
 .reviewListPagingIcon{
 	margin-top:3rem;
@@ -846,8 +842,16 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.11),
               0 16px 16px rgba(0,0,0,0.11), 
               0 32px 32px rgba(0,0,0,0.11);
 }
+.reviewListFont11{font-size:1.8rem; margin-left:0.7rem;}
 
 
+
+.simpleEffectILike{
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
+.simpleEffectILike:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+} 
 
 
 
@@ -934,7 +938,9 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
     padding: 0;
     font-family: sans-serif;
    /* background:#646464;   */
- 
+  background: #ADA996; 
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
  
  
    
@@ -950,7 +956,7 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
   width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #aaaaaa	;
+  background-color: black	;
   border-radius: 2px;
 }
 .chatbox {
@@ -967,15 +973,13 @@ details[open] > summary ~ * { animation:reveal 0.5s;}
     flex: auto;
     max-height: calc(100% - 60px);
     overflow: auto;
- /*  background: #bdc3c7;  fallback for old browsers
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  Chrome 10-25, Safari 5.1-6
-background: linear-gradient(to right, #2c3e50, #bdc3c7); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
-   */
-   
-   background: #C9D6FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   
+
+/*    background: #C9D6FF;  
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  
+background: linear-gradient(to right, #E2E2E2, #C9D6FF);  */
+    background: #ADA996; 
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
 }
 .chat-input {
     flex: 0 0 auto;
@@ -1024,15 +1028,18 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
     width: 100%;
     margin: 0 0 10px 0;
     padding: 0;
+  
 }
 .msg-box {
     display: flex;
     /* background: #8c8c8c; */
     
-    background: #E8CBC0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+ /*    background: #E8CBC0;  
+background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  
+background: linear-gradient(to right, #636FA4, #E8CBC0); */ 
+ background: #6D6027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
     
     
     
@@ -1064,8 +1071,9 @@ background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, F
     display: inline-block;
     font-size: 2rem;
     line-height: 13pt;
-    color: rgba(255,255,255,.7);
+   /*  color: rgba(255,255,255,.7); */
     margin: 0 0 4px 0;
+
 }
 .msg:first-of-type {
     margin-top: 8px;
@@ -1106,10 +1114,10 @@ background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, F
         position: absolute;
         display: none;
         font-size:2rem;
- background: #C9D6FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   
+ background: #ADA996; 
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+
 
 
 
@@ -1120,10 +1128,11 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
     flex: auto;
     max-height: calc(100% - 60px);
     overflow: auto;
- background: #C9D6FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
    
+ background: #ADA996; 
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
 
 
 
@@ -1138,7 +1147,7 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
 
 .messageUserLangaugeFont{font-size: 1.4rem;}
 .messageBigEffect234:hover{transform: scale(1.2);}
-
+.fromFont{font-size:1.2rem;}
 
 
 
@@ -1165,8 +1174,13 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
 .btn-11 {
 	font-size:1.7rem;
   border: none;
-  background-color: #cb99c5;  
-    color: #fff;
+background: #3C3B3F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+color:white;
+font-weight:bold;
     overflow: hidden;
 }
 .btn-11:hover {
@@ -1208,12 +1222,56 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
 
 
 /* message modal css  */
-#message-text{height:25rem; font-size:2rem;}
+#message-text{height:25rem; font-size:2rem;
+ background: #ADA996; 
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+
+
+
+
+}
+.modal-body{ 
+background: #6D6027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+	
+
+}
+.modal-footer{
+background: #6D6027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+.modal-header{
+background: #6D6027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+
+
+}
+.modal-content{
+border-radius:40px 40px 40px 40px;
+}
+
+
+
+
+
 #exampleModalLabel{font-size:1.6rem;}
-.modalMessageText{font-size:1.3rem;}
+.modalMessageText{font-size:1.7rem;}
 .profileSendMessage22{font-size:1.5rem;}
 .messageCloseBtn{font-size:1.5rem;}
-.profileSendMessage:hover{transform: scale(1.4);}
+
 .messageDeleteImg:hover{transform: scale(1.4);}
  
  

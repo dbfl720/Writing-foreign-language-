@@ -22,7 +22,7 @@
 				<!--더보기  -->
 				<div>
 				 <a href="#" class="more-btn ReviewMoreIcon"  data-review-id="${review.id}"> 
-					<img class="shadowToTalEffects" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
+					<img class="simpleEffectILike" src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="30"> 
 				 </a>	
 				</div>
 				

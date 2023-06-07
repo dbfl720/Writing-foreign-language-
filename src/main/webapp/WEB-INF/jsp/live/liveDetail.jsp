@@ -16,7 +16,7 @@
 	
 	<%-- 언어 선택 --%>
 	<div class="d-flex">
-				<select onchange="if(this.value) location.href=(this.value);" name="id" id= livelanguageId class="shadowToTalEffects select form-select form-select-sm form-control standardHeight">
+				<select onchange="if(this.value) location.href=(this.value);" name="id" id= livelanguageId class="simpleEffectILike select form-select form-select-sm form-control standardHeight">
 						<option value="none" selected>language</option>
 						<option value="/live/live_view?languageCategoryId=KO">KO</option>
 						<option value="/live/live_view?languageCategoryId=EN">EN</option>
@@ -31,7 +31,7 @@
 				
 				<!-- 리뷰쓰기 아이콘 -->
 			<div class="ReviewPencilIcon ">
-				<a href="/live/live_writing_view"> <img class="shadowToTalEffects" alt="연필 이모티콘"
+				<a href="/live/live_writing_view"> <img class="simpleEffectILike" alt="연필 이모티콘"
 					width="33" height="33"
 					src="https://icons.iconarchive.com/icons/iconka/business-outline/128/pencil-icon.png">
 				</a>
@@ -354,14 +354,14 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="message-text" class="modalMessageText col-form-label">Message:</label>
+            <label for="message-text" class="modalMessageText col-form-label">content</label>
             <textarea class="form-control" id="message-text"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="messageCloseBtn btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-warning">Send message</button>
+        <button type="button" class="messageCloseBtn btn btn-white" data-dismiss="modal">Close</button>
+        <button id="profileSendMessage22" type="button" class="profileSendMessage22 btn btn-white">Send message</button>
       </div>
     </div>
   </div>
