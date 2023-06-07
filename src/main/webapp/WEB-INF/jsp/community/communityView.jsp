@@ -9,11 +9,11 @@
 		<img alt="글쓴이 이모티콘" width="60" height="60" src="https://icons.iconarchive.com/icons/handdrawngoods/busy/128/people-structure-2-icon.png">
 	New Writers !</div>
 	
-	<!-- 검색 -->
+		<!-- 검색 -->
 	<form method = "get" action="/community/search"> <!-- 검색은 주소에 정보 보여도 상관없어서 get. -->
-	<div class="input-group d-flex ml-5 col-2">
-		<input id="loginId" name="loginId" type="text" class="form-control " placeholder="홍유리를 검색해보세요.">
-		<button class="btn btn-success h-30" type="submit" >검색</button>
+	<div class="input-group d-flex  communitySearchBtn">
+		<input id="loginId" name="loginId" type="text" class= "form-control communitySearchInput" placeholder="Try searching for a new writer's name.">
+		<button class=" btn btn-secondary h-30 communitySearchButton" type="submit" >search</button>
 	</div>
 	</form>
 	

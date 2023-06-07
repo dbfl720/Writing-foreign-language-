@@ -31,5 +31,15 @@ Logger logger = LoggerFactory.getLogger(this.getClass());
 		List<CommunityView> communityView = communityBO.generateCommunityList(12);
 		assertNotNull(communityView);
 	}
+	
+	
+	
+	@Transactional
+	@Test
+	void 커뮤니티유저가져오기() {
+		logger.info("####### 커뮤니티 유저 가져오기");
+		CommunityView user = communityBO.generateCommunity("yuri");
+		assertNotNull(user);
+	}
 
 }

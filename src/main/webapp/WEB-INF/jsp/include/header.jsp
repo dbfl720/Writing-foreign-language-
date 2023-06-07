@@ -4,7 +4,7 @@
 
 <div class="header">
 	<div class="d-flex justify-content-between">
-		<div class="ami TopLogoEffects brigthEffect headerAmi">Ami</div>
+		<a href="/community/community_view" class="headerAmi126"><div class="ami TopLogoEffects brigthEffect headerAmi">Ami</div></a>
 		<%-- 프로필 사진 --%>
 		<%-- file태그는 숨겨두고 이미지를 클릭하면 file태그를 클릭한 것처럼 이벤트 줌. --%>
 		<c:if test="${not empty userId}">
