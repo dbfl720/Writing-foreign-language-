@@ -18,7 +18,7 @@
 					alt="프로필 이모티콘" height="30" width="30" class="shadowToTalEffects"
 					src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-setting-icon.png"></a>
 			
-				<a href="#" class="myinfo-btn" data-toggle="modal" data-target="#staticBackdrop" data-live-id=""> <img
+				<a href="#" class="headerInfomation" data-toggle="modal" data-target="#staticBackdrop" data-live-id=""> <img
 					 class="myinfoImg3344 shadowToTalEffects" width="25" src="https://icons.iconarchive.com/icons/icons8/ios7/128/Holidays-Jingle-Bell-icon.png">
 				</a>
 				
@@ -34,16 +34,14 @@
 				        </button>
 				      </div>
 				      <div class="modal-body">
+				        <div class="headerMyInfoFont">Project name :Writing-foreign-language program</div>
+				        <div class="headerMyInfoFont">Project period : 1st May.2023 ~ 7th June.2023</div>
 				        <div class="headerMyInfoFont">Creator : 홍유리 (YURI HONG)</div>
-				        <div class="headerMyInfoFont">E-mail : dbfl720@gmail.com</div>
 				        <div class="headerMyInfoFont">Github : github.com/dbfl720</div>
 				        <div class="headerMyInfoFont">Blog : dbfl720.tistory.com</div>
-				        <div class="headerMyInfoFont">Youtube : https://www.youtube.com/@YURIHONG-uh8py</div>
-				        <div class="headerMyInfoFont">   </div>
-				        <div class="headerMyInfoFont">Project period : 1st May.2023 ~ 7th June.2023</div>
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary headerMyInfoFont" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-secondary headerMyInfoFont mr-5" data-dismiss="modal">Close</button>
 				      </div>
 				    </div>
 				  </div>

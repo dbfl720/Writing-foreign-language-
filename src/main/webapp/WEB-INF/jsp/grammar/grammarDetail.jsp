@@ -27,6 +27,11 @@
 				 <a href="#" class="GrammarDetailOthers simpleEffectILike"  data-grammar-id="${grammar.id}"> 
 				<img src="https://icons.iconarchive.com/icons/amitjakhu/drip/128/dots-3-icon.png" width="27"> 
 				</a>
+				
+				<!-- 그래머 목록 페이지 이동  -->
+				 <a href="/grammar/grammar_list_view" class="ml-5 simpleEffectILike"> 
+				<img src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png" width="27"> 
+				</a>
 			</div>
 
 

@@ -48,13 +48,22 @@
 				<div class="reviewDetailContent">${review.content}</div>
 			</div>
 				
+				
+				
+				<!-- 그래머 목록 페이지 이동  -->
+				 <a href="/review/review_list_view" class="reviewListPageBtn simpleEffectILike"> 
+				<img  src="https://icons.iconarchive.com/icons/github/octicons/128/list-unordered-24-icon.png" width="34" height="34" > 
+				</a>
+				
+				
+				
 				    
 			    <!-- 좋아요 하트-->
 				<div class="mr-2">
 				<!-- 좋아요 빈하트(안눌러 졌을 때) -->
 					 <c:if test="${reviewLikeView.filledLike == false}"> 
 						<a href="#" class="reviewLikeBtn" data-review-id="${review.id}"><img
-							class="languageMark ml-3 reviewDetailHeart" alt="빈하트 이모티콘" width="35"
+							class="languageMark ml-3 simpleEffectILike" alt="빈하트 이모티콘" width="35"
 							height="35"
 							src="https://icons.iconarchive.com/icons/pictogrammers/material-light/128/heart-icon.png"></a>
 					 </c:if> 
@@ -66,6 +75,8 @@
 							src="https://icons.iconarchive.com/icons/pictogrammers/material/128/heart-icon.png"></a>
 					</c:if>
 				</div> <!--  좋아요 끝 -->
+				
+				
 		</div> <!-- d-flex  -->
 		</div> <!-- reviewTotal55 끝 -->
 		

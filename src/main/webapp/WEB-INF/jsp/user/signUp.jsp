@@ -172,7 +172,7 @@
 						</div>
 					</form>
 	
-					<div class="already_member_box d-flex justify-content-between px-4">
+					<div class="already_member_box d-flex justify-content-center px-4">
 						<p class="text-center signInText" id="to_signup">Create an
 							account?</p>
 						<!-- <p class="signInText text-center">Forgot password</p> -->

@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.language.community.bo.CommunityBO;
+import com.language.community.model.CommunityView;
 import com.language.grammar_comment.model.GrammarComment;
 import com.language.grammar_comment.model.GrammarCommentView;
 
@@ -58,3 +60,38 @@ Logger logger = LoggerFactory.getLogger(this.getClass());
 	}
 
 }
+
+
+
+
+//
+//@SpringBootTest
+//class CommunityBOTest {
+//
+//Logger logger = LoggerFactory.getLogger(this.getClass());
+//	
+//	
+//	@Autowired
+//	CommunityBO communityBO;
+//	
+//	
+//	
+//	//@Transactional
+//	//@Test
+//	void 커뮤니티리스트가져오기() {
+//		logger.info("##### 커뮤니티 리스트 가져오기");
+//		List<CommunityView> communityView = communityBO.generateCommunityList(12);
+//		assertNotNull(communityView);
+//	}
+//	
+//	
+//	
+//	//@Transactional
+//	//@Test
+//	void 커뮤니티유저가져오기() {
+//		logger.info("####### 커뮤니티 유저 가져오기");
+//		CommunityView user = communityBO.generateCommunity("yuri");
+//		assertNotNull(user);
+//	}
+//
+//}

@@ -54,7 +54,7 @@ public class CommunityController {
 		CommunityView user = communityBO.generateCommunity(loginId);
 		
 		
-		model.addAttribute("loginId", loginId);
+		
 		model.addAttribute("user", user);
 		model.addAttribute("view", "community/communitySearch");
 		return "template/layout";

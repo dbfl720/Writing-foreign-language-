@@ -21,7 +21,7 @@
 	
 	
 	<!-- 유저 찾았을 때 -->
-	  <c:if test="${user.user.loginId eq loginId}">
+	  <c:if test="${not empty user.user.loginId}">
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55 ">
 			<div class="communityImg">
 				<a href="/user/profile_view?userId=${user.user.id}"><img class="profilePicture2" id="communityImg" alt="프로필 사진"
@@ -63,7 +63,7 @@
 	
 	
 	<!--  찾는 유저가 없을 때 --> 
-	<c:if test="${user.user.loginId ne loginId}">
+	<c:if test="${empty user.user.loginId}">
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55 ">
 			<div class="communityImg">
 				<a><img class="profilePicture2" id="communityImg" alt="프로필 사진"

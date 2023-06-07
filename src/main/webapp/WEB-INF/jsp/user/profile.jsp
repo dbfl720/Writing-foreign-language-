@@ -79,7 +79,7 @@
 						src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/128/user-2-icon.png">		
 					<div class="profileLoginId mt-3">${user.loginId}</div>
 					<!--쪽지 보내기 -->
-					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${user.id}" class="profileSendMessage ml-4  simpleEffectILike" alt="쪽지 사진" width="38" height="36"
+					<a href="#"><img data-toggle="modal" data-target="#exampleModal" data-receiver-id="${user.id}" class="profileSendMessages ml-4  simpleEffectILike" alt="쪽지 사진" width="38" height="36"
 						src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Paper-Plane-icon.png"></a>
 					</div> 
 					
@@ -359,7 +359,7 @@ $(document).ready(function() {
 			
 			
 			// 메세지 보내기
-			$('.profileSendMessage').on('click', function(e){
+			$('.profileSendMessages').on('click', function(e){
 				e.preventDefault();
 				
 				let receiverId = $(this).data("receiver-id");
