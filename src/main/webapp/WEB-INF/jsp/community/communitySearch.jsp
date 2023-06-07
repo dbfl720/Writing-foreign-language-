@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <%-- 커뮤니티  --%>
 <div class="container">
 	<div class="display-4 pt-5 pb-5 TopLogoEffects">
@@ -7,7 +9,7 @@
 	New Writers !</div>
 	
 	<!-- 검색 -->
-	<form method = "get" action="/community/community_view"> <!-- 검색은 주소에 정보 보여도 상관없어서 get. -->
+	<form method = "get" action="/community/search"> <!-- 검색은 주소에 정보 보여도 상관없어서 get. -->
 	<div class="input-group d-flex ml-5 col-2">
 		<input id="loginId" name="loginId" type="text" class="form-control " placeholder="홍유리를 검색해보세요.">
 		<button class="btn btn-success h-30" type="submit" >검색</button>
@@ -18,8 +20,8 @@
 	
 	
 	
-	
-	<c:if test="${not empty user}">
+
+	  <c:if test="${user.user.loginId eq loginId}">
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55 ">
 			<div class="communityImg">
 				<a href="/user/profile_view?userId=${user.user.id}"><img class="profilePicture2" id="communityImg" alt="프로필 사진"
@@ -56,6 +58,10 @@
 			</div>
 		</div>
 	</c:if>
-
 	
+	
+	<c:if test="${user.user.loginId ne loginId}">
+	
+	dfdfd
+	</c:if>
 </div>
