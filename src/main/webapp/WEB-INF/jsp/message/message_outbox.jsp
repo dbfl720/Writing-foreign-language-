@@ -29,7 +29,7 @@
 		          <img class="user-img" id="user-0" src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Mail-Send-icon.png" />
 		          <div class="flr">
 		            <div class="messages">
-		              <p class="msg outBoxContent" id="msg-0">
+		              <p class="msg mt-3 outBoxContent" id="msg-0">
 		                ${card.messageEntity.content}          
 		              </p>
 		            </div>

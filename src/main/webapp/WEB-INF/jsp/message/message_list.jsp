@@ -75,7 +75,7 @@
 		          <a href="/user/profile_view?userId=${card.user.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${card.user.imagePath}" /></a>
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
-		              <p class="msg mt-2" id="msg-0">
+		              <p class="msg mt-4" id="msg-0">
 		                ${card.messageEntity.content}          
 		              </p>
 		              
