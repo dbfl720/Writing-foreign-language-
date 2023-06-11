@@ -40,7 +40,7 @@
 		<c:forEach items="${reviewViewList}" var="reviewViewLists">
 			<div class="swiper-slide">
 				<div class="">
-					<div><img class="reviewTopImgBox2" src="${reviewViewLists.user.imagePath}" width="600" height="100"></div>
+					<div><img class="reviewTopImgBox2" src="${reviewViewLists.user.ImagePath}" width="600" height="100"></div>
 					<div class="d-flex reviewTopInfoBox44">
 						<div class="mt-3 d-flex">
 							<img alt="유저 아이콘" width="25" height="25"
@@ -76,7 +76,7 @@
 			<div class="ReviewListbox mt-3 card">
 				<a href="/review/review_detail_view?reviewId=${reviewLists.id}">
 					<small class="reveiwLangagueText card-img-overlay ">${reviewLists.languageCategoryId}</small>
-						<img class="ReveiwImgBox2 " src="${reviewLists.imagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="253" height="130">
+						<img class="ReveiwImgBox2 " src="${reviewLists.ImagePath}" id="imageUrl" name="iamgeUrl" alt="이미지 " width="253" height="130">
 				</a>
 				<div class="reviewListTextBox22">
 					<h3 class="text-secondary" name="price">
