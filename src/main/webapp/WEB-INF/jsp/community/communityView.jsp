@@ -24,7 +24,7 @@
 		<div class="d-flex border-bottom rounded outer align-items-center communityTotal55 ">
 			<div class="communityImg">
 				<a href="/user/profile_view?userId=${communityLists.user.id}"><img class="profilePicture2" id="communityImg" alt="프로필 사진"
-					src="${communityLists.user.ImagePath}"
+					src="${communityLists.user.imagePath}"
 					height="200" width="200"></a>
 			</div>
 			

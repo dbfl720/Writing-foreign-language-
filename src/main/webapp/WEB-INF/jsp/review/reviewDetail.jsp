@@ -30,7 +30,7 @@
 			<div class="reviewDetailBox">	
 				<div class="reviewBox mr-3">
 					<img id="reviewImg" class=" review" alt="프로필 사진"
-						src="${review.ImagePath}" height="300" width="300">
+						src="${review.imagePath}" height="300" width="300">
 				</div>
 				<!-- 업데이트 아이콘 -->
 				<c:if test="${review.userId eq userId}">

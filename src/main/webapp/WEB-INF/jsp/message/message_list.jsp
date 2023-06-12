@@ -32,7 +32,7 @@
 		    <c:forEach items="${userList}" var="userLists">
 		      <div class="msg-container msg-remote" id="msg-0">
 		        <div class="msg-box shadowToTalEffects">
-		          <a href="/user/profile_view?userId=${userLists.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${userLists.ImagePath}" /></a>
+		          <a href="/user/profile_view?userId=${userLists.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${userLists.imagePath}" /></a>
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
 		             
@@ -72,7 +72,7 @@
 		    <c:forEach items="${messageViewList}" var="card">
 		      <div class="msg-container msg-remote scrollDownEffect" id="msg-0">
 		        <div class="msg-box shadowToTalEffects">
-		          <a href="/user/profile_view?userId=${card.user.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${card.user.ImagePath}" /></a>
+		          <a href="/user/profile_view?userId=${card.user.id}"><img class="user-img messageBigEffect234 shadowToTalEffects"  id="user-0" src="${card.user.imagePath}" /></a>
 		          <div class="flr">
 		            <div class="messages d-flex justify-content-between">
 		              <p class="msg mt-4" id="msg-0">
