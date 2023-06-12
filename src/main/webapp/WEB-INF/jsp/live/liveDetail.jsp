@@ -58,7 +58,7 @@
 								<c:when test="${card.user.id ne userId}">
 								<details>
 									<summary>
-										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.ImagePath}" 
+										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.imagePath}" 
 										width="70" height="70">
 									</summary>
 									<div class="tpt">
@@ -69,7 +69,7 @@
 								</details>
 								</c:when>
 								<c:otherwise>
-										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.ImagePath}" 
+										<img class="reviewTopImgBox2 shadowToTalEffects liveUserImg56" src="${card.user.imagePath}" 
 										width="70" height="70">
 								</c:otherwise>
 							</c:choose>
@@ -111,7 +111,7 @@
 					<%-- 카드 이미지 --%>
 					<div>
 						<img class="w-100 shadowToTalEffects liveImageBox111"  height="300" alt="본문 이미지"
-							src="${card.live.ImagePath}">
+							src="${card.live.imagePath}">
 					</div>
 
 

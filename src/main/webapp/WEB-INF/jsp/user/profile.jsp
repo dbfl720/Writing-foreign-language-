@@ -25,7 +25,7 @@
 				</c:if>
 				<div class="reviewBox mr-3">
 					<img id="profileImg" class=" " alt="프로필 사진"
-						src="${user.ImagePath}"
+						src="${user.imagePath}"
 						height="250" width=250">
 				</div>
 				<c:if test="${user.id eq userId}">
