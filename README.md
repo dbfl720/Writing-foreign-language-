@@ -4,6 +4,12 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 
 
 
+## Getting Started / URL을 클릭해서 프로젝트 이용을 해주세요. 
+- 외국어 글쓰기 프로그램 : http://52.78.77.9:8080/user/sign_up_view
+- 사용자 Id : coffee
+- 사용자 Password : AAaa1234! <br><br><br>
+
+
 ## 홍유리 개인 정보
 - Blog : https://dbfl720.tistory.com
 - Youtube : www.youtube.com/@YURIHONG-uh8py
@@ -26,16 +32,13 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 - URL 설계 : https://docs.google.com/spreadsheets/d/1f4hwscIE23jhXf--9adrQmwIZbGBVJnbr9y5DFZ-pTI/edit#gid=1396187432
 - 일정 설계 : https://docs.google.com/spreadsheets/d/1f5wdmagaCvbPJXa9YketsgxxgYZ8h5W7Uc8JIvANuwk/edit#gid=0
 - 포트폴리오 : https://www.miricanvas.com/v/1252ue5 
-- 포트폴리오 pdf :  [홍유리 프로젝트.pdf](https://github.com/dbfl720/Writing-foreign-language-/files/11768337/default.pdf)
+- 포트폴리오 pdf : [홍유리-프로젝트.pdf](https://github.com/dbfl720/Writing-foreign-language-/files/11772437/-.pdf)
+
   <br><br><br>
 
 
 
 
-## Getting Started
-- 외국어 글쓰기 프로그램 : http://52.78.77.9:8080/user/sign_up_view
-- 사용자 Id : coffee
-- 사용자 Password : AAaa1234! <br><br><br>
 
 
 ## 회원가입 / 로그인 페이지
