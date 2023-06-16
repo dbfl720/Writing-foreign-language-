@@ -60,6 +60,10 @@ https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/8776f458-f
 ## Community 페이지
 
 
+https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/aab1392b-ea99-4256-82d6-193a98d4654c
+
+
+
 <br><br><br>
 
 
