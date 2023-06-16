@@ -4,7 +4,7 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 
 
 
-## Getting Started / URL을 클릭해서 프로젝트 이용을 해주세요. 
+## Getting Started / 아래 URL을 통해 프로젝트 사용이 가능합니다. 
 - 외국어 글쓰기 프로그램 : http://52.78.77.9:8080/user/sign_up_view
 - 사용자 Id : coffee
 - 사용자 Password : AAaa1234! <br><br><br>
