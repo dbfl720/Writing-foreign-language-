@@ -45,7 +45,10 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
     
 
 
-https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/e70e3f5c-79fa-4e0a-b5ce-9c28ff84f950
+https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/8776f458-f28a-41d9-91ef-17ad5b434274
+
+
+
 
 <br><br><br>
 
