@@ -91,6 +91,14 @@ https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/7ee2fc37-1
 ## Review 페이지
 
 
+    음악, 책, 스포츠, 음식 등 장르와 상관없이 자신의 글을 자랑할 수 있는 페이지입니다.
+    전체 사용자의 글 개수가 많은 순위대로 총 18명을 선정하여 볼 수 있게 구현하여 사용자의 글쓰기 동기부여를 했습니다.
+    
+
+
+https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/7fbb1614-b084-4fca-a6bd-93482a7de038
+
+
 <br><br><br>
 
 
