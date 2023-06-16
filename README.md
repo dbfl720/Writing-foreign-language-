@@ -4,6 +4,11 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 
 
 
+## 홍유리 개인 정보
+- Blog : https://dbfl720.tistory.com
+- Youtube : https://github.com/dbfl720
+- Email : dbfl720@gmail.com
+<br><br><br>
 
 ## Description
 - 5월 1일 ~ 6월 7일 , 총 38일 동안 개인 프로젝트
@@ -41,6 +46,38 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 
 https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/e70e3f5c-79fa-4e0a-b5ce-9c28ff84f950
 
+<br><br><br>
+
+
+
+## Community 페이지
+
+
+<br><br><br>
+
+
+## Grammar 페이지
+
+
+<br><br><br>
+
+
+## Review 페이지
+
+
+<br><br><br>
+
+
+## Live 페이지
+
+<br><br><br>
+
+
+
+## Message 페이지
+
+
+<br><br><br>
 
 
 
