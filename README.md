@@ -11,7 +11,7 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 <br><br><br>
 
 ## Description
-- 5월 1일 ~ 6월 7일 , 총 38일 동안 개인 프로젝트
+- 5월 1일 ~ 6월 7일 (총 38일)  개인 프로젝트
   -  Back-End  :     JAVA ,     SpringBoot,     JSP,    JST  <br>    
   -  DB  :  MySQL, MyBatis, JPA <br>  
   -  SERVER  :     Apach Tomcat,       Amazon AWS,       Linux <br>
