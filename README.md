@@ -57,8 +57,14 @@ https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/8776f458-f
 
 
 
-## Community 페이지
+## Community 페이지 / Profile 페이지
 
+
+
+    최신 가입자 10명을 볼 수 있고 간략한 기본 정보들을 볼 수 있으며 가입자를 클릭하면 프로필로 이동할 수 있습니다. 
+    Profile페이지는 가입자의 이미지를 클릭하면 모국어,외국어, 글쓰기 목적, 자기소개 등 다양한 정보를 볼 수 있는 동시에 메시지도 보내며 친목을 다질 수 있습니다.
+
+    
 
 https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/aab1392b-ea99-4256-82d6-193a98d4654c
 
@@ -68,6 +74,15 @@ https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/aab1392b-e
 
 
 ## Grammar 페이지
+
+
+
+    언어별로 글을 선택할 수 있고, 사용자가 첨삭 받고 싶은 문장을 적고 해당 모국어의 다른 사용자가 답변으로 틀린 문법을 고쳐주는 형식입니다.
+    틀린 문장과 고친 문장을 구별했고 틀린 문장에는 빨간 줄을 그어 눈에 띄게 했습니다. 
+    
+
+
+https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/7ee2fc37-1939-49ac-8507-26ee5d7c6787
 
 
 <br><br><br>
