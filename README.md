@@ -16,7 +16,7 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
   -  DB  :  MySQL, MyBatis, JPA <br>  
   -  SERVER  :     Apach Tomcat,       Amazon AWS,       Linux <br>
   -  Front-End   :    JQuery,      JavaScript ,    CSS,      HTML,     BOOTSTRAP <br>
-  -  Tools :     Eclips,  SpringToolSuit4,   SourceTree,   Visual Studio Code <br><br><br>
+  -  TOOLS :     Eclips,  SpringToolSuit4,   SourceTree,   Visual Studio Code <br><br><br>
 
 
 ## Project Proposal
