@@ -104,11 +104,26 @@ https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/7fbb1614-b
 
 ## Live 페이지
 
+
+    오늘 하루 있었던 일들을 적는 페이지이며 댓글로 사람들과 소통할 수 있습니다.
+    
+
+https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/71f2e858-e156-45b6-900b-687c47abbfd2
+
+
+
 <br><br><br>
 
 
 
 ## Message 페이지
+
+
+    받은 편지함, 보낸 편지함이 있고 받은 메시지를 답장할 수 있는 기능 및 모든 사용자에게 메시지를 보낼 수도 있습니다.
+    
+
+
+https://github.com/dbfl720/Writing-foreign-language-/assets/116433637/993ff3ea-e63e-42ae-b08f-054bd11a98d5
 
 
 <br><br><br>
