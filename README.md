@@ -32,6 +32,7 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 - URL 설계 : https://docs.google.com/spreadsheets/d/1f4hwscIE23jhXf--9adrQmwIZbGBVJnbr9y5DFZ-pTI/edit#gid=1396187432
 - 일정 설계 : https://docs.google.com/spreadsheets/d/1f5wdmagaCvbPJXa9YketsgxxgYZ8h5W7Uc8JIvANuwk/edit#gid=0
 - 트러블슈팅 모음집 : https://github.com/dbfl720/Writing-foreign-language-/issues/4
+- 프로젝트 이슈 모음집 : https://github.com/dbfl720/Writing-foreign-language-/issues
 - 포트폴리오 : https://www.miricanvas.com/v/1252ue5 
 - 포트폴리오 pdf : [홍유리-프로젝트.pdf](https://github.com/dbfl720/Writing-foreign-language-/files/11772437/-.pdf)
 
