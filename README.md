@@ -4,11 +4,6 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 
 
 
-## Getting Started / 아래 URL을 통해 프로젝트 사용이 가능합니다. 
-- 외국어 글쓰기 프로그램 : http://52.78.77.9:8080/user/sign_up_view
-- 사용자 Id : coffee
-- 사용자 Password : AAaa1234! <br><br><br>
-
 
 ## 홍유리 개인 정보
 - Blog : https://dbfl720.tistory.com
