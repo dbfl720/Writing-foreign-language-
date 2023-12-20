@@ -7,7 +7,6 @@ Community, Grammar, Review, Live, Message 페이지가 있습니다. <br><br><br
 
 ## 홍유리 개인 정보
 - Blog : https://dbfl720.tistory.com
-- Youtube : www.youtube.com/@YURIHONG-uh8py
 - Email : dbfl720@gmail.com
 <br><br><br>
 
